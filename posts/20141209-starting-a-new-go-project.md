@@ -4,6 +4,33 @@ I have the need for a program that can monitor Kubernetes* for services* and upd
 
 Instead I need a way to define a set of rules, perhaps as simple as a template, that will be used to update the HAProxy configuration file intelligently.
 
+The template spec:
+
+```go
+type ServiceEntry struct {
+    Name string `json:"name,omitempty"`
+    Port int `json:"port,omitempty"`
+    Uri string `json:"uri,omitempty"`
+}
+
+type ServiceEntries []ServiceEntry {}
+```
+
+```
+services:
+    # accessible as http://<proxy ip>:9200
+    # the name of the service to monitor
+    - name: elasticsearch
+    # the port on the proxy for the service
+      port: 9200
+    # the uri on the proxy for the service
+      uri: /
+    # accessible as http://<proxy ip>/kibana
+    - name: kibana
+      port: 80
+      uri: /kibana
+```
+
 To be continued...
 
 ### Resources
