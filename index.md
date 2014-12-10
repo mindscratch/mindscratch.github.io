@@ -2,6 +2,8 @@
 
 A very simple blog.
 
+2014-12-09 [Starting a new Go project](posts/20141209-starting-a-new-go-project.html)
+
 On the radar:
 * [Kubernetes - Scheduling](kubernetes/scheduling.html)
 
