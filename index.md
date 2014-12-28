@@ -2,7 +2,9 @@
 
 A very simple blog.
 
-2014-12-09 [Starting a new Go project](posts/20141209-starting-a-new-go-project.html)
+2014-12-28 [Windows 8, Thoughts](posts/20141228-windows-8-thoughts.html)
+
+2014-12-09 [Starting a new Go project](posts/20141209-starting-a-new-go-project.html) [unfinshed]
 
 On the radar:
 * [Kubernetes - Scheduling](kubernetes/scheduling.html)
