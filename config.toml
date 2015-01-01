@@ -1,0 +1,22 @@
+languageCode = "en-us"
+contentdir = "content"
+publishdir = "public"
+builddrafts = false
+baseurl = "http://craigwickesser.com"
+canonifyurls = true
+title = "craig wickesser"
+author = "Craig Wickesser"
+theme = "hugo-uno"
+
+[indexes]
+   category = "categories"
+   tag = "tags"
+[Params]
+  AuthorName = "Craig"
+  github = "mindscratch"
+  twitter = "mind_scratch"
+  email = "codecraig@gmail.com"
+  description = "scratch space"
+  cv = "/pages/cv"
+  cover = "/images/background-cover.jpg"
+  logo = "/img/logo-1.jpg"
