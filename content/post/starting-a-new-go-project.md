@@ -1,4 +1,12 @@
-# Starting a new Go project
+---
+title: "Starting a new Go project"
+date: "2014-12-09"
+description: "Notes related to starting a new Go project."
+categories:
+    - "posts"
+tags: 
+    - "golang"
+---
 
 I have the need for a program that can monitor Kubernetes* for services* and update an HAProxy* configuration file when changes occur. Sounds rather simple, however, there's a slight twist. I don't want to simply add entries to HAProxy for each service created in Kubernetes (it also wouldn't work as multiple services in Kubernetes could have the same port, since each service has its own IP address).
 

@@ -1,4 +1,12 @@
-# Windows 8, Thoughts
+---
+title: "Thoughts on Windows 8"
+date: "2014-12-28"
+description: "My thoughts on Windows 8 after setting up a laptop."
+categories:
+    - "posts"
+tags: 
+    - "windows"
+---
 
 My son received a laptop, his first, for Christmas. It's an ASUS running Windows 8. To date, he's only used Apple laptops, iPad, iPhone Touch and Galaxy S3/4/5 Android phones at home.
 
