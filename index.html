@@ -39,8 +39,6 @@
                     <nav class="cover-navigation cover-navigation--primary">
                         <ul class="navigation">
                             <li class="navigation__item"><a href="http://craigwickesser.com/#blog" title="link to craig wickesser blog" class="blog-button">Blog</a> </li>
-                            </br> 
-                            <li class="navigation__item"><a href="http://craigwickesser.com/pages/cv" title="link to my CV " class="blog-button">CV</a> </li>
                             </br>  </ul>
                     </nav> <nav class="cover-navigation navigation--social">
     <ul class="navigation"> 
@@ -68,6 +66,23 @@
             <div class="content-wrapper__inner">
                 <section id="main">
                     <div>
+                        
+                            
+                                <article class="post">
+<header>
+<h2><a href="http://craigwickesser.com/post/capture-stdout-in-go/">Capture STDOUT in Go </a> </h2>
+<div class="post-meta">Fri, Jan 2, 2015 - Read in 2 Min </div>
+</header>
+<div class="summary">
+    Capturing output written to STDOUT (standard output) can be accomplished with the following code. import ( &quot;bytes&quot; &quot;io&quot; &quot;os&quot; ) // not thread safe func captureStdout(f func()) string { old := os.Stdout r, w, _ := os.Pipe() os.Stdout = w f() w.Close() os.Stdout = old var buf bytes.Buffer io.Copy(&amp;buf, r) return buf.String() } The code here is fairly straight forward. First, a reference to the Writer that&rsquo;s assigned to os.Stdout is stashed for later.
+</div>
+<footer>
+<a href='http://craigwickesser.com/post/capture-stdout-in-go/'><nobr>Read more →</nobr></a>
+</footer>
+</article>
+
+
+                            
                         
                             
                                 <article class="post">

@@ -7,7 +7,72 @@
     <language>en-us</language>
     
     
-    <updated>Sun, 28 Dec 2014 00:00:00 UTC</updated>
+    <updated>Fri, 02 Jan 2015 00:00:00 UTC</updated>
+    
+    <item>
+      <title>Capture STDOUT in Go</title>
+      <link>http://craigwickesser.com/post/capture-stdout-in-go/</link>
+      <pubDate>Fri, 02 Jan 2015 00:00:00 UTC</pubDate>
+      
+      <guid>http://craigwickesser.com/post/capture-stdout-in-go/</guid>
+      <description>&lt;p&gt;Capturing output written to STDOUT (standard output) can be accomplished
+with the following code.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import (
+  &amp;quot;bytes&amp;quot;
+  &amp;quot;io&amp;quot;
+  &amp;quot;os&amp;quot;
+)
+
+// not thread safe
+func captureStdout(f func()) string {
+  old := os.Stdout
+  r, w, _ := os.Pipe()
+  os.Stdout = w
+
+  f()
+
+  w.Close()
+  os.Stdout = old
+
+  var buf bytes.Buffer
+  io.Copy(&amp;amp;buf, r)
+  return buf.String()
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The code here is fairly straight forward. First, a reference to the &lt;code&gt;Writer&lt;/code&gt;
+that&amp;rsquo;s assigned to &lt;code&gt;os.Stdout&lt;/code&gt; is stashed for later. Next a &lt;a href=&#34;http://golang.org/pkg/os/#Pipe&#34;&gt;Pipe&lt;/a&gt; is created,
+which provides a connected pair of Files. The writer created by the Pipe is
+assigned to &lt;code&gt;os.Stdout&lt;/code&gt;. Perhaps you can see where this is going.&lt;/p&gt;
+
+&lt;p&gt;Next, we invoke the function provided to &lt;code&gt;captureStdout&lt;/code&gt;. The writer is closed
+and &lt;code&gt;os.Stdout&lt;/code&gt; gets the original &lt;code&gt;Writer&lt;/code&gt; assigned back to it.&lt;/p&gt;
+
+&lt;p&gt;The final steps are to copy the data from the reader, created from the Pipe,
+and return the string as the result.&lt;/p&gt;
+
+&lt;p&gt;You should note, this code is &lt;strong&gt;not thread safe&lt;/strong&gt;. Why? Because of that
+&lt;em&gt;global&lt;/em&gt; reference, &lt;code&gt;os.Stdout&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;An example using it would look something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;func doSomething() {
+  fmt.Println(&amp;quot;This goes to STDOUT&amp;quot;)
+}
+
+func example() {
+
+  // invoke doSomething and return whatever it writes to STDOUT
+  message := captureStdout(doSomething)
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The example shown is trivial. I had a use case where I had to execute an
+executable on the system that wrote data to STDOUT which I needed to process.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Thoughts on Windows 8</title>

@@ -1,10 +1,10 @@
-    <!DOCTYPE html>
+  <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <title> Posts &middot; craig wickesser </title>
+    <title> Capture STDOUT in Go &middot; craig wickesser </title>
     
     <link rel="stylesheet" type="text/css" href="http://craigwickesser.com/css/uno.min.css" />
     <link rel="stylesheet" type="text/css" href="http://craigwickesser.com/css/lightGallery.css" />
@@ -12,19 +12,19 @@
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://craigwickesser.com/apple-touch-icon-144-precomposed.png">
     <link rel="shortcut icon" href="http://craigwickesser.com/favicon.ico">
     
-    <link href="http://craigwickesser.com/post/index.xml/" rel="alternate" type="application/rss+xml" title="craig wickesser" />
+    <link href="" rel="alternate" type="application/rss+xml" title="craig wickesser" />
     
     <script src="http://craigwickesser.com/js/jquery.min.js"></script>
     <script src="http://craigwickesser.com/js/main.min.js">
     </script>
 </head>
 
-    <body>
-        <span class="mobile btn-mobile-menu">
+  <body>
+    <span class="mobile btn-mobile-menu">
         <i class="fa fa-bars btn-mobile-menu__icon"></i>
         <i class="fa fa-times btn-mobile-close__icon hidden"></i>
     </span>
-<header class="  panel-cover panel-cover--collapsed "  style="background-image: url(/images/monster.jpg)" >
+<header class="panel-cover panel-cover--collapsed"  style="background-image: url(/images/monster.jpg)" >
     <div class="panel-main">
         <div class="panel-main__inner panel-inverted">
             <div class="panel-main__content"> 
@@ -62,36 +62,73 @@
     </div>
 </header>
 
-        <div class="content-wrapper">
-            <div class="content-wrapper__inner">
-                
-                <h2>2015</h2>
-                <ul id="list">
-                    
-                    <li>
-                        <a href="http://craigwickesser.com/post/capture-stdout-in-go/">Capture STDOUT in Go </a>
-                        <div class="meta">Fri, Jan 2, 2015</div>
-                    </li>
-                    
-                </ul>
-                
-                <h2>2014</h2>
-                <ul id="list">
-                    
-                    <li>
-                        <a href="http://craigwickesser.com/post/windows-8-thoughts/">Thoughts on Windows 8 </a>
-                        <div class="meta">Sun, Dec 28, 2014</div>
-                    </li>
-                    
-                    <li>
-                        <a href="http://craigwickesser.com/post/starting-a-new-go-project/">Starting a new Go project </a>
-                        <div class="meta">Tue, Dec 9, 2014</div>
-                    </li>
-                    
-                </ul>
-                
-            </div>
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <div class="post">
+          <h1>Capture STDOUT in Go</h1>
+          <span class="post-date">Fri, Jan 2, 2015</span>
+          <p>Capturing output written to STDOUT (standard output) can be accomplished
+with the following code.</p>
+
+<pre><code>import (
+  &quot;bytes&quot;
+  &quot;io&quot;
+  &quot;os&quot;
+)
+
+// not thread safe
+func captureStdout(f func()) string {
+  old := os.Stdout
+  r, w, _ := os.Pipe()
+  os.Stdout = w
+
+  f()
+
+  w.Close()
+  os.Stdout = old
+
+  var buf bytes.Buffer
+  io.Copy(&amp;buf, r)
+  return buf.String()
+}
+</code></pre>
+
+<p>The code here is fairly straight forward. First, a reference to the <code>Writer</code>
+that&rsquo;s assigned to <code>os.Stdout</code> is stashed for later. Next a <a href="http://golang.org/pkg/os/#Pipe">Pipe</a> is created,
+which provides a connected pair of Files. The writer created by the Pipe is
+assigned to <code>os.Stdout</code>. Perhaps you can see where this is going.</p>
+
+<p>Next, we invoke the function provided to <code>captureStdout</code>. The writer is closed
+and <code>os.Stdout</code> gets the original <code>Writer</code> assigned back to it.</p>
+
+<p>The final steps are to copy the data from the reader, created from the Pipe,
+and return the string as the result.</p>
+
+<p>You should note, this code is <strong>not thread safe</strong>. Why? Because of that
+<em>global</em> reference, <code>os.Stdout</code>.</p>
+
+<p>An example using it would look something like this:</p>
+
+<pre><code>func doSomething() {
+  fmt.Println(&quot;This goes to STDOUT&quot;)
+}
+
+func example() {
+
+  // invoke doSomething and return whatever it writes to STDOUT
+  message := captureStdout(doSomething)
+
+}
+</code></pre>
+
+<p>The example shown is trivial. I had a use case where I had to execute an
+executable on the system that wrote data to STDOUT which I needed to process.</p>
+
         </div>
-    </body>
-    
+        
+
+      </div>
+    </div>
+  </body>
+  
 </html>
