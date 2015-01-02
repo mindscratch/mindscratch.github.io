@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Posts on craig wickesser </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://craigwickesser.com/post/index.xml/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Sun, 28 Dec 2014 00:00:00 UTC</updated>
+    
+    <item>
+      <title>Thoughts on Windows 8</title>
+      <link>http://craigwickesser.com/post/windows-8-thoughts/</link>
+      <pubDate>Sun, 28 Dec 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://craigwickesser.com/post/windows-8-thoughts/</guid>
+      <description>&lt;p&gt;My son received a laptop, his first, for Christmas. It&amp;rsquo;s an ASUS running Windows 8. To date, he&amp;rsquo;s only used Apple laptops, iPad, iPhone Touch and Galaxy S3/&lt;sup&gt;4&lt;/sup&gt;&amp;frasl;&lt;sub&gt;5&lt;/sub&gt; Android phones at home.&lt;/p&gt;
+
+&lt;p&gt;I helped setup the laptop and the first thing I noticed was the &amp;ldquo;app&amp;rdquo; centric user interface. I noticed he seemed to be able to navigate around rather easily and wasn&amp;rsquo;t getting lost. The &amp;ldquo;app&amp;rdquo; centric focus of the operating system is compelling and I believe a win for Microsoft in terms of aligning with the younger generation.&lt;/p&gt;
+
+&lt;p&gt;The first issue I ran into was when my son wanted to install the YouTube client.  I was able to find it in the Store, thanks to it being near the top of the &amp;ldquo;Top Free&amp;rdquo; apps. I was surprised not to see a &amp;ldquo;search&amp;rdquo; option, but perhaps I just didn&amp;rsquo;t see it. The Store said that Windows 8.1 was required to install the YouTube client.&lt;/p&gt;
+
+&lt;p&gt;Luckily, the Store had Windows 8.1 as a featured item to install, so I clicked the button to install it. I was then prompted with a message stating updates needed to be installed first. I began the install for those which took a little over an hour and required a restart.&lt;/p&gt;
+
+&lt;p&gt;Once the laptop booted up, I went back to the store to install Windows 8.1. Again, it took a while and required a restart. After the laptop booted up with Windows 8.1 freshly installed I went back to the Store. This time I noticed a search box, which I used to find the YouTube client, since the &amp;ldquo;Top Free&amp;rdquo; apps list was no longer an option.&lt;/p&gt;
+
+&lt;p&gt;Upon trying to install the YouTube client it stated that it required a parents permission (since my son is younger than 13). I clicked the &amp;ldquo;Fix It&amp;rdquo; button, logged into my Microsoft Live account (which I forgot I had). After logging in, I was just dropped into the account home, no directions on where to go to approve installing the YouTube client app. I went back to try installing the YouTube client and again it said, I could &amp;ldquo;Fix It&amp;rdquo; (the parent permission issue). I clicked the button and again it just took me to the Microsoft Live account home page.&lt;/p&gt;
+
+&lt;p&gt;After trying several variations of the steps I&amp;rsquo;ve already described, I decided I&amp;rsquo;d change my sons account to make his birthday such that he was at least 13 years old. After I figured out how to do that, I was required to put in credit card information so Microsoft could verify I (my son in this case) was an adult. I submitted the information, and Microsoft was happy that the credit card I submitted verified someone elses age (since the card has my name, not my sons).&lt;/p&gt;
+
+&lt;p&gt;Finally, I was able to install the YouTube client app.&lt;/p&gt;
+
+&lt;p&gt;This is where Windows 8 went wrong. Certain aspects are just overly complicated and difficult to follow, especially for children. In concrast, the &lt;a href=&#34;www.amazon.com/kids-edition-tablet&#34;&gt;Amazon Fire Kids&lt;/a&gt; made it stupid simple to setup, add a &amp;ldquo;childs&amp;rdquo; account and let them begin playing with it (including add apps). Certainly the Windows 8 laptop and the Amazon tablet are different in many ways, but I think the comparison is reasonable to demonstrate how Windows 8 got things wrong and how something like the Amazon Fire kids tablet got it right.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/hashtag/windows8&#34;&gt;#windows8&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/amazon&#34;&gt;#amazon&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Starting a new Go project</title>
+      <link>http://craigwickesser.com/post/starting-a-new-go-project/</link>
+      <pubDate>Tue, 09 Dec 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://craigwickesser.com/post/starting-a-new-go-project/</guid>
+      <description>
+
+&lt;p&gt;I have the need for a program that can monitor Kubernetes* for services* and update an HAProxy* configuration file when changes occur. Sounds rather simple, however, there&amp;rsquo;s a slight twist. I don&amp;rsquo;t want to simply add entries to HAProxy for each service created in Kubernetes (it also wouldn&amp;rsquo;t work as multiple services in Kubernetes could have the same port, since each service has its own IP address).&lt;/p&gt;
+
+&lt;p&gt;Instead I need a way to define a set of rules, perhaps as simple as a template, that will be used to update the HAProxy configuration file intelligently.&lt;/p&gt;
+
+&lt;p&gt;The template spec:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;type ServiceEntry struct {
+    Name string `json:&amp;quot;name,omitempty&amp;quot;`
+    Port int `json:&amp;quot;port,omitempty&amp;quot;`
+    Uri string `json:&amp;quot;uri,omitempty&amp;quot;`
+}
+
+type ServiceEntries []ServiceEntry {}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;services:
+    # accessible as http://&amp;lt;proxy ip&amp;gt;:9200
+    # the name of the service to monitor
+    - name: elasticsearch
+    # the port on the proxy for the service
+      port: 9200
+    # the uri on the proxy for the service
+      uri: /
+    # accessible as http://&amp;lt;proxy ip&amp;gt;/kibana
+    - name: kibana
+      port: 80
+      uri: /kibana
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To be continued&amp;hellip;&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_0&#34;&gt;Resources&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes/&#34;&gt;Kubernetes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/services.md&#34;&gt;Kubernetes services&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.haproxy.org/&#34;&gt;HAProxy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://code.google.com/p/go-wiki/wiki/GithubCodeLayout&#34;&gt;GithubCodeLayout&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
