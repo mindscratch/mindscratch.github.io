@@ -33,7 +33,7 @@ The focus of this post is the &lt;code&gt;-p POST-file&lt;/code&gt; option which
 &lt;code&gt;File containing data to POST&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Sounded simple, so I thought I&amp;rsquo;d give it a shot. I was trying to benchmark a form
-submission. I thought maybe I could use use &lt;code&gt;-p my-awesome-data.tgz&lt;/code&gt;, but it
+submission. I thought maybe I could use &lt;code&gt;-p my-awesome-data.tgz&lt;/code&gt;, but it
 wasn&amp;rsquo;t quite that simple.&lt;/p&gt;
 
 &lt;p&gt;After some googling, I found that what I needed to do was submit a file that
