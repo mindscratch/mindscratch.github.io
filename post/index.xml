@@ -26,7 +26,7 @@ fact, it might be worth checking out &lt;a href=&#34;https://github.com/rakyll/b
 is written in &lt;a href=&#34;http://golang.org&#34;&gt;Go&lt;/a&gt; which makes it easier to use across platforms,
 and is simple to install (spoiler alert: it&amp;rsquo;s just a binary).&lt;/p&gt;
 
-&lt;p&gt;Anyhow, in this post I&amp;rsquo;ll demonstrate using ApacheBench (since I came across it) first.&lt;/p&gt;
+&lt;p&gt;Anyhow, in this post I&amp;rsquo;ll demonstrate using ApacheBench (since I came across it first).&lt;/p&gt;
 
 &lt;p&gt;If you look at the documentation for &lt;code&gt;ab&lt;/code&gt; you&amp;rsquo;ll see there a bunch of options.
 The focus of this post is the &lt;code&gt;-p POST-file&lt;/code&gt; option which lets you POST a
