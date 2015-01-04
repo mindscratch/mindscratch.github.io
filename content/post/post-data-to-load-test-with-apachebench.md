@@ -19,7 +19,7 @@ fact, it might be worth checking out [boom](https://github.com/rakyll/boom) whic
 is written in [Go](http://golang.org) which makes it easier to use across platforms,
 and is simple to install (spoiler alert: it's just a binary).
 
-Anyhow, in this post I'll demonstrate using ApacheBench (since I came across it) first.
+Anyhow, in this post I'll demonstrate using ApacheBench (since I came across it first).
 
 If you look at the documentation for `ab` you'll see there a bunch of options.
 The focus of this post is the `-p POST-file` option which lets you POST a
