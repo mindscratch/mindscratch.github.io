@@ -26,7 +26,7 @@ The focus of this post is the `-p POST-file` option which lets you POST a
 `File containing data to POST`.
 
 Sounded simple, so I thought I'd give it a shot. I was trying to benchmark a form
-submission. I thought maybe I could use use `-p my-awesome-data.tgz`, but it
+submission. I thought maybe I could use `-p my-awesome-data.tgz`, but it
 wasn't quite that simple.
 
 After some googling, I found that what I needed to do was submit a file that
