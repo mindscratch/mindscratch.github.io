@@ -1,0 +1,145 @@
+  <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title> Go HTTP: Too Many Open Files &middot; craig wickesser </title>
+    
+    <link rel="stylesheet" type="text/css" href="http://craigwickesser.com/css/uno.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://craigwickesser.com/css/lightGallery.css" />
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://craigwickesser.com/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="http://craigwickesser.com/favicon.ico">
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="craig wickesser" />
+    
+    <script src="http://craigwickesser.com/js/jquery.min.js"></script>
+    <script src="http://craigwickesser.com/js/main.min.js">
+    </script>
+</head>
+
+  <body>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-bars btn-mobile-menu__icon"></i>
+        <i class="fa fa-times btn-mobile-close__icon hidden"></i>
+    </span>
+<header class="panel-cover panel-cover--collapsed"  style="background-image: url(/images/monster.jpg)" >
+    <div class="panel-main">
+        <div class="panel-main__inner panel-inverted">
+            <div class="panel-main__content"> 
+                <a href="http://craigwickesser.com" title="link to homepage for craig wickesser"> <img src="http://craigwickesser.com/images/Mindscratch_150.png" width="80" alt="craig wickesser logo" class="panel-cover__logo logo" /> </a> 
+                <h1 class="panel-cover__title panel-title">
+                    <a href="http://craigwickesser.com" title="link to homepage for craig wickesser">craig wickesser</a>
+                </h1>
+                <hr class="panel-cover__divider" />
+                <p class="panel-cover__description">  scratch space  </p>
+                <hr class="panel-cover__divider panel-cover__divider--secondary" />
+                <div class="navigation-wrapper">
+                    <nav class="cover-navigation cover-navigation--primary">
+                        <ul class="navigation">
+                            <li class="navigation__item"><a href="http://craigwickesser.com/#blog" title="link to craig wickesser blog" class="blog-button">Blog</a> </li>
+                            </br>  </ul>
+                    </nav> <nav class="cover-navigation navigation--social">
+    <ul class="navigation"> 
+        
+        <li class="navigation__item">
+            <a href="http://twitter.com/mind_scratch" title="@mind_scratch on Twitter"> <i class='fa fa-tt'></i> <span class="label">Twitter</span> </a>
+        </li>   
+        
+        <li class="navigation__item">
+            <a href="https://github.com/mindscratch" title="mindscratch on github"> <i class='fa fa-github'></i> <span class="label">Github</span> </a>
+        </li>  </br>   
+        
+        <li class="navigation__item">
+            <a href="mailto:codecraig@gmail.com" title="Email codecraig@gmail.com"> <i class='fa fa-envelope-o'></i> <span class="label">Email</span> </a>
+        </li>  </ul>
+</nav>
+ </div>
+            </div>
+        </div>
+        <div class="panel-cover--overlay"></div>
+    </div>
+</header>
+
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <div class="post">
+          <h1>Go HTTP: Too Many Open Files</h1>
+          <span class="post-date">Wed, Jan 7, 2015</span>
+          <p>I recently had a situation where an application I was working on in <a href="http://golang.org">Go</a> would
+run into the &ldquo;too many open files&rdquo; error. After some debugging, I discovered
+it wasn&rsquo;t closing HTTP connections being made to an HTTP server.</p>
+
+<p>The code looked like this:</p>
+
+<pre><code class="language-go">  transport := &amp;http.Transport {
+    Proxy: http.ProxyFromEnvironment,
+    Dial: (&amp;net.Dialer{
+      Timeout: 0,
+      KeepAlive: 0
+    }).Dial,
+    TLSHandshakeTimeout: 10 * time.second
+  }
+
+  httpClient := &amp;http.Client{Transport: transport}
+
+  function submitData(url string, fileReader io.Reader) error {
+    req, reqErr := http.NewRequest(&quot;POST&quot;, url, fileReader)
+    if reqErr != nil {
+      return reqErr
+    }
+    req.Header.Set(&quot;Content-Type&quot;, &quot;application/octet-stream&quot;)
+
+    resp, err := httpClient.Do(req)
+    if err != nil {
+      return err
+    }
+    defer resp.Body.Close()
+
+    // read the body
+
+    return nil
+  }
+</code></pre>
+
+<p>The <code>submitData</code> function gets called over and over whenever new data needs to
+be POSTed. Using <a href="http://en.wikipedia.org/wiki/Netstat">netstat</a> I noticed the
+connections to the server were staying <code>ESTABLISHED</code> instead of being closed. I
+set the &ldquo;timeout&rdquo; on the dialer to 0, because the POST should block until the
+server is done and responds (which is an undetermined amount of time).</p>
+
+<p>I know the server is responding, because the code that processes the response
+was in fact getting data.</p>
+
+<p>It turns out, HTTP/1.1 uses persistent connections by default:</p>
+
+<blockquote>
+<p>A significant difference between HTTP/1.1 and earlier versions of HTTP is that persistent connections are the default behavior of any HTTP connection.</p>
+</blockquote>
+
+<p><cite><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html">http://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html</a></cite></p>
+
+<p>The solution was to inform the server that the client wants to close the connection
+after the transaction is complete. This can be done by setting the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Connection">Connection</a>
+header,</p>
+
+<pre><code>req.Header.Set(&quot;Connection&quot;, &quot;close&quot;)
+</code></pre>
+
+<p>or by setting the <code>Close</code> property to <code>true</code> on the <a href="http://golang.org/pkg/net/http/#Request">http.Request</a>:</p>
+
+<pre><code>req.Close = true
+</code></pre>
+
+<p>After doing that, the &ldquo;too many open files&rdquo; issue went away as the program was
+no longer keeping HTTP connections open and thus not using up file descriptors.</p>
+
+        </div>
+        
+
+      </div>
+    </div>
+  </body>
+  
+</html>

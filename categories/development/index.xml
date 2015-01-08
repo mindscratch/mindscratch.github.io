@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Development on craig wickesser </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://craigwickesser.com/categories/development/index.xml/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Wed, 07 Jan 2015 18:26:39 EST</updated>
+    
+    <item>
+      <title>Go HTTP: Too Many Open Files</title>
+      <link>http://craigwickesser.com/post/golang-http-to-many-open-files/</link>
+      <pubDate>Wed, 07 Jan 2015 18:26:39 EST</pubDate>
+      
+      <guid>http://craigwickesser.com/post/golang-http-to-many-open-files/</guid>
+      <description>&lt;p&gt;I recently had a situation where an application I was working on in &lt;a href=&#34;http://golang.org&#34;&gt;Go&lt;/a&gt; would
+run into the &amp;ldquo;too many open files&amp;rdquo; error. After some debugging, I discovered
+it wasn&amp;rsquo;t closing HTTP connections being made to an HTTP server.&lt;/p&gt;
+
+&lt;p&gt;The code looked like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;  transport := &amp;amp;http.Transport {
+    Proxy: http.ProxyFromEnvironment,
+    Dial: (&amp;amp;net.Dialer{
+      Timeout: 0,
+      KeepAlive: 0
+    }).Dial,
+    TLSHandshakeTimeout: 10 * time.second
+  }
+
+  httpClient := &amp;amp;http.Client{Transport: transport}
+
+  function submitData(url string, fileReader io.Reader) error {
+    req, reqErr := http.NewRequest(&amp;quot;POST&amp;quot;, url, fileReader)
+    if reqErr != nil {
+      return reqErr
+    }
+    req.Header.Set(&amp;quot;Content-Type&amp;quot;, &amp;quot;application/octet-stream&amp;quot;)
+
+    resp, err := httpClient.Do(req)
+    if err != nil {
+      return err
+    }
+    defer resp.Body.Close()
+
+    // read the body
+
+    return nil
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;submitData&lt;/code&gt; function gets called over and over whenever new data needs to
+be POSTed. Using &lt;a href=&#34;http://en.wikipedia.org/wiki/Netstat&#34;&gt;netstat&lt;/a&gt; I noticed the
+connections to the server were staying &lt;code&gt;ESTABLISHED&lt;/code&gt; instead of being closed. I
+set the &amp;ldquo;timeout&amp;rdquo; on the dialer to 0, because the POST should block until the
+server is done and responds (which is an undetermined amount of time).&lt;/p&gt;
+
+&lt;p&gt;I know the server is responding, because the code that processes the response
+was in fact getting data.&lt;/p&gt;
+
+&lt;p&gt;It turns out, HTTP/1.1 uses persistent connections by default:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;A significant difference between HTTP/1.1 and earlier versions of HTTP is that persistent connections are the default behavior of any HTTP connection.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a href=&#34;http://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html&#34;&gt;http://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;The solution was to inform the server that the client wants to close the connection
+after the transaction is complete. This can be done by setting the &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Connection&#34;&gt;Connection&lt;/a&gt;
+header,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;req.Header.Set(&amp;quot;Connection&amp;quot;, &amp;quot;close&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or by setting the &lt;code&gt;Close&lt;/code&gt; property to &lt;code&gt;true&lt;/code&gt; on the &lt;a href=&#34;http://golang.org/pkg/net/http/#Request&#34;&gt;http.Request&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;req.Close = true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;After doing that, the &amp;ldquo;too many open files&amp;rdquo; issue went away as the program was
+no longer keeping HTTP connections open and thus not using up file descriptors.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -70,6 +70,23 @@
                             
                                 <article class="post">
 <header>
+<h2><a href="http://craigwickesser.com/post/golang-http-to-many-open-files/">Go HTTP: Too Many Open Files </a> </h2>
+<div class="post-meta">Wed, Jan 7, 2015 - Read in 2 Min </div>
+</header>
+<div class="summary">
+    I recently had a situation where an application I was working on in Go would run into the &ldquo;too many open files&rdquo; error. After some debugging, I discovered it wasn&rsquo;t closing HTTP connections being made to an HTTP server. The code looked like this: transport := &amp;http.Transport { Proxy: http.ProxyFromEnvironment, Dial: (&amp;net.Dialer{ Timeout: 0, KeepAlive: 0 }).Dial, TLSHandshakeTimeout: 10 * time.second } httpClient := &amp;http.Client{Transport: transport} function submitData(url string, fileReader io.Reader) error { req, reqErr := http.NewRequest(&quot;POST&quot;, url, fileReader) if reqErr != nil { return reqErr } req.Header.Set(&quot;Content-Type&quot;, &quot;application/octet-stream&quot;) resp, err := httpClient.Do(req) if err != nil { return err } defer resp.Body.Close() // read the body return nil } The submitData function gets called over and over whenever new data needs to be POSTed.
+</div>
+<footer>
+<a href='http://craigwickesser.com/post/golang-http-to-many-open-files/'><nobr>Read more →</nobr></a>
+</footer>
+</article>
+
+
+                            
+                        
+                            
+                                <article class="post">
+<header>
 <h2><a href="http://craigwickesser.com/post/post-data-to-load-test-with-apachebench/">POST Data to Load Test with ApacheBench </a> </h2>
 <div class="post-meta">Sat, Jan 3, 2015 - Read in 2 Min </div>
 </header>
