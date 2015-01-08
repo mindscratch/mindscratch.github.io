@@ -7,7 +7,27 @@
     <language>en-us</language>
     
     
-    <updated>Wed, 07 Jan 2015 18:26:39 EST</updated>
+    <updated>Wed, 07 Jan 2015 21:42:58 EST</updated>
+    
+    <item>
+      <title>about</title>
+      <link>http://craigwickesser.com/about/</link>
+      <pubDate>Wed, 07 Jan 2015 21:42:58 EST</pubDate>
+      
+      <guid>http://craigwickesser.com/about/</guid>
+      <description>&lt;p&gt;I am Craig Wickesser and I write code for fun and for &lt;a href=&#34;http://www.urbandictionary.com/define.php?term=Makin%27+Paper&#34;&gt;makin&amp;rsquo; paper&lt;/a&gt;. I&amp;rsquo;ve &lt;a href=&#34;https://osrc.dfm.io/mindscratch/&#34;&gt;contributed
+code&lt;/a&gt; to various open source projects using
+a variety of programming languages.&lt;/p&gt;
+
+&lt;p&gt;I was an editor for &lt;a href=&#34;http://www.jsmag.com/&#34;&gt;jsmag&lt;/a&gt; and &lt;a href=&#34;http://groovymag.com/&#34;&gt;GroovyMag&lt;/a&gt;, but I have also written articles for &lt;a href=&#34;http://www.infoq.com/author/Craig-Wickesser&#34;&gt;InfoQ&lt;/a&gt;, &lt;a href=&#34;http://www.sitepoint.com/author/cwickesser/&#34;&gt;SitePoint&lt;/a&gt; and &lt;a href=&#34;http://www.groovymag.com/authors&#34;&gt;GroovyMag&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;As &lt;a href=&#34;http://zedshaw.com/about/&#34;&gt;Zed Shaw&lt;/a&gt; says,&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I block comments on my writing because I believe you should go say what you think of my words on your own site instead of shitting all over mine.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
     
     <item>
       <title>Go HTTP: Too Many Open Files</title>

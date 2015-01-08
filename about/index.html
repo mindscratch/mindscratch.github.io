@@ -1,10 +1,10 @@
-  <!DOCTYPE html>
+    <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <title> Starting a new Go project &middot; craig wickesser </title>
+    <title> about &middot; craig wickesser </title>
     
     <link rel="stylesheet" type="text/css" href="http://craigwickesser.com/css/uno.min.css" />
     <link rel="stylesheet" type="text/css" href="http://craigwickesser.com/css/lightGallery.css" />
@@ -19,8 +19,8 @@
     </script>
 </head>
 
-  <body>
-    <span class="mobile btn-mobile-menu">
+    <body>
+        <span class="mobile btn-mobile-menu">
         <i class="fa fa-bars btn-mobile-menu__icon"></i>
         <i class="fa fa-times btn-mobile-close__icon hidden"></i>
     </span>
@@ -65,58 +65,26 @@
     </div>
 </header>
 
-    <div class="content-wrapper">
-      <div class="content-wrapper__inner">
-        <div class="post">
-          <h1>Starting a new Go project</h1>
-          <span class="post-date">Tue, Dec 9, 2014</span>
-          
+        <div class="content-wrapper">
+            <div class="content-wrapper__inner">
+                <div class="post">
+                    <h1>about</h1>
+                    <span class="post-date">Wed, Jan 7, 2015</span>
+                    <p>I am Craig Wickesser and I write code for fun and for <a href="http://www.urbandictionary.com/define.php?term=Makin%27+Paper">makin&rsquo; paper</a>. I&rsquo;ve <a href="https://osrc.dfm.io/mindscratch/">contributed
+code</a> to various open source projects using
+a variety of programming languages.</p>
 
-<p>I have the need for a program that can monitor Kubernetes* for services* and update an HAProxy* configuration file when changes occur. Sounds rather simple, however, there&rsquo;s a slight twist. I don&rsquo;t want to simply add entries to HAProxy for each service created in Kubernetes (it also wouldn&rsquo;t work as multiple services in Kubernetes could have the same port, since each service has its own IP address).</p>
+<p>I was an editor for <a href="http://www.jsmag.com/">jsmag</a> and <a href="http://groovymag.com/">GroovyMag</a>, but I have also written articles for <a href="http://www.infoq.com/author/Craig-Wickesser">InfoQ</a>, <a href="http://www.sitepoint.com/author/cwickesser/">SitePoint</a> and <a href="http://www.groovymag.com/authors">GroovyMag</a>.</p>
 
-<p>Instead I need a way to define a set of rules, perhaps as simple as a template, that will be used to update the HAProxy configuration file intelligently.</p>
+<p>As <a href="http://zedshaw.com/about/">Zed Shaw</a> says,</p>
 
-<p>The template spec:</p>
+<blockquote>
+<p>I block comments on my writing because I believe you should go say what you think of my words on your own site instead of shitting all over mine.</p>
+</blockquote>
 
-<pre><code class="language-go">type ServiceEntry struct {
-    Name string `json:&quot;name,omitempty&quot;`
-    Port int `json:&quot;port,omitempty&quot;`
-    Uri string `json:&quot;uri,omitempty&quot;`
-}
-
-type ServiceEntries []ServiceEntry {}
-</code></pre>
-
-<pre><code>services:
-    # accessible as http://&lt;proxy ip&gt;:9200
-    # the name of the service to monitor
-    - name: elasticsearch
-    # the port on the proxy for the service
-      port: 9200
-    # the uri on the proxy for the service
-      uri: /
-    # accessible as http://&lt;proxy ip&gt;/kibana
-    - name: kibana
-      port: 80
-      uri: /kibana
-</code></pre>
-
-<p>To be continued&hellip;</p>
-
-<h3 id="toc_0">Resources</h3>
-
-<ul>
-<li><a href="https://github.com/GoogleCloudPlatform/kubernetes/">Kubernetes</a></li>
-<li><a href="https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/services.md">Kubernetes services</a></li>
-<li><a href="http://www.haproxy.org/">HAProxy</a></li>
-<li><a href="https://code.google.com/p/go-wiki/wiki/GithubCodeLayout">GithubCodeLayout</a></li>
-</ul>
-
+                </div>
+            </div>
         </div>
-        
-
-      </div>
-    </div>
-  </body>
-  
+    </body>
+    
 </html>
