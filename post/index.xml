@@ -19,6 +19,11 @@
 run into the &amp;ldquo;too many open files&amp;rdquo; error. After some debugging, I discovered
 it wasn&amp;rsquo;t closing HTTP connections being made to an HTTP server.&lt;/p&gt;
 
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: It turns out, I was testing against &amp;ldquo;test&amp;rdquo; server which wasn&amp;rsquo;t
+setting the &lt;code&gt;Connection: close&lt;/code&gt; header, therefore neither the client or
+server was requesting the connection to be closed. If the server had set the
+&lt;code&gt;Connection&lt;/code&gt; header, things would&amp;rsquo;ve been fine.&lt;/p&gt;
+
 &lt;p&gt;The code looked like this:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;  transport := &amp;amp;http.Transport {

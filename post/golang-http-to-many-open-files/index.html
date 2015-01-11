@@ -74,6 +74,11 @@
 run into the &ldquo;too many open files&rdquo; error. After some debugging, I discovered
 it wasn&rsquo;t closing HTTP connections being made to an HTTP server.</p>
 
+<p><strong>Update</strong>: It turns out, I was testing against &ldquo;test&rdquo; server which wasn&rsquo;t
+setting the <code>Connection: close</code> header, therefore neither the client or
+server was requesting the connection to be closed. If the server had set the
+<code>Connection</code> header, things would&rsquo;ve been fine.</p>
+
 <p>The code looked like this:</p>
 
 <pre><code class="language-go">  transport := &amp;http.Transport {
