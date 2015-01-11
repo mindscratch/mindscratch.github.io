@@ -12,6 +12,11 @@ I recently had a situation where an application I was working on in [Go](http://
 run into the "too many open files" error. After some debugging, I discovered
 it wasn't closing HTTP connections being made to an HTTP server.
 
+**Update**: It turns out, I was testing against "test" server which wasn't
+setting the `Connection: close` header, therefore neither the client or
+server was requesting the connection to be closed. If the server had set the
+`Connection` header, things would've been fine.
+
 The code looked like this:
 
 ```go
