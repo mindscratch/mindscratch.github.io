@@ -6,7 +6,7 @@ baseurl = "http://craigwickesser.com"
 canonifyurls = true
 title = "craig wickesser"
 author = "Craig Wickesser"
-theme = "hugo-uno"
+theme = "hyde"
 
 [indexes]
    category = "categories"
@@ -20,3 +20,6 @@ theme = "hugo-uno"
   cover = "/images/monster.jpg"
   logo = "/images/Mindscratch_150.png"
   about = "/about"
+
+[permalinks]
+  post = "/:year/:month/:filename/"
