@@ -7,56 +7,7 @@
     <language>en-us</language>
     <author>Craig Wickesser</author>
     <copyright>2015 Craig Wickesser</copyright>
-    <updated>Wed, 21 Jan 2015 00:00:00 UTC</updated>
-    
-    
-    <item>
-      <title>Mindscratch Newsletter 1</title>
-      <link>http://craigwickesser.com/2015/01/mindscratch-newsletter-1/</link>
-      <pubDate>Wed, 21 Jan 2015 00:00:00 UTC</pubDate>
-      <author>Craig Wickesser</author>
-      <guid>http://craigwickesser.com/2015/01/mindscratch-newsletter-1/</guid>
-      <description>&lt;p&gt;On a regular basis, hopefully once per week, I&amp;rsquo;ll be posting links to
-content related to distributed systems, programming and devops. If you&amp;rsquo;d prefer
-to access this content via email, then &lt;a href=&#34;/subscribe&#34;&gt;subscribe&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.meetup.com/Apache-Mesos-NYC-Meetup/events/219073804/&#34;&gt;http://www.meetup.com/Apache-Mesos-NYC-Meetup/events/219073804/&lt;/a&gt;
-  - interesting b/c of  mention of running Accumulo on Mesos&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.slideshare.net/ColleenLee1/iguaz-a-longrunning-job-scheduler-using-docker-and-mesos&#34;&gt;http://www.slideshare.net/ColleenLee1/iguaz-a-longrunning-job-scheduler-using-docker-and-mesos&lt;/a&gt;
-  - job scheduler from corsera&lt;/p&gt;
-
-&lt;p&gt;Docker security
-&lt;a href=&#34;https://github.com/GDSSecurity/Docker-Secure-Deployment-Guidelines&#34;&gt;https://github.com/GDSSecurity/Docker-Secure-Deployment-Guidelines&lt;/a&gt;
-&lt;a href=&#34;https://www.gartner.com/doc/2956826&#34;&gt;https://www.gartner.com/doc/2956826&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/ExPHAT/twitter-sort&#34;&gt;https://github.com/ExPHAT/twitter-sort&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://am./chronos&#34;&gt;http://am./chronos&lt;/a&gt; &amp;ndash;master zk://server1:2181/mesos &amp;ndash;zk_hosts zk://server1:2181/mesos &amp;ndash;http_port 8080bari.apache.org/&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://jpetazzo.github.io/2015/01/13/docker-mount-dynamic-volumes/&#34;&gt;http://jpetazzo.github.io/2015/01/13/docker-mount-dynamic-volumes/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://codeascraft.com/2015/01/14/introducing-statsd-jvm-profiler-a-jvm-profiler-for-hadoop/&#34;&gt;https://codeascraft.com/2015/01/14/introducing-statsd-jvm-profiler-a-jvm-profiler-for-hadoop/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Go
-Go Static Analysis Tools by Alan Donovan &lt;a href=&#34;https://vimeo.com/116108566&#34;&gt;https://vimeo.com/116108566&lt;/a&gt;
-Benchmarking Go &lt;a href=&#34;https://vimeo.com/114975899&#34;&gt;https://vimeo.com/114975899&lt;/a&gt;
-7 common mistakes in go and how to avoid them &lt;a href=&#34;https://vimeo.com/115776445&#34;&gt;https://vimeo.com/115776445&lt;/a&gt;
-cancellation, context and plumbing &lt;a href=&#34;https://vimeo.com/115309491&#34;&gt;https://vimeo.com/115309491&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Io.js
-&lt;a href=&#34;https://www.youtube.com/watch?v=DqMFX91ToLw&#34;&gt;https://www.youtube.com/watch?v=DqMFX91ToLw&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Ecmascript 7 async &amp;ndash; the evolution of javascript - &lt;a href=&#34;https://www.youtube.com/watch?v=DqMFX91ToLw&#34;&gt;https://www.youtube.com/watch?v=DqMFX91ToLw&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://opensource.com/business/15/1/apache-spark-new-world-record&#34;&gt;http://opensource.com/business/15/1/apache-spark-new-world-record&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://events.linuxfoundation.org/events/vault/program/schedule?utm_source=lf&amp;amp;utm_medium=email&amp;amp;utm_campaign=vault15&#34;&gt;http://events.linuxfoundation.org/events/vault/program/schedule?utm_source=lf&amp;amp;utm_medium=email&amp;amp;utm_campaign=vault15&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;onyx: &lt;a href=&#34;https://www.youtube.com/watch?v=vG47Gui3hYE&#34;&gt;https://www.youtube.com/watch?v=vG47Gui3hYE&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
+    <updated>Wed, 07 Jan 2015 18:26:39 EST</updated>
     
     
     <item>
