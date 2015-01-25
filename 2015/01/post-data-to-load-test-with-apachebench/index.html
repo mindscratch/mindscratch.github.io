@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+
+  <title> POST Data to Load Test with ApacheBench  &middot; craigwickesser.com </title>
+
+  
+  <link rel="stylesheet" href="http://craigwickesser.com/css/poole.css">
+  <link rel="stylesheet" href="http://craigwickesser.com/css/syntax.css">
+  <link rel="stylesheet" href="http://craigwickesser.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="craigwickesser.com" />
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+
+  <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Raleway']
+      }
+    });
+  </script>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="/images/Mindscratch_150.png" class="img-responsive" />
+      <h1 class="brand"><a href="http://craigwickesser.com">craigwickesser.com</a></h1>
+      <p class="lead">
+         
+      </p>
+    </div>
+
+
+
+    <ul class="sidebar-nav">
+      <li><a href="http://craigwickesser.com/blog">Posts</a></li>
+      
+        <li><a href="http://craigwickesser.com/subscribe/">subscribe </a></li>
+      
+        <li><a href="http://craigwickesser.com/about/">about </a></li>
+      
+      <br/>
+      
+    </ul>
+      <a href="https://twitter.com/mind_scratch"><i class="fa fa-twitter-square"></i></a>&nbsp;&nbsp;
+      
+      
+      <a href="https://github.com/mindscratch"><i class="fa fa-github-square"></i></a>&nbsp;&nbsp;
+      <a href="https://plus.google.com/&#43;CraigWickesser"><i class="fa fa-google-plus"></i></a>
+
+    <p class="footnote">powered by <a href="http://hugo.spf13.com">Hugo</a> <br/>
+    &copy; 2015 Craig Wickesser. All rights reserved.</p>
+
+  </div>
+</div>
+
+
+<div class="content container">
+<div class="post">
+  <h1 class="post-title">POST Data to Load Test with ApacheBench</h1>
+  <span class="post-date">Sat, Jan 3, 2015</span>
+      <p><a href="http://httpd.apache.org/docs/2.2/programs/ab.html">ApacheBench</a> (also known as, ab) is,</p>
+
+<blockquote>
+<p>a tool for benchmarking your Apache Hypertext Transfer Protocol (HTTP) server</p>
+</blockquote>
+
+<p>Don&rsquo;t be fooled, you can use it to benchmark any server that supports HTTP. In
+fact, it might be worth checking out <a href="https://github.com/rakyll/boom">boom</a> which
+is written in <a href="http://golang.org">Go</a> which makes it easier to use across platforms,
+and is simple to install (spoiler alert: it&rsquo;s just a binary).</p>
+
+<p>Anyhow, in this post I&rsquo;ll demonstrate using ApacheBench (since I came across it first).</p>
+
+<p>If you look at the documentation for <code>ab</code> you&rsquo;ll see there a bunch of options.
+The focus of this post is the <code>-p POST-file</code> option which lets you POST a
+<code>File containing data to POST</code>.</p>
+
+<p>Sounded simple, so I thought I&rsquo;d give it a shot. I was trying to benchmark a form
+submission. I thought maybe I could use <code>-p my-awesome-data.tgz</code>, but it
+wasn&rsquo;t quite that simple.</p>
+
+<p>After some googling, I found that what I needed to do was submit a file that
+looked like a form based file upload. Turns out <a href="http://www.faqs.org/rfcs/rfc1867.html">RFC1867</a> was the ticket.
+Here&rsquo;s an example, check out the RFC for more details.</p>
+
+<pre><code>--1234567890
+Content-Disposition: form-data; filename=&quot;my-awesome-data.tgz&quot;
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+
+&lt;base64 data&gt;
+--1234567890
+</code></pre>
+
+<p>The boundary, <code>1234567890</code>, should be a value <strong>guaranteed</strong> not to appear in
+the content of the request. The rest of the fields should be relatively simple
+to understand. The <code>&lt;base64 data&gt;</code> portion must contain the base64 encoded
+value of the file being uploaded.</p>
+
+<p>Here&rsquo;s how you&rsquo;d run a benchmark that submits 100 requests, with 5 concurrent
+clients using a file named <code>post.txt</code> (which looks like the example shown above)
+to <code>http://server.com/api/v1/data</code></p>
+
+<pre><code>ab -n 100 -c 5 -T 'multipart/form-data; boundary=1234567890' -p post.txt http://server.com/api/v1/data
+</code></pre>
+
+<p>I&rsquo;d like to try out boom, but the concepts are similar so I suspect it should be
+just as easy.</p>
+
+<p>Happy benchmarking!</p>
+
+
+      <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost") 
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'codecraig';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the comments powered by <a href="http://disqus.com/?ref_noscript">Disqus.</a></noscript>
+</div>
+</div>
+
+  </body>
+</html>

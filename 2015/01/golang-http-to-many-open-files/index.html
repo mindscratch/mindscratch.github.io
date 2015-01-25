@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+
+  <title> Go HTTP: Too Many Open Files  &middot; craigwickesser.com </title>
+
+  
+  <link rel="stylesheet" href="http://craigwickesser.com/css/poole.css">
+  <link rel="stylesheet" href="http://craigwickesser.com/css/syntax.css">
+  <link rel="stylesheet" href="http://craigwickesser.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="craigwickesser.com" />
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+
+  <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Raleway']
+      }
+    });
+  </script>
+
+</head>
+
+<body>
+
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="/images/Mindscratch_150.png" class="img-responsive" />
+      <h1 class="brand"><a href="http://craigwickesser.com">craigwickesser.com</a></h1>
+      <p class="lead">
+         
+      </p>
+    </div>
+
+
+
+    <ul class="sidebar-nav">
+      <li><a href="http://craigwickesser.com/blog">Posts</a></li>
+      
+        <li><a href="http://craigwickesser.com/subscribe/">subscribe </a></li>
+      
+        <li><a href="http://craigwickesser.com/about/">about </a></li>
+      
+      <br/>
+      
+    </ul>
+      <a href="https://twitter.com/mind_scratch"><i class="fa fa-twitter-square"></i></a>&nbsp;&nbsp;
+      
+      
+      <a href="https://github.com/mindscratch"><i class="fa fa-github-square"></i></a>&nbsp;&nbsp;
+      <a href="https://plus.google.com/&#43;CraigWickesser"><i class="fa fa-google-plus"></i></a>
+
+    <p class="footnote">powered by <a href="http://hugo.spf13.com">Hugo</a> <br/>
+    &copy; 2015 Craig Wickesser. All rights reserved.</p>
+
+  </div>
+</div>
+
+
+  <div class="content container">
+    <div class="post">
+    <h1 class="post-title">Go HTTP: Too Many Open Files</h1>
+    <span class="post-date">Jan 7, 2015</span>
+    
+    <p>I recently had a situation where an application I was working on in <a href="http://golang.org">Go</a> would
+run into the &ldquo;too many open files&rdquo; error. After some debugging, I discovered
+it wasn&rsquo;t closing HTTP connections being made to an HTTP server.</p>
+
+<p><strong>Update</strong>: It turns out, I was testing against &ldquo;test&rdquo; server which wasn&rsquo;t
+setting the <code>Connection: close</code> header, therefore neither the client or
+server was requesting the connection to be closed. If the server had set the
+<code>Connection</code> header, things would&rsquo;ve been fine.</p>
+
+<p>The code looked like this:</p>
+
+<pre><code class="language-go">  transport := &amp;http.Transport {
+    Proxy: http.ProxyFromEnvironment,
+    Dial: (&amp;net.Dialer{
+      Timeout: 0,
+      KeepAlive: 0
+    }).Dial,
+    TLSHandshakeTimeout: 10 * time.second
+  }
+
+  httpClient := &amp;http.Client{Transport: transport}
+
+  function submitData(url string, fileReader io.Reader) error {
+    req, reqErr := http.NewRequest(&quot;POST&quot;, url, fileReader)
+    if reqErr != nil {
+      return reqErr
+    }
+    req.Header.Set(&quot;Content-Type&quot;, &quot;application/octet-stream&quot;)
+
+    resp, err := httpClient.Do(req)
+    if err != nil {
+      return err
+    }
+    defer resp.Body.Close()
+
+    // read the body
+
+    return nil
+  }
+</code></pre>
+
+<p>The <code>submitData</code> function gets called over and over whenever new data needs to
+be POSTed. Using <a href="http://en.wikipedia.org/wiki/Netstat">netstat</a> I noticed the
+connections to the server were staying <code>ESTABLISHED</code> instead of being closed. I
+set the &ldquo;timeout&rdquo; on the dialer to 0, because the POST should block until the
+server is done and responds (which is an undetermined amount of time).</p>
+
+<p>I know the server is responding, because the code that processes the response
+was in fact getting data.</p>
+
+<p>It turns out, HTTP/1.1 uses persistent connections by default:</p>
+
+<blockquote>
+<p>A significant difference between HTTP/1.1 and earlier versions of HTTP is that persistent connections are the default behavior of any HTTP connection.</p>
+</blockquote>
+
+<p><cite><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html">http://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html</a></cite></p>
+
+<p>The solution was to inform the server that the client wants to close the connection
+after the transaction is complete. This can be done by setting the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Connection">Connection</a>
+header,</p>
+
+<pre><code>req.Header.Set(&quot;Connection&quot;, &quot;close&quot;)
+</code></pre>
+
+<p>or by setting the <code>Close</code> property to <code>true</code> on the <a href="http://golang.org/pkg/net/http/#Request">http.Request</a>:</p>
+
+<pre><code>req.Close = true
+</code></pre>
+
+<p>After doing that, the &ldquo;too many open files&rdquo; issue went away as the program was
+no longer keeping HTTP connections open and thus not using up file descriptors.</p>
+
+    
+
+     
+	
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost") 
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'codecraig';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the comments powered by <a href="http://disqus.com/?ref_noscript">Disqus.</a></noscript>
+</div>
+</div> 
+
+</body>w
+</html>
