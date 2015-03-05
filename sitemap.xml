@@ -13,6 +13,11 @@
   </url>
   
   <url>
+    <loc>http://craigwickesser.com/about/</loc>
+    <lastmod>2015-01-07T21:42:58-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://craigwickesser.com/2015/01/golang-http-to-many-open-files/</loc>
     <lastmod>2015-01-07T18:26:39-05:00</lastmod>
   </url>
