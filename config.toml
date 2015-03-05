@@ -1,0 +1,13 @@
+baseurl = "http://yourSiteHere/"
+languageCode = "en-us"
+title = "craig wickesser"
+theme = "nofancy"
+
+[author]
+  name = "Craig Wickesser"
+  email = "codecraig@gmail.com"
+  github = "mindscratch"
+  twitter = "mind_scratch"
+
+[permalinks]
+  post = "/:year/:month/:filename/"
