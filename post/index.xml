@@ -3,7 +3,7 @@
   <channel>
       <title>Posts on craig wickesser </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://yourSiteHere/post/index.xml/</link>
+    <link>http://craigwickesser.com/post/index.xml/</link>
     <language>en-us</language>
     <author>Craig Wickesser</author>
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Mindscratch Newsletter 1</title>
-      <link>http://yoursitehere/2015/01/mindscratch-newsletter-1/</link>
+      <link>http://craigwickesser.com/2015/01/mindscratch-newsletter-1/</link>
       <pubDate>Wed, 21 Jan 2015 00:00:00 UTC</pubDate>
       <author>Craig Wickesser</author>
-      <guid>http://yoursitehere/2015/01/mindscratch-newsletter-1/</guid>
+      <guid>http://craigwickesser.com/2015/01/mindscratch-newsletter-1/</guid>
       <description>&lt;p&gt;On a regular basis, hopefully once per week, I&amp;rsquo;ll be posting links to
 content related to distributed systems, programming and devops. If you&amp;rsquo;d prefer
 to access this content via email, then &lt;a href=&#34;/subscribe&#34;&gt;subscribe&lt;/a&gt;.&lt;/p&gt;
@@ -58,10 +58,10 @@ cancellation, context and plumbing &lt;a href=&#34;https://vimeo.com/115309491&#
     
     <item>
       <title>Go HTTP: Too Many Open Files</title>
-      <link>http://yoursitehere/2015/01/golang-http-to-many-open-files/</link>
+      <link>http://craigwickesser.com/2015/01/golang-http-to-many-open-files/</link>
       <pubDate>Wed, 07 Jan 2015 18:26:39 EST</pubDate>
       <author>Craig Wickesser</author>
-      <guid>http://yoursitehere/2015/01/golang-http-to-many-open-files/</guid>
+      <guid>http://craigwickesser.com/2015/01/golang-http-to-many-open-files/</guid>
       <description>&lt;p&gt;I recently had a situation where an application I was working on in &lt;a href=&#34;http://golang.org&#34;&gt;Go&lt;/a&gt; would
 run into the &amp;ldquo;too many open files&amp;rdquo; error. After some debugging, I discovered
 it wasn&amp;rsquo;t closing HTTP connections being made to an HTTP server.&lt;/p&gt;
@@ -139,10 +139,10 @@ no longer keeping HTTP connections open and thus not using up file descriptors.&
     
     <item>
       <title>POST Data to Load Test with ApacheBench</title>
-      <link>http://yoursitehere/2015/01/post-data-to-load-test-with-apachebench/</link>
+      <link>http://craigwickesser.com/2015/01/post-data-to-load-test-with-apachebench/</link>
       <pubDate>Sat, 03 Jan 2015 00:00:00 UTC</pubDate>
       <author>Craig Wickesser</author>
-      <guid>http://yoursitehere/2015/01/post-data-to-load-test-with-apachebench/</guid>
+      <guid>http://craigwickesser.com/2015/01/post-data-to-load-test-with-apachebench/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://httpd.apache.org/docs/2.2/programs/ab.html&#34;&gt;ApacheBench&lt;/a&gt; (also known as, ab) is,&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -198,10 +198,10 @@ just as easy.&lt;/p&gt;
     
     <item>
       <title>Capture STDOUT in Go</title>
-      <link>http://yoursitehere/2015/01/capture-stdout-in-go/</link>
+      <link>http://craigwickesser.com/2015/01/capture-stdout-in-go/</link>
       <pubDate>Fri, 02 Jan 2015 00:00:00 UTC</pubDate>
       <author>Craig Wickesser</author>
-      <guid>http://yoursitehere/2015/01/capture-stdout-in-go/</guid>
+      <guid>http://craigwickesser.com/2015/01/capture-stdout-in-go/</guid>
       <description>&lt;p&gt;Capturing output written to STDOUT (standard output) can be accomplished
 with the following code.&lt;/p&gt;
 
@@ -263,10 +263,10 @@ executable on the system that wrote data to STDOUT which I needed to process.&lt
     
     <item>
       <title>Thoughts on Windows 8</title>
-      <link>http://yoursitehere/2014/12/windows-8-thoughts/</link>
+      <link>http://craigwickesser.com/2014/12/windows-8-thoughts/</link>
       <pubDate>Sun, 28 Dec 2014 00:00:00 UTC</pubDate>
       <author>Craig Wickesser</author>
-      <guid>http://yoursitehere/2014/12/windows-8-thoughts/</guid>
+      <guid>http://craigwickesser.com/2014/12/windows-8-thoughts/</guid>
       <description>&lt;p&gt;My son received a laptop, his first, for Christmas. It&amp;rsquo;s an ASUS running Windows 8. To date, he&amp;rsquo;s only used Apple laptops, iPad, iPhone Touch and Galaxy S3/&lt;sup&gt;4&lt;/sup&gt;&amp;frasl;&lt;sub&gt;5&lt;/sub&gt; Android phones at home.&lt;/p&gt;
 
 &lt;p&gt;I helped setup the laptop and the first thing I noticed was the &amp;ldquo;app&amp;rdquo; centric user interface. I noticed he seemed to be able to navigate around rather easily and wasn&amp;rsquo;t getting lost. The &amp;ldquo;app&amp;rdquo; centric focus of the operating system is compelling and I believe a win for Microsoft in terms of aligning with the younger generation.&lt;/p&gt;
@@ -291,10 +291,10 @@ executable on the system that wrote data to STDOUT which I needed to process.&lt
     
     <item>
       <title>Starting a new Go project</title>
-      <link>http://yoursitehere/2014/12/starting-a-new-go-project/</link>
+      <link>http://craigwickesser.com/2014/12/starting-a-new-go-project/</link>
       <pubDate>Tue, 09 Dec 2014 00:00:00 UTC</pubDate>
       <author>Craig Wickesser</author>
-      <guid>http://yoursitehere/2014/12/starting-a-new-go-project/</guid>
+      <guid>http://craigwickesser.com/2014/12/starting-a-new-go-project/</guid>
       <description>
 
 &lt;p&gt;I have the need for a program that can monitor Kubernetes* for services* and update an HAProxy* configuration file when changes occur. Sounds rather simple, however, there&amp;rsquo;s a slight twist. I don&amp;rsquo;t want to simply add entries to HAProxy for each service created in Kubernetes (it also wouldn&amp;rsquo;t work as multiple services in Kubernetes could have the same port, since each service has its own IP address).&lt;/p&gt;

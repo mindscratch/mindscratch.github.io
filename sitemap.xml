@@ -2,38 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursitehere/</loc>
+    <loc>http://craigwickesser.com/</loc>
     <lastmod>2015-01-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://yoursitehere/2015/01/mindscratch-newsletter-1/</loc>
+    <loc>http://craigwickesser.com/2015/01/mindscratch-newsletter-1/</loc>
     <lastmod>2015-01-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://yoursitehere/2015/01/golang-http-to-many-open-files/</loc>
+    <loc>http://craigwickesser.com/2015/01/golang-http-to-many-open-files/</loc>
     <lastmod>2015-01-07T18:26:39-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://yoursitehere/2015/01/post-data-to-load-test-with-apachebench/</loc>
+    <loc>http://craigwickesser.com/2015/01/post-data-to-load-test-with-apachebench/</loc>
     <lastmod>2015-01-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://yoursitehere/2015/01/capture-stdout-in-go/</loc>
+    <loc>http://craigwickesser.com/2015/01/capture-stdout-in-go/</loc>
     <lastmod>2015-01-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://yoursitehere/2014/12/windows-8-thoughts/</loc>
+    <loc>http://craigwickesser.com/2014/12/windows-8-thoughts/</loc>
     <lastmod>2014-12-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://yoursitehere/2014/12/starting-a-new-go-project/</loc>
+    <loc>http://craigwickesser.com/2014/12/starting-a-new-go-project/</loc>
     <lastmod>2014-12-09T00:00:00+00:00</lastmod>
   </url>
   

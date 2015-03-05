@@ -3,7 +3,7 @@
   <channel>
       <title>Newsletter on craig wickesser </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://yourSiteHere/categories/newsletter/index.xml/</link>
+    <link>http://craigwickesser.com/categories/newsletter/index.xml/</link>
     <language>en-us</language>
     <author>Craig Wickesser</author>
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Mindscratch Newsletter 1</title>
-      <link>http://yoursitehere/2015/01/mindscratch-newsletter-1/</link>
+      <link>http://craigwickesser.com/2015/01/mindscratch-newsletter-1/</link>
       <pubDate>Wed, 21 Jan 2015 00:00:00 UTC</pubDate>
       <author>Craig Wickesser</author>
-      <guid>http://yoursitehere/2015/01/mindscratch-newsletter-1/</guid>
+      <guid>http://craigwickesser.com/2015/01/mindscratch-newsletter-1/</guid>
       <description>&lt;p&gt;On a regular basis, hopefully once per week, I&amp;rsquo;ll be posting links to
 content related to distributed systems, programming and devops. If you&amp;rsquo;d prefer
 to access this content via email, then &lt;a href=&#34;/subscribe&#34;&gt;subscribe&lt;/a&gt;.&lt;/p&gt;
