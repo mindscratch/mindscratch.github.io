@@ -7,7 +7,85 @@
     <language>en-us</language>
     <author>Craig Wickesser</author>
     
-    <updated>Wed, 21 Jan 2015 00:00:00 UTC</updated>
+    <updated>Tue, 24 Feb 2015 21:51:56 EST</updated>
+    
+    <item>
+      <title>Go: command with custom environment</title>
+      <link>http://craigwickesser.com/2015/02/golang-cmd-with-custom-environment/</link>
+      <pubDate>Tue, 24 Feb 2015 21:51:56 EST</pubDate>
+      <author>Craig Wickesser</author>
+      <guid>http://craigwickesser.com/2015/02/golang-cmd-with-custom-environment/</guid>
+      <description>&lt;p&gt;Problem: Execute an external process with a customized environment.&lt;/p&gt;
+
+&lt;p&gt;Solution: The &lt;a href=&#34;https://gobyexample.com&#34;&gt;Go by Example&lt;/a&gt; site
+has as an example demonstrating how to &lt;a href=&#34;https://gobyexample.com/spawning-processes&#34;&gt;spawn an external process&lt;/a&gt; and how &lt;a href=&#34;https://gobyexample.com/execing-processes&#34;&gt;exec
+a process&lt;/a&gt;. Those two examples provide
+a great starting point. Below, we&amp;rsquo;ll take it a step further to modify the
+environment.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;io/ioutil&amp;quot;
+	&amp;quot;os&amp;quot;
+	&amp;quot;os/exec&amp;quot;
+)
+
+// In this example `messageId` is a value that
+// needs to be stored in an environment variable to be
+// used by the command that&#39;s going to be executed
+func doIt(messageId string) error {
+	binary, err := exec.LookPath(&amp;quot;print_env.sh&amp;quot;)
+	if err != nil {
+		return err
+	}
+
+	cmd := exec.Command(binary)
+	env := os.Environ()
+	env = append(env, fmt.Sprintf(&amp;quot;MESSAGE_ID=%s&amp;quot;, messageId))
+	cmd.Env = env
+
+	cmdOut, _ := cmd.StdoutPipe()
+	//cmdErr, _ := cmd.StderrPipe()
+
+	startErr := cmd.Start()
+	if startErr != nil {
+		return startErr
+	}
+
+	// read stdout and stderr
+	stdOutput, _ := ioutil.ReadAll(cmdOut)
+	//errOutput, _ := ioutil.ReadAll(cmdErr)
+
+	fmt.Printf(&amp;quot;STDOUT: %s\n&amp;quot;, stdOutput)
+	//fmt.Printf(&amp;quot;ERROUT: %s\n&amp;quot;, errOutput)
+
+	err = cmd.Wait()
+	return err
+}
+
+func main() {
+	messageId := &amp;quot;abc123&amp;quot;
+	err := doIt(messageId)
+	if err != nil {
+		fmt.Printf(&amp;quot;Error: %v\n&amp;quot;, err)
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;doIt&lt;/code&gt; function is where the magic happens. First, a &lt;code&gt;exec.Command&lt;/code&gt; is
+created. Next, we grab a copy of the environment using &lt;code&gt;os.Environ()&lt;/code&gt;. The
+environment is a slice of strings so we append another string, in the correct
+format, containing the environment variable we want to add, &lt;code&gt;MESSAGE_ID&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The rest of the code sets up reading stdout (and stderr, though I commented )
+and executing the command. If you run the program, you&amp;rsquo;ll see in the output
+that &lt;code&gt;MESSAGE_ID&lt;/code&gt; was set to &lt;code&gt;abc123&lt;/code&gt; (as passed into the &lt;code&gt;doIt&lt;/code&gt; function).&lt;/p&gt;
+
+&lt;p&gt;Simple, right?&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Mindscratch Newsletter 1</title>
