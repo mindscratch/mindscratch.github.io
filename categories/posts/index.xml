@@ -46,8 +46,8 @@ disaster that were in place prior to the 0.22.0 release:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;master commits suicide when losing connection to ZK&lt;/li&gt;
-&lt;li&gt;compute nodes ignore shutdown requests received from master that is not leader
-— recovery remove limit (% of cluster)&lt;/li&gt;
+&lt;li&gt;compute nodes ignore shutdown requests received from master that is not leader&lt;/li&gt;
+&lt;li&gt;recovery remove limit (% of cluster)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;In this release the ability to &lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-1148&#34;&gt;rate limit slave removal&lt;/a&gt;
