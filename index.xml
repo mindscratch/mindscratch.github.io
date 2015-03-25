@@ -68,8 +68,7 @@ slave removals occurring.&lt;/p&gt;
 common attributes such as &lt;code&gt;environment&lt;/code&gt;, &lt;code&gt;location&lt;/code&gt; and &lt;code&gt;version&lt;/code&gt;. However, it
 also supports &lt;a href=&#34;https://github.com/apache/mesos/blob/b2f73095fd168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1075&#34;&gt;Ports&lt;/a&gt; (which can have names), as well as arbitrary labels.&lt;/p&gt;
 
-&lt;p&gt;Video link: &lt;a href=&#34;https://youtu.be/LC3dlmdc4bc?t=600&#34;&gt;https://youtu.be/LC3dlmdc4bc?t=600&lt;/a&gt;
-d168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093&lt;/p&gt;
+&lt;p&gt;Video link: &lt;a href=&#34;https://youtu.be/LC3dlmdc4bc?t=600d168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093&#34;&gt;https://youtu.be/LC3dlmdc4bc?t=600d168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;toc_3&#34;&gt;More features and improvements&lt;/h2&gt;
 
