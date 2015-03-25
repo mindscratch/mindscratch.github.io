@@ -7,7 +7,173 @@
     <language>en-us</language>
     <author>Craig Wickesser</author>
     
-    <updated>Wed, 21 Jan 2015 00:00:00 UTC</updated>
+    <updated>Tue, 24 Mar 2015 20:33:36 -0500</updated>
+    
+    <item>
+      <title>Mesos 0.22.0 Release</title>
+      <link>http://craigwickesser.com/2015/03/mesos-022-release/</link>
+      <pubDate>Tue, 24 Mar 2015 20:33:36 -0500</pubDate>
+      <author>Craig Wickesser</author>
+      <guid>http://craigwickesser.com/2015/03/mesos-022-release/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://mesos.apache.org/&#34;&gt;Mesos&lt;/a&gt; 0.22.0 has been &lt;a href=&#34;https://dist.apache.org/repos/dist/release/mesos/0.22.0/&#34;&gt;released&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s a nice &lt;a href=&#34;https://www.youtube.com/watch?v=LC3dlmdc4bc&#34;&gt;video&lt;/a&gt; which goes through the new features in 0.22.0 as well as
+some features scheduled for the 0.23.0 release.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve put together some notes I put together while watching the video.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Disk Isolation&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-1589&#34;&gt;Disk Isolation&lt;/a&gt; allows the
+&lt;code&gt;MesosContainerizer&lt;/code&gt; to enforce a disk quota. Prior to 0.22.0 mesos supported &lt;a href=&#34;https://youtu.be/LC3dlmdc4bc?t=207&#34;&gt;isolation&lt;/a&gt; of cpu, memory, pid namespacing,
+network ports and bandwidth.&lt;/p&gt;
+
+&lt;p&gt;To use this new isolation, two new flags are required:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# enable disk isolation
+--isolation=“posix/disk” --enforce_container_disk_quota
+
+# set the quota, in megabytes
+-—resources=“disk:64”
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Disaster Prevention&lt;/h2&gt;
+
+&lt;p&gt;There are &lt;a href=&#34;https://youtu.be/LC3dlmdc4bc?t=503&#34;&gt;several mechanisms&lt;/a&gt; to prevent
+disaster that were in place prior to the 0.22.0 release:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;master commits suicide when losing connection to ZK&lt;/li&gt;
+&lt;li&gt;compute nodes ignore shutdown requests received from master that is not leader&lt;/li&gt;
+&lt;li&gt;recovery remove limit (% of cluster)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In this release the ability to &lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-1148&#34;&gt;rate limit slave removal&lt;/a&gt;
+was added which could allow administrators to react when they notice the
+slave removals occurring.&lt;/p&gt;
+
+&lt;p&gt;To configure the rate limit, a new flag is available:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# remove one slave per minute
+--slave_removal_rate_limit=1/1mins
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Labels and Discovery&lt;/h2&gt;
+
+&lt;p&gt;Tasks can now have &lt;a href=&#34;https://github.com/apache/mesos/blob/b2f73095fd168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1056&#34;&gt;labels&lt;/a&gt;, which are simply key/value pairs. This allows tasks to be tagged, for example &lt;code&gt;environment: production&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Additionally, tasks can now include &lt;a href=&#34;https://github.com/apache/mesos/blob/b2f73095fd168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093&#34;&gt;DiscoveryInfo&lt;/a&gt;. This information can be used for service discovery as it can provide
+common attributes such as &lt;code&gt;environment&lt;/code&gt;, &lt;code&gt;location&lt;/code&gt; and &lt;code&gt;version&lt;/code&gt;. However, it
+also supports &lt;a href=&#34;https://github.com/apache/mesos/blob/b2f73095fd168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1075&#34;&gt;Ports&lt;/a&gt; (which can have names), as well as arbitrary labels.&lt;/p&gt;
+
+&lt;p&gt;Video link: &lt;a href=&#34;https://youtu.be/LC3dlmdc4bc?t=600d168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093&#34;&gt;https://youtu.be/LC3dlmdc4bc?t=600d168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;More features and improvements&lt;/h2&gt;
+
+&lt;p&gt;There are other features and improvements which are highlighted in the video.
+I imagine the mesos website will be updated soon with a summary as well.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_4&#34;&gt;What to look forward to&lt;/h2&gt;
+
+&lt;p&gt;With a release being published within the hour, naturally it&amp;rsquo;s time to look at
+what&amp;rsquo;s coming next:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-1554&#34;&gt;persistent primitives&lt;/a&gt; - to
+support storage-like services&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-2018&#34;&gt;dynamic reservations&lt;/a&gt; - allow a
+framework to dynamically reserve offered resources, allowing those resources to
+only be re-offered to the same framework (to support stateful services)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-910&#34;&gt;ssl support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-1607&#34;&gt;optimistic offers&lt;/a&gt; - resource offers
+are currently offered to a single framework at a time, with optimistic offers the
+offers would be handed out in parallel.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Again, there&amp;rsquo;s other features, improvements and bug fixes slated for Mesos 0.23.0
+but this should at least give a taste for what&amp;rsquo;s to come.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Go: command with custom environment</title>
+      <link>http://craigwickesser.com/2015/02/golang-cmd-with-custom-environment/</link>
+      <pubDate>Tue, 24 Feb 2015 21:51:56 EST</pubDate>
+      <author>Craig Wickesser</author>
+      <guid>http://craigwickesser.com/2015/02/golang-cmd-with-custom-environment/</guid>
+      <description>&lt;p&gt;Problem: Execute an external process with a customized environment.&lt;/p&gt;
+
+&lt;p&gt;Solution: The &lt;a href=&#34;https://gobyexample.com&#34;&gt;Go by Example&lt;/a&gt; site
+has as an example demonstrating how to &lt;a href=&#34;https://gobyexample.com/spawning-processes&#34;&gt;spawn an external process&lt;/a&gt; and how &lt;a href=&#34;https://gobyexample.com/execing-processes&#34;&gt;exec
+a process&lt;/a&gt;. Those two examples provide
+a great starting point. Below, we&amp;rsquo;ll take it a step further to modify the
+environment.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;io/ioutil&amp;quot;
+	&amp;quot;os&amp;quot;
+	&amp;quot;os/exec&amp;quot;
+)
+
+// In this example `messageId` is a value that
+// needs to be stored in an environment variable to be
+// used by the command that&#39;s going to be executed
+func doIt(messageId string) error {
+	binary, err := exec.LookPath(&amp;quot;print_env.sh&amp;quot;)
+	if err != nil {
+		return err
+	}
+
+	cmd := exec.Command(binary)
+	env := os.Environ()
+	env = append(env, fmt.Sprintf(&amp;quot;MESSAGE_ID=%s&amp;quot;, messageId))
+	cmd.Env = env
+
+	cmdOut, _ := cmd.StdoutPipe()
+	//cmdErr, _ := cmd.StderrPipe()
+
+	startErr := cmd.Start()
+	if startErr != nil {
+		return startErr
+	}
+
+	// read stdout and stderr
+	stdOutput, _ := ioutil.ReadAll(cmdOut)
+	//errOutput, _ := ioutil.ReadAll(cmdErr)
+
+	fmt.Printf(&amp;quot;STDOUT: %s\n&amp;quot;, stdOutput)
+	//fmt.Printf(&amp;quot;ERROUT: %s\n&amp;quot;, errOutput)
+
+	err = cmd.Wait()
+	return err
+}
+
+func main() {
+	messageId := &amp;quot;abc123&amp;quot;
+	err := doIt(messageId)
+	if err != nil {
+		fmt.Printf(&amp;quot;Error: %v\n&amp;quot;, err)
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;doIt&lt;/code&gt; function is where the magic happens. First, a &lt;code&gt;exec.Command&lt;/code&gt; is
+created. Next, we grab a copy of the environment using &lt;code&gt;os.Environ()&lt;/code&gt;. The
+environment is a slice of strings so we append another string, in the correct
+format, containing the environment variable we want to add, &lt;code&gt;MESSAGE_ID&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The rest of the code sets up reading stdout (and stderr, though I commented )
+and executing the command. If you run the program, you&amp;rsquo;ll see in the output
+that &lt;code&gt;MESSAGE_ID&lt;/code&gt; was set to &lt;code&gt;abc123&lt;/code&gt; (as passed into the &lt;code&gt;doIt&lt;/code&gt; function).&lt;/p&gt;
+
+&lt;p&gt;Simple, right?&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Mindscratch Newsletter 1</title>

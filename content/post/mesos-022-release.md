@@ -59,8 +59,7 @@ Additionally, tasks can now include [DiscoveryInfo](https://github.com/apache/me
 common attributes such as `environment`, `location` and `version`. However, it
 also supports [Ports](https://github.com/apache/mesos/blob/b2f73095fd168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1075) (which can have names), as well as arbitrary labels.
 
-Video link: https://youtu.be/LC3dlmdc4bc?t=600
-d168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093
+Video link: https://youtu.be/LC3dlmdc4bc?t=600d168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093
 
 ## More features and improvements
 
