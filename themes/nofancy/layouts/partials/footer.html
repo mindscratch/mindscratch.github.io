@@ -32,6 +32,10 @@
 	  </div>
 	</div>
   </div>
+  <script type="text/javascript">
+    var title = "{{ .Title }}";
+    mixpanel.track("view.page", {"title": title});
+  </script>
 </div>
 
 
