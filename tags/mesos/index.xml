@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mesos on craig wickesser</title>
+    <link>http://craigwickesser.com/tags/mesos/</link>
+    <description>Recent content in Mesos on craig wickesser</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
+    <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
+    <lastBuildDate>Tue, 24 Mar 2015 20:33:36 -0500</lastBuildDate>
+    <atom:link href="http://craigwickesser.com/tags/mesos/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Mesos 0.22.0 Release</title>
+      <link>http://craigwickesser.com/2015/03/mesos-022-release/</link>
+      <pubDate>Tue, 24 Mar 2015 20:33:36 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>http://craigwickesser.com/2015/03/mesos-022-release/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://mesos.apache.org/&#34;&gt;Mesos&lt;/a&gt; 0.22.0 has been &lt;a href=&#34;https://dist.apache.org/repos/dist/release/mesos/0.22.0/&#34;&gt;released&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s a nice &lt;a href=&#34;https://www.youtube.com/watch?v=LC3dlmdc4bc&#34;&gt;video&lt;/a&gt; which goes through the new features in 0.22.0 as well as
+some features scheduled for the 0.23.0 release.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve put together some notes I put together while watching the video.&lt;/p&gt;
+
+&lt;h2 id=&#34;disk-isolation:05540a89ab0bd7894a855407044491dc&#34;&gt;Disk Isolation&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-1589&#34;&gt;Disk Isolation&lt;/a&gt; allows the
+&lt;code&gt;MesosContainerizer&lt;/code&gt; to enforce a disk quota. Prior to 0.22.0 mesos supported &lt;a href=&#34;https://youtu.be/LC3dlmdc4bc?t=207&#34;&gt;isolation&lt;/a&gt; of cpu, memory, pid namespacing,
+network ports and bandwidth.&lt;/p&gt;
+
+&lt;p&gt;To use this new isolation, two new flags are required:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# enable disk isolation
+--isolation=“posix/disk” --enforce_container_disk_quota
+
+# set the quota, in megabytes
+-—resources=“disk:64”
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;disaster-prevention:05540a89ab0bd7894a855407044491dc&#34;&gt;Disaster Prevention&lt;/h2&gt;
+
+&lt;p&gt;There are &lt;a href=&#34;https://youtu.be/LC3dlmdc4bc?t=503&#34;&gt;several mechanisms&lt;/a&gt; to prevent
+disaster that were in place prior to the 0.22.0 release:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;master commits suicide when losing connection to ZK&lt;/li&gt;
+&lt;li&gt;compute nodes ignore shutdown requests received from master that is not leader&lt;/li&gt;
+&lt;li&gt;recovery remove limit (% of cluster)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In this release the ability to &lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-1148&#34;&gt;rate limit slave removal&lt;/a&gt;
+was added which could allow administrators to react when they notice the
+slave removals occurring.&lt;/p&gt;
+
+&lt;p&gt;To configure the rate limit, a new flag is available:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# remove one slave per minute
+--slave_removal_rate_limit=1/1mins
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;labels-and-discovery:05540a89ab0bd7894a855407044491dc&#34;&gt;Labels and Discovery&lt;/h2&gt;
+
+&lt;p&gt;Tasks can now have &lt;a href=&#34;https://github.com/apache/mesos/blob/b2f73095fd168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1056&#34;&gt;labels&lt;/a&gt;, which are simply key/value pairs. This allows tasks to be tagged, for example &lt;code&gt;environment: production&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Additionally, tasks can now include &lt;a href=&#34;https://github.com/apache/mesos/blob/b2f73095fd168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093&#34;&gt;DiscoveryInfo&lt;/a&gt;. This information can be used for service discovery as it can provide
+common attributes such as &lt;code&gt;environment&lt;/code&gt;, &lt;code&gt;location&lt;/code&gt; and &lt;code&gt;version&lt;/code&gt;. However, it
+also supports &lt;a href=&#34;https://github.com/apache/mesos/blob/b2f73095fd168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1075&#34;&gt;Ports&lt;/a&gt; (which can have names), as well as arbitrary labels.&lt;/p&gt;
+
+&lt;p&gt;Video link: &lt;a href=&#34;https://youtu.be/LC3dlmdc4bc?t=600d168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093&#34;&gt;https://youtu.be/LC3dlmdc4bc?t=600d168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;more-features-and-improvements:05540a89ab0bd7894a855407044491dc&#34;&gt;More features and improvements&lt;/h2&gt;
+
+&lt;p&gt;There are other features and improvements which are highlighted in the video.
+I imagine the mesos website will be updated soon with a summary as well.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-to-look-forward-to:05540a89ab0bd7894a855407044491dc&#34;&gt;What to look forward to&lt;/h2&gt;
+
+&lt;p&gt;With a release being published within the hour, naturally it&amp;rsquo;s time to look at
+what&amp;rsquo;s coming next:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-1554&#34;&gt;persistent primitives&lt;/a&gt; - to
+support storage-like services&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-2018&#34;&gt;dynamic reservations&lt;/a&gt; - allow a
+framework to dynamically reserve offered resources, allowing those resources to
+only be re-offered to the same framework (to support stateful services)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-910&#34;&gt;ssl support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-1607&#34;&gt;optimistic offers&lt;/a&gt; - resource offers
+are currently offered to a single framework at a time, with optimistic offers the
+offers would be handed out in parallel.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Again, there&amp;rsquo;s other features, improvements and bug fixes slated for Mesos 0.23.0
+but this should at least give a taste for what&amp;rsquo;s to come.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mindscratch Newsletter 1</title>
+      <link>http://craigwickesser.com/2015/01/mindscratch-newsletter-1/</link>
+      <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>http://craigwickesser.com/2015/01/mindscratch-newsletter-1/</guid>
+      <description>&lt;p&gt;On a regular basis, hopefully once per week, I&amp;rsquo;ll be posting links to
+content related to distributed systems, programming and devops. If you&amp;rsquo;d prefer
+to access this content via email, then &lt;a href=&#34;http://craigwickesser.com/subscribe&#34;&gt;subscribe&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.meetup.com/Apache-Mesos-NYC-Meetup/events/219073804/&#34;&gt;http://www.meetup.com/Apache-Mesos-NYC-Meetup/events/219073804/&lt;/a&gt;
+  - interesting b/c of  mention of running Accumulo on Mesos&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.slideshare.net/ColleenLee1/iguaz-a-longrunning-job-scheduler-using-docker-and-mesos&#34;&gt;http://www.slideshare.net/ColleenLee1/iguaz-a-longrunning-job-scheduler-using-docker-and-mesos&lt;/a&gt;
+  - job scheduler from corsera&lt;/p&gt;
+
+&lt;p&gt;Docker security
+&lt;a href=&#34;https://github.com/GDSSecurity/Docker-Secure-Deployment-Guidelines&#34;&gt;https://github.com/GDSSecurity/Docker-Secure-Deployment-Guidelines&lt;/a&gt;
+&lt;a href=&#34;https://www.gartner.com/doc/2956826&#34;&gt;https://www.gartner.com/doc/2956826&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/ExPHAT/twitter-sort&#34;&gt;https://github.com/ExPHAT/twitter-sort&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://am./chronos&#34;&gt;http://am./chronos&lt;/a&gt; &amp;ndash;master zk://server1:2181/mesos &amp;ndash;zk_hosts zk://server1:2181/mesos &amp;ndash;http_port 8080bari.apache.org/&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://jpetazzo.github.io/2015/01/13/docker-mount-dynamic-volumes/&#34;&gt;http://jpetazzo.github.io/2015/01/13/docker-mount-dynamic-volumes/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://codeascraft.com/2015/01/14/introducing-statsd-jvm-profiler-a-jvm-profiler-for-hadoop/&#34;&gt;https://codeascraft.com/2015/01/14/introducing-statsd-jvm-profiler-a-jvm-profiler-for-hadoop/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Go
+Go Static Analysis Tools by Alan Donovan &lt;a href=&#34;https://vimeo.com/116108566&#34;&gt;https://vimeo.com/116108566&lt;/a&gt;
+Benchmarking Go &lt;a href=&#34;https://vimeo.com/114975899&#34;&gt;https://vimeo.com/114975899&lt;/a&gt;
+7 common mistakes in go and how to avoid them &lt;a href=&#34;https://vimeo.com/115776445&#34;&gt;https://vimeo.com/115776445&lt;/a&gt;
+cancellation, context and plumbing &lt;a href=&#34;https://vimeo.com/115309491&#34;&gt;https://vimeo.com/115309491&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Io.js
+&lt;a href=&#34;https://www.youtube.com/watch?v=DqMFX91ToLw&#34;&gt;https://www.youtube.com/watch?v=DqMFX91ToLw&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Ecmascript 7 async &amp;ndash; the evolution of javascript - &lt;a href=&#34;https://www.youtube.com/watch?v=DqMFX91ToLw&#34;&gt;https://www.youtube.com/watch?v=DqMFX91ToLw&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://opensource.com/business/15/1/apache-spark-new-world-record&#34;&gt;http://opensource.com/business/15/1/apache-spark-new-world-record&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://events.linuxfoundation.org/events/vault/program/schedule?utm_source=lf&amp;amp;utm_medium=email&amp;amp;utm_campaign=vault15&#34;&gt;http://events.linuxfoundation.org/events/vault/program/schedule?utm_source=lf&amp;amp;utm_medium=email&amp;amp;utm_campaign=vault15&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;onyx: &lt;a href=&#34;https://www.youtube.com/watch?v=vG47Gui3hYE&#34;&gt;https://www.youtube.com/watch?v=vG47Gui3hYE&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

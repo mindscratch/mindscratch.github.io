@@ -1,103 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on craig wickesser</title>
-    <link>http://craigwickesser.com/categories/posts/</link>
-    <description>Recent content in Posts on craig wickesser</description>
+    <title>Golang on craig wickesser</title>
+    <link>http://craigwickesser.com/tags/golang/</link>
+    <description>Recent content in Golang on craig wickesser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
     <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
-    <lastBuildDate>Tue, 24 Mar 2015 20:33:36 -0500</lastBuildDate>
-    <atom:link href="http://craigwickesser.com/categories/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Mesos 0.22.0 Release</title>
-      <link>http://craigwickesser.com/2015/03/mesos-022-release/</link>
-      <pubDate>Tue, 24 Mar 2015 20:33:36 -0500</pubDate>
-      <author>codecraig@gmail.com (Craig Wickesser)</author>
-      <guid>http://craigwickesser.com/2015/03/mesos-022-release/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://mesos.apache.org/&#34;&gt;Mesos&lt;/a&gt; 0.22.0 has been &lt;a href=&#34;https://dist.apache.org/repos/dist/release/mesos/0.22.0/&#34;&gt;released&lt;/a&gt;!&lt;/p&gt;
-
-&lt;p&gt;There&amp;rsquo;s a nice &lt;a href=&#34;https://www.youtube.com/watch?v=LC3dlmdc4bc&#34;&gt;video&lt;/a&gt; which goes through the new features in 0.22.0 as well as
-some features scheduled for the 0.23.0 release.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve put together some notes I put together while watching the video.&lt;/p&gt;
-
-&lt;h2 id=&#34;disk-isolation:05540a89ab0bd7894a855407044491dc&#34;&gt;Disk Isolation&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-1589&#34;&gt;Disk Isolation&lt;/a&gt; allows the
-&lt;code&gt;MesosContainerizer&lt;/code&gt; to enforce a disk quota. Prior to 0.22.0 mesos supported &lt;a href=&#34;https://youtu.be/LC3dlmdc4bc?t=207&#34;&gt;isolation&lt;/a&gt; of cpu, memory, pid namespacing,
-network ports and bandwidth.&lt;/p&gt;
-
-&lt;p&gt;To use this new isolation, two new flags are required:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# enable disk isolation
---isolation=“posix/disk” --enforce_container_disk_quota
-
-# set the quota, in megabytes
--—resources=“disk:64”
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;disaster-prevention:05540a89ab0bd7894a855407044491dc&#34;&gt;Disaster Prevention&lt;/h2&gt;
-
-&lt;p&gt;There are &lt;a href=&#34;https://youtu.be/LC3dlmdc4bc?t=503&#34;&gt;several mechanisms&lt;/a&gt; to prevent
-disaster that were in place prior to the 0.22.0 release:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;master commits suicide when losing connection to ZK&lt;/li&gt;
-&lt;li&gt;compute nodes ignore shutdown requests received from master that is not leader&lt;/li&gt;
-&lt;li&gt;recovery remove limit (% of cluster)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In this release the ability to &lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-1148&#34;&gt;rate limit slave removal&lt;/a&gt;
-was added which could allow administrators to react when they notice the
-slave removals occurring.&lt;/p&gt;
-
-&lt;p&gt;To configure the rate limit, a new flag is available:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# remove one slave per minute
---slave_removal_rate_limit=1/1mins
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;labels-and-discovery:05540a89ab0bd7894a855407044491dc&#34;&gt;Labels and Discovery&lt;/h2&gt;
-
-&lt;p&gt;Tasks can now have &lt;a href=&#34;https://github.com/apache/mesos/blob/b2f73095fd168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1056&#34;&gt;labels&lt;/a&gt;, which are simply key/value pairs. This allows tasks to be tagged, for example &lt;code&gt;environment: production&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Additionally, tasks can now include &lt;a href=&#34;https://github.com/apache/mesos/blob/b2f73095fd168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093&#34;&gt;DiscoveryInfo&lt;/a&gt;. This information can be used for service discovery as it can provide
-common attributes such as &lt;code&gt;environment&lt;/code&gt;, &lt;code&gt;location&lt;/code&gt; and &lt;code&gt;version&lt;/code&gt;. However, it
-also supports &lt;a href=&#34;https://github.com/apache/mesos/blob/b2f73095fd168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1075&#34;&gt;Ports&lt;/a&gt; (which can have names), as well as arbitrary labels.&lt;/p&gt;
-
-&lt;p&gt;Video link: &lt;a href=&#34;https://youtu.be/LC3dlmdc4bc?t=600d168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093&#34;&gt;https://youtu.be/LC3dlmdc4bc?t=600d168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;more-features-and-improvements:05540a89ab0bd7894a855407044491dc&#34;&gt;More features and improvements&lt;/h2&gt;
-
-&lt;p&gt;There are other features and improvements which are highlighted in the video.
-I imagine the mesos website will be updated soon with a summary as well.&lt;/p&gt;
-
-&lt;h2 id=&#34;what-to-look-forward-to:05540a89ab0bd7894a855407044491dc&#34;&gt;What to look forward to&lt;/h2&gt;
-
-&lt;p&gt;With a release being published within the hour, naturally it&amp;rsquo;s time to look at
-what&amp;rsquo;s coming next:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-1554&#34;&gt;persistent primitives&lt;/a&gt; - to
-support storage-like services&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-2018&#34;&gt;dynamic reservations&lt;/a&gt; - allow a
-framework to dynamically reserve offered resources, allowing those resources to
-only be re-offered to the same framework (to support stateful services)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-910&#34;&gt;ssl support&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-1607&#34;&gt;optimistic offers&lt;/a&gt; - resource offers
-are currently offered to a single framework at a time, with optimistic offers the
-offers would be handed out in parallel.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Again, there&amp;rsquo;s other features, improvements and bug fixes slated for Mesos 0.23.0
-but this should at least give a taste for what&amp;rsquo;s to come.&lt;/p&gt;
-</description>
-    </item>
+    <lastBuildDate>Tue, 24 Feb 2015 21:51:56 -0500</lastBuildDate>
+    <atom:link href="http://craigwickesser.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Go: command with custom environment</title>
@@ -306,65 +218,6 @@ no longer keeping HTTP connections open and thus not using up file descriptors.&
     </item>
     
     <item>
-      <title>POST Data to Load Test with ApacheBench</title>
-      <link>http://craigwickesser.com/2015/01/post-data-to-load-test-with-apachebench/</link>
-      <pubDate>Sat, 03 Jan 2015 00:00:00 +0000</pubDate>
-      <author>codecraig@gmail.com (Craig Wickesser)</author>
-      <guid>http://craigwickesser.com/2015/01/post-data-to-load-test-with-apachebench/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://httpd.apache.org/docs/2.2/programs/ab.html&#34;&gt;ApacheBench&lt;/a&gt; (also known as, ab) is,&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;a tool for benchmarking your Apache Hypertext Transfer Protocol (HTTP) server&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Don&amp;rsquo;t be fooled, you can use it to benchmark any server that supports HTTP. In
-fact, it might be worth checking out &lt;a href=&#34;https://github.com/rakyll/boom&#34;&gt;boom&lt;/a&gt; which
-is written in &lt;a href=&#34;http://golang.org&#34;&gt;Go&lt;/a&gt; which makes it easier to use across platforms,
-and is simple to install (spoiler alert: it&amp;rsquo;s just a binary).&lt;/p&gt;
-
-&lt;p&gt;Anyhow, in this post I&amp;rsquo;ll demonstrate using ApacheBench (since I came across it first).&lt;/p&gt;
-
-&lt;p&gt;If you look at the documentation for &lt;code&gt;ab&lt;/code&gt; you&amp;rsquo;ll see there a bunch of options.
-The focus of this post is the &lt;code&gt;-p POST-file&lt;/code&gt; option which lets you POST a
-&lt;code&gt;File containing data to POST&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Sounded simple, so I thought I&amp;rsquo;d give it a shot. I was trying to benchmark a form
-submission. I thought maybe I could use &lt;code&gt;-p my-awesome-data.tgz&lt;/code&gt;, but it
-wasn&amp;rsquo;t quite that simple.&lt;/p&gt;
-
-&lt;p&gt;After some googling, I found that what I needed to do was submit a file that
-looked like a form based file upload. Turns out &lt;a href=&#34;http://www.faqs.org/rfcs/rfc1867.html&#34;&gt;RFC1867&lt;/a&gt; was the ticket.
-Here&amp;rsquo;s an example, check out the RFC for more details.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;--1234567890
-Content-Disposition: form-data; filename=&amp;quot;my-awesome-data.tgz&amp;quot;
-Content-Type: application/octet-stream
-Content-Transfer-Encoding: binary
-
-&amp;lt;base64 data&amp;gt;
---1234567890
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The boundary, &lt;code&gt;1234567890&lt;/code&gt;, should be a value &lt;strong&gt;guaranteed&lt;/strong&gt; not to appear in
-the content of the request. The rest of the fields should be relatively simple
-to understand. The &lt;code&gt;&amp;lt;base64 data&amp;gt;&lt;/code&gt; portion must contain the base64 encoded
-value of the file being uploaded.&lt;/p&gt;
-
-&lt;p&gt;Here&amp;rsquo;s how you&amp;rsquo;d run a benchmark that submits 100 requests, with 5 concurrent
-clients using a file named &lt;code&gt;post.txt&lt;/code&gt; (which looks like the example shown above)
-to &lt;code&gt;http://server.com/api/v1/data&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ab -n 100 -c 5 -T &#39;multipart/form-data; boundary=1234567890&#39; -p post.txt http://server.com/api/v1/data
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I&amp;rsquo;d like to try out boom, but the concepts are similar so I suspect it should be
-just as easy.&lt;/p&gt;
-
-&lt;p&gt;Happy benchmarking!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Capture STDOUT in Go</title>
       <link>http://craigwickesser.com/2015/01/capture-stdout-in-go/</link>
       <pubDate>Fri, 02 Jan 2015 00:00:00 +0000</pubDate>
@@ -426,34 +279,6 @@ func example() {
 
 &lt;p&gt;The example shown is trivial. I had a use case where I had to execute an
 executable on the system that wrote data to STDOUT which I needed to process.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Thoughts on Windows 8</title>
-      <link>http://craigwickesser.com/2014/12/windows-8-thoughts/</link>
-      <pubDate>Sun, 28 Dec 2014 00:00:00 +0000</pubDate>
-      <author>codecraig@gmail.com (Craig Wickesser)</author>
-      <guid>http://craigwickesser.com/2014/12/windows-8-thoughts/</guid>
-      <description>&lt;p&gt;My son received a laptop, his first, for Christmas. It&amp;rsquo;s an ASUS running Windows 8. To date, he&amp;rsquo;s only used Apple laptops, iPad, iPhone Touch and Galaxy S3/4/5 Android phones at home.&lt;/p&gt;
-
-&lt;p&gt;I helped setup the laptop and the first thing I noticed was the &amp;ldquo;app&amp;rdquo; centric user interface. I noticed he seemed to be able to navigate around rather easily and wasn&amp;rsquo;t getting lost. The &amp;ldquo;app&amp;rdquo; centric focus of the operating system is compelling and I believe a win for Microsoft in terms of aligning with the younger generation.&lt;/p&gt;
-
-&lt;p&gt;The first issue I ran into was when my son wanted to install the YouTube client.  I was able to find it in the Store, thanks to it being near the top of the &amp;ldquo;Top Free&amp;rdquo; apps. I was surprised not to see a &amp;ldquo;search&amp;rdquo; option, but perhaps I just didn&amp;rsquo;t see it. The Store said that Windows 8.1 was required to install the YouTube client.&lt;/p&gt;
-
-&lt;p&gt;Luckily, the Store had Windows 8.1 as a featured item to install, so I clicked the button to install it. I was then prompted with a message stating updates needed to be installed first. I began the install for those which took a little over an hour and required a restart.&lt;/p&gt;
-
-&lt;p&gt;Once the laptop booted up, I went back to the store to install Windows 8.1. Again, it took a while and required a restart. After the laptop booted up with Windows 8.1 freshly installed I went back to the Store. This time I noticed a search box, which I used to find the YouTube client, since the &amp;ldquo;Top Free&amp;rdquo; apps list was no longer an option.&lt;/p&gt;
-
-&lt;p&gt;Upon trying to install the YouTube client it stated that it required a parents permission (since my son is younger than 13). I clicked the &amp;ldquo;Fix It&amp;rdquo; button, logged into my Microsoft Live account (which I forgot I had). After logging in, I was just dropped into the account home, no directions on where to go to approve installing the YouTube client app. I went back to try installing the YouTube client and again it said, I could &amp;ldquo;Fix It&amp;rdquo; (the parent permission issue). I clicked the button and again it just took me to the Microsoft Live account home page.&lt;/p&gt;
-
-&lt;p&gt;After trying several variations of the steps I&amp;rsquo;ve already described, I decided I&amp;rsquo;d change my sons account to make his birthday such that he was at least 13 years old. After I figured out how to do that, I was required to put in credit card information so Microsoft could verify I (my son in this case) was an adult. I submitted the information, and Microsoft was happy that the credit card I submitted verified someone elses age (since the card has my name, not my sons).&lt;/p&gt;
-
-&lt;p&gt;Finally, I was able to install the YouTube client app.&lt;/p&gt;
-
-&lt;p&gt;This is where Windows 8 went wrong. Certain aspects are just overly complicated and difficult to follow, especially for children. In concrast, the &lt;a href=&#34;www.amazon.com/kids-edition-tablet&#34;&gt;Amazon Fire Kids&lt;/a&gt; made it stupid simple to setup, add a &amp;ldquo;childs&amp;rdquo; account and let them begin playing with it (including add apps). Certainly the Windows 8 laptop and the Amazon tablet are different in many ways, but I think the comparison is reasonable to demonstrate how Windows 8 got things wrong and how something like the Amazon Fire kids tablet got it right.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/hashtag/windows8&#34;&gt;#windows8&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/amazon&#34;&gt;#amazon&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

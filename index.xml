@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Recent Content on craig wickesser </title>
-      <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://craigwickesser.com/index.xml/</link>
+    <title>craig wickesser</title>
+    <link>http://craigwickesser.com/</link>
+    <description>Recent content on craig wickesser</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Craig Wickesser</author>
-    
-    <updated>Tue, 24 Mar 2015 20:33:36 -0500</updated>
+    <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
+    <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
+    <lastBuildDate>Tue, 24 Mar 2015 20:33:36 -0500</lastBuildDate>
+    <atom:link href="http://craigwickesser.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Mesos 0.22.0 Release</title>
       <link>http://craigwickesser.com/2015/03/mesos-022-release/</link>
       <pubDate>Tue, 24 Mar 2015 20:33:36 -0500</pubDate>
-      <author>Craig Wickesser</author>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2015/03/mesos-022-release/</guid>
       <description>
 
@@ -24,7 +26,7 @@ some features scheduled for the 0.23.0 release.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve put together some notes I put together while watching the video.&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Disk Isolation&lt;/h2&gt;
+&lt;h2 id=&#34;disk-isolation:05540a89ab0bd7894a855407044491dc&#34;&gt;Disk Isolation&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-1589&#34;&gt;Disk Isolation&lt;/a&gt; allows the
 &lt;code&gt;MesosContainerizer&lt;/code&gt; to enforce a disk quota. Prior to 0.22.0 mesos supported &lt;a href=&#34;https://youtu.be/LC3dlmdc4bc?t=207&#34;&gt;isolation&lt;/a&gt; of cpu, memory, pid namespacing,
@@ -39,7 +41,7 @@ network ports and bandwidth.&lt;/p&gt;
 -—resources=“disk:64”
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;toc_1&#34;&gt;Disaster Prevention&lt;/h2&gt;
+&lt;h2 id=&#34;disaster-prevention:05540a89ab0bd7894a855407044491dc&#34;&gt;Disaster Prevention&lt;/h2&gt;
 
 &lt;p&gt;There are &lt;a href=&#34;https://youtu.be/LC3dlmdc4bc?t=503&#34;&gt;several mechanisms&lt;/a&gt; to prevent
 disaster that were in place prior to the 0.22.0 release:&lt;/p&gt;
@@ -60,7 +62,7 @@ slave removals occurring.&lt;/p&gt;
 --slave_removal_rate_limit=1/1mins
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;toc_2&#34;&gt;Labels and Discovery&lt;/h2&gt;
+&lt;h2 id=&#34;labels-and-discovery:05540a89ab0bd7894a855407044491dc&#34;&gt;Labels and Discovery&lt;/h2&gt;
 
 &lt;p&gt;Tasks can now have &lt;a href=&#34;https://github.com/apache/mesos/blob/b2f73095fd168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1056&#34;&gt;labels&lt;/a&gt;, which are simply key/value pairs. This allows tasks to be tagged, for example &lt;code&gt;environment: production&lt;/code&gt;.&lt;/p&gt;
 
@@ -70,12 +72,12 @@ also supports &lt;a href=&#34;https://github.com/apache/mesos/blob/b2f73095fd168
 
 &lt;p&gt;Video link: &lt;a href=&#34;https://youtu.be/LC3dlmdc4bc?t=600d168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093&#34;&gt;https://youtu.be/LC3dlmdc4bc?t=600d168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_3&#34;&gt;More features and improvements&lt;/h2&gt;
+&lt;h2 id=&#34;more-features-and-improvements:05540a89ab0bd7894a855407044491dc&#34;&gt;More features and improvements&lt;/h2&gt;
 
 &lt;p&gt;There are other features and improvements which are highlighted in the video.
 I imagine the mesos website will be updated soon with a summary as well.&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_4&#34;&gt;What to look forward to&lt;/h2&gt;
+&lt;h2 id=&#34;what-to-look-forward-to:05540a89ab0bd7894a855407044491dc&#34;&gt;What to look forward to&lt;/h2&gt;
 
 &lt;p&gt;With a release being published within the hour, naturally it&amp;rsquo;s time to look at
 what&amp;rsquo;s coming next:&lt;/p&gt;
@@ -100,8 +102,8 @@ but this should at least give a taste for what&amp;rsquo;s to come.&lt;/p&gt;
     <item>
       <title>Go: command with custom environment</title>
       <link>http://craigwickesser.com/2015/02/golang-cmd-with-custom-environment/</link>
-      <pubDate>Tue, 24 Feb 2015 21:51:56 EST</pubDate>
-      <author>Craig Wickesser</author>
+      <pubDate>Tue, 24 Feb 2015 21:51:56 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2015/02/golang-cmd-with-custom-environment/</guid>
       <description>&lt;p&gt;Problem: Execute an external process with a customized environment.&lt;/p&gt;
 
@@ -178,12 +180,12 @@ that &lt;code&gt;MESSAGE_ID&lt;/code&gt; was set to &lt;code&gt;abc123&lt;/code&
     <item>
       <title>Mindscratch Newsletter 1</title>
       <link>http://craigwickesser.com/2015/01/mindscratch-newsletter-1/</link>
-      <pubDate>Wed, 21 Jan 2015 00:00:00 UTC</pubDate>
-      <author>Craig Wickesser</author>
+      <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2015/01/mindscratch-newsletter-1/</guid>
       <description>&lt;p&gt;On a regular basis, hopefully once per week, I&amp;rsquo;ll be posting links to
 content related to distributed systems, programming and devops. If you&amp;rsquo;d prefer
-to access this content via email, then &lt;a href=&#34;/subscribe&#34;&gt;subscribe&lt;/a&gt;.&lt;/p&gt;
+to access this content via email, then &lt;a href=&#34;http://craigwickesser.com/subscribe&#34;&gt;subscribe&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.meetup.com/Apache-Mesos-NYC-Meetup/events/219073804/&#34;&gt;http://www.meetup.com/Apache-Mesos-NYC-Meetup/events/219073804/&lt;/a&gt;
   - interesting b/c of  mention of running Accumulo on Mesos&lt;/p&gt;
@@ -225,8 +227,8 @@ cancellation, context and plumbing &lt;a href=&#34;https://vimeo.com/115309491&#
     <item>
       <title>about</title>
       <link>http://craigwickesser.com/about/</link>
-      <pubDate>Wed, 07 Jan 2015 21:42:58 EST</pubDate>
-      <author>Craig Wickesser</author>
+      <pubDate>Wed, 07 Jan 2015 21:42:58 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/about/</guid>
       <description>&lt;p&gt;I am Craig Wickesser and I write code for fun and for &lt;a href=&#34;http://www.urbandictionary.com/define.php?term=Makin%27+Paper&#34;&gt;makin&amp;rsquo; paper&lt;/a&gt;. I&amp;rsquo;ve &lt;a href=&#34;https://osrc.dfm.io/mindscratch/&#34;&gt;contributed
 code&lt;/a&gt; to various open source projects using
@@ -245,8 +247,8 @@ a variety of programming languages.&lt;/p&gt;
     <item>
       <title>Go HTTP: Too Many Open Files</title>
       <link>http://craigwickesser.com/2015/01/golang-http-to-many-open-files/</link>
-      <pubDate>Wed, 07 Jan 2015 18:26:39 EST</pubDate>
-      <author>Craig Wickesser</author>
+      <pubDate>Wed, 07 Jan 2015 18:26:39 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2015/01/golang-http-to-many-open-files/</guid>
       <description>&lt;p&gt;I recently had a situation where an application I was working on in &lt;a href=&#34;http://golang.org&#34;&gt;Go&lt;/a&gt; would
 run into the &amp;ldquo;too many open files&amp;rdquo; error. After some debugging, I discovered
@@ -326,8 +328,8 @@ no longer keeping HTTP connections open and thus not using up file descriptors.&
     <item>
       <title>POST Data to Load Test with ApacheBench</title>
       <link>http://craigwickesser.com/2015/01/post-data-to-load-test-with-apachebench/</link>
-      <pubDate>Sat, 03 Jan 2015 00:00:00 UTC</pubDate>
-      <author>Craig Wickesser</author>
+      <pubDate>Sat, 03 Jan 2015 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2015/01/post-data-to-load-test-with-apachebench/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://httpd.apache.org/docs/2.2/programs/ab.html&#34;&gt;ApacheBench&lt;/a&gt; (also known as, ab) is,&lt;/p&gt;
 
@@ -385,8 +387,8 @@ just as easy.&lt;/p&gt;
     <item>
       <title>Capture STDOUT in Go</title>
       <link>http://craigwickesser.com/2015/01/capture-stdout-in-go/</link>
-      <pubDate>Fri, 02 Jan 2015 00:00:00 UTC</pubDate>
-      <author>Craig Wickesser</author>
+      <pubDate>Fri, 02 Jan 2015 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2015/01/capture-stdout-in-go/</guid>
       <description>&lt;p&gt;Capturing output written to STDOUT (standard output) can be accomplished
 with the following code.&lt;/p&gt;
@@ -450,10 +452,10 @@ executable on the system that wrote data to STDOUT which I needed to process.&lt
     <item>
       <title>Thoughts on Windows 8</title>
       <link>http://craigwickesser.com/2014/12/windows-8-thoughts/</link>
-      <pubDate>Sun, 28 Dec 2014 00:00:00 UTC</pubDate>
-      <author>Craig Wickesser</author>
+      <pubDate>Sun, 28 Dec 2014 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2014/12/windows-8-thoughts/</guid>
-      <description>&lt;p&gt;My son received a laptop, his first, for Christmas. It&amp;rsquo;s an ASUS running Windows 8. To date, he&amp;rsquo;s only used Apple laptops, iPad, iPhone Touch and Galaxy S3/&lt;sup&gt;4&lt;/sup&gt;&amp;frasl;&lt;sub&gt;5&lt;/sub&gt; Android phones at home.&lt;/p&gt;
+      <description>&lt;p&gt;My son received a laptop, his first, for Christmas. It&amp;rsquo;s an ASUS running Windows 8. To date, he&amp;rsquo;s only used Apple laptops, iPad, iPhone Touch and Galaxy S3/4/5 Android phones at home.&lt;/p&gt;
 
 &lt;p&gt;I helped setup the laptop and the first thing I noticed was the &amp;ldquo;app&amp;rdquo; centric user interface. I noticed he seemed to be able to navigate around rather easily and wasn&amp;rsquo;t getting lost. The &amp;ldquo;app&amp;rdquo; centric focus of the operating system is compelling and I believe a win for Microsoft in terms of aligning with the younger generation.&lt;/p&gt;
 
@@ -478,8 +480,8 @@ executable on the system that wrote data to STDOUT which I needed to process.&lt
     <item>
       <title>Starting a new Go project</title>
       <link>http://craigwickesser.com/2014/12/starting-a-new-go-project/</link>
-      <pubDate>Tue, 09 Dec 2014 00:00:00 UTC</pubDate>
-      <author>Craig Wickesser</author>
+      <pubDate>Tue, 09 Dec 2014 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2014/12/starting-a-new-go-project/</guid>
       <description>
 
@@ -514,7 +516,7 @@ type ServiceEntries []ServiceEntry {}
 
 &lt;p&gt;To be continued&amp;hellip;&lt;/p&gt;
 
-&lt;h3 id=&#34;toc_0&#34;&gt;Resources&lt;/h3&gt;
+&lt;h3 id=&#34;resources:49d19ae450dab18d6578e10e73a07a91&#34;&gt;Resources&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes/&#34;&gt;Kubernetes&lt;/a&gt;&lt;/li&gt;
