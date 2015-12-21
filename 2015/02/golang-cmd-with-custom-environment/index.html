@@ -12,79 +12,99 @@
 
   
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="http://craigwickesser.comcss/fonts.css">
   
-  <link rel="stylesheet" href="http://craigwickesser.com/css/fonts.css">
-  <link rel="stylesheet" href="http://craigwickesser.com/css/normalize.css">
-  <link rel="stylesheet" href="http://craigwickesser.com/css/skeleton.css">
-  <link rel="stylesheet" href="http://craigwickesser.com/css/custom.css">
+  
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+
+  <link rel="stylesheet" href="http://craigwickesser.comcss/custom.css">
 
   
   
-  <link rel="stylesheet" href="http://craigwickesser.com/highlight/styles/default.css">
+  <link rel="stylesheet" href="http://craigwickesser.comhighlight/styles/default.css">
   
-  <script src="http://craigwickesser.com/highlight/highlight.pack.js"></script>
+  <script src="http://craigwickesser.comhighlight/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 
 </head>
 <body>
 
-<header id="menu">
-  <div class="container">
-	<span class="logo">craig wickesser</span>
-	<a>&#9776;</a>
-  </div>
-</header>
 
-<nav class="navbar">
-  <div class="container">
-	<div class="row">
-	  <div class="eight columns offset-by-two">
-		<ul class="">
-		  
-		  <li class="u-pull-left"> <a href="http://craigwickesser.com" class="brand" style="font-weight:bold;font-size:normal"> craig wickesser </a></li>
-		  <li class="u-pull-right cate"> <a href="http://craigwickesser.com/about/" class=""> About </a></li>
-		  
-		  <li class="u-pull-right cate"> <a href="http://craigwickesser.com/categories/newsletter" class=""> Newsletter </a></li>
-		  
-		  <li class="u-pull-right cate"> <a href="http://craigwickesser.com/categories/posts" class=""> Posts </a></li>
-		  
-		</ul>
-	  </div>
-	</div>
-  </div>
-</nav>
+<div class="header pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+    <div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="desktop pure-menu pure-menu-horizontal nav-menu">
+            
+            <a href="/" class="site-title pure-menu-heading">craig wickesser</a>
+            <ul class="pure-menu-list">
+                
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.comcategories/newsletter" class="pure-menu-link">Newsletter</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.comcategories/posts" class="pure-menu-link">Posts</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.comabout/" class="pure-menu-link">About</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mobile pure-menu nav-menu">
+            <a href="/" class="pure-menu-heading" id="toggle-home">craig wickesser</a>
+            <a href="#" id="toggle-btn">&#9776;</a>
+            <ul class="pure-menu-list" id="toggle-content" style="display:none;">
+                
+                
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.comcategories/newsletter" class="pure-menu-link">Newsletter</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.comcategories/posts" class="pure-menu-link">Posts</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.comabout" class="pure-menu-link">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-6"></div>
+</div>
 
 
-<div class="container post-wrapper">
-  <a href="http://craigwickesser.com">
-    <img src="http://craigwickesser.com/images/mindscratch_150.png" class="u-pull-right" title="mindscratch"/>
-  </a>
-  <div class="row">
-	<div class="eight columns offset-by-two">
-	  <div id="post-title">
-		<p class="footnote">
-		  
-		  <time class="">2015-02-24</time>
-		  
-		  
-		  |
-		  
-		  
-		  tags:<a href="http://craigwickesser.com/tags/golang">golang</a> 
-		  
+<div class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+	<div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="post">
 
-		  
-		  categories:<a href="http://craigwickesser.com/categories/posts">posts</a> 
-		  
+            <div class="post-title">
+                <p class="footnote">
+                    <time class="">2015-02-24</time>
+		            
+                    
+                    |
+                    
+                    
+                    tags:<a href="http://craigwickesser.comtags/golang">golang</a> 
+                    
 
-		  
+                    
+                    categories:<a href="http://craigwickesser.comcategories/posts">posts</a> 
+                    
 
-		</p>
-		<h5>Go: command with custom environment</h5>
-	  </div>
+                    
+                </p>
+                <h1>Go: command with custom environment</h1>
+            </div>
 
-	  <div class="post">
-		<p>Problem: Execute an external process with a customized environment.</p>
+            <div class="post-content">
+                <p>Problem: Execute an external process with a customized environment.</p>
 
 <p>Solution: The <a href="https://gobyexample.com">Go by Example</a> site
 has as an example demonstrating how to <a href="https://gobyexample.com/spawning-processes">spawn an external process</a> and how <a href="https://gobyexample.com/execing-processes">exec
@@ -154,56 +174,66 @@ that <code>MESSAGE_ID</code> was set to <code>abc123</code> (as passed into the 
 
 <p>Simple, right?</p>
 
-	  </div>
+            </div>
+        </div>
 	</div>
-  </div>
+    <div class="pure-u-1-24 pure-u-md-1-6"></div>
 </div>
 
-<div class="footer">
-  <div class="container">
-	<div class="row">
-	  <div class="ten columns offset-by-two">
-		<p class="footnote">
-		  
-		  Copyright: All rights reserved by <a href="mailto:codecraig@gmail.com">@Craig Wickesser</a>.
-		  
-		  
-		  Find me at
+<div class="footer pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+    <div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="pure-menu pure-menu-horizontal footer-content">
+            <ul>
+                <li class="pure-menu-heading" id="foot-name">Craig Wickesser:</li>
 
-		  
-		  <a href="https://github.com/mindscratch" >GitHub</a>
-		  
+                
+                <li class="pure-menu-item">
+                    <a href="mailto:codecraig@gmail.com" class="pure-menu-link">Email</a>
+                </li>
+                
 
-		  
+                
+                <li class="pure-menu-item">
+                    <a href="https://github.com/mindscratch" class="pure-menu-link">GitHub</a>
+                </li>
+                
 
-		  
-		  <a href="https://twitter.com/mind_scratch">Twitter</a>
-		  
+                
 
-		  
+                
 
-		  
-		</p>
+                
+                <li class="pure-menu-item">
+                    <a href="https://twitter.com/mind_scratch" class="pure-menu-link">Twitter</a>
+                </li>
+                
+
+            </ul>
+            <a href="#" class="pure-menu-heading pull-right" id="gototop-btn">↑↑</a>
+        </div>
 	  </div>
-	</div>
-  </div>
+      <div class="pure-u-1-24 pure-u-md-1-6"></div>
 </div>
 
 
-<script src="http://craigwickesser.com/js/jquery.min.js" type="text/javascript"></script>
-<script src="http://craigwickesser.com/js/jquery.timeago.js" type="text/javascript"></script>
+<script src="http://craigwickesser.comjs/jquery.min.js" type="text/javascript"></script>
+<script src="http://craigwickesser.comjs/jquery.timeago.js" type="text/javascript"></script>
 <script type="text/javascript">
   $(function(){
     $("time.timeago").timeago();
   })
-  $("#menu").click(function(){
-    $(".brand").text("HOME");
-    $(".navbar ul li").removeClass("cate");
-    $(".navbar").toggle();
+  $("#toggle-btn").click(function(){
+    $("#toggle-content").toggle();
+    if($(this).html() === "☰") {
+        $(this).html("X")
+    } else {
+        $(this).html("☰")
+    }
   });
   $(window).resize(function(){
     if(window.innerWidth > 768) {
-      $(".navbar").removeAttr("style");
+      $(".desktop").removeAttr("style");
     }
   });
 </script>

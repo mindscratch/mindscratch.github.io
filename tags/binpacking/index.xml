@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Binpacking on craig wickesser</title>
+    <link>http://localhost:1313/tags/binpacking/</link>
+    <description>Recent content in Binpacking on craig wickesser</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
+    <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
+    <lastBuildDate>Sat, 07 Mar 2015 08:02:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/binpacking/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Figuring out the size of objects to pack in bins</title>
+      <link>http://localhost:1313/2015/03/figuring-out-the-size-of-objects-to-pack-in-bins/</link>
+      <pubDate>Sat, 07 Mar 2015 08:02:00 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>http://localhost:1313/2015/03/figuring-out-the-size-of-objects-to-pack-in-bins/</guid>
+      <description>
+
+&lt;p&gt;Efficiently utilizing resources is one of the big issues to deal with when operating
+servers, especially as the scale increases into hundreds, thousands or more. Projects
+such as &lt;a href=&#34;http://mesos.apache.org/&#34;&gt;Mesos&lt;/a&gt; and &lt;a href=&#34;http://kubernetes.io/&#34;&gt;Kubernetes&lt;/a&gt;
+aim to simplify the deployment of applications (or containers) onto a cluster. They
+allow servers to be treated as one big pool of resources (CPU, Memory, Disk).&lt;/p&gt;
+
+&lt;p&gt;Mesos has slaves, a process that runs on each host. When a slave registers itself
+with the master, it reports the total resources it has available (CPU, Memory, Disk).
+This can be overridden via the command-line if necessary.&lt;/p&gt;
+
+&lt;p&gt;However, how do you determine how many resources to assign to a task? Should the
+web server get 1 CPU share or 2? Should the database get 4GB of RAM, 16, more?&lt;/p&gt;
+
+&lt;h2 id=&#34;what-is-bin-packing:9815f07edbe8f16b6fdfe8014d01716a&#34;&gt;what is bin packing&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.cs.arizona.edu/icon/oddsends/bpack/bpack.htm&#34;&gt;http://www.cs.arizona.edu/icon/oddsends/bpack/bpack.htm&lt;/a&gt;
+&lt;a href=&#34;http://www.slideshare.net/spodila/aws-reinvent-2014-talk-scheduling-using-apache-mesos-in-the-cloud&#34;&gt;http://www.slideshare.net/spodila/aws-reinvent-2014-talk-scheduling-using-apache-mesos-in-the-cloud&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;problem:9815f07edbe8f16b6fdfe8014d01716a&#34;&gt;problem&lt;/h2&gt;
+
+&lt;p&gt;how do you figure out how big the things that will be packed in bins need to be?
+For example in MEsos how do you decide 1 CPU or 2 CPU, memory, etc?&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
