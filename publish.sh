@@ -2,7 +2,7 @@
 
 hugo
 
-git co master
+git checkout master
 
 cp -R public/* .
 rm -rf public
