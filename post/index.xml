@@ -8,81 +8,8 @@
     <language>en-us</language>
     <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
     <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
-    <lastBuildDate>Sat, 09 Jan 2016 12:14:56 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2015 20:33:36 -0500</lastBuildDate>
     <atom:link href="http://craigwickesser.com/post/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Mesos on Mac OS X</title>
-      <link>http://craigwickesser.com/2016/01/mesos-on-mac-osx/</link>
-      <pubDate>Sat, 09 Jan 2016 12:14:56 -0500</pubDate>
-      <author>codecraig@gmail.com (Craig Wickesser)</author>
-      <guid>http://craigwickesser.com/2016/01/mesos-on-mac-osx/</guid>
-      <description>
-
-&lt;p&gt;Using docker it&amp;rsquo;s simple to get a &lt;a href=&#34;mesos.apache.org&#34;&gt;Mesos&lt;/a&gt; cluster running on Mac OS X. I&amp;rsquo;m running Docker 1.9.1
-and OS X 10.11.2. We&amp;rsquo;ll be running Zookeeper 3.4.7 and&lt;/p&gt;
-
-&lt;p&gt;First we&amp;rsquo;ll start a Zookeeper server, then a Mesos master and
-a single Mesos slave.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;note&lt;/strong&gt;: I have satellite internet, so my downloads are throttled after I use the data allowance for the month. I was able to pull a Docker images for Mesos but I kept having issues pulling the Zookeeper so I just downloaded Zookeeper from their &lt;a href=&#34;zookeeper.apache.org&#34;&gt;website&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;zookeeper:fbd5e7fec7c8e618d5a6c691dfb3fbe5&#34;&gt;Zookeeper&lt;/h2&gt;
-
-&lt;p&gt;After downloading the zookeeper tarball, extract it. Copy the sample configuration file, &lt;code&gt;cp /path/to/zookeeper-3.4.7/conf/zoo_sample.cfg /path/to/zookeeper-3.4.7/zoo.cfg&lt;/code&gt;. For now, the default configuration is good enough.&lt;/p&gt;
-
-&lt;p&gt;Start the server: &lt;code&gt;/path/to/zookeeper-3.4.7/bin/zkServer.sh&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;start-mesos-master:fbd5e7fec7c8e618d5a6c691dfb3fbe5&#34;&gt;Start Mesos master&lt;/h2&gt;
-
-&lt;p&gt;On the Mac, Docker is run in a VM, so we have to do some finagling to get the correect IP address for Mesos to use. To start the Mesos master I created a small script:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-
-dockerIp=$(echo $DOCKER_HOST | cut -d &#39;/&#39; -f 3 | cut -d &#39;:&#39; -f 1)
-hostIp=$(ipconfig getifaddr en0)
-
-docker run \
--e MESOS_HOSTNAME=$dockerIp \
--e MESOS_IP=$dockerIp \
--e MESOS_QUORUM=1 \
--e MESOS_ZK=zk://$hostIp:2181/mesos \
---name mesos-master \
---net host \
---restart always \
-mesoscloud/mesos-master
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;note&lt;/em&gt;: You could optionally pass the &lt;code&gt;-d&lt;/code&gt; flag so the container would run in the background.&lt;/p&gt;
-
-&lt;h2 id=&#34;start-mesos-slave:fbd5e7fec7c8e618d5a6c691dfb3fbe5&#34;&gt;Start Mesos slave&lt;/h2&gt;
-
-&lt;p&gt;I also used a script to start the Mesos slave:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-
-dockerIp=$(echo $DOCKER_HOST | cut -d &#39;/&#39; -f 3 | cut -d &#39;:&#39; -f 1)
-hostIp=$(ipconfig getifaddr en0)
-
-docker run \
--e MESOS_HOSTNAME=$dockerIp \
--e MESOS_IP=$dockerIp \
--e MESOS_MASTER=zk://$hostIp:2181/mesos \
--v /sys/fs/cgroup:/sys/fs/cgroup \
--v /var/run/docker.sock:/var/run/docker.sock \
---name slave --net host --privileged --restart always \
-mesoscloud/mesos-slave
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You can now browse to the Mesos UI. You&amp;rsquo;ll need to get the IP address of the VM running docker:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;bash-3.2$ echo $DOCKER_HOST
-tcp://192.168.99.100:2376
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In this case, browse to &lt;code&gt;http://192.168.99.100:5050&lt;/code&gt;.&lt;/p&gt;
-</description>
-    </item>
     
     <item>
       <title>Mesos 0.22.0 Release</title>
