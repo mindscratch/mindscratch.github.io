@@ -3,8 +3,8 @@
 
   
   <meta charset="utf-8">
-  <title>Mesos</title>
-  <meta name="description" content="Mesos">
+  <title>Mesos on Mac OS X</title>
+  <meta name="description" content="Mesos on Mac OS X">
   <meta name="author" content="Craig Wickesser">
 
   
@@ -78,91 +78,99 @@
 </div>
 
 
-
 <div class="pure-g">
     <div class="pure-u-1-24 pure-u-md-5-24"></div>
 	<div class="pure-u-11-12 pure-u-md-5-8">
-	  <p class="posts-name">Mesos:</p>
+        <div class="post">
 
-	  <ul class="posts">
-		
-		
-		
-		<li>
-		  <a href="http://craigwickesser.com/2016/01/mesos-on-mac-osx/">Mesos on Mac OS X</a>
+            <div class="post-title">
+                <p class="footnote">
+                    <time class="">2016-01-09</time>
+		            
+                    
+                    |
+                    
+                    
+                    tags:<a href="http://craigwickesser.com/tags/mesos">mesos</a> <a href="http://craigwickesser.com/tags/mac">mac</a> 
+                    
 
-		  <p class="footnote">
-			submitted <time datetime="2016-01-09T12:14:56-05:00" class="post-list timeago">2016-01-09T12:14:56-05:00</time>
+                    
+                    categories:<a href="http://craigwickesser.com/categories/posts">posts</a> 
+                    
 
-			
-			to
-			
+                    
+                </p>
+                <h1>Mesos on Mac OS X</h1>
+            </div>
 
-			
-			tags:[ <a href="http://craigwickesser.com/tags/mesos">mesos</a> <a href="http://craigwickesser.com/tags/mac">mac</a> ]
-			
+            <div class="post-content">
+                
 
-			
-			categories:[ <a href="http://craigwickesser.com/categories/posts">posts</a> ]
-			
+<p>Using docker it&rsquo;s simple to get a <a href="mesos.apache.org">Mesos</a> cluster running on Mac OS X. I&rsquo;m running Docker 1.9.1
+and OS X 10.11.2. We&rsquo;ll be running Zookeeper 3.4.7 and</p>
 
-			
+<p>First we&rsquo;ll start a Zookeeper server, then a Mesos master and
+a single Mesos slave.</p>
 
-		  </p>
-		</li>
-		
-		
-		
-		<li>
-		  <a href="http://craigwickesser.com/2015/03/mesos-022-release/">Mesos 0.22.0 Release</a>
+<p><strong>note</strong>: I have satellite internet, so my downloads are throttled after I use the data allowance for the month. I was able to pull a Docker images for Mesos but I kept having issues pulling the Zookeeper so I just downloaded Zookeeper from their <a href="zookeeper.apache.org">website</a>.</p>
 
-		  <p class="footnote">
-			submitted <time datetime="2015-03-24T20:33:36-05:00" class="post-list timeago">2015-03-24T20:33:36-05:00</time>
+<h2 id="zookeeper:fbd5e7fec7c8e618d5a6c691dfb3fbe5">Zookeeper</h2>
 
-			
-			to
-			
+<p>After downloading the zookeeper tarball, extract it. Copy the sample configuration file, <code>cp /path/to/zookeeper-3.4.7/conf/zoo_sample.cfg /path/to/zookeeper-3.4.7/zoo.cfg</code>. For now, the default configuration is good enough.</p>
 
-			
-			tags:[ <a href="http://craigwickesser.com/tags/mesos">mesos</a> ]
-			
+<p>Start the server: <code>/path/to/zookeeper-3.4.7/bin/zkServer.sh</code></p>
 
-			
-			categories:[ <a href="http://craigwickesser.com/categories/posts">posts</a> ]
-			
+<h2 id="start-mesos-master:fbd5e7fec7c8e618d5a6c691dfb3fbe5">Start Mesos master</h2>
 
-			
+<p>On the Mac, Docker is run in a VM, so we have to do some finagling to get the correect IP address for Mesos to use. To start the Mesos master I created a small script:</p>
 
-		  </p>
-		</li>
-		
-		
-		
-		<li>
-		  <a href="http://craigwickesser.com/2015/01/mindscratch-newsletter-1/">Mindscratch Newsletter 1</a>
+<pre><code>#!/bin/bash
 
-		  <p class="footnote">
-			submitted <time datetime="2015-01-21T00:00:00Z" class="post-list timeago">2015-01-21T00:00:00Z</time>
+dockerIp=$(echo $DOCKER_HOST | cut -d '/' -f 3 | cut -d ':' -f 1)
+hostIp=$(ipconfig getifaddr en0)
 
-			
-			to
-			
+docker run \
+-e MESOS_HOSTNAME=$dockerIp \
+-e MESOS_IP=$dockerIp \
+-e MESOS_QUORUM=1 \
+-e MESOS_ZK=zk://$hostIp:2181/mesos \
+--name mesos-master \
+--net host \
+--restart always \
+mesoscloud/mesos-master
+</code></pre>
 
-			
-			tags:[ <a href="http://craigwickesser.com/tags/mindscratch">mindscratch</a> <a href="http://craigwickesser.com/tags/docker">docker</a> <a href="http://craigwickesser.com/tags/mesos">mesos</a> <a href="http://craigwickesser.com/tags/chronos">chronos</a> <a href="http://craigwickesser.com/tags/mesosphere">mesosphere</a> <a href="http://craigwickesser.com/tags/golang">golang</a> <a href="http://craigwickesser.com/tags/java">java</a> <a href="http://craigwickesser.com/tags/hadoop">hadoop</a> <a href="http://craigwickesser.com/tags/javascript">javascript</a> <a href="http://craigwickesser.com/tags/distributed-systems">distributed systems</a> ]
-			
+<p><em>note</em>: You could optionally pass the <code>-d</code> flag so the container would run in the background.</p>
 
-			
-			categories:[ <a href="http://craigwickesser.com/categories/posts">posts</a> <a href="http://craigwickesser.com/categories/newsletter">newsletter</a> ]
-			
+<h2 id="start-mesos-slave:fbd5e7fec7c8e618d5a6c691dfb3fbe5">Start Mesos slave</h2>
 
-			
+<p>I also used a script to start the Mesos slave:</p>
 
-		  </p>
-		</li>
-		
-		
-	  </ul>
+<pre><code>#!/bin/bash
+
+dockerIp=$(echo $DOCKER_HOST | cut -d '/' -f 3 | cut -d ':' -f 1)
+hostIp=$(ipconfig getifaddr en0)
+
+docker run \
+-e MESOS_HOSTNAME=$dockerIp \
+-e MESOS_IP=$dockerIp \
+-e MESOS_MASTER=zk://$hostIp:2181/mesos \
+-v /sys/fs/cgroup:/sys/fs/cgroup \
+-v /var/run/docker.sock:/var/run/docker.sock \
+--name slave --net host --privileged --restart always \
+mesoscloud/mesos-slave
+</code></pre>
+
+<p>You can now browse to the Mesos UI. You&rsquo;ll need to get the IP address of the VM running docker:</p>
+
+<pre><code>bash-3.2$ echo $DOCKER_HOST
+tcp://192.168.99.100:2376
+</code></pre>
+
+<p>In this case, browse to <code>http://192.168.99.100:5050</code>.</p>
+
+            </div>
+        </div>
 	</div>
     <div class="pure-u-1-24 pure-u-md-1-6">
 	  <a href="http://craigwickesser.com/">
