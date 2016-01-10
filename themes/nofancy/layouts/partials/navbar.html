@@ -40,6 +40,9 @@
                 </li>
                 {{ end }}
                 <li class="pure-menu-item">
+                    <a href="{{ $baseurl }}now/" class="pure-menu-link">Now</a>
+                </li>
+                <li class="pure-menu-item">
                     <a href="{{ $baseurl }}about/" class="pure-menu-link">About</a>
                 </li>
             </ul>
@@ -54,6 +57,9 @@
                     <a href="{{ $baseurl }}categories/{{ $name | urlize }}" class="pure-menu-link">{{ $name | title }}</a>
                 </li>
                 {{ end }}
+                <li class="pure-menu-item">
+                    <a href="{{ .Site.BaseURL }}now" class="pure-menu-link">Now</a>
+                </li>
                 <li class="pure-menu-item">
                     <a href="{{ .Site.BaseURL }}about" class="pure-menu-link">About</a>
                 </li>
