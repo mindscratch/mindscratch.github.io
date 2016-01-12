@@ -8,8 +8,33 @@
     <language>en-us</language>
     <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
     <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
-    <lastBuildDate>Sat, 09 Jan 2016 12:14:56 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 09 Jan 2016 23:39:49 -0500</lastBuildDate>
     <atom:link href="http://craigwickesser.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>now</title>
+      <link>http://craigwickesser.com/now/</link>
+      <pubDate>Sat, 09 Jan 2016 23:39:49 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>http://craigwickesser.com/now/</guid>
+      <description>
+
+&lt;h1 id=&#34;what-i-m-doing-now:247a13dfd66840d71b0a44da5c567f8b&#34;&gt;What I&amp;rsquo;m doing now&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;being a full-time dad&lt;/li&gt;
+&lt;li&gt;being the best husband I can be to the most amazing woman&lt;/li&gt;
+&lt;li&gt;writing software to make a difference&lt;/li&gt;
+&lt;li&gt;raising and loving chickens, &lt;a href=&#34;https://www.google.com/search?q=lion+mane+bunnies&#34;&gt;lion mane bunnies&lt;/a&gt; and almost a handful of dogs&lt;/li&gt;
+&lt;li&gt;reading &lt;a href=&#34;https://en.wikipedia.org/wiki/The_Revenant_(novel&#34;&gt;The Revenant&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;hopefully playing guitar once and a while&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;last updated&lt;/strong&gt;: 01/11/2016&lt;/p&gt;
+
+&lt;p&gt;This page inspired by &lt;a href=&#34;http://nownownow.com/&#34;&gt;nownownow.com&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Mesos on Mac OS X</title>
