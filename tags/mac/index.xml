@@ -20,7 +20,7 @@
       <description>
 
 &lt;p&gt;Using docker it&amp;rsquo;s simple to get a &lt;a href=&#34;mesos.apache.org&#34;&gt;Mesos&lt;/a&gt; cluster running on Mac OS X. I&amp;rsquo;m running Docker 1.9.1
-and OS X 10.11.2. We&amp;rsquo;ll be running Zookeeper 3.4.7 and&lt;/p&gt;
+and OS X 10.11.2. We&amp;rsquo;ll be running Zookeeper 3.4.7 and Mesos 0.24.1 (that&amp;rsquo;s the version provided by the docker image I&amp;rsquo;m using for this example).&lt;/p&gt;
 
 &lt;p&gt;First we&amp;rsquo;ll start a Zookeeper server, then a Mesos master and
 a single Mesos slave.&lt;/p&gt;
