@@ -9,7 +9,7 @@ draft = false
 +++
 
 Using docker it's simple to get a [Mesos](mesos.apache.org) cluster running on Mac OS X. I'm running Docker 1.9.1
-and OS X 10.11.2. We'll be running Zookeeper 3.4.7 and
+and OS X 10.11.2. We'll be running Zookeeper 3.4.7 and Mesos 0.24.1 (that's the version provided by the docker image I'm using for this example).
 
  First we'll start a Zookeeper server, then a Mesos master and
 a single Mesos slave.
@@ -72,4 +72,4 @@ bash-3.2$ echo $DOCKER_HOST
 tcp://192.168.99.100:2376
 ```
 
-In this case, browse to `http://192.168.99.100:5050`. 
+In this case, browse to `http://192.168.99.100:5050`.
