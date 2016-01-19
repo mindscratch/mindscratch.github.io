@@ -1,5 +1,6 @@
 +++
-categories = ["misc"]
+categories = ["posts"]
+Tags = ["mac"]
 date = "2016-01-18T20:06:53-05:00"
 title = "Secure Email on Mac OS X"
 menu = "main"
