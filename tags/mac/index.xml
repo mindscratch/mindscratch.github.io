@@ -8,8 +8,36 @@
     <language>en-us</language>
     <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
     <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
-    <lastBuildDate>Sat, 09 Jan 2016 12:14:56 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 18 Jan 2016 20:06:53 -0500</lastBuildDate>
     <atom:link href="http://craigwickesser.com/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Secure Email on Mac OS X</title>
+      <link>http://craigwickesser.com/2016/01/secure-email-on-mac/</link>
+      <pubDate>Mon, 18 Jan 2016 20:06:53 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>http://craigwickesser.com/2016/01/secure-email-on-mac/</guid>
+      <description>&lt;p&gt;This will be quick. I use GMail but it lacks the native ability to sign and
+encrypt email. I did some looking around for desktop email clients for Mac OS X
+that support &lt;a href=&#34;https://en.wikipedia.org/wiki/S/MIME&#34;&gt;S/MIME&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I ended up going with &lt;a href=&#34;http://airmailapp.com/&#34;&gt;Airmail 2&lt;/a&gt; because it has S/MIME
+support and it supports &lt;a href=&#34;https://daringfireball.net/projects/markdown/&#34;&gt;Markdown&lt;/a&gt; which I like to use.&lt;/p&gt;
+
+&lt;p&gt;S/MIME support is provided by a &lt;a href=&#34;http://airmailapp.com/smime&#34;&gt;plugin&lt;/a&gt;. Follow
+the instructions after going to the link, you&amp;rsquo;ll ultimately download a zip file.&lt;/p&gt;
+
+&lt;p&gt;Open Airmail, click on the &lt;code&gt;Window&lt;/code&gt; menu and select &lt;code&gt;Show Plugins Folder...&lt;/code&gt;.
+Extract the S/MIME plugin zip file and copy the &lt;code&gt;.bundle&lt;/code&gt; file into the plugins
+folder.&lt;/p&gt;
+
+&lt;p&gt;Click on the &lt;code&gt;Window&lt;/code&gt; menu and choose &lt;code&gt;Plugins&lt;/code&gt; and click &lt;code&gt;Reload Plugins&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;You should be all set to send signed and encrypted email.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;note&lt;/strong&gt;: Comodo offers a &lt;a href=&#34;https://www.comodo.com/home/email-security/free-email-certificate.php&#34;&gt;free email certificate&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Mesos on Mac OS X</title>
