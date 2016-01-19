@@ -8,8 +8,37 @@
     <language>en-us</language>
     <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
     <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
-    <lastBuildDate>Wed, 21 Jan 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 18 Jan 2016 20:32:45 -0500</lastBuildDate>
     <atom:link href="http://craigwickesser.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>hypersh on mac</title>
+      <link>http://craigwickesser.com/2016/01/hypersh-on-mac/</link>
+      <pubDate>Mon, 18 Jan 2016 20:32:45 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>http://craigwickesser.com/2016/01/hypersh-on-mac/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://hyper.sh/&#34;&gt;Hyper&lt;/a&gt; calls itself a &lt;code&gt;Hypervisor-agnostic Docker Runtime&lt;/code&gt;.
+It boasts the &lt;a href=&#34;https://hyper.sh/why-hyper.html&#34;&gt;benefits&lt;/a&gt; of Virtual Machines and Containers, without the downsides:
+* security
+  * using a VM reduces the attach surface and avoids the &amp;ldquo;shared kernel&amp;rdquo; problem
+  presented by containers.
+* performance
+  * Hyper is able to launch instances in sub-second versus tens of seconds like
+  traditional VM&amp;rsquo;s.
+* portable
+  * the hypervisor is agnostic, it supports KVM, Xen and VirtualBox.
+* immutable&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s also nice to see their following the &lt;a href=&#34;https://github.com/opencontainers/specs&#34;&gt;OCI Specs&lt;/a&gt;
+for their &lt;a href=&#34;https://github.com/hyperhq/runv&#34;&gt;hypervisor&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Hyper supports Mac OS X, however, due to recent changes in the OS, VirtualBox doesn&amp;rsquo;t
+work well, so &lt;a href=&#34;https://github.com/hyperhq/hyper/issues/182&#34;&gt;Hyper doesn&amp;rsquo;t currently work with Mac OS X 10.11 (El Capitan)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I look forward to trying out Hyper on my laptop, I&amp;rsquo;ll probably give it a whirl
+on &lt;a href=&#34;https://www.packet.net/promo/hyper/&#34;&gt;Packet&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Mindscratch Newsletter 1</title>
