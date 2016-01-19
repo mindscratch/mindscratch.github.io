@@ -8,6 +8,7 @@ menu = "main"
 
 [Hyper](https://hyper.sh/) calls itself a `Hypervisor-agnostic Docker Runtime`.
 It boasts the [benefits](https://hyper.sh/why-hyper.html) of Virtual Machines and Containers, without the downsides:
+
 * security
   * using a VM reduces the attach surface and avoids the "shared kernel" problem
   presented by containers.
