@@ -111,16 +111,28 @@
 
             <div class="post-content">
                 <p><a href="https://hyper.sh/">Hyper</a> calls itself a <code>Hypervisor-agnostic Docker Runtime</code>.
-It boasts the <a href="https://hyper.sh/why-hyper.html">benefits</a> of Virtual Machines and Containers, without the downsides:
-* security
-  * using a VM reduces the attach surface and avoids the &ldquo;shared kernel&rdquo; problem
-  presented by containers.
-* performance
-  * Hyper is able to launch instances in sub-second versus tens of seconds like
-  traditional VM&rsquo;s.
-* portable
-  * the hypervisor is agnostic, it supports KVM, Xen and VirtualBox.
-* immutable</p>
+It boasts the <a href="https://hyper.sh/why-hyper.html">benefits</a> of Virtual Machines and Containers, without the downsides:</p>
+
+<ul>
+<li>security
+
+<ul>
+<li>using a VM reduces the attach surface and avoids the &ldquo;shared kernel&rdquo; problem
+presented by containers.</li>
+</ul></li>
+<li>performance
+
+<ul>
+<li>Hyper is able to launch instances in sub-second versus tens of seconds like
+traditional VM&rsquo;s.</li>
+</ul></li>
+<li>portable
+
+<ul>
+<li>the hypervisor is agnostic, it supports KVM, Xen and VirtualBox.</li>
+</ul></li>
+<li>immutable</li>
+</ul>
 
 <p>It&rsquo;s also nice to see their following the <a href="https://github.com/opencontainers/specs">OCI Specs</a>
 for their <a href="https://github.com/hyperhq/runv">hypervisor</a>.</p>
