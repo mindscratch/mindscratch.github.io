@@ -113,6 +113,8 @@ folder.&lt;/p&gt;
       <guid>http://craigwickesser.com/2016/01/mesos-on-mac-osx/</guid>
       <description>
 
+&lt;p&gt;&lt;strong&gt;updated on 04/01/2016 to use mesosphere docker images&lt;/strong&gt;&lt;/p&gt;
+
 &lt;p&gt;Using docker it&amp;rsquo;s simple to get a &lt;a href=&#34;mesos.apache.org&#34;&gt;Mesos&lt;/a&gt; cluster running on Mac OS X. I&amp;rsquo;m running Docker 1.9.1
 and OS X 10.11.2. We&amp;rsquo;ll be running Zookeeper 3.4.7 and Mesos 0.24.1 (that&amp;rsquo;s the version provided by the docker image I&amp;rsquo;m using for this example).&lt;/p&gt;
 
@@ -144,7 +146,7 @@ docker run \
 --name mesos-master \
 --net host \
 --restart always \
-mesoscloud/mesos-master
+mesosphere/mesos-master:0.28.0-2.0.16.ubuntu1404
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;em&gt;note&lt;/em&gt;: You could optionally pass the &lt;code&gt;-d&lt;/code&gt; flag so the container would run in the background.&lt;/p&gt;
@@ -165,7 +167,7 @@ docker run \
 -v /sys/fs/cgroup:/sys/fs/cgroup \
 -v /var/run/docker.sock:/var/run/docker.sock \
 --name slave --net host --privileged --restart always \
-mesoscloud/mesos-slave
+mesosphere/mesos-slave:0.28.0-2.0.16.ubuntu1404
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;You can now browse to the Mesos UI. You&amp;rsquo;ll need to get the IP address of the VM running docker:&lt;/p&gt;
