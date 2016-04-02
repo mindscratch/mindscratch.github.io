@@ -8,6 +8,8 @@ title = "Mesos on Mac OS X"
 draft = false
 +++
 
+**updated on 04/01/2016 to use mesosphere docker images**
+
 Using docker it's simple to get a [Mesos](mesos.apache.org) cluster running on Mac OS X. I'm running Docker 1.9.1
 and OS X 10.11.2. We'll be running Zookeeper 3.4.7 and Mesos 0.24.1 (that's the version provided by the docker image I'm using for this example).
 
@@ -40,7 +42,7 @@ docker run \
 --name mesos-master \
 --net host \
 --restart always \
-mesoscloud/mesos-master
+mesosphere/mesos-master:0.28.0-2.0.16.ubuntu1404
 ```
 
 _note_: You could optionally pass the `-d` flag so the container would run in the background.
@@ -62,7 +64,7 @@ docker run \
 -v /sys/fs/cgroup:/sys/fs/cgroup \
 -v /var/run/docker.sock:/var/run/docker.sock \
 --name slave --net host --privileged --restart always \
-mesoscloud/mesos-slave
+mesosphere/mesos-slave:0.28.0-2.0.16.ubuntu1404
 ```
 
 You can now browse to the Mesos UI. You'll need to get the IP address of the VM running docker:
