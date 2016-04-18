@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://craigwickesser.com/</loc>
-    <lastmod>2016-01-18T20:32:45-05:00</lastmod>
+    <lastmod>2016-04-17T20:30:55-04:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/2016/04/run-mesos-using-docker-beta-on-mac-osx/</loc>
+    <lastmod>2016-04-17T20:30:55-04:00</lastmod>
   </url>
   
   <url>

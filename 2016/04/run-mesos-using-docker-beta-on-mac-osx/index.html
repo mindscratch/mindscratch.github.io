@@ -1,0 +1,295 @@
+<html lang="en">
+<head>
+
+  
+  <meta charset="utf-8">
+  <title>Run Mesos using Docker Beta on Mac OS X</title>
+  <meta name="description" content="Run Mesos using Docker Beta on Mac OS X">
+  <meta name="author" content="Craig Wickesser">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="http://craigwickesser.com/css/fonts.css">
+  
+  
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+
+  <link rel="stylesheet" href="http://craigwickesser.com/css/custom.css">
+
+  
+  
+  <link rel="stylesheet" href="http://craigwickesser.com/highlight/styles/default.css">
+  
+  <script src="http://craigwickesser.com/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+
+
+<div class="header pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+    <div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="desktop pure-menu pure-menu-horizontal nav-menu">
+            
+            <a href="/" class="site-title pure-menu-heading">craig wickesser</a>
+            <ul class="pure-menu-list">
+                
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/categories/newsletter" class="pure-menu-link">Newsletter</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/categories/posts" class="pure-menu-link">Posts</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/now/" class="pure-menu-link">Now</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/about/" class="pure-menu-link">About</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mobile pure-menu nav-menu">
+            <a href="/" class="pure-menu-heading" id="toggle-home">craig wickesser</a>
+            <a href="#" id="toggle-btn">&#9776;</a>
+            <ul class="pure-menu-list" id="toggle-content" style="display:none;">
+                
+                
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/categories/newsletter" class="pure-menu-link">Newsletter</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/categories/posts" class="pure-menu-link">Posts</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/now" class="pure-menu-link">Now</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/about" class="pure-menu-link">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-6"></div>
+</div>
+
+
+<div class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+	<div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="post">
+
+            <div class="post-title">
+                <p class="footnote">
+                    <time class="">2016-04-17</time>
+		            
+                    
+                    |
+                    
+                    
+                    tags:<a href="http://craigwickesser.com/tags/docker">docker</a> <a href="http://craigwickesser.com/tags/mesos">mesos</a> <a href="http://craigwickesser.com/tags/mac">mac</a> 
+                    
+
+                    
+                    categories:<a href="http://craigwickesser.com/categories/posts">posts</a> 
+                    
+
+                    
+                </p>
+                <h1>Run Mesos using Docker Beta on Mac OS X</h1>
+            </div>
+
+            <div class="post-content">
+                
+
+<p>Previously I <a href="/2016/01/mesos-on-mac-osx/">wrote about</a> running <a href="http://mesos.apache.org">Apache Mesos</a>
+in Docker on Mac OS X. Back then Docker worked by using a VM run via VirtualBox. Today,
+using Docker Beta for Mac, the process is simpler and more like the linux experience.</p>
+
+<p>The scripts I used before only had to be changed to update the way the <code>dockerIp</code>
+was discovered. I wasn&rsquo;t sure how do find that IP address.</p>
+
+<p>With the Docker Beta there&rsquo;s a command-line tool named <code>pinata</code>
+which can be used to configure docker:</p>
+
+<pre><code>laptop:~ craig$ pinata list
+These are advanced configuration settings to customise Docker.app on MacOSX.
+You can set them via pinata set &lt;key&gt; &lt;value&gt; &lt;options&gt;.
+
+🐳  hostname = docker
+   Hostname of the virtual machine endpoint, where container ports will be
+   exposed if using nat networking. Access it via 'docker.local'.
+
+🐳  hypervisor = native (memory=2, ncpu=4)
+   The Docker.app includes embedded hypervisors that run the virtual machines
+   that power the containers. This setting allows you to control which the
+   default one used for Linux is.
+
+ ▸  native: a version of the xhyve hypervisor that uses the MacOSX
+              Hypervisor.framework to run container VMs. Parameters:
+              memory (VM memory in gigabytes), ncpu (vCPUs)
+
+
+🐳  network = nat (external-bind=false)
+   Controls how local containers can access the external network via the
+   MacOS X host. This includes outbound traffic as well as publishing ports
+   for external access to the local containers.
+
+ ▸     nat: a mode that uses the MacOS X vmnet.framework to route container
+              traffic to the host network via a NAT. Parameters:
+              external-bind (bind ports to external network interface)
+ ▸ hostnet: a mode that helps if you are using a VPN that restricts
+              connectivity. Activating this mode will proxy container network
+              packets via the Docker.app process as host socket traffic.
+              Parameters: docker-ipv4 (docker node), host-ipv4 (host node)
+
+🐳  filesystem = osxfs
+   Controls the mode by which files from the MacOS X host and the container
+   filesystem are shared with each other.
+
+ ▸   osxfs: a FUSE-based filesystem that bidirectionally forwards OSX
+              filesystem events into the container.
+
+
+🐳  daemon = run 'pinata get daemon' or 'pinata set daemon [@file|-]&gt;
+   JSON configuration of the local Docker daemon. Configure any custom
+   options you need as documented in:
+   https://docs.docker.com/engine/reference/commandline/daemon/. Set it
+   directly, or a @file or - for stdin.
+</code></pre>
+
+<p>The <code>hostname</code> property says you can access the virtual machine endpoint through
+<code>docker.local</code>. I tried to ping that hostname and received &ldquo;request timed out&rdquo;. From what I render
+in the forums, I should&rsquo;ve gotten a response. I rebooted my Mac and tried the ping again:</p>
+
+<pre><code>laptop:~ craig$ ping docker.local
+PING docker.local (192.168.64.4): 56 data bytes
+64 bytes from 192.168.64.4: icmp_seq=0 ttl=64 time=0.361 ms
+64 bytes from 192.168.64.4: icmp_seq=1 ttl=64 time=0.382 ms
+^C
+--- docker.local ping statistics ---
+2 packets transmitted, 2 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 0.361/0.371/0.382/0.010 ms
+</code></pre>
+
+<p>It worked! Here&rsquo;s the updated scripts I used to start a Mesos master and slave
+using Docker Beta for Mac:</p>
+
+<h2 id="start-mesos-master:53ae553c4baed7c54e57f316d653c62a">Start Mesos master</h2>
+
+<pre><code>#!/bin/bash
+
+# there must be a simpler way...
+dockerIp=$(ping -c 1 docker.local  | grep &quot;^PING docker.local&quot; | gawk '{print $3}' | tr -d '(' | tr -d ')' | tr -d ':')
+hostIp=$(ipconfig getifaddr en0)
+
+docker run \
+-e MESOS_HOSTNAME=$dockerIp \
+-e MESOS_IP=$dockerIp \
+-e MESOS_QUORUM=1 \
+-e MESOS_ZK=zk://$hostIp:2181/mesos \
+--name mesos-master \
+--net host \
+--restart always \
+mesosphere/mesos-master:0.28.0-2.0.16.ubuntu1404
+</code></pre>
+
+<h2 id="start-mesos-slave:53ae553c4baed7c54e57f316d653c62a">Start Mesos slave</h2>
+
+<pre><code>#!/bin/bash
+
+# there must be a simpler way...
+dockerIp=$(ping -c 1 docker.local  | grep &quot;^PING docker.local&quot; | gawk '{print $3}' | tr -d '(' | tr -d ')' | tr -d ':')
+hostIp=$(ipconfig getifaddr en0)
+
+docker run \
+-e MESOS_HOSTNAME=$dockerIp \
+-e MESOS_IP=$dockerIp \
+-e MESOS_MASTER=zk://$hostIp:2181/mesos \
+-v /sys/fs/cgroup:/sys/fs/cgroup \
+-v /var/run/docker.sock:/var/run/docker.sock \
+--name slave --net host --privileged --restart always \
+mesosphere/mesos-slave:0.28.0-2.0.16.ubuntu1404
+</code></pre>
+
+            </div>
+        </div>
+	</div>
+    <div class="pure-u-1-24 pure-u-md-1-6">
+	  <a href="http://craigwickesser.com/">
+	    <img src="http://craigwickesser.com//images/mindscratch_150.png" class="pull-right" title="mindscratch"/>
+	  </a>
+    </div>
+</div>
+
+<div class="footer pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+    <div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="pure-menu pure-menu-horizontal footer-content">
+            <ul>
+                <li class="pure-menu-heading" id="foot-name">Craig Wickesser:</li>
+
+                
+                <li class="pure-menu-item">
+                    <a href="mailto:codecraig@gmail.com" class="pure-menu-link">Email</a>
+                </li>
+                
+
+                
+                <li class="pure-menu-item">
+                    <a href="https://github.com/mindscratch" class="pure-menu-link">GitHub</a>
+                </li>
+                
+
+                
+
+                
+
+                
+                <li class="pure-menu-item">
+                    <a href="https://twitter.com/mind_scratch" class="pure-menu-link">Twitter</a>
+                </li>
+                
+
+            </ul>
+            <a href="#" class="pure-menu-heading pull-right" id="gototop-btn">↑↑</a>
+        </div>
+	  </div>
+      <div class="pure-u-1-24 pure-u-md-1-6"></div>
+</div>
+
+
+<script src="http://craigwickesser.com/js/jquery.min.js" type="text/javascript"></script>
+<script src="http://craigwickesser.com/js/jquery.timeago.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(function(){
+    $("time.timeago").timeago();
+  })
+  $("#toggle-btn").click(function(){
+    $("#toggle-content").toggle();
+    if($(this).html() === "☰") {
+        $(this).html("X")
+    } else {
+        $(this).html("☰")
+    }
+  });
+  $(window).resize(function(){
+    if(window.innerWidth > 768) {
+      $(".desktop").removeAttr("style");
+    }
+  });
+</script>
+
+</body>
+</html>
+
