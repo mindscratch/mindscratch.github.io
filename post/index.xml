@@ -8,8 +8,97 @@
     <language>en-us</language>
     <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
     <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
-    <lastBuildDate>Sun, 17 Apr 2016 20:30:55 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 11 May 2016 19:37:37 -0400</lastBuildDate>
     <atom:link href="http://craigwickesser.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Run Mesos using Docker 1.11.1-beta11 on Mac OS X</title>
+      <link>http://craigwickesser.com/2016/05/run-mesos-using-docker-beta11-on-mac-osx/</link>
+      <pubDate>Wed, 11 May 2016 19:37:37 -0400</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>http://craigwickesser.com/2016/05/run-mesos-using-docker-beta11-on-mac-osx/</guid>
+      <description>
+
+&lt;p&gt;Previously I &lt;a href=&#34;http://craigwickesser.com/2016/04/run-mesos-using-docker-beta-on-mac-osx/&#34;&gt;wrote about&lt;/a&gt; running &lt;a href=&#34;http://mesos.apache.org&#34;&gt;Apache Mesos&lt;/a&gt;
+in Docker on Mac OS X using Docker for Mac Beta 8. With the recent update to
+Docker 1.11.1-beta11 things have changed a bit and so the scripts have to change.&lt;/p&gt;
+
+&lt;p&gt;Once again the &lt;code&gt;dockerIp&lt;/code&gt; had to be discovered differently and I had to switch
+docker to use &lt;code&gt;nat&lt;/code&gt; networking, instead of the default &lt;code&gt;hostnet&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;First, change the networking: &lt;code&gt;pinata set network nat&lt;/code&gt;. Now, create a script
+to help start mesos once inside the container.&lt;/p&gt;
+
+&lt;h2 id=&#34;start-mesos-master:dac466967fe79cd636e3f82ddd3ff3e9&#34;&gt;Start Mesos Master&lt;/h2&gt;
+
+&lt;p&gt;First create a script used to prep and launch &lt;code&gt;mesos-master&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;run-mesos-master-sh:dac466967fe79cd636e3f82ddd3ff3e9&#34;&gt;run_mesos_master.sh&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+
+dockerIp=$(ip route get 8.8.8.8 | awk &#39;{print $NF; exit}&#39;)
+
+echo; echo &amp;quot;DOCKER IP: $dockerIp; echo; echo&amp;quot;
+
+exec MESOS_HOSTNAME=$dockerIp MESOS_IP=$dockerIp mesos-master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;start-mesos-master-sh:dac466967fe79cd636e3f82ddd3ff3e9&#34;&gt;start_mesos_master.sh&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+
+hostIp=$(ipconfig getifaddr en0)
+
+docker run \
+-e MESOS_QUORUM=1 \
+-e MESOS_ZK=zk://$hostIp:2181/mesos \
+-e MESOS_REGISTRY=in_memory \
+-v $(pwd):/scripts \
+--name mesos-master \
+--net=host \
+--entrypoint /bin/bash \
+mesosphere/mesos-master:0.28.0-2.0.16.ubuntu1404 \
+/scripts/run_mesos_master.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now run &lt;code&gt;start_mesos_master.sh&lt;/code&gt; to start the master.&lt;/p&gt;
+
+&lt;h2 id=&#34;start-mesos-slave:dac466967fe79cd636e3f82ddd3ff3e9&#34;&gt;Start Mesos slave&lt;/h2&gt;
+
+&lt;p&gt;Create a separate script to prep and launch the &lt;code&gt;mesos-slave&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;run-mesos-slave-sh:dac466967fe79cd636e3f82ddd3ff3e9&#34;&gt;run_mesos_slave.sh&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+
+dockerIp=$(ip route get 8.8.8.8 | awk &#39;{print $NF; exit}&#39;)
+
+exec MESOS_HOSTNAME=$dockerIp MESOS_IP=$dockerIp mesos-slave
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;start-mesos-slave-sh:dac466967fe79cd636e3f82ddd3ff3e9&#34;&gt;start_mesos_slave.sh&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+
+hostIp=$(ipconfig getifaddr en0)
+
+docker run \
+-e MESOS_MASTER=zk://$hostIp:2181/mesos \
+-v $(pwd):/scripts \
+-v /sys/fs/cgroup:/sys/fs/cgroup \
+-v /var/run/docker.sock:/var/run/docker.sock \
+--name slave --net=host --privileged --restart always \
+--entrypoint /bin/bash \
+mesosphere/mesos-slave:0.28.0-2.0.16.ubuntu1404 \
+/scripts/run_mesos_slave.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now run &lt;code&gt;start_mesos_slave.sh&lt;/code&gt; to start the slave.&lt;/p&gt;
+
+&lt;p&gt;Browse to the IP address output when starting the mesos master.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Run Mesos using Docker Beta on Mac OS X</title>

@@ -3,8 +3,8 @@
 
   
   <meta charset="utf-8">
-  <title>Mesos</title>
-  <meta name="description" content="Mesos">
+  <title>Run Mesos using Docker 1.11.1-beta11 on Mac OS X</title>
+  <meta name="description" content="Run Mesos using Docker 1.11.1-beta11 on Mac OS X">
   <meta name="author" content="Craig Wickesser">
 
   
@@ -84,141 +84,115 @@
 </div>
 
 
-
 <div class="pure-g">
     <div class="pure-u-1-24 pure-u-md-5-24"></div>
 	<div class="pure-u-11-12 pure-u-md-5-8">
-	  <p class="posts-name">Mesos:</p>
+        <div class="post">
 
-	  <ul class="posts">
-		
-		
-		
-		<li>
-		  <a href="http://craigwickesser.com/2016/05/run-mesos-using-docker-beta11-on-mac-osx/">Run Mesos using Docker 1.11.1-beta11 on Mac OS X</a>
+            <div class="post-title">
+                <p class="footnote">
+                    <time class="">2016-05-11</time>
+		            
+                    
+                    |
+                    
+                    
+                    tags:<a href="http://craigwickesser.com/tags/docker">docker</a> <a href="http://craigwickesser.com/tags/mesos">mesos</a> <a href="http://craigwickesser.com/tags/mac">mac</a> 
+                    
 
-		  <p class="footnote">
-			submitted <time datetime="2016-05-11T19:37:37-04:00" class="post-list timeago">2016-05-11T19:37:37-04:00</time>
+                    
+                    categories:<a href="http://craigwickesser.com/categories/posts">posts</a> 
+                    
 
-			
-			to
-			
+                    
+                </p>
+                <h1>Run Mesos using Docker 1.11.1-beta11 on Mac OS X</h1>
+            </div>
 
-			
-			tags:[ <a href="http://craigwickesser.com/tags/docker">docker</a> <a href="http://craigwickesser.com/tags/mesos">mesos</a> <a href="http://craigwickesser.com/tags/mac">mac</a> ]
-			
+            <div class="post-content">
+                
 
-			
-			categories:[ <a href="http://craigwickesser.com/categories/posts">posts</a> ]
-			
+<p>Previously I <a href="/2016/04/run-mesos-using-docker-beta-on-mac-osx/">wrote about</a> running <a href="http://mesos.apache.org">Apache Mesos</a>
+in Docker on Mac OS X using Docker for Mac Beta 8. With the recent update to
+Docker 1.11.1-beta11 things have changed a bit and so the scripts have to change.</p>
 
-			
+<p>Once again the <code>dockerIp</code> had to be discovered differently and I had to switch
+docker to use <code>nat</code> networking, instead of the default <code>hostnet</code>.</p>
 
-		  </p>
-		</li>
-		
-		
-		
-		<li>
-		  <a href="http://craigwickesser.com/2016/04/run-mesos-using-docker-beta-on-mac-osx/">Run Mesos using Docker Beta on Mac OS X</a>
+<p>First, change the networking: <code>pinata set network nat</code>. Now, create a script
+to help start mesos once inside the container.</p>
 
-		  <p class="footnote">
-			submitted <time datetime="2016-04-17T20:30:55-04:00" class="post-list timeago">2016-04-17T20:30:55-04:00</time>
+<h2 id="start-mesos-master:dac466967fe79cd636e3f82ddd3ff3e9">Start Mesos Master</h2>
 
-			
-			to
-			
+<p>First create a script used to prep and launch <code>mesos-master</code>.</p>
 
-			
-			tags:[ <a href="http://craigwickesser.com/tags/docker">docker</a> <a href="http://craigwickesser.com/tags/mesos">mesos</a> <a href="http://craigwickesser.com/tags/mac">mac</a> ]
-			
+<h3 id="run-mesos-master-sh:dac466967fe79cd636e3f82ddd3ff3e9">run_mesos_master.sh</h3>
 
-			
-			categories:[ <a href="http://craigwickesser.com/categories/posts">posts</a> ]
-			
+<pre><code>#!/bin/bash
 
-			
+dockerIp=$(ip route get 8.8.8.8 | awk '{print $NF; exit}')
 
-		  </p>
-		</li>
-		
-		
-		
-		<li>
-		  <a href="http://craigwickesser.com/2016/01/mesos-on-mac-osx/">Mesos on Mac OS X</a>
+echo; echo &quot;DOCKER IP: $dockerIp; echo; echo&quot;
 
-		  <p class="footnote">
-			submitted <time datetime="2016-01-09T12:14:56-05:00" class="post-list timeago">2016-01-09T12:14:56-05:00</time>
+exec MESOS_HOSTNAME=$dockerIp MESOS_IP=$dockerIp mesos-master
+</code></pre>
 
-			
-			to
-			
+<h3 id="start-mesos-master-sh:dac466967fe79cd636e3f82ddd3ff3e9">start_mesos_master.sh</h3>
 
-			
-			tags:[ <a href="http://craigwickesser.com/tags/mesos">mesos</a> <a href="http://craigwickesser.com/tags/mac">mac</a> ]
-			
+<pre><code>#!/bin/bash
 
-			
-			categories:[ <a href="http://craigwickesser.com/categories/posts">posts</a> ]
-			
+hostIp=$(ipconfig getifaddr en0)
 
-			
+docker run \
+-e MESOS_QUORUM=1 \
+-e MESOS_ZK=zk://$hostIp:2181/mesos \
+-e MESOS_REGISTRY=in_memory \
+-v $(pwd):/scripts \
+--name mesos-master \
+--net=host \
+--entrypoint /bin/bash \
+mesosphere/mesos-master:0.28.0-2.0.16.ubuntu1404 \
+/scripts/run_mesos_master.sh
+</code></pre>
 
-		  </p>
-		</li>
-		
-		
-		
-		<li>
-		  <a href="http://craigwickesser.com/2015/03/mesos-022-release/">Mesos 0.22.0 Release</a>
+<p>Now run <code>start_mesos_master.sh</code> to start the master.</p>
 
-		  <p class="footnote">
-			submitted <time datetime="2015-03-24T20:33:36-05:00" class="post-list timeago">2015-03-24T20:33:36-05:00</time>
+<h2 id="start-mesos-slave:dac466967fe79cd636e3f82ddd3ff3e9">Start Mesos slave</h2>
 
-			
-			to
-			
+<p>Create a separate script to prep and launch the <code>mesos-slave</code>.</p>
 
-			
-			tags:[ <a href="http://craigwickesser.com/tags/mesos">mesos</a> ]
-			
+<h3 id="run-mesos-slave-sh:dac466967fe79cd636e3f82ddd3ff3e9">run_mesos_slave.sh</h3>
 
-			
-			categories:[ <a href="http://craigwickesser.com/categories/posts">posts</a> ]
-			
+<pre><code>#!/bin/bash
 
-			
+dockerIp=$(ip route get 8.8.8.8 | awk '{print $NF; exit}')
 
-		  </p>
-		</li>
-		
-		
-		
-		<li>
-		  <a href="http://craigwickesser.com/2015/01/mindscratch-newsletter-1/">Mindscratch Newsletter 1</a>
+exec MESOS_HOSTNAME=$dockerIp MESOS_IP=$dockerIp mesos-slave
+</code></pre>
 
-		  <p class="footnote">
-			submitted <time datetime="2015-01-21T00:00:00Z" class="post-list timeago">2015-01-21T00:00:00Z</time>
+<h3 id="start-mesos-slave-sh:dac466967fe79cd636e3f82ddd3ff3e9">start_mesos_slave.sh</h3>
 
-			
-			to
-			
+<pre><code>#!/bin/bash
 
-			
-			tags:[ <a href="http://craigwickesser.com/tags/mindscratch">mindscratch</a> <a href="http://craigwickesser.com/tags/docker">docker</a> <a href="http://craigwickesser.com/tags/mesos">mesos</a> <a href="http://craigwickesser.com/tags/chronos">chronos</a> <a href="http://craigwickesser.com/tags/mesosphere">mesosphere</a> <a href="http://craigwickesser.com/tags/golang">golang</a> <a href="http://craigwickesser.com/tags/java">java</a> <a href="http://craigwickesser.com/tags/hadoop">hadoop</a> <a href="http://craigwickesser.com/tags/javascript">javascript</a> <a href="http://craigwickesser.com/tags/distributed-systems">distributed systems</a> ]
-			
+hostIp=$(ipconfig getifaddr en0)
 
-			
-			categories:[ <a href="http://craigwickesser.com/categories/posts">posts</a> <a href="http://craigwickesser.com/categories/newsletter">newsletter</a> ]
-			
+docker run \
+-e MESOS_MASTER=zk://$hostIp:2181/mesos \
+-v $(pwd):/scripts \
+-v /sys/fs/cgroup:/sys/fs/cgroup \
+-v /var/run/docker.sock:/var/run/docker.sock \
+--name slave --net=host --privileged --restart always \
+--entrypoint /bin/bash \
+mesosphere/mesos-slave:0.28.0-2.0.16.ubuntu1404 \
+/scripts/run_mesos_slave.sh
+</code></pre>
 
-			
+<p>Now run <code>start_mesos_slave.sh</code> to start the slave.</p>
 
-		  </p>
-		</li>
-		
-		
-	  </ul>
+<p>Browse to the IP address output when starting the mesos master.</p>
+
+            </div>
+        </div>
 	</div>
     <div class="pure-u-1-24 pure-u-md-1-6">
 	  <a href="http://craigwickesser.com/">
