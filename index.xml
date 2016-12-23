@@ -8,13 +8,13 @@
     <language>en-us</language>
     <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
     <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
-    <lastBuildDate>Thu, 22 Dec 2016 20:41:49 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 22 Dec 2016 22:01:49 -0400</lastBuildDate>
     <atom:link href="http://craigwickesser.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>2016 - Year in Review</title>
       <link>http://craigwickesser.com/2016/12/year-in-review/</link>
-      <pubDate>Thu, 22 Dec 2016 20:41:49 -0400</pubDate>
+      <pubDate>Thu, 22 Dec 2016 22:01:49 -0400</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2016/12/year-in-review/</guid>
       <description>
@@ -31,7 +31,7 @@ tracking down issues with services and servers.&lt;/p&gt;
 &lt;p&gt;On one project I&amp;rsquo;ve had the good fortune to help evolve a system to a Docker + Mesos environment that runs on
 100+ servers. I&amp;rsquo;m also excited to continue pushing that system to make it simpler to develop, deploy and maintain.&lt;/p&gt;
 
-&lt;p&gt;Another project has given me the opportunity to work remotely on a REST based API with a web based user interfaces
+&lt;p&gt;Another project has given me the opportunity to work remotely on a REST based API with a web based user interface
 that runs on a single server.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ll list the languages and prominent technologies I&amp;rsquo;ve directly used, configured, deployed and/or managed this year:&lt;/p&gt;
@@ -41,7 +41,7 @@ that runs on a single server.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;http://python.org&#34;&gt;Python&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.scala-lang.org/&#34;&gt;Scala&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.gnu.org/software/bash/&#34;&gt;Bash&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/C_(programming_language&#34;&gt;C&lt;/a&gt;) (thin wrapper to enable Go to leverage a C++ library)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.google.com/search?q=c+programming+language&amp;amp;spell=1&amp;amp;sa=X&amp;amp;ved=0ahUKEwiMh5KoqYnRAhUS84MKHU3dAxgQvwUIGigA&#34;&gt;C&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.php.net/&#34;&gt;PHP&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://angularjs.org/&#34;&gt;AngularJS 1.x&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt;&lt;/li&gt;
@@ -77,7 +77,7 @@ after you hung up the phone when speaking with her.&lt;/p&gt;
 &lt;p&gt;Besides having the chance to see my dad so many days when getting home from work, he&amp;rsquo;s
 been building a &amp;ldquo;playhouse&amp;rdquo; at our home, I had the chance to go to a Porsche driving
 event with him at &lt;a href=&#34;http://summitpoint-raceway.com/track-information/shenandoah-circuit/&#34;&gt;Summit Point&lt;/a&gt;
-(slightly modified setup on the Shenadoah Circuit) We had a blast driving the 2016 911 Carerra 4S, Cayenne GTS and
+(slightly modified setup on the Shenadoah Circuit). We had a blast driving the 2016 911 Carerra 4S, Cayenne GTS and
 Macan GTS.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve also had the chance to see my sister and her family a few times which has been great, my
@@ -85,7 +85,7 @@ nieces and nephews have grown up sooo much. We even had my youngest niece stay f
 which  was a lot of fun!&lt;/p&gt;
 
 &lt;p&gt;I also feel like the luckiest guy in the world, because I woke up everyday next to my high school
-sweet heart, who has been my rock everyday. We&amp;rsquo;re raising three amazin children who certainly give
+sweet heart, who has been my rock every day. We&amp;rsquo;re raising three amazing children who certainly give
 us a run for our money, but also make us laugh and smile more than any other thing in our lives.&lt;/p&gt;
 
 &lt;h2 id=&#34;looking-forward:7c4fca12116257f897be5510b5fb19bb&#34;&gt;Looking Forward&lt;/h2&gt;
@@ -116,7 +116,7 @@ ended up selling or giving away most of the bunnies. We took the rest to a nearb
 to stay in cages with us to prevent more babies)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Looking forward I want to continue exploring and doing new things. A couple things are already lined up such
+&lt;p&gt;Looking forward I want to continue exploring and doing new things as a family. A couple things are already lined up such
 as going to a hockey game (we&amp;rsquo;ve done this once before, but its been a few years) and seeing the &lt;a href=&#34;http://stomponline.com/&#34;&gt;STOMP&lt;/a&gt;
 show.&lt;/p&gt;
 
@@ -134,6 +134,8 @@ since that area is rapidly changing.&lt;/p&gt;
 
 &lt;p&gt;I also looked at Kubernetes back in September 2014, but I&amp;rsquo;d like to give it a shot again. I&amp;rsquo;m slightly concerned
 about the Mesos ecosystem as Mesosphere continues pushing and focusing on their DC/OS.&lt;/p&gt;
+
+&lt;p&gt;Oh, and hardware. I&amp;rsquo;d like to get a Raspberry Pi, or something similar and create something.&lt;/p&gt;
 </description>
     </item>
     
