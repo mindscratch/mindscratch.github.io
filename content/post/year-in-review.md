@@ -2,7 +2,7 @@
 Categories = ["posts"]
 Description = "2016 - Year in Review"
 Tags = ["2016"]
-date = "2016-12-22T20:41:49-04:00"
+date = "2016-12-22T22:01:49-04:00"
 menu = "main"
 title = "2016 - Year in Review"
 draft = false
@@ -20,7 +20,7 @@ tracking down issues with services and servers.
 On one project I've had the good fortune to help evolve a system to a Docker + Mesos environment that runs on
 100+ servers. I'm also excited to continue pushing that system to make it simpler to develop, deploy and maintain.
 
-Another project has given me the opportunity to work remotely on a REST based API with a web based user interfaces
+Another project has given me the opportunity to work remotely on a REST based API with a web based user interface
 that runs on a single server.
 
 I'll list the languages and prominent technologies I've directly used, configured, deployed and/or managed this year:
@@ -29,7 +29,7 @@ I'll list the languages and prominent technologies I've directly used, configure
 * [Python](http://python.org)
 * [Scala](https://www.scala-lang.org/)
 * [Bash](https://www.gnu.org/software/bash/)
-* [C](https://en.wikipedia.org/wiki/C_(programming_language)) (thin wrapper to enable Go to leverage a C++ library)
+* [C](https://www.google.com/search?q=c+programming+language&spell=1&sa=X&ved=0ahUKEwiMh5KoqYnRAhUS84MKHU3dAxgQvwUIGigA)
 * [PHP](http://www.php.net/)
 * [AngularJS 1.x](https://angularjs.org/)
 * [Docker](https://www.docker.com/)
@@ -65,7 +65,7 @@ after you hung up the phone when speaking with her.
 Besides having the chance to see my dad so many days when getting home from work, he's
 been building a "playhouse" at our home, I had the chance to go to a Porsche driving
 event with him at [Summit Point](http://summitpoint-raceway.com/track-information/shenandoah-circuit/) 
-(slightly modified setup on the Shenadoah Circuit) We had a blast driving the 2016 911 Carerra 4S, Cayenne GTS and
+(slightly modified setup on the Shenadoah Circuit). We had a blast driving the 2016 911 Carerra 4S, Cayenne GTS and
 Macan GTS.
 
 I've also had the chance to see my sister and her family a few times which has been great, my
@@ -73,7 +73,7 @@ nieces and nephews have grown up sooo much. We even had my youngest niece stay f
 which  was a lot of fun!
 
 I also feel like the luckiest guy in the world, because I woke up everyday next to my high school
-sweet heart, who has been my rock everyday. We're raising three amazin children who certainly give 
+sweet heart, who has been my rock every day. We're raising three amazing children who certainly give 
 us a run for our money, but also make us laugh and smile more than any other thing in our lives.
 
 ## Looking Forward
@@ -102,7 +102,7 @@ which quickly turned into something like 16 - 20 bunnies after the kids put the 
 ended up selling or giving away most of the bunnies. We took the rest to a nearby farm so they could live a better life (they had
 to stay in cages with us to prevent more babies)
 
-Looking forward I want to continue exploring and doing new things. A couple things are already lined up such
+Looking forward I want to continue exploring and doing new things as a family. A couple things are already lined up such
 as going to a hockey game (we've done this once before, but its been a few years) and seeing the [STOMP](http://stomponline.com/)
 show.
 
@@ -118,3 +118,5 @@ since that area is rapidly changing.
 
 I also looked at Kubernetes back in September 2014, but I'd like to give it a shot again. I'm slightly concerned
 about the Mesos ecosystem as Mesosphere continues pushing and focusing on their DC/OS.
+
+Oh, and hardware. I'd like to get a Raspberry Pi, or something similar and create something.
