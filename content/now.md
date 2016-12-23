@@ -9,10 +9,10 @@ title = "now"
 * being a full-time dad
 * being the best husband I can be to the most amazing woman
 * writing software to make a difference
-* raising and loving chickens, [lion mane bunnies](https://www.google.com/search?q=lion+mane+bunnies) and almost a handful of dogs
-* reading [The Revenant](https://en.wikipedia.org/wiki/The_Revenant_(novel)
-* hopefully playing guitar once and a while
+* raising and loving chickens, and almost a handful of dogs
+* looking forward to getting rid of my VW TDI
+* looking forward to some great experiences with my family in 2017
 
-__last updated__: 01/11/2016
+__last updated__: 12/22/2016
 
 This page inspired by [nownownow.com](http://nownownow.com/).
