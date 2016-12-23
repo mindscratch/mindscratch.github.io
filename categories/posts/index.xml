@@ -8,8 +8,134 @@
     <language>en-us</language>
     <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
     <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
-    <lastBuildDate>Wed, 11 May 2016 19:37:37 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 22 Dec 2016 20:41:49 -0400</lastBuildDate>
     <atom:link href="http://craigwickesser.com/categories/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>2016 - Year in Review</title>
+      <link>http://craigwickesser.com/2016/12/year-in-review/</link>
+      <pubDate>Thu, 22 Dec 2016 20:41:49 -0400</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>http://craigwickesser.com/2016/12/year-in-review/</guid>
+      <description>
+
+&lt;p&gt;Another year is coming to an end so I thought I&amp;rsquo;d reflect and jot down some things.&lt;/p&gt;
+
+&lt;h2 id=&#34;programming:7c4fca12116257f897be5510b5fb19bb&#34;&gt;Programming&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;ve enjoyed spending the majority of my time writing code, including web applications, command-line applications,
+devops tools and user interfaces. Besides writing code, the next highest item on my list was probably &amp;ldquo;devops&amp;rdquo;. Tasks
+in this area included writing Puppet and Salt modules, bash scripts to simplify repetitive tasks, configuring firewalls and
+tracking down issues with services and servers.&lt;/p&gt;
+
+&lt;p&gt;On one project I&amp;rsquo;ve had the good fortune to help evolve a system to a Docker + Mesos environment that runs on
+100+ servers. I&amp;rsquo;m also excited to continue pushing that system to make it simpler to develop, deploy and maintain.&lt;/p&gt;
+
+&lt;p&gt;Another project has given me the opportunity to work remotely on a REST based API with a web based user interfaces
+that runs on a single server.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll list the languages and prominent technologies I&amp;rsquo;ve directly used, configured, deployed and/or managed this year:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://golang.org&#34;&gt;Go&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://python.org&#34;&gt;Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.scala-lang.org/&#34;&gt;Scala&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.gnu.org/software/bash/&#34;&gt;Bash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/C_(programming_language&#34;&gt;C&lt;/a&gt;) (thin wrapper to enable Go to leverage a C++ library)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.php.net/&#34;&gt;PHP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://angularjs.org/&#34;&gt;AngularJS 1.x&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://mesos.apache.org/&#34;&gt;Mesos&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mesosphere.github.io/marathon/&#34;&gt;Marathon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kafka.apache.org/&#34;&gt;Kafka&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://redis.io/&#34;&gt;Redis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://crate.io/&#34;&gt;Crate&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.rabbitmq.com/&#34;&gt;RabbitMQ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.puppet.com/puppet/3/index.html&#34;&gt;Puppet 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.saltstack.com/en/2016.3/contents.html&#34;&gt;Salt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://nginx.org/en/&#34;&gt;Nginx&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Needless to say, it&amp;rsquo;s been a blast.&lt;/p&gt;
+
+&lt;h2 id=&#34;people:7c4fca12116257f897be5510b5fb19bb&#34;&gt;People&lt;/h2&gt;
+
+&lt;h3 id=&#34;work:7c4fca12116257f897be5510b5fb19bb&#34;&gt;Work&lt;/h3&gt;
+
+&lt;p&gt;I&amp;rsquo;ve been able to work with a lot of smart, hands-on, technical people which has
+been great. A few have moved on which is always a bummer, but I&amp;rsquo;m excited for them.&lt;/p&gt;
+
+&lt;h3 id=&#34;friends-and-family:7c4fca12116257f897be5510b5fb19bb&#34;&gt;Friends and Family&lt;/h3&gt;
+
+&lt;p&gt;I&amp;rsquo;ve made some new friends, had an old friend visit and stay a few days, and kept in
+touch with some others.&lt;/p&gt;
+
+&lt;p&gt;I also lost my mom. She had a variety of health issues that
+spanned decades. I miss her a lot, especially her &amp;ldquo;automatic redial&amp;rdquo; that would occur
+after you hung up the phone when speaking with her.&lt;/p&gt;
+
+&lt;p&gt;Besides having the chance to see my dad so many days when getting home from work, he&amp;rsquo;s
+been building a &amp;ldquo;playhouse&amp;rdquo; at our home, I had the chance to go to a Porsche driving
+event with him at &lt;a href=&#34;http://summitpoint-raceway.com/track-information/shenandoah-circuit/&#34;&gt;Summit Point&lt;/a&gt;
+(slightly modified setup on the Shenadoah Circuit) We had a blast driving the 2016 911 Carerra 4S, Cayenne GTS and
+Macan GTS.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve also had the chance to see my sister and her family a few times which has been great, my
+nieces and nephews have grown up sooo much. We even had my youngest niece stay for a sleep over,
+which  was a lot of fun!&lt;/p&gt;
+
+&lt;p&gt;I also feel like the luckiest guy in the world, because I woke up everyday next to my high school
+sweet heart, who has been my rock everyday. We&amp;rsquo;re raising three amazin children who certainly give
+us a run for our money, but also make us laugh and smile more than any other thing in our lives.&lt;/p&gt;
+
+&lt;h2 id=&#34;looking-forward:7c4fca12116257f897be5510b5fb19bb&#34;&gt;Looking Forward&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;m pretty sure last year I had resolutions to eat better, exercise regularly, keep the
+2013 VW Passat and do new things with the family.&lt;/p&gt;
+
+&lt;p&gt;I still have moments where I binge on crab chips and ice cream, but I think I&amp;rsquo;ve gotten
+better overall, still want to do better. I made no progress in regularly excercising. There
+were days where I went for walks, did some basic push-ups / crunches, etc&amp;hellip;but nothing consistent.&lt;/p&gt;
+
+&lt;p&gt;I did succeed in not getting rid of the 2013 Passat for something newer just because I might want
+something newer. However, it&amp;rsquo;s a TDI and fell under the VW scandal. I was given the option to
+keep the car and let VW try to fix the emissions issue or have VW buy it back. I&amp;rsquo;ve elected to
+have them buy it back. I got ahead of myself a bit and bought a 2017 Passat with the
+expectation I&amp;rsquo;d be selling back the 2013 Passat within a couple weeks. Turns out VW is
+swamped and disorganized, so the 2013 Passat isn&amp;rsquo;t going back until February.&lt;/p&gt;
+
+&lt;p&gt;As a family we did a few new things this year such as:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;hiking/exploring the &lt;a href=&#34;https://www.nps.gov/cato/&#34;&gt;Catoctin Mountain Park&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;seeing the &lt;a href=&#34;http://www.harlemglobetrotters.com/&#34;&gt;Harlem Globetrotters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;setup a vegetable garden (which actually produced food we could eat)&lt;/li&gt;
+&lt;li&gt;bought and raised &lt;a href=&#34;https://www.google.com/search?q=lionhead+bunnies&amp;amp;espv=2&amp;amp;biw=1435&amp;amp;bih=724&amp;amp;source=lnms&amp;amp;tbm=isch&amp;amp;sa=X&amp;amp;ved=0ahUKEwiCvpT0pInRAhUM1oMKHYVXBLwQ_AUIBigB&#34;&gt;3 Lionhead Bunnies&lt;/a&gt;
+which quickly turned into something like 16 - 20 bunnies after the kids put the boy bunny with the two girl bunnies. Over time, we
+ended up selling or giving away most of the bunnies. We took the rest to a nearby farm so they could live a better life (they had
+to stay in cages with us to prevent more babies)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Looking forward I want to continue exploring and doing new things. A couple things are already lined up such
+as going to a hockey game (we&amp;rsquo;ve done this once before, but its been a few years) and seeing the &lt;a href=&#34;http://stomponline.com/&#34;&gt;STOMP&lt;/a&gt;
+show.&lt;/p&gt;
+
+&lt;p&gt;With regards to tech, I&amp;rsquo;d like to at least checkout a new langauge, maybe one of these:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.rust-lang.org/en-US/&#34;&gt;rust&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://elixir-lang.org/&#34;&gt;elixir&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://julialang.org/&#34;&gt;julia&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://elm-lang.org/&#34;&gt;elm&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I&amp;rsquo;d also like to try some new front-end hotness, think angular / react /&amp;hellip;, but I&amp;rsquo;m not going to make a list
+since that area is rapidly changing.&lt;/p&gt;
+
+&lt;p&gt;I also looked at Kubernetes back in September 2014, but I&amp;rsquo;d like to give it a shot again. I&amp;rsquo;m slightly concerned
+about the Mesos ecosystem as Mesosphere continues pushing and focusing on their DC/OS.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Run Mesos using Docker 1.11.1-beta11 on Mac OS X</title>
