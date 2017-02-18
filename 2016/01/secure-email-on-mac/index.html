@@ -3,8 +3,8 @@
 
   
   <meta charset="utf-8">
-  <title>Load Test</title>
-  <meta name="description" content="Load Test">
+  <title>Secure Email on Mac OS X</title>
+  <meta name="description" content="Secure Email on Mac OS X">
   <meta name="author" content="Craig Wickesser">
 
   
@@ -84,41 +84,54 @@
 </div>
 
 
-
 <div class="pure-g">
     <div class="pure-u-1-24 pure-u-md-5-24"></div>
 	<div class="pure-u-11-12 pure-u-md-5-8">
-	  <p class="posts-name">Load Test:</p>
+        <div class="post">
 
-	  <ul class="posts">
-		
-		
-		
-		<li>
-		  <a href="http://craigwickesser.com/2015/01/post-data-to-load-test-with-apachebench/">POST Data to Load Test with ApacheBench</a>
+            <div class="post-title">
+                <p class="footnote">
+                    <time class="">2016-01-18</time>
+		            
+                    
+                    |
+                    
+                    
+                    tags:<a href="http://craigwickesser.com/tags/mac">mac</a> 
+                    
 
-		  <p class="footnote">
-			submitted <time datetime="2015-01-03T00:00:00Z" class="post-list timeago">2015-01-03T00:00:00Z</time>
+                    
+                    categories:<a href="http://craigwickesser.com/categories/posts">posts</a> 
+                    
 
-			
-			to
-			
+                    
+                </p>
+                <h1>Secure Email on Mac OS X</h1>
+            </div>
 
-			
-			tags:[ <a href="http://craigwickesser.com/tags/apachebench">apachebench</a> <a href="http://craigwickesser.com/tags/load-test">load test</a> <a href="http://craigwickesser.com/tags/http">http</a> ]
-			
+            <div class="post-content">
+                <p>This will be quick. I use GMail but it lacks the native ability to sign and
+encrypt email. I did some looking around for desktop email clients for Mac OS X
+that support <a href="https://en.wikipedia.org/wiki/S/MIME">S/MIME</a>.</p>
 
-			
-			categories:[ <a href="http://craigwickesser.com/categories/posts">posts</a> ]
-			
+<p>I ended up going with <a href="http://airmailapp.com/">Airmail 2</a> because it has S/MIME
+support and it supports <a href="https://daringfireball.net/projects/markdown/">Markdown</a> which I like to use.</p>
 
-			
+<p>S/MIME support is provided by a <a href="http://airmailapp.com/smime">plugin</a>. Follow
+the instructions after going to the link, you&rsquo;ll ultimately download a zip file.</p>
 
-		  </p>
-		</li>
-		
-		
-	  </ul>
+<p>Open Airmail, click on the <code>Window</code> menu and select <code>Show Plugins Folder...</code>.
+Extract the S/MIME plugin zip file and copy the <code>.bundle</code> file into the plugins
+folder.</p>
+
+<p>Click on the <code>Window</code> menu and choose <code>Plugins</code> and click <code>Reload Plugins</code>.</p>
+
+<p>You should be all set to send signed and encrypted email.</p>
+
+<p><strong>note</strong>: Comodo offers a <a href="https://www.comodo.com/home/email-security/free-email-certificate.php">free email certificate</a>.</p>
+
+            </div>
+        </div>
 	</div>
     <div class="pure-u-1-24 pure-u-md-1-6">
           <a href="https://twitter.com/mind_scratch" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @mind_scratch</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

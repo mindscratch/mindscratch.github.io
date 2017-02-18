@@ -3,8 +3,8 @@
 
   
   <meta charset="utf-8">
-  <title>Load Test</title>
-  <meta name="description" content="Load Test">
+  <title>hypersh on mac</title>
+  <meta name="description" content="hypersh on mac">
   <meta name="author" content="Craig Wickesser">
 
   
@@ -84,41 +84,67 @@
 </div>
 
 
-
 <div class="pure-g">
     <div class="pure-u-1-24 pure-u-md-5-24"></div>
 	<div class="pure-u-11-12 pure-u-md-5-8">
-	  <p class="posts-name">Load Test:</p>
+        <div class="post">
 
-	  <ul class="posts">
-		
-		
-		
-		<li>
-		  <a href="http://craigwickesser.com/2015/01/post-data-to-load-test-with-apachebench/">POST Data to Load Test with ApacheBench</a>
+            <div class="post-title">
+                <p class="footnote">
+                    <time class="">2016-01-18</time>
+		            
+                    
+                    |
+                    
+                    
+                    tags:<a href="http://craigwickesser.com/tags/docker">docker</a> <a href="http://craigwickesser.com/tags/containers">containers</a> <a href="http://craigwickesser.com/tags/hyper.sh">hyper.sh</a> 
+                    
 
-		  <p class="footnote">
-			submitted <time datetime="2015-01-03T00:00:00Z" class="post-list timeago">2015-01-03T00:00:00Z</time>
+                    
+                    categories:<a href="http://craigwickesser.com/categories/posts">posts</a> 
+                    
 
-			
-			to
-			
+                    
+                </p>
+                <h1>hypersh on mac</h1>
+            </div>
 
-			
-			tags:[ <a href="http://craigwickesser.com/tags/apachebench">apachebench</a> <a href="http://craigwickesser.com/tags/load-test">load test</a> <a href="http://craigwickesser.com/tags/http">http</a> ]
-			
+            <div class="post-content">
+                <p><a href="https://hyper.sh/">Hyper</a> calls itself a <code>Hypervisor-agnostic Docker Runtime</code>.
+It boasts the <a href="https://hyper.sh/why-hyper.html">benefits</a> of Virtual Machines and Containers, without the downsides:</p>
 
-			
-			categories:[ <a href="http://craigwickesser.com/categories/posts">posts</a> ]
-			
+<ul>
+<li>security
 
-			
+<ul>
+<li>using a VM reduces the attach surface and avoids the &ldquo;shared kernel&rdquo; problem
+presented by containers.</li>
+</ul></li>
+<li>performance
 
-		  </p>
-		</li>
-		
-		
-	  </ul>
+<ul>
+<li>Hyper is able to launch instances in sub-second versus tens of seconds like
+traditional VM&rsquo;s.</li>
+</ul></li>
+<li>portable
+
+<ul>
+<li>the hypervisor is agnostic, it supports KVM, Xen and VirtualBox.</li>
+</ul></li>
+<li>immutable</li>
+</ul>
+
+<p>It&rsquo;s also nice to see their following the <a href="https://github.com/opencontainers/specs">OCI Specs</a>
+for their <a href="https://github.com/hyperhq/runv">hypervisor</a>.</p>
+
+<p>Hyper supports Mac OS X, however, due to recent changes in the OS, VirtualBox doesn&rsquo;t
+work well, so <a href="https://github.com/hyperhq/hyper/issues/182">Hyper doesn&rsquo;t currently work with Mac OS X 10.11 (El Capitan)</a>.</p>
+
+<p>I look forward to trying out Hyper on my laptop, I&rsquo;ll probably give it a whirl
+on <a href="https://www.packet.net/promo/hyper/">Packet</a>.</p>
+
+            </div>
+        </div>
 	</div>
     <div class="pure-u-1-24 pure-u-md-1-6">
           <a href="https://twitter.com/mind_scratch" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @mind_scratch</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

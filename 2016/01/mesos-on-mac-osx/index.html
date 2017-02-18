@@ -112,8 +112,10 @@
             <div class="post-content">
                 
 
+<p><strong>updated on 04/01/2016 to use mesosphere docker images</strong></p>
+
 <p>Using docker it&rsquo;s simple to get a <a href="mesos.apache.org">Mesos</a> cluster running on Mac OS X. I&rsquo;m running Docker 1.9.1
-and OS X 10.11.2. We&rsquo;ll be running Zookeeper 3.4.7 and</p>
+and OS X 10.11.2. We&rsquo;ll be running Zookeeper 3.4.7 and Mesos 0.24.1 (that&rsquo;s the version provided by the docker image I&rsquo;m using for this example).</p>
 
 <p>First we&rsquo;ll start a Zookeeper server, then a Mesos master and
 a single Mesos slave.</p>
@@ -143,7 +145,7 @@ docker run \
 --name mesos-master \
 --net host \
 --restart always \
-mesoscloud/mesos-master
+mesosphere/mesos-master:0.28.0-2.0.16.ubuntu1404
 </code></pre>
 
 <p><em>note</em>: You could optionally pass the <code>-d</code> flag so the container would run in the background.</p>
@@ -164,7 +166,7 @@ docker run \
 -v /sys/fs/cgroup:/sys/fs/cgroup \
 -v /var/run/docker.sock:/var/run/docker.sock \
 --name slave --net host --privileged --restart always \
-mesoscloud/mesos-slave
+mesosphere/mesos-slave:0.28.0-2.0.16.ubuntu1404
 </code></pre>
 
 <p>You can now browse to the Mesos UI. You&rsquo;ll need to get the IP address of the VM running docker:</p>
@@ -179,6 +181,7 @@ tcp://192.168.99.100:2376
         </div>
 	</div>
     <div class="pure-u-1-24 pure-u-md-1-6">
+          <a href="https://twitter.com/mind_scratch" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @mind_scratch</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 	  <a href="http://craigwickesser.com/">
 	    <img src="http://craigwickesser.com//images/mindscratch_150.png" class="pull-right" title="mindscratch"/>
 	  </a>

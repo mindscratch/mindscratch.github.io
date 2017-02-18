@@ -8,11 +8,11 @@ title = "now"
 
 * being a full-time dad
 * being the best husband I can be to the most amazing woman
-* writing software to make a difference
-* raising and loving chickens, and almost a handful of dogs
-* looking forward to getting rid of my VW TDI
-* looking forward to some great experiences with my family in 2017
+* being an independent software developer
+* keeping our two chikens away from the hawks, and loving our 4 dogs (yes, that's probably to many)
+* considering becoming a single car family 
+* enjoying great experiences with my family in 2017
 
-__last updated__: 12/22/2016
+__last updated__: 02/18/2017
 
 This page inspired by [nownownow.com](http://nownownow.com/).
