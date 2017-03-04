@@ -131,6 +131,7 @@ on Udacity is taught by <a href="http://robots.stanford.edu/">Sebastian Thrun</a
 <li><a href="https://github.com/terryum/awesome-deep-learning-papers">Awesome Deep Learning Papers</a></li>
 <li><a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">The Unreasonable Effectiveness of Recurrent Neural Networks</a></li>
 <li><a href="https://medium.com/all-of-us-are-belong-to-machines/the-gentlest-introduction-to-tensorflow-248dc871a224#.il98kd2r1">Gentlest Introduction to TensorFlow</a></li>
+<li><a href="https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/partial-derivatives/v/partial-derivatives-introduction">Partial Derivatives</a> and Basic Matrix Operations <a href="https://www.khanacademy.org/math/precalculus/precalc-matrices/intro-to-matrices/v/introduction-to-the-matrix">1</a>, <a href="https://www.youtube.com/watch?v=xr6qsiEznKU">2</a>, <a href="https://users.cs.duke.edu/~reif/courses/alglectures/littman.lectures/lect15/node7.html">3</a>.</li>
 </ul>
 
 <p>My plan is to update this page from time to time with notes and my status on my
@@ -140,6 +141,21 @@ journey to grokking Machine Learning.</p>
 
 <ul>
 <li>March 01, 2017 - start <a href="https://www.udacity.com/course/intro-to-machine-learning--ud120">Intro to Machine Learning</a></li>
+<li>March 03, 2017 - Completed Naive Bayes section of course
+
+<ul>
+<li>machine learning finds the decision surface (aka decision boundary), separates one class from another to generalize new data points</li>
+<li>algorithms are divided into two types: supervised vs unsupervised</li>
+<li>Bayes Algorithm</li>
+<li>Prior Probability x Test Evidence -&gt; Posterior Probability</li>
+<li>Naive Bayes algorithm</li>
+<li>supervised</li>
+<li>usually used for text learning</li>
+<li>looks at word frequencies, not word order</li>
+<li>given the frequency of words for a person, multiply the probability for each word and then multiply that by the prior probability. Do that for each person. For example, If you have two people, perform the multiplication for Person A and Person B, this will give you the ratio of whether it was Person A or Person B.</li>
+<li>It is good for classifying texts because of its simplicity and the independent features.</li>
+<li>Example where it fails, &ldquo;Chicago Bulls&rdquo;. Since the algorithm ignores word order it would treat it as &ldquo;Chicago&rdquo; and &ldquo;Bulls&rdquo;.</li>
+</ul></li>
 </ul>
 
             </div>

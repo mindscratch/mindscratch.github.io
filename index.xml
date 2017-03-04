@@ -38,6 +38,7 @@ on Udacity is taught by &lt;a href=&#34;http://robots.stanford.edu/&#34;&gt;Seba
 &lt;li&gt;&lt;a href=&#34;https://github.com/terryum/awesome-deep-learning-papers&#34;&gt;Awesome Deep Learning Papers&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://karpathy.github.io/2015/05/21/rnn-effectiveness/&#34;&gt;The Unreasonable Effectiveness of Recurrent Neural Networks&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://medium.com/all-of-us-are-belong-to-machines/the-gentlest-introduction-to-tensorflow-248dc871a224#.il98kd2r1&#34;&gt;Gentlest Introduction to TensorFlow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/partial-derivatives/v/partial-derivatives-introduction&#34;&gt;Partial Derivatives&lt;/a&gt; and Basic Matrix Operations &lt;a href=&#34;https://www.khanacademy.org/math/precalculus/precalc-matrices/intro-to-matrices/v/introduction-to-the-matrix&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;https://www.youtube.com/watch?v=xr6qsiEznKU&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;https://users.cs.duke.edu/~reif/courses/alglectures/littman.lectures/lect15/node7.html&#34;&gt;3&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;My plan is to update this page from time to time with notes and my status on my
@@ -47,6 +48,21 @@ journey to grokking Machine Learning.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;March 01, 2017 - start &lt;a href=&#34;https://www.udacity.com/course/intro-to-machine-learning--ud120&#34;&gt;Intro to Machine Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;March 03, 2017 - Completed Naive Bayes section of course
+
+&lt;ul&gt;
+&lt;li&gt;machine learning finds the decision surface (aka decision boundary), separates one class from another to generalize new data points&lt;/li&gt;
+&lt;li&gt;algorithms are divided into two types: supervised vs unsupervised&lt;/li&gt;
+&lt;li&gt;Bayes Algorithm&lt;/li&gt;
+&lt;li&gt;Prior Probability x Test Evidence -&amp;gt; Posterior Probability&lt;/li&gt;
+&lt;li&gt;Naive Bayes algorithm&lt;/li&gt;
+&lt;li&gt;supervised&lt;/li&gt;
+&lt;li&gt;usually used for text learning&lt;/li&gt;
+&lt;li&gt;looks at word frequencies, not word order&lt;/li&gt;
+&lt;li&gt;given the frequency of words for a person, multiply the probability for each word and then multiply that by the prior probability. Do that for each person. For example, If you have two people, perform the multiplication for Person A and Person B, this will give you the ratio of whether it was Person A or Person B.&lt;/li&gt;
+&lt;li&gt;It is good for classifying texts because of its simplicity and the independent features.&lt;/li&gt;
+&lt;li&gt;Example where it fails, &amp;ldquo;Chicago Bulls&amp;rdquo;. Since the algorithm ignores word order it would treat it as &amp;ldquo;Chicago&amp;rdquo; and &amp;ldquo;Bulls&amp;rdquo;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
