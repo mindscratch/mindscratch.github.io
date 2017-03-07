@@ -55,13 +55,16 @@ journey to grokking Machine Learning.&lt;/p&gt;
 &lt;li&gt;algorithms are divided into two types: supervised vs unsupervised&lt;/li&gt;
 &lt;li&gt;Bayes Algorithm&lt;/li&gt;
 &lt;li&gt;Prior Probability x Test Evidence -&amp;gt; Posterior Probability&lt;/li&gt;
-&lt;li&gt;Naive Bayes algorithm&lt;/li&gt;
+&lt;li&gt;Naive Bayes algorithm
+
+&lt;ul&gt;
 &lt;li&gt;supervised&lt;/li&gt;
 &lt;li&gt;usually used for text learning&lt;/li&gt;
 &lt;li&gt;looks at word frequencies, not word order&lt;/li&gt;
 &lt;li&gt;given the frequency of words for a person, multiply the probability for each word and then multiply that by the prior probability. Do that for each person. For example, If you have two people, perform the multiplication for Person A and Person B, this will give you the ratio of whether it was Person A or Person B.&lt;/li&gt;
 &lt;li&gt;It is good for classifying texts because of its simplicity and the independent features.&lt;/li&gt;
 &lt;li&gt;Example where it fails, &amp;ldquo;Chicago Bulls&amp;rdquo;. Since the algorithm ignores word order it would treat it as &amp;ldquo;Chicago&amp;rdquo; and &amp;ldquo;Bulls&amp;rdquo;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
