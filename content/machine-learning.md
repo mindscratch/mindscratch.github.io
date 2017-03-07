@@ -39,9 +39,9 @@ journey to grokking Machine Learning.
   * Bayes Algorithm
     * Prior Probability x Test Evidence -> Posterior Probability
   * Naive Bayes algorithm
-    * supervised
-    * usually used for text learning
-    * looks at word frequencies, not word order
-    * given the frequency of words for a person, multiply the probability for each word and then multiply that by the prior probability. Do that for each person. For example, If you have two people, perform the multiplication for Person A and Person B, this will give you the ratio of whether it was Person A or Person B.
-    * It is good for classifying texts because of its simplicity and the independent features.
-    * Example where it fails, "Chicago Bulls". Since the algorithm ignores word order it would treat it as "Chicago" and "Bulls".
+     * supervised
+     * usually used for text learning
+     * looks at word frequencies, not word order
+     * given the frequency of words for a person, multiply the probability for each word and then multiply that by the prior probability. Do that for each person. For example, If you have two people, perform the multiplication for Person A and Person B, this will give you the ratio of whether it was Person A or Person B.
+     * It is good for classifying texts because of its simplicity and the independent features.
+     * Example where it fails, "Chicago Bulls". Since the algorithm ignores word order it would treat it as "Chicago" and "Bulls".
