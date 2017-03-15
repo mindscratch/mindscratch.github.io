@@ -45,3 +45,21 @@ journey to grokking Machine Learning.
      * given the frequency of words for a person, multiply the probability for each word and then multiply that by the prior probability. Do that for each person. For example, If you have two people, perform the multiplication for Person A and Person B, this will give you the ratio of whether it was Person A or Person B.
      * It is good for classifying texts because of its simplicity and the independent features.
      * Example where it fails, "Chicago Bulls". Since the algorithm ignores word order it would treat it as "Chicago" and "Bulls".
+
+* March 07, 2007
+  * Support Vector Machine (SVM)
+    * find separating line between data of two different classes, called a hyper line
+    * the "best" line maximizes the distance to the nearest point, this is called the margin
+    * should "do the best it can", when a clear line can't be created (b/c of outliers)
+    * sometimes you have to add a new feature (such as x^2+y^2, or absolute value of x |x|, etc) so the SVM can linearly separate the two classes of data
+    * [kernel trick](https://en.wikipedia.org/wiki/Kernel_method)
+    * there are often parameters you can use when setting up your classifier (can make a big difference when training the model)
+      * kernel
+      * C -- controls tradeoff between smooth decision boundary and classifying training points correctly
+      * gamma
+    * work well in complicated domains where there is a clear marginal separation
+    * don't perform well in very large datasets b/c the training time, or lots and lots of noise (where classes overlap a lot, naive bayes would be better)
+  * Want to prevent overfitting, by tuning parameters. That's where the decision boundary is very complicated.
+
+* March 14, 2017
+  * Next up, Decision Trees
