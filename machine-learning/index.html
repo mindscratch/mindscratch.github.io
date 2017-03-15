@@ -141,7 +141,8 @@ journey to grokking Machine Learning.</p>
 
 <ul>
 <li>March 01, 2017 - start <a href="https://www.udacity.com/course/intro-to-machine-learning--ud120">Intro to Machine Learning</a></li>
-<li>March 03, 2017 - Completed Naive Bayes section of course
+
+<li><p>March 03, 2017 - Completed Naive Bayes section of course</p>
 
 <ul>
 <li>machine learning finds the decision surface (aka decision boundary), separates one class from another to generalize new data points</li>
@@ -158,6 +159,33 @@ journey to grokking Machine Learning.</p>
 <li>It is good for classifying texts because of its simplicity and the independent features.</li>
 <li>Example where it fails, &ldquo;Chicago Bulls&rdquo;. Since the algorithm ignores word order it would treat it as &ldquo;Chicago&rdquo; and &ldquo;Bulls&rdquo;.</li>
 </ul></li>
+</ul></li>
+
+<li><p>March 07, 2007</p>
+
+<ul>
+<li>Support Vector Machine (SVM)</li>
+<li>find separating line between data of two different classes, called a hyper line</li>
+<li>the &ldquo;best&rdquo; line maximizes the distance to the nearest point, this is called the margin</li>
+<li>should &ldquo;do the best it can&rdquo;, when a clear line can&rsquo;t be created (b/c of outliers)</li>
+<li>sometimes you have to add a new feature (such as x^2+y^2, or absolute value of x |x|, etc) so the SVM can linearly separate the two classes of data</li>
+<li><a href="https://en.wikipedia.org/wiki/Kernel_method">kernel trick</a></li>
+<li>there are often parameters you can use when setting up your classifier (can make a big difference when training the model)
+
+<ul>
+<li>kernel</li>
+<li>C &ndash; controls tradeoff between smooth decision boundary and classifying training points correctly</li>
+<li>gamma</li>
+</ul></li>
+<li>work well in complicated domains where there is a clear marginal separation</li>
+<li>don&rsquo;t perform well in very large datasets b/c the training time, or lots and lots of noise (where classes overlap a lot, naive bayes would be better)</li>
+<li>Want to prevent overfitting, by tuning parameters. That&rsquo;s where the decision boundary is very complicated.</li>
+</ul></li>
+
+<li><p>March 14, 2017</p>
+
+<ul>
+<li>Next up, Decision Trees</li>
 </ul></li>
 </ul>
 
