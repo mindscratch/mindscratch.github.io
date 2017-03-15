@@ -45,7 +45,6 @@ journey to grokking Machine Learning.
      * given the frequency of words for a person, multiply the probability for each word and then multiply that by the prior probability. Do that for each person. For example, If you have two people, perform the multiplication for Person A and Person B, this will give you the ratio of whether it was Person A or Person B.
      * It is good for classifying texts because of its simplicity and the independent features.
      * Example where it fails, "Chicago Bulls". Since the algorithm ignores word order it would treat it as "Chicago" and "Bulls".
-
 * March 07, 2007
   * Support Vector Machine (SVM)
     * find separating line between data of two different classes, called a hyper line
