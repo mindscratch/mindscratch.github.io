@@ -7,10 +7,12 @@ title = "about"
 +++
 
 I am Craig Wickesser and I write code for fun and for [makin' paper](http://www.urbandictionary.com/define.php?term=Makin%27+Paper). I've [contributed
-code](https://osrc.dfm.io/mindscratch/) to various open source projects using
+code](https://github.com/mindscratch) to various open source projects using
 a variety of programming languages, though I tend to prefer Go for server-side projects.
 
 I was an editor for [jsmag](http://www.jsmag.com/) and [GroovyMag](http://groovymag.com/), but I have also written articles for [InfoQ](http://www.infoq.com/author/Craig-Wickesser), [SitePoint](http://www.sitepoint.com/author/cwickesser/) and [GroovyMag](http://www.groovymag.com/authors).
+
+For a more formal review, take a look at my [resume](http://visualcv.com/craig-wickesser).
 
 As [Zed Shaw](http://zedshaw.com/about/) says,
 
