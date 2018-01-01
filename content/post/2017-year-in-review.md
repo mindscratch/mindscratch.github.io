@@ -103,3 +103,5 @@ In 2018 I want to:
 * take the kids to Disney
 * get more experience with machine learning and natural language processing
 * have a date night (in or out of the house) with Kelly at least every other month (more the better :)
+
+I'm also working on starting something new....more to come later in the year.
