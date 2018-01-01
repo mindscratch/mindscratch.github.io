@@ -9,7 +9,9 @@
     <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
     <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
     <lastBuildDate>Wed, 11 May 2016 19:37:37 -0400</lastBuildDate>
-    <atom:link href="http://craigwickesser.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://craigwickesser.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Run Mesos using Docker 1.11.1-beta11 on Mac OS X</title>
@@ -17,87 +19,9 @@
       <pubDate>Wed, 11 May 2016 19:37:37 -0400</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2016/05/run-mesos-using-docker-beta11-on-mac-osx/</guid>
-      <description>
-
-&lt;p&gt;Previously I &lt;a href=&#34;http://craigwickesser.com/2016/04/run-mesos-using-docker-beta-on-mac-osx/&#34;&gt;wrote about&lt;/a&gt; running &lt;a href=&#34;http://mesos.apache.org&#34;&gt;Apache Mesos&lt;/a&gt;
-in Docker on Mac OS X using Docker for Mac Beta 8. With the recent update to
-Docker 1.11.1-beta11 things have changed a bit and so the scripts have to change.&lt;/p&gt;
-
-&lt;p&gt;Once again the &lt;code&gt;dockerIp&lt;/code&gt; had to be discovered differently and I had to switch
-docker to use &lt;code&gt;nat&lt;/code&gt; networking, instead of the default &lt;code&gt;hostnet&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;First, change the networking: &lt;code&gt;pinata set network nat&lt;/code&gt;. Now, create a script
-to help start mesos once inside the container.&lt;/p&gt;
-
-&lt;h2 id=&#34;start-mesos-master:dac466967fe79cd636e3f82ddd3ff3e9&#34;&gt;Start Mesos Master&lt;/h2&gt;
-
-&lt;p&gt;First create a script used to prep and launch &lt;code&gt;mesos-master&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;run-mesos-master-sh:dac466967fe79cd636e3f82ddd3ff3e9&#34;&gt;run_mesos_master.sh&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-
-dockerIp=$(ip route get 8.8.8.8 | awk &#39;{print $NF; exit}&#39;)
-
-echo; echo &amp;quot;DOCKER IP: $dockerIp; echo; echo&amp;quot;
-
-exec MESOS_HOSTNAME=$dockerIp MESOS_IP=$dockerIp mesos-master
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;start-mesos-master-sh:dac466967fe79cd636e3f82ddd3ff3e9&#34;&gt;start_mesos_master.sh&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-
-hostIp=$(ipconfig getifaddr en0)
-
-docker run \
--e MESOS_QUORUM=1 \
--e MESOS_ZK=zk://$hostIp:2181/mesos \
--e MESOS_REGISTRY=in_memory \
--v $(pwd):/scripts \
---name mesos-master \
---net=host \
---entrypoint /bin/bash \
-mesosphere/mesos-master:0.28.0-2.0.16.ubuntu1404 \
-/scripts/run_mesos_master.sh
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now run &lt;code&gt;start_mesos_master.sh&lt;/code&gt; to start the master.&lt;/p&gt;
-
-&lt;h2 id=&#34;start-mesos-slave:dac466967fe79cd636e3f82ddd3ff3e9&#34;&gt;Start Mesos slave&lt;/h2&gt;
-
-&lt;p&gt;Create a separate script to prep and launch the &lt;code&gt;mesos-slave&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;run-mesos-slave-sh:dac466967fe79cd636e3f82ddd3ff3e9&#34;&gt;run_mesos_slave.sh&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-
-dockerIp=$(ip route get 8.8.8.8 | awk &#39;{print $NF; exit}&#39;)
-
-exec MESOS_HOSTNAME=$dockerIp MESOS_IP=$dockerIp mesos-slave
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;start-mesos-slave-sh:dac466967fe79cd636e3f82ddd3ff3e9&#34;&gt;start_mesos_slave.sh&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-
-hostIp=$(ipconfig getifaddr en0)
-
-docker run \
--e MESOS_MASTER=zk://$hostIp:2181/mesos \
--v $(pwd):/scripts \
--v /sys/fs/cgroup:/sys/fs/cgroup \
--v /var/run/docker.sock:/var/run/docker.sock \
---name slave --net=host --privileged --restart always \
---entrypoint /bin/bash \
-mesosphere/mesos-slave:0.28.0-2.0.16.ubuntu1404 \
-/scripts/run_mesos_slave.sh
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now run &lt;code&gt;start_mesos_slave.sh&lt;/code&gt; to start the slave.&lt;/p&gt;
-
-&lt;p&gt;Browse to the IP address output when starting the mesos master.&lt;/p&gt;
-</description>
+      <description>Previously I wrote about running Apache Mesos in Docker on Mac OS X using Docker for Mac Beta 8. With the recent update to Docker 1.11.1-beta11 things have changed a bit and so the scripts have to change.
+Once again the dockerIp had to be discovered differently and I had to switch docker to use nat networking, instead of the default hostnet.
+First, change the networking: pinata set network nat.</description>
     </item>
     
     <item>
@@ -106,118 +30,9 @@ mesosphere/mesos-slave:0.28.0-2.0.16.ubuntu1404 \
       <pubDate>Sun, 17 Apr 2016 20:30:55 -0400</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2016/04/run-mesos-using-docker-beta-on-mac-osx/</guid>
-      <description>
-
-&lt;p&gt;Previously I &lt;a href=&#34;http://craigwickesser.com/2016/01/mesos-on-mac-osx/&#34;&gt;wrote about&lt;/a&gt; running &lt;a href=&#34;http://mesos.apache.org&#34;&gt;Apache Mesos&lt;/a&gt;
-in Docker on Mac OS X. Back then Docker worked by using a VM run via VirtualBox. Today,
-using Docker Beta for Mac, the process is simpler and more like the linux experience.&lt;/p&gt;
-
-&lt;p&gt;The scripts I used before only had to be changed to update the way the &lt;code&gt;dockerIp&lt;/code&gt;
-was discovered. I wasn&amp;rsquo;t sure how do find that IP address.&lt;/p&gt;
-
-&lt;p&gt;With the Docker Beta there&amp;rsquo;s a command-line tool named &lt;code&gt;pinata&lt;/code&gt;
-which can be used to configure docker:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;laptop:~ craig$ pinata list
-These are advanced configuration settings to customise Docker.app on MacOSX.
-You can set them via pinata set &amp;lt;key&amp;gt; &amp;lt;value&amp;gt; &amp;lt;options&amp;gt;.
-
-🐳  hostname = docker
-   Hostname of the virtual machine endpoint, where container ports will be
-   exposed if using nat networking. Access it via &#39;docker.local&#39;.
-
-🐳  hypervisor = native (memory=2, ncpu=4)
-   The Docker.app includes embedded hypervisors that run the virtual machines
-   that power the containers. This setting allows you to control which the
-   default one used for Linux is.
-
- ▸  native: a version of the xhyve hypervisor that uses the MacOSX
-              Hypervisor.framework to run container VMs. Parameters:
-              memory (VM memory in gigabytes), ncpu (vCPUs)
-
-
-🐳  network = nat (external-bind=false)
-   Controls how local containers can access the external network via the
-   MacOS X host. This includes outbound traffic as well as publishing ports
-   for external access to the local containers.
-
- ▸     nat: a mode that uses the MacOS X vmnet.framework to route container
-              traffic to the host network via a NAT. Parameters:
-              external-bind (bind ports to external network interface)
- ▸ hostnet: a mode that helps if you are using a VPN that restricts
-              connectivity. Activating this mode will proxy container network
-              packets via the Docker.app process as host socket traffic.
-              Parameters: docker-ipv4 (docker node), host-ipv4 (host node)
-
-🐳  filesystem = osxfs
-   Controls the mode by which files from the MacOS X host and the container
-   filesystem are shared with each other.
-
- ▸   osxfs: a FUSE-based filesystem that bidirectionally forwards OSX
-              filesystem events into the container.
-
-
-🐳  daemon = run &#39;pinata get daemon&#39; or &#39;pinata set daemon [@file|-]&amp;gt;
-   JSON configuration of the local Docker daemon. Configure any custom
-   options you need as documented in:
-   https://docs.docker.com/engine/reference/commandline/daemon/. Set it
-   directly, or a @file or - for stdin.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The &lt;code&gt;hostname&lt;/code&gt; property says you can access the virtual machine endpoint through
-&lt;code&gt;docker.local&lt;/code&gt;. I tried to ping that hostname and received &amp;ldquo;request timed out&amp;rdquo;. From what I render
-in the forums, I should&amp;rsquo;ve gotten a response. I rebooted my Mac and tried the ping again:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;laptop:~ craig$ ping docker.local
-PING docker.local (192.168.64.4): 56 data bytes
-64 bytes from 192.168.64.4: icmp_seq=0 ttl=64 time=0.361 ms
-64 bytes from 192.168.64.4: icmp_seq=1 ttl=64 time=0.382 ms
-^C
---- docker.local ping statistics ---
-2 packets transmitted, 2 packets received, 0.0% packet loss
-round-trip min/avg/max/stddev = 0.361/0.371/0.382/0.010 ms
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;It worked! Here&amp;rsquo;s the updated scripts I used to start a Mesos master and slave
-using Docker Beta for Mac:&lt;/p&gt;
-
-&lt;h2 id=&#34;start-mesos-master:53ae553c4baed7c54e57f316d653c62a&#34;&gt;Start Mesos master&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-
-# there must be a simpler way...
-dockerIp=$(ping -c 1 docker.local  | grep &amp;quot;^PING docker.local&amp;quot; | gawk &#39;{print $3}&#39; | tr -d &#39;(&#39; | tr -d &#39;)&#39; | tr -d &#39;:&#39;)
-hostIp=$(ipconfig getifaddr en0)
-
-docker run \
--e MESOS_HOSTNAME=$dockerIp \
--e MESOS_IP=$dockerIp \
--e MESOS_QUORUM=1 \
--e MESOS_ZK=zk://$hostIp:2181/mesos \
---name mesos-master \
---net host \
---restart always \
-mesosphere/mesos-master:0.28.0-2.0.16.ubuntu1404
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;start-mesos-slave:53ae553c4baed7c54e57f316d653c62a&#34;&gt;Start Mesos slave&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-
-# there must be a simpler way...
-dockerIp=$(ping -c 1 docker.local  | grep &amp;quot;^PING docker.local&amp;quot; | gawk &#39;{print $3}&#39; | tr -d &#39;(&#39; | tr -d &#39;)&#39; | tr -d &#39;:&#39;)
-hostIp=$(ipconfig getifaddr en0)
-
-docker run \
--e MESOS_HOSTNAME=$dockerIp \
--e MESOS_IP=$dockerIp \
--e MESOS_MASTER=zk://$hostIp:2181/mesos \
--v /sys/fs/cgroup:/sys/fs/cgroup \
--v /var/run/docker.sock:/var/run/docker.sock \
---name slave --net host --privileged --restart always \
-mesosphere/mesos-slave:0.28.0-2.0.16.ubuntu1404
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>Previously I wrote about running Apache Mesos in Docker on Mac OS X. Back then Docker worked by using a VM run via VirtualBox. Today, using Docker Beta for Mac, the process is simpler and more like the linux experience.
+The scripts I used before only had to be changed to update the way the dockerIp was discovered. I wasn&amp;rsquo;t sure how do find that IP address.
+With the Docker Beta there&amp;rsquo;s a command-line tool named pinata which can be used to configure docker:</description>
     </item>
     
     <item>
@@ -226,39 +41,8 @@ mesosphere/mesos-slave:0.28.0-2.0.16.ubuntu1404
       <pubDate>Mon, 18 Jan 2016 20:32:45 -0500</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2016/01/hypersh-on-mac/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://hyper.sh/&#34;&gt;Hyper&lt;/a&gt; calls itself a &lt;code&gt;Hypervisor-agnostic Docker Runtime&lt;/code&gt;.
-It boasts the &lt;a href=&#34;https://hyper.sh/why-hyper.html&#34;&gt;benefits&lt;/a&gt; of Virtual Machines and Containers, without the downsides:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;security
-
-&lt;ul&gt;
-&lt;li&gt;using a VM reduces the attach surface and avoids the &amp;ldquo;shared kernel&amp;rdquo; problem
-presented by containers.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;performance
-
-&lt;ul&gt;
-&lt;li&gt;Hyper is able to launch instances in sub-second versus tens of seconds like
-traditional VM&amp;rsquo;s.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;portable
-
-&lt;ul&gt;
-&lt;li&gt;the hypervisor is agnostic, it supports KVM, Xen and VirtualBox.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;immutable&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;It&amp;rsquo;s also nice to see their following the &lt;a href=&#34;https://github.com/opencontainers/specs&#34;&gt;OCI Specs&lt;/a&gt;
-for their &lt;a href=&#34;https://github.com/hyperhq/runv&#34;&gt;hypervisor&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Hyper supports Mac OS X, however, due to recent changes in the OS, VirtualBox doesn&amp;rsquo;t
-work well, so &lt;a href=&#34;https://github.com/hyperhq/hyper/issues/182&#34;&gt;Hyper doesn&amp;rsquo;t currently work with Mac OS X 10.11 (El Capitan)&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I look forward to trying out Hyper on my laptop, I&amp;rsquo;ll probably give it a whirl
-on &lt;a href=&#34;https://www.packet.net/promo/hyper/&#34;&gt;Packet&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>Hyper calls itself a Hypervisor-agnostic Docker Runtime. It boasts the benefits of Virtual Machines and Containers, without the downsides:
+ security  using a VM reduces the attach surface and avoids the &amp;ldquo;shared kernel&amp;rdquo; problem presented by containers.  performance  Hyper is able to launch instances in sub-second versus tens of seconds like traditional VM&amp;rsquo;s.  portable  the hypervisor is agnostic, it supports KVM, Xen and VirtualBox.  immutable  It&amp;rsquo;s also nice to see their following the OCI Specs for their hypervisor.</description>
     </item>
     
     <item>
@@ -267,45 +51,15 @@ on &lt;a href=&#34;https://www.packet.net/promo/hyper/&#34;&gt;Packet&lt;/a&gt;.
       <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2015/01/mindscratch-newsletter-1/</guid>
-      <description>&lt;p&gt;On a regular basis, hopefully once per week, I&amp;rsquo;ll be posting links to
-content related to distributed systems, programming and devops. If you&amp;rsquo;d prefer
-to access this content via email, then &lt;a href=&#34;http://craigwickesser.com/subscribe&#34;&gt;subscribe&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.meetup.com/Apache-Mesos-NYC-Meetup/events/219073804/&#34;&gt;http://www.meetup.com/Apache-Mesos-NYC-Meetup/events/219073804/&lt;/a&gt;
-  - interesting b/c of  mention of running Accumulo on Mesos&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.slideshare.net/ColleenLee1/iguaz-a-longrunning-job-scheduler-using-docker-and-mesos&#34;&gt;http://www.slideshare.net/ColleenLee1/iguaz-a-longrunning-job-scheduler-using-docker-and-mesos&lt;/a&gt;
-  - job scheduler from corsera&lt;/p&gt;
-
-&lt;p&gt;Docker security
-&lt;a href=&#34;https://github.com/GDSSecurity/Docker-Secure-Deployment-Guidelines&#34;&gt;https://github.com/GDSSecurity/Docker-Secure-Deployment-Guidelines&lt;/a&gt;
-&lt;a href=&#34;https://www.gartner.com/doc/2956826&#34;&gt;https://www.gartner.com/doc/2956826&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/ExPHAT/twitter-sort&#34;&gt;https://github.com/ExPHAT/twitter-sort&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://am./chronos&#34;&gt;http://am./chronos&lt;/a&gt; &amp;ndash;master zk://server1:2181/mesos &amp;ndash;zk_hosts zk://server1:2181/mesos &amp;ndash;http_port 8080bari.apache.org/&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://jpetazzo.github.io/2015/01/13/docker-mount-dynamic-volumes/&#34;&gt;http://jpetazzo.github.io/2015/01/13/docker-mount-dynamic-volumes/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://codeascraft.com/2015/01/14/introducing-statsd-jvm-profiler-a-jvm-profiler-for-hadoop/&#34;&gt;https://codeascraft.com/2015/01/14/introducing-statsd-jvm-profiler-a-jvm-profiler-for-hadoop/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Go
-Go Static Analysis Tools by Alan Donovan &lt;a href=&#34;https://vimeo.com/116108566&#34;&gt;https://vimeo.com/116108566&lt;/a&gt;
-Benchmarking Go &lt;a href=&#34;https://vimeo.com/114975899&#34;&gt;https://vimeo.com/114975899&lt;/a&gt;
-7 common mistakes in go and how to avoid them &lt;a href=&#34;https://vimeo.com/115776445&#34;&gt;https://vimeo.com/115776445&lt;/a&gt;
-cancellation, context and plumbing &lt;a href=&#34;https://vimeo.com/115309491&#34;&gt;https://vimeo.com/115309491&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Io.js
-&lt;a href=&#34;https://www.youtube.com/watch?v=DqMFX91ToLw&#34;&gt;https://www.youtube.com/watch?v=DqMFX91ToLw&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Ecmascript 7 async &amp;ndash; the evolution of javascript - &lt;a href=&#34;https://www.youtube.com/watch?v=DqMFX91ToLw&#34;&gt;https://www.youtube.com/watch?v=DqMFX91ToLw&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://opensource.com/business/15/1/apache-spark-new-world-record&#34;&gt;http://opensource.com/business/15/1/apache-spark-new-world-record&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://events.linuxfoundation.org/events/vault/program/schedule?utm_source=lf&amp;amp;utm_medium=email&amp;amp;utm_campaign=vault15&#34;&gt;http://events.linuxfoundation.org/events/vault/program/schedule?utm_source=lf&amp;amp;utm_medium=email&amp;amp;utm_campaign=vault15&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;onyx: &lt;a href=&#34;https://www.youtube.com/watch?v=vG47Gui3hYE&#34;&gt;https://www.youtube.com/watch?v=vG47Gui3hYE&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>On a regular basis, hopefully once per week, I&amp;rsquo;ll be posting links to content related to distributed systems, programming and devops. If you&amp;rsquo;d prefer to access this content via email, then subscribe.
+http://www.meetup.com/Apache-Mesos-NYC-Meetup/events/219073804/ - interesting b/c of mention of running Accumulo on Mesos
+http://www.slideshare.net/ColleenLee1/iguaz-a-longrunning-job-scheduler-using-docker-and-mesos - job scheduler from corsera
+Docker security https://github.com/GDSSecurity/Docker-Secure-Deployment-Guidelines https://www.gartner.com/doc/2956826
+https://github.com/ExPHAT/twitter-sort
+http://am./chronos &amp;ndash;master zk://server1:2181/mesos &amp;ndash;zk_hosts zk://server1:2181/mesos &amp;ndash;http_port 8080bari.apache.org/
+http://jpetazzo.github.io/2015/01/13/docker-mount-dynamic-volumes/
+https://codeascraft.com/2015/01/14/introducing-statsd-jvm-profiler-a-jvm-profiler-for-hadoop/
+Go Go Static Analysis Tools by Alan Donovan https://vimeo.</description>
     </item>
     
   </channel>

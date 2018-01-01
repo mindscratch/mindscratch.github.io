@@ -3,8 +3,8 @@
 
   
   <meta charset="utf-8">
-  <title>Mesos 0.22.0 Release</title>
-  <meta name="description" content="Mesos 0.22.0 Release">
+  <title>2017 - Year in Review</title>
+  <meta name="description" content="2017 - Year in Review">
   <meta name="author" content="Craig Wickesser">
 
   
@@ -97,13 +97,13 @@
 
             <div class="post-title">
                 <p class="footnote">
-                    <time class="">2015-03-24</time>
+                    <time class="">2017-12-31</time>
 		            
                     
                     |
                     
                     
-                    tags:<a href="http://craigwickesser.com/tags/mesos">mesos</a> 
+                    tags:<a href="http://craigwickesser.com/tags/2017">2017</a> 
                     
 
                     
@@ -112,89 +112,137 @@
 
                     
                 </p>
-                <h1>Mesos 0.22.0 Release</h1>
+                <h1>2017 - Year in Review</h1>
             </div>
 
             <div class="post-content">
                 
 
-<p><a href="http://mesos.apache.org/">Mesos</a> 0.22.0 has been <a href="https://dist.apache.org/repos/dist/release/mesos/0.22.0/">released</a>!</p>
+<p>In trying to keep the <a href="http://craigwickesser.com/2016/12/year-in-review/">tradition</a> of posting a year in review,
+so here it goes.</p>
 
-<p>There&rsquo;s a nice <a href="https://www.youtube.com/watch?v=LC3dlmdc4bc">video</a> which goes through the new features in 0.22.0 as well as
-some features scheduled for the 0.23.0 release.</p>
+<h2 id="programming">Programming</h2>
 
-<p>I&rsquo;ve put together some notes I put together while watching the video.</p>
+<p>This year I worked a couple of different projects. I continued to work on a LAMP stack app which used Angular 1.x
+for its frontend. I also developed a web based application to assist in monitoring local government, built with VueJS, Go, Elasticsearch, Amazon SQS, RDS and SES.</p>
 
-<h2 id="disk-isolation">Disk Isolation</h2>
+<p>I also continued working on the next generation of a backend processing system that uses Docker + Mesos, with the goal
+of simplifying the archtiecture, development, deployment and maintenance. This version of the system is being deployed
+to production in early 2018.</p>
 
-<p><a href="https://issues.apache.org/jira/browse/MESOS-1589">Disk Isolation</a> allows the
-<code>MesosContainerizer</code> to enforce a disk quota. Prior to 0.22.0 mesos supported <a href="https://youtu.be/LC3dlmdc4bc?t=207">isolation</a> of cpu, memory, pid namespacing,
-network ports and bandwidth.</p>
+<p>I was able to spend the majority of the year working remote (i.e. at home) on most of the projects, which has been
+a great experience.</p>
 
-<p>To use this new isolation, two new flags are required:</p>
-
-<pre><code># enable disk isolation
---isolation=“posix/disk” --enforce_container_disk_quota
-
-# set the quota, in megabytes
--—resources=“disk:64”
-</code></pre>
-
-<h2 id="disaster-prevention">Disaster Prevention</h2>
-
-<p>There are <a href="https://youtu.be/LC3dlmdc4bc?t=503">several mechanisms</a> to prevent
-disaster that were in place prior to the 0.22.0 release:</p>
+<p>I&rsquo;ll list the languages and prominent technologies I&rsquo;ve directly used, configured, deployed and/or managed this year:</p>
 
 <ul>
-<li>master commits suicide when losing connection to ZK</li>
-<li>compute nodes ignore shutdown requests received from master that is not leader</li>
-<li>recovery remove limit (% of cluster)</li>
+<li><a href="http://golang.org">Go</a></li>
+<li><a href="http://python.org">Python</a></li>
+<li><a href="https://kotlinlang.org/">Kotlin</a> - just beginning to work with Kotlin, replacing Scala</li>
+<li><a href="https://www.gnu.org/software/bash/">Bash</a></li>
+<li><a href="http://www.php.net/">PHP</a></li>
+<li><a href="https://angularjs.org/">AngularJS 1.x</a></li>
+<li><a href="https://vuejs.org/">Vue.js</a></li>
+<li><a href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a></li>
+<li><a href="https://www.docker.com/">Docker</a></li>
+<li><a href="http://mesos.apache.org/">Mesos</a></li>
+<li><a href="https://mesosphere.github.io/marathon/">Marathon</a></li>
+<li><a href="https://crate.io/">Crate</a></li>
+<li><a href="https://www.rabbitmq.com/">RabbitMQ</a></li>
+<li><a href="https://docs.saltstack.com/en/2016.3/contents.html">Salt</a></li>
+<li><a href="https://nginx.org/en/">Nginx</a></li>
+<li><a href="https://kubernetes.io/">Kubernetes</a> - exploring for use in 2018</li>
 </ul>
 
-<p>In this release the ability to <a href="https://issues.apache.org/jira/browse/MESOS-1148">rate limit slave removal</a>
-was added which could allow administrators to react when they notice the
-slave removals occurring.</p>
+<p>To quote last year, &ldquo;Needless to say, it&rsquo;s been a blast&rdquo;.</p>
 
-<p>To configure the rate limit, a new flag is available:</p>
+<h2 id="people">People</h2>
 
-<pre><code># remove one slave per minute
---slave_removal_rate_limit=1/1mins
-</code></pre>
+<h3 id="work">Work</h3>
 
-<h2 id="labels-and-discovery">Labels and Discovery</h2>
+<p>I&rsquo;ve been able to work with a lot of smart, hands-on, technical people which has
+been great. I&rsquo;ve also had the chance to work with, and for new clients which was exciting
+and refreshing.</p>
 
-<p>Tasks can now have <a href="https://github.com/apache/mesos/blob/b2f73095fd168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1056">labels</a>, which are simply key/value pairs. This allows tasks to be tagged, for example <code>environment: production</code>.</p>
+<h3 id="friends-and-family">Friends and Family</h3>
 
-<p>Additionally, tasks can now include <a href="https://github.com/apache/mesos/blob/b2f73095fd168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093">DiscoveryInfo</a>. This information can be used for service discovery as it can provide
-common attributes such as <code>environment</code>, <code>location</code> and <code>version</code>. However, it
-also supports <a href="https://github.com/apache/mesos/blob/b2f73095fd168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1075">Ports</a> (which can have names), as well as arbitrary labels.</p>
+<p>Its been over a year since I lost my mom. I miss her a lot but its been comforting talking with
+family about their memories and experiences with her.</p>
 
-<p>Video link: <a href="https://youtu.be/LC3dlmdc4bc?t=600d168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093">https://youtu.be/LC3dlmdc4bc?t=600d168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093</a></p>
+<p>I&rsquo;ve continued to see my sister and her family at various get togethers which has been great.
+I really enjoy seeing all of them when we can, we certainly spent to much time not spending
+time together.</p>
 
-<h2 id="more-features-and-improvements">More features and improvements</h2>
+<p>Just like last year, I woke up next to the girl of my dreams everyday. I&rsquo;m certainly spoiled, but
+absolutely grateful.</p>
 
-<p>There are other features and improvements which are highlighted in the video.
-I imagine the mesos website will be updated soon with a summary as well.</p>
+<h2 id="looking-back">Looking Back</h2>
 
-<h2 id="what-to-look-forward-to">What to look forward to</h2>
-
-<p>With a release being published within the hour, naturally it&rsquo;s time to look at
-what&rsquo;s coming next:</p>
+<p>To recap, for 2017 I wanted to:</p>
 
 <ul>
-<li><a href="https://issues.apache.org/jira/browse/MESOS-1554">persistent primitives</a> - to
-support storage-like services</li>
-<li><a href="https://issues.apache.org/jira/browse/MESOS-2018">dynamic reservations</a> - allow a
-framework to dynamically reserve offered resources, allowing those resources to
-only be re-offered to the same framework (to support stateful services)</li>
-<li><a href="https://issues.apache.org/jira/browse/MESOS-910">ssl support</a></li>
-<li><a href="https://issues.apache.org/jira/browse/MESOS-1607">optimistic offers</a> - resource offers
-are currently offered to a single framework at a time, with optimistic offers the
-offers would be handed out in parallel.</li>
+<li>checkout a new programming language
+
+<ul>
+<li>didn&rsquo;t really get into a new programming language, though I just began working with Kotlin</li>
+</ul></li>
+<li>try out some new front-end hotness
+
+<ul>
+<li>used webpack and Vue.js, its been amaze-balls!</li>
+</ul></li>
+<li>kubernetes
+
+<ul>
+<li>spent time investigating and trying out kubernetes in small environments</li>
+</ul></li>
+<li>get and try out a raspberry pi
+
+<ul>
+<li>didn&rsquo;t do anything with hardware</li>
+</ul></li>
+<li>do new things as a family
+
+<ul>
+<li>here&rsquo;s a summary of things we did in 2017:
+
+<ul>
+<li>February - hershey bears hockey game</li>
+<li>March - STOMP music performance at The Hippodrome in Baltimore</li>
+<li>June - surf and turf date night cooking class at The Kitchen Studio</li>
+<li>June - Dave Matthews and Tim Reynolds concert at Merriweather Pavillion with Kelly, Mike and Gina</li>
+<li>July - <a href="https://www.thextremexperience.com">Xtreme Xperience</a>, I drove a Lamborghini, Kelly drove a Ferrari</li>
+<li>September - Family Reunion at Piney Run Park</li>
+<li>Septmeber - Hiking with Rylan and Graham at Patapsco Park</li>
+<li>December - Eat a &ldquo;fancy&rdquo; restaurant, we went to Ruth&rsquo;s Chris on New Years Eve</li>
+</ul></li>
+</ul></li>
 </ul>
 
-<p>Again, there&rsquo;s other features, improvements and bug fixes slated for Mesos 0.23.0
-but this should at least give a taste for what&rsquo;s to come.</p>
+<p>I also committed to exercising on a regular basis (3+ days a week). Kelly and I started in February and she
+really helped to keep me motivated and focused on my goals. I didn&rsquo;t make it to the gym every week, but I
+made it almost every week. I lost 10 pounds and I&rsquo;m able to lift more, run more, etc. Its great to see progress!</p>
+
+<h2 id="looking-forward">Looking Forward</h2>
+
+<p>In 2018 I want to:</p>
+
+<ul>
+<li>exercise regularly</li>
+<li>give up energy drinks
+
+<ul>
+<li>I used to drink them regularly, but I cut way back during 2017, time to cut them out completely.</li>
+</ul></li>
+<li>read more books
+
+<ul>
+<li>I tend to lean towards non-fiction, as I like to &ldquo;learn&rdquo; something, but in general I want to read more (audible books count too)</li>
+</ul></li>
+<li>take the kids to Disney</li>
+<li>get more experience with machine learning and natural language processing</li>
+<li>have a date night (in or out of the house) with Kelly at least every other month (more the better :)</li>
+</ul>
 
             </div>
         </div>

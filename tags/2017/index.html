@@ -3,8 +3,8 @@
 
   
   <meta charset="utf-8">
-  <title>Mesos 0.22.0 Release</title>
-  <meta name="description" content="Mesos 0.22.0 Release">
+  <title>2017</title>
+  <meta name="description" content="2017">
   <meta name="author" content="Craig Wickesser">
 
   
@@ -90,114 +90,41 @@
 </div>
 
 
+
 <div class="pure-g">
     <div class="pure-u-1-24 pure-u-md-5-24"></div>
 	<div class="pure-u-11-12 pure-u-md-5-8">
-        <div class="post">
+	  <p class="posts-name">2017:</p>
 
-            <div class="post-title">
-                <p class="footnote">
-                    <time class="">2015-03-24</time>
-		            
-                    
-                    |
-                    
-                    
-                    tags:<a href="http://craigwickesser.com/tags/mesos">mesos</a> 
-                    
+	  <ul class="posts">
+		
+		
+		
+		<li>
+		  <a href="http://craigwickesser.com/2017/12/2017-year-in-review/">2017 - Year in Review</a>
 
-                    
-                    categories:<a href="http://craigwickesser.com/categories/posts">posts</a> 
-                    
+		  <p class="footnote">
+			submitted <time datetime="2017-12-31T12:26:05-04:00" class="post-list timeago">2017-12-31T12:26:05-04:00</time>
 
-                    
-                </p>
-                <h1>Mesos 0.22.0 Release</h1>
-            </div>
+			
+			to
+			
 
-            <div class="post-content">
-                
+			
+			tags:[ <a href="http://craigwickesser.com/tags/2017">2017</a> ]
+			
 
-<p><a href="http://mesos.apache.org/">Mesos</a> 0.22.0 has been <a href="https://dist.apache.org/repos/dist/release/mesos/0.22.0/">released</a>!</p>
+			
+			categories:[ <a href="http://craigwickesser.com/categories/posts">posts</a> ]
+			
 
-<p>There&rsquo;s a nice <a href="https://www.youtube.com/watch?v=LC3dlmdc4bc">video</a> which goes through the new features in 0.22.0 as well as
-some features scheduled for the 0.23.0 release.</p>
+			
 
-<p>I&rsquo;ve put together some notes I put together while watching the video.</p>
-
-<h2 id="disk-isolation">Disk Isolation</h2>
-
-<p><a href="https://issues.apache.org/jira/browse/MESOS-1589">Disk Isolation</a> allows the
-<code>MesosContainerizer</code> to enforce a disk quota. Prior to 0.22.0 mesos supported <a href="https://youtu.be/LC3dlmdc4bc?t=207">isolation</a> of cpu, memory, pid namespacing,
-network ports and bandwidth.</p>
-
-<p>To use this new isolation, two new flags are required:</p>
-
-<pre><code># enable disk isolation
---isolation=“posix/disk” --enforce_container_disk_quota
-
-# set the quota, in megabytes
--—resources=“disk:64”
-</code></pre>
-
-<h2 id="disaster-prevention">Disaster Prevention</h2>
-
-<p>There are <a href="https://youtu.be/LC3dlmdc4bc?t=503">several mechanisms</a> to prevent
-disaster that were in place prior to the 0.22.0 release:</p>
-
-<ul>
-<li>master commits suicide when losing connection to ZK</li>
-<li>compute nodes ignore shutdown requests received from master that is not leader</li>
-<li>recovery remove limit (% of cluster)</li>
-</ul>
-
-<p>In this release the ability to <a href="https://issues.apache.org/jira/browse/MESOS-1148">rate limit slave removal</a>
-was added which could allow administrators to react when they notice the
-slave removals occurring.</p>
-
-<p>To configure the rate limit, a new flag is available:</p>
-
-<pre><code># remove one slave per minute
---slave_removal_rate_limit=1/1mins
-</code></pre>
-
-<h2 id="labels-and-discovery">Labels and Discovery</h2>
-
-<p>Tasks can now have <a href="https://github.com/apache/mesos/blob/b2f73095fd168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1056">labels</a>, which are simply key/value pairs. This allows tasks to be tagged, for example <code>environment: production</code>.</p>
-
-<p>Additionally, tasks can now include <a href="https://github.com/apache/mesos/blob/b2f73095fd168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093">DiscoveryInfo</a>. This information can be used for service discovery as it can provide
-common attributes such as <code>environment</code>, <code>location</code> and <code>version</code>. However, it
-also supports <a href="https://github.com/apache/mesos/blob/b2f73095fd168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1075">Ports</a> (which can have names), as well as arbitrary labels.</p>
-
-<p>Video link: <a href="https://youtu.be/LC3dlmdc4bc?t=600d168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093">https://youtu.be/LC3dlmdc4bc?t=600d168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093</a></p>
-
-<h2 id="more-features-and-improvements">More features and improvements</h2>
-
-<p>There are other features and improvements which are highlighted in the video.
-I imagine the mesos website will be updated soon with a summary as well.</p>
-
-<h2 id="what-to-look-forward-to">What to look forward to</h2>
-
-<p>With a release being published within the hour, naturally it&rsquo;s time to look at
-what&rsquo;s coming next:</p>
-
-<ul>
-<li><a href="https://issues.apache.org/jira/browse/MESOS-1554">persistent primitives</a> - to
-support storage-like services</li>
-<li><a href="https://issues.apache.org/jira/browse/MESOS-2018">dynamic reservations</a> - allow a
-framework to dynamically reserve offered resources, allowing those resources to
-only be re-offered to the same framework (to support stateful services)</li>
-<li><a href="https://issues.apache.org/jira/browse/MESOS-910">ssl support</a></li>
-<li><a href="https://issues.apache.org/jira/browse/MESOS-1607">optimistic offers</a> - resource offers
-are currently offered to a single framework at a time, with optimistic offers the
-offers would be handed out in parallel.</li>
-</ul>
-
-<p>Again, there&rsquo;s other features, improvements and bug fixes slated for Mesos 0.23.0
-but this should at least give a taste for what&rsquo;s to come.</p>
-
-            </div>
-        </div>
+		  </p>
+		</li>
+		
+		
+	  </ul>
 	</div>
     <div class="pure-u-1-24 pure-u-md-1-6">
           <a href="https://twitter.com/mind_scratch" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @mind_scratch</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

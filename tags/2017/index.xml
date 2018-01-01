@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2017 on craig wickesser</title>
+    <link>http://craigwickesser.com/tags/2017/</link>
+    <description>Recent content in 2017 on craig wickesser</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
+    <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
+    <lastBuildDate>Sun, 31 Dec 2017 12:26:05 -0400</lastBuildDate>
+    
+	<atom:link href="http://craigwickesser.com/tags/2017/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2017 - Year in Review</title>
+      <link>http://craigwickesser.com/2017/12/2017-year-in-review/</link>
+      <pubDate>Sun, 31 Dec 2017 12:26:05 -0400</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>http://craigwickesser.com/2017/12/2017-year-in-review/</guid>
+      <description>In trying to keep the tradition of posting a year in review, so here it goes.
+Programming This year I worked a couple of different projects. I continued to work on a LAMP stack app which used Angular 1.x for its frontend. I also developed a web based application to assist in monitoring local government, built with VueJS, Go, Elasticsearch, Amazon SQS, RDS and SES.
+I also continued working on the next generation of a backend processing system that uses Docker + Mesos, with the goal of simplifying the archtiecture, development, deployment and maintenance.</description>
+    </item>
+    
+  </channel>
+</rss>
