@@ -1,0 +1,323 @@
+<html lang="en">
+<head>
+
+  
+  <meta charset="utf-8">
+  <title>2018 - Year in Review</title>
+  <meta name="description" content="2018 - Year in Review">
+  <meta name="author" content="Craig Wickesser">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="http://craigwickesser.com/css/fonts.css">
+  
+  
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+
+  <link rel="stylesheet" href="http://craigwickesser.com/css/custom.css">
+
+  
+  
+  <link rel="stylesheet" href="http://craigwickesser.com/highlight/styles/default.css">
+  
+  <script src="http://craigwickesser.com/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+
+
+<div class="header pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+    <div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="desktop pure-menu pure-menu-horizontal nav-menu">
+            
+            <a href="/" class="site-title pure-menu-heading">craig wickesser</a>
+            <ul class="pure-menu-list">
+                
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/categories/newsletter" class="pure-menu-link">Newsletter</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/categories/posts" class="pure-menu-link">Posts</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/machine-learning/" class="pure-menu-link">Journey into Machine Learning</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/now/" class="pure-menu-link">Now</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/about/" class="pure-menu-link">About</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mobile pure-menu nav-menu">
+            <a href="/" class="pure-menu-heading" id="toggle-home">craig wickesser</a>
+            <a href="#" id="toggle-btn">&#9776;</a>
+            <ul class="pure-menu-list" id="toggle-content" style="display:none;">
+                
+                
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/categories/newsletter" class="pure-menu-link">Newsletter</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/categories/posts" class="pure-menu-link">Posts</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/machine-learning" class="pure-menu-link">Journey into Machine Learning</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/now" class="pure-menu-link">Now</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/about" class="pure-menu-link">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-6"></div>
+</div>
+
+
+<div class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+	<div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="post">
+
+            <div class="post-title">
+                <p class="footnote">
+                    <time class="">2018-12-31</time>
+		            
+                    
+                    |
+                    
+                    
+                    tags:<a href="http://craigwickesser.com/tags/2018">2018</a> 
+                    
+
+                    
+                    categories:<a href="http://craigwickesser.com/categories/posts">posts</a> 
+                    
+
+                    
+                </p>
+                <h1>2018 - Year in Review</h1>
+            </div>
+
+            <div class="post-content">
+                
+
+<p>In trying to <a href="http://craigwickesser.com/2016/12/year-in-review/">keep</a> the <a href="http://craigwickesser.com/2017/12/2017-year-in-review/">tradition</a> of posting a year in review, so here it goes.</p>
+
+<h2 id="programming">Programming</h2>
+
+<p>This year I continued working part-time on a LAMP stack app, the one that used Angular 1.x for the UI. I also continued fixing bugs and adding new features to the &ldquo;web based application to assist in monitoring local government, which I still continue to do. I did move it over to use Amazon AWS hosted Elasticsearch because the single, &ldquo;small&rdquo; EC2 server was being overloaded.</p>
+
+<p>This year, I gave up working remote to help focus on getting the &ldquo;next generation backend processing system&rdquo; (mentioned in last years <a href="http://craigwickesser.com/2017/12/2017-year-in-review/">post</a>) to production. I&rsquo;m happy to report we did get it deployed to production in September with only a few issues in the weeks after the cut-over. In particular, we realized that heavily using blobs in <a href="https://crate.io/">Crate</a> was not feasible, at least with our use case and cluster size. We actually migrated blob storage over to a self-hosted <a href="https://www.minio.io/">Minio</a> cluster. The biggest drawback so far with Minio, is the time it takes to list objects and delete them. A co-worker developed an application that runs alongside Minio that can &ldquo;age-off&rdquo; data by time, by simply deleting the files from disk (on each server + disk(s)) which has been working quite well.</p>
+
+<p>This year I only tried and used a few new technologies or libraries:</p>
+
+<ul>
+<li><a href="https://www.minio.io/">Minio</a></li>
+<li><a href="https://www.http4k.org/">http4k</a></li>
+<li><a href="https://aws.amazon.com/tools/">AWS SDKs</a> - Java/Python/Go - the Minio clients didn&rsquo;t support batch deletes at the time</li>
+</ul>
+
+<p>The languages and prominent technologies I continued using this year included:</p>
+
+<ul>
+<li><a href="http://golang.org">Go</a></li>
+<li><a href="http://python.org">Python</a></li>
+<li><a href="https://kotlinlang.org/">Kotlin</a> - just beginning to work with Kotlin, replacing Scala</li>
+<li><a href="https://www.gnu.org/software/bash/">Bash</a></li>
+<li><a href="http://www.php.net/">PHP</a></li>
+<li><a href="https://angularjs.org/">AngularJS 1.x</a></li>
+<li><a href="https://vuejs.org/">Vue.js</a></li>
+<li><a href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a></li>
+<li><a href="https://www.docker.com/">Docker</a></li>
+<li><a href="http://mesos.apache.org/">Mesos</a></li>
+<li><a href="https://mesosphere.github.io/marathon/">Marathon</a></li>
+<li><a href="https://crate.io/">Crate</a></li>
+<li><a href="https://www.rabbitmq.com/">RabbitMQ</a></li>
+<li><a href="https://docs.saltstack.com/en/2016.3/contents.html">Salt</a></li>
+<li><a href="https://nginx.org/en/">Nginx</a></li>
+<li><a href="https://github.com/martensson/nixy">Nixy</a></li>
+</ul>
+
+<h2 id="looking-back">Looking Back</h2>
+
+<p>To recap, for 2018 I wanted to:</p>
+
+<ul>
+<li>exercise regularly
+
+<ul>
+<li>I averaged 3 days per week</li>
+</ul></li>
+<li>give up energy drinks
+
+<ul>
+<li>I didn&rsquo;t completely, in June I decided to stop and I ended up having a few more from June - December (mostly because of long working days where I&rsquo;d only get 3.5 - 4 hours of sleep). I do occasionally drink coffee and sometimes I&rsquo;ll have other energy style drinks (hi-ball for example), though they use coffee beans for caffeine and don&rsquo;t include other chemicals.</li>
+</ul></li>
+<li>read more books
+
+<ul>
+<li>success, though I don&rsquo;t retain a lot of details, which might be something to work on in 2019. I did read a few books:
+
+<ul>
+<li><a href="https://www.goodreads.com/book/show/38108759-west-cork">West Cork</a></li>
+<li><a href="https://www.goodreads.com/book/show/32191710-astrophysics-for-people-in-a-hurry">Astrophysics for People in a Hurry</a>
+
+<ul>
+<li>this got me looking up at the night sky more often, which resulted in seeing ~10 shooting stars</li>
+</ul></li>
+<li><a href="https://www.goodreads.com/book/show/15803037-red-sparrow">Red Sparrow</a></li>
+<li><a href="https://www.goodreads.com/book/show/30257963-12-rules-for-life">12 Rules for Life: An Antidote to Chaos</a></li>
+<li><a href="https://www.goodreads.com/book/show/36045512-crushing-it">Crushing It</a></li>
+<li><a href="https://www.goodreads.com/book/show/37903770-norse-mythology">Norse Mythology</a></li>
+<li><a href="https://www.goodreads.com/book/show/22609257-palace-of-treason">Palace of Treason</a> - sequel to Red Sparrow, haven&rsquo;t finished</li>
+<li><a href="https://www.goodreads.com/book/show/40885164-unshakeable">Unshakeable: Your Financial Freedom Playbook</a></li>
+</ul></li>
+</ul></li>
+<li>take the kids to Disney
+
+<ul>
+<li>we went on a 7 day cruise on Disney Fantasy to the Eastern Caribbean (Philipsburg, St. Maarten; St. Thomas; Castaway Cay, Bahamas)</li>
+</ul></li>
+<li>get more experience with machine learning and natural language processing
+
+<ul>
+<li>not really</li>
+</ul></li>
+<li>have a date night (in or out of the house) with Kelly at least every other month (more the better :)
+
+<ul>
+<li>we went to frederick a few times (<a href="http://hootchandbanter.com/">hootch and banter</a> was one that was a lot of fun) and to a few places in Westminster</li>
+<li>we also were able to go to the gym and run errands from time to time</li>
+</ul></li>
+<li>celebrated 20 years with my the love of my life</li>
+<li>officially started a company, <a href="https://codescratch.com">Codescratch</a> with two partners and we celebrated the new beginning with our wives at <a href="https://www.rosesluxury.com/">Rose&rsquo;s Luxury</a></li>
+</ul>
+
+<h2 id="looking-forward">Looking Forward</h2>
+
+<p>In 2019 I will:</p>
+
+<ul>
+<li>exercise regularly, with a few specific goals:
+
+<ul>
+<li>bench press 5 reps at 150lb (max I&rsquo;ve tried by myself is 105)</li>
+<li>curl dumbbells 5 reps (each arm) at 50 lbs (today I can do 1-2 sets of 5 reps at 40lb)</li>
+<li>run 1 mile in 8 minutes (no idea what my timing is now, in middle school I could do 6:50 or so)</li>
+</ul></li>
+<li>read more books
+
+<ul>
+<li><a href="https://www.goodreads.com/book/show/22609257-palace-of-treason">Palace of Treason</a> - book 2 in the Red Sparrow Trilogy, finish it</li>
+<li><a href="https://www.goodreads.com/book/show/30753713-the-kremlin-s-candidate">The Kremlin&rsquo;s Candidate</a> - book 3 in the Red Sparrow Trilogy</li>
+<li><a href="https://www.goodreads.com/book/show/25480342-a-monster-calls">A Monster Calls</a></li>
+<li><a href="https://www.goodreads.com/book/show/23463279-designing-data-intensive-applications">Designing Data-Intensive Applications</a></li>
+</ul></li>
+<li>take Kelly and the kids to <a href="https://tobysdinnertheatre.com/">Toby&rsquo;s Dinner Theatre</a></li>
+<li>go to the beach</li>
+</ul>
+
+<p>I want to:</p>
+
+<ul>
+<li>get our driveway paved, its currently just stone</li>
+<li>landscaping in the backyard, the grass by the deck stairs and around needs some major love, thanks to our wonderful Sheepies</li>
+<li>try new things, perhaps:
+
+<ul>
+<li>indoor rock climbing (<a href="https://www.earthtreksclimbing.com/columbia/">here</a>, maybe <a href="http://climbzone.us/">here</a>)</li>
+<li><a href="https://www.iflyworld.com/">indoor sky diving</a></li>
+<li><a href="https://autobahnspeed.com/">go kart racing</a></li>
+<li>kayaking</li>
+</ul></li>
+</ul>
+
+            </div>
+        </div>
+	</div>
+    <div class="pure-u-1-24 pure-u-md-1-6">
+          <a href="https://twitter.com/mind_scratch" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @mind_scratch</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+	  <a href="http://craigwickesser.com/">
+	    <img src="http://craigwickesser.com//images/craig-profile-sm.png" class="pull-right profile" title="craig"/>
+	  </a>
+    </div>
+</div>
+
+<div class="footer pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+    <div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="pure-menu pure-menu-horizontal footer-content">
+            <ul>
+                <li class="pure-menu-heading" id="foot-name">Craig Wickesser:</li>
+
+                
+                <li class="pure-menu-item">
+                    <a href="mailto:codecraig@gmail.com" class="pure-menu-link">Email</a>
+                </li>
+                
+
+                
+                <li class="pure-menu-item">
+                    <a href="https://github.com/mindscratch" class="pure-menu-link">GitHub</a>
+                </li>
+                
+
+                
+
+                
+
+                
+                <li class="pure-menu-item">
+                    <a href="https://twitter.com/mind_scratch" class="pure-menu-link">Twitter</a>
+                </li>
+                
+
+            </ul>
+            <a href="#" class="pure-menu-heading pull-right" id="gototop-btn">↑↑</a>
+        </div>
+	  </div>
+      <div class="pure-u-1-24 pure-u-md-1-6"></div>
+</div>
+
+
+<script src="http://craigwickesser.com/js/jquery.min.js" type="text/javascript"></script>
+<script src="http://craigwickesser.com/js/jquery.timeago.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(function(){
+    $("time.timeago").timeago();
+  })
+  $("#toggle-btn").click(function(){
+    $("#toggle-content").toggle();
+    if($(this).html() === "☰") {
+        $(this).html("X")
+    } else {
+        $(this).html("☰")
+    }
+  });
+  $(window).resize(function(){
+    if(window.innerWidth > 768) {
+      $(".desktop").removeAttr("style");
+    }
+  });
+</script>
+
+</body>
+</html>
+

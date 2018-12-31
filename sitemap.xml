@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://craigwickesser.com/2018/12/2018-year-in-review/</loc>
+    <lastmod>2018-12-31T15:35:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://craigwickesser.com/2017/12/2017-year-in-review/</loc>
     <lastmod>2017-12-31T12:26:05-04:00</lastmod>
   </url>
@@ -101,6 +106,12 @@
   <url>
     <loc>http://craigwickesser.com/tags/2017/</loc>
     <lastmod>2017-12-31T12:26:05-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/2018/</loc>
+    <lastmod>2018-12-31T15:35:00-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -219,7 +230,7 @@
   
   <url>
     <loc>http://craigwickesser.com/post/</loc>
-    <lastmod>2017-12-31T12:26:05-04:00</lastmod>
+    <lastmod>2018-12-31T15:35:00-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -231,7 +242,7 @@
   
   <url>
     <loc>http://craigwickesser.com/categories/posts/</loc>
-    <lastmod>2017-12-31T12:26:05-04:00</lastmod>
+    <lastmod>2018-12-31T15:35:00-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -249,7 +260,7 @@
   
   <url>
     <loc>http://craigwickesser.com/</loc>
-    <lastmod>2017-12-31T12:26:05-04:00</lastmod>
+    <lastmod>2018-12-31T15:35:00-04:00</lastmod>
     <priority>0</priority>
   </url>
   
