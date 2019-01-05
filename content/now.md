@@ -8,11 +8,10 @@ title = "now"
 
 * being a full-time dad
 * being the best husband I can be to the most amazing woman
-* being an independent software developer
+* building [Codescratch](https://codescratch.com)
 * ~~keeping our two chikens away from the hawks~~ (we gave them to someone else to, safely, take care of), and loving our 4 dogs
-* considering becoming a single car family (maybe next year).
-* enjoying great experiences with my family in 2017
+* enjoying great experiences with my family in 2019
 
-__last updated__: 04/26/2017
+__last updated__: 01/04/2019
 
 This page inspired by [nownownow.com](http://nownownow.com/).
