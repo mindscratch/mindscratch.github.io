@@ -8,10 +8,20 @@
     <language>en-us</language>
     <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
     <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
-    <lastBuildDate>Mon, 31 Dec 2018 15:35:00 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 04 Jan 2019 20:16:58 -0500</lastBuildDate>
     
 	<atom:link href="http://craigwickesser.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>books</title>
+      <link>http://craigwickesser.com/books/</link>
+      <pubDate>Fri, 04 Jan 2019 20:16:58 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>http://craigwickesser.com/books/</guid>
+      <description>Books I&amp;rsquo;ve read and want to read. The table shown below was created with goodreads. More work needs to be done to make this page easier to digest.
+   Title Author Date Read     How to Win Friends and Influence People Dale Carnegie 2018/01/03   Artemis Andy Weir 2018/01/03   The Go Programming Language Alan A. A. Donovan 2018/01/01   Kubernetes: Up &amp;amp; Running Kelsey Hightower 2018/01/01   The 4-Hour Body: An Uncommon Guide to Rapid Fat-Loss, Incredible Sex, and Becoming Superhuman Timothy Ferriss 2012/12/22   The Fuck It Show John Parkin 2012/11/29   In the Plex: How Google Thinks, Works, and Shapes Our Lives Steven Levy 2012/11/29   The Lean Startup: How Today&amp;rsquo;s Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses Eric Ries 2012/11/29   Kill Decision Daniel Suarez 2012/11/21   The Kremlin&amp;rsquo;s Candidate (Red Sparrow Trilogy, #3) Jason Matthews 0001/01/01   12 Rules for Life: An Antidote to Chaos Jordan B.</description>
+    </item>
     
     <item>
       <title>2018 - Year in Review</title>
@@ -103,7 +113,8 @@ S/MIME support is provided by a plugin. Follow the instructions after going to t
       <pubDate>Sat, 09 Jan 2016 23:39:49 -0500</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/now/</guid>
-      <description>What I&amp;rsquo;m doing now  being a full-time dad being the best husband I can be to the most amazing woman being an independent software developer keeping our two chikens away from the hawks (we gave them to someone else to, safely, take care of), and loving our 4 dogs considering becoming a single car family (maybe next year). enjoying great experiences with my family in 2017  last updated: 04/26/2017</description>
+      <description>What I&amp;rsquo;m doing now  being a full-time dad being the best husband I can be to the most amazing woman building Codescratch keeping our two chikens away from the hawks (we gave them to someone else to, safely, take care of), and loving our 4 dogs enjoying great experiences with my family in 2019  last updated: 01/04/2019
+This page inspired by nownownow.com.</description>
     </item>
     
     <item>
