@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2018 on craig wickesser</title>
+    <link>http://craigwickesser.com/tags/2018/</link>
+    <description>Recent content in 2018 on craig wickesser</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
+    <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
+    <lastBuildDate>Mon, 31 Dec 2018 15:35:00 -0400</lastBuildDate>
+    
+	<atom:link href="http://craigwickesser.com/tags/2018/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2018 - Year in Review</title>
+      <link>http://craigwickesser.com/2018/12/2018-year-in-review/</link>
+      <pubDate>Mon, 31 Dec 2018 15:35:00 -0400</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>http://craigwickesser.com/2018/12/2018-year-in-review/</guid>
+      <description>In trying to keep the tradition of posting a year in review, so here it goes.
+Programming This year I continued working part-time on a LAMP stack app, the one that used Angular 1.x for the UI. I also continued fixing bugs and adding new features to the &amp;ldquo;web based application to assist in monitoring local government, which I still continue to do. I did move it over to use Amazon AWS hosted Elasticsearch because the single, &amp;ldquo;small&amp;rdquo; EC2 server was being overloaded.</description>
+    </item>
+    
+  </channel>
+</rss>

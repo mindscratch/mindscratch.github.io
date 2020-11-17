@@ -8,8 +8,31 @@
     <language>en-us</language>
     <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
     <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
-    <lastBuildDate>Thu, 22 Dec 2016 22:01:49 -0400</lastBuildDate>
-    <atom:link href="http://craigwickesser.com/categories/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Dec 2018 15:35:00 -0400</lastBuildDate>
+    
+	<atom:link href="http://craigwickesser.com/categories/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2018 - Year in Review</title>
+      <link>http://craigwickesser.com/2018/12/2018-year-in-review/</link>
+      <pubDate>Mon, 31 Dec 2018 15:35:00 -0400</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>http://craigwickesser.com/2018/12/2018-year-in-review/</guid>
+      <description>In trying to keep the tradition of posting a year in review, so here it goes.
+Programming This year I continued working part-time on a LAMP stack app, the one that used Angular 1.x for the UI. I also continued fixing bugs and adding new features to the &amp;ldquo;web based application to assist in monitoring local government, which I still continue to do. I did move it over to use Amazon AWS hosted Elasticsearch because the single, &amp;ldquo;small&amp;rdquo; EC2 server was being overloaded.</description>
+    </item>
+    
+    <item>
+      <title>2017 - Year in Review</title>
+      <link>http://craigwickesser.com/2017/12/2017-year-in-review/</link>
+      <pubDate>Sun, 31 Dec 2017 12:26:05 -0400</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>http://craigwickesser.com/2017/12/2017-year-in-review/</guid>
+      <description>In trying to keep the tradition of posting a year in review, so here it goes.
+Programming This year I worked a couple of different projects. I continued to work on a LAMP stack app which used Angular 1.x for its frontend. I also developed a web based application to assist in monitoring local government, built with VueJS, Go, Elasticsearch, Amazon SQS, RDS and SES.
+I also continued working on the next generation of a backend processing system that uses Docker + Mesos, with the goal of simplifying the archtiecture, development, deployment and maintenance.</description>
+    </item>
     
     <item>
       <title>2016 - Year in Review</title>
@@ -17,126 +40,8 @@
       <pubDate>Thu, 22 Dec 2016 22:01:49 -0400</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2016/12/year-in-review/</guid>
-      <description>
-
-&lt;p&gt;Another year is coming to an end so I thought I&amp;rsquo;d reflect and jot down some things.&lt;/p&gt;
-
-&lt;h2 id=&#34;programming:7c4fca12116257f897be5510b5fb19bb&#34;&gt;Programming&lt;/h2&gt;
-
-&lt;p&gt;I&amp;rsquo;ve enjoyed spending the majority of my time writing code, including web applications, command-line applications,
-devops tools and user interfaces. Besides writing code, the next highest item on my list was probably &amp;ldquo;devops&amp;rdquo;. Tasks
-in this area included writing Puppet and Salt modules, bash scripts to simplify repetitive tasks, configuring firewalls and
-tracking down issues with services and servers.&lt;/p&gt;
-
-&lt;p&gt;On one project I&amp;rsquo;ve had the good fortune to help evolve a system to a Docker + Mesos environment that runs on
-100+ servers. I&amp;rsquo;m also excited to continue pushing that system to make it simpler to develop, deploy and maintain.&lt;/p&gt;
-
-&lt;p&gt;Another project has given me the opportunity to work remotely on a REST based API with a web based user interface
-that runs on a single server.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ll list the languages and prominent technologies I&amp;rsquo;ve directly used, configured, deployed and/or managed this year:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://golang.org&#34;&gt;Go&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://python.org&#34;&gt;Python&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.scala-lang.org/&#34;&gt;Scala&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.gnu.org/software/bash/&#34;&gt;Bash&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.google.com/search?q=c+programming+language&amp;amp;spell=1&amp;amp;sa=X&amp;amp;ved=0ahUKEwiMh5KoqYnRAhUS84MKHU3dAxgQvwUIGigA&#34;&gt;C&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.php.net/&#34;&gt;PHP&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://angularjs.org/&#34;&gt;AngularJS 1.x&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://mesos.apache.org/&#34;&gt;Mesos&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://mesosphere.github.io/marathon/&#34;&gt;Marathon&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://kafka.apache.org/&#34;&gt;Kafka&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://redis.io/&#34;&gt;Redis&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://crate.io/&#34;&gt;Crate&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.rabbitmq.com/&#34;&gt;RabbitMQ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.puppet.com/puppet/3/index.html&#34;&gt;Puppet 3&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.saltstack.com/en/2016.3/contents.html&#34;&gt;Salt&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://nginx.org/en/&#34;&gt;Nginx&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Needless to say, it&amp;rsquo;s been a blast.&lt;/p&gt;
-
-&lt;h2 id=&#34;people:7c4fca12116257f897be5510b5fb19bb&#34;&gt;People&lt;/h2&gt;
-
-&lt;h3 id=&#34;work:7c4fca12116257f897be5510b5fb19bb&#34;&gt;Work&lt;/h3&gt;
-
-&lt;p&gt;I&amp;rsquo;ve been able to work with a lot of smart, hands-on, technical people which has
-been great. A few have moved on which is always a bummer, but I&amp;rsquo;m excited for them.&lt;/p&gt;
-
-&lt;h3 id=&#34;friends-and-family:7c4fca12116257f897be5510b5fb19bb&#34;&gt;Friends and Family&lt;/h3&gt;
-
-&lt;p&gt;I&amp;rsquo;ve made some new friends, had an old friend visit and stay a few days, and kept in
-touch with some others.&lt;/p&gt;
-
-&lt;p&gt;I also lost my mom. She had a variety of health issues that
-spanned decades. I miss her a lot, especially her &amp;ldquo;automatic redial&amp;rdquo; that would occur
-after you hung up the phone when speaking with her.&lt;/p&gt;
-
-&lt;p&gt;Besides having the chance to see my dad so many days when getting home from work, he&amp;rsquo;s
-been building a &amp;ldquo;playhouse&amp;rdquo; at our home, I had the chance to go to a Porsche driving
-event with him at &lt;a href=&#34;http://summitpoint-raceway.com/track-information/shenandoah-circuit/&#34;&gt;Summit Point&lt;/a&gt;
-(slightly modified setup on the Shenadoah Circuit). We had a blast driving the 2016 911 Carerra 4S, Cayenne GTS and
-Macan GTS.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve also had the chance to see my sister and her family a few times which has been great, my
-nieces and nephews have grown up sooo much. We even had my youngest niece stay for a sleep over,
-which  was a lot of fun!&lt;/p&gt;
-
-&lt;p&gt;I also feel like the luckiest guy in the world, because I woke up everyday next to my high school
-sweet heart, who has been my rock every day. We&amp;rsquo;re raising three amazing children who certainly give
-us a run for our money, but also make us laugh and smile more than any other thing in our lives.&lt;/p&gt;
-
-&lt;h2 id=&#34;looking-forward:7c4fca12116257f897be5510b5fb19bb&#34;&gt;Looking Forward&lt;/h2&gt;
-
-&lt;p&gt;I&amp;rsquo;m pretty sure last year I had resolutions to eat better, exercise regularly, keep the
-2013 VW Passat and do new things with the family.&lt;/p&gt;
-
-&lt;p&gt;I still have moments where I binge on crab chips and ice cream, but I think I&amp;rsquo;ve gotten
-better overall, still want to do better. I made no progress in regularly excercising. There
-were days where I went for walks, did some basic push-ups / crunches, etc&amp;hellip;but nothing consistent.&lt;/p&gt;
-
-&lt;p&gt;I did succeed in not getting rid of the 2013 Passat for something newer just because I might want
-something newer. However, it&amp;rsquo;s a TDI and fell under the VW scandal. I was given the option to
-keep the car and let VW try to fix the emissions issue or have VW buy it back. I&amp;rsquo;ve elected to
-have them buy it back. I got ahead of myself a bit and bought a 2017 Passat with the
-expectation I&amp;rsquo;d be selling back the 2013 Passat within a couple weeks. Turns out VW is
-swamped and disorganized, so the 2013 Passat isn&amp;rsquo;t going back until February.&lt;/p&gt;
-
-&lt;p&gt;As a family we did a few new things this year such as:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;hiking/exploring the &lt;a href=&#34;https://www.nps.gov/cato/&#34;&gt;Catoctin Mountain Park&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;seeing the &lt;a href=&#34;http://www.harlemglobetrotters.com/&#34;&gt;Harlem Globetrotters&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;setup a vegetable garden (which actually produced food we could eat)&lt;/li&gt;
-&lt;li&gt;bought and raised &lt;a href=&#34;https://www.google.com/search?q=lionhead+bunnies&amp;amp;espv=2&amp;amp;biw=1435&amp;amp;bih=724&amp;amp;source=lnms&amp;amp;tbm=isch&amp;amp;sa=X&amp;amp;ved=0ahUKEwiCvpT0pInRAhUM1oMKHYVXBLwQ_AUIBigB&#34;&gt;3 Lionhead Bunnies&lt;/a&gt;
-which quickly turned into something like 16 - 20 bunnies after the kids put the boy bunny with the two girl bunnies. Over time, we
-ended up selling or giving away most of the bunnies. We took the rest to a nearby farm so they could live a better life (they had
-to stay in cages with us to prevent more babies)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Looking forward I want to continue exploring and doing new things as a family. A couple things are already lined up such
-as going to a hockey game (we&amp;rsquo;ve done this once before, but its been a few years) and seeing the &lt;a href=&#34;http://stomponline.com/&#34;&gt;STOMP&lt;/a&gt;
-show.&lt;/p&gt;
-
-&lt;p&gt;With regards to tech, I&amp;rsquo;d like to at least checkout a new langauge, maybe one of these:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.rust-lang.org/en-US/&#34;&gt;rust&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://elixir-lang.org/&#34;&gt;elixir&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://julialang.org/&#34;&gt;julia&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://elm-lang.org/&#34;&gt;elm&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I&amp;rsquo;d also like to try some new front-end hotness, think angular / react /&amp;hellip;, but I&amp;rsquo;m not going to make a list
-since that area is rapidly changing.&lt;/p&gt;
-
-&lt;p&gt;I also looked at Kubernetes back in September 2014, but I&amp;rsquo;d like to give it a shot again. I&amp;rsquo;m slightly concerned
-about the Mesos ecosystem as Mesosphere continues pushing and focusing on their DC/OS.&lt;/p&gt;
-
-&lt;p&gt;Oh, and hardware. I&amp;rsquo;d like to get a Raspberry Pi, or something similar and create something.&lt;/p&gt;
-</description>
+      <description>Another year is coming to an end so I thought I&amp;rsquo;d reflect and jot down some things.
+Programming I&amp;rsquo;ve enjoyed spending the majority of my time writing code, including web applications, command-line applications, devops tools and user interfaces. Besides writing code, the next highest item on my list was probably &amp;ldquo;devops&amp;rdquo;. Tasks in this area included writing Puppet and Salt modules, bash scripts to simplify repetitive tasks, configuring firewalls and tracking down issues with services and servers.</description>
     </item>
     
     <item>
@@ -145,87 +50,9 @@ about the Mesos ecosystem as Mesosphere continues pushing and focusing on their 
       <pubDate>Wed, 11 May 2016 19:37:37 -0400</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2016/05/run-mesos-using-docker-beta11-on-mac-osx/</guid>
-      <description>
-
-&lt;p&gt;Previously I &lt;a href=&#34;http://craigwickesser.com/2016/04/run-mesos-using-docker-beta-on-mac-osx/&#34;&gt;wrote about&lt;/a&gt; running &lt;a href=&#34;http://mesos.apache.org&#34;&gt;Apache Mesos&lt;/a&gt;
-in Docker on Mac OS X using Docker for Mac Beta 8. With the recent update to
-Docker 1.11.1-beta11 things have changed a bit and so the scripts have to change.&lt;/p&gt;
-
-&lt;p&gt;Once again the &lt;code&gt;dockerIp&lt;/code&gt; had to be discovered differently and I had to switch
-docker to use &lt;code&gt;nat&lt;/code&gt; networking, instead of the default &lt;code&gt;hostnet&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;First, change the networking: &lt;code&gt;pinata set network nat&lt;/code&gt;. Now, create a script
-to help start mesos once inside the container.&lt;/p&gt;
-
-&lt;h2 id=&#34;start-mesos-master:dac466967fe79cd636e3f82ddd3ff3e9&#34;&gt;Start Mesos Master&lt;/h2&gt;
-
-&lt;p&gt;First create a script used to prep and launch &lt;code&gt;mesos-master&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;run-mesos-master-sh:dac466967fe79cd636e3f82ddd3ff3e9&#34;&gt;run_mesos_master.sh&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-
-dockerIp=$(ip route get 8.8.8.8 | awk &#39;{print $NF; exit}&#39;)
-
-echo; echo &amp;quot;DOCKER IP: $dockerIp; echo; echo&amp;quot;
-
-exec MESOS_HOSTNAME=$dockerIp MESOS_IP=$dockerIp mesos-master
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;start-mesos-master-sh:dac466967fe79cd636e3f82ddd3ff3e9&#34;&gt;start_mesos_master.sh&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-
-hostIp=$(ipconfig getifaddr en0)
-
-docker run \
--e MESOS_QUORUM=1 \
--e MESOS_ZK=zk://$hostIp:2181/mesos \
--e MESOS_REGISTRY=in_memory \
--v $(pwd):/scripts \
---name mesos-master \
---net=host \
---entrypoint /bin/bash \
-mesosphere/mesos-master:0.28.0-2.0.16.ubuntu1404 \
-/scripts/run_mesos_master.sh
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now run &lt;code&gt;start_mesos_master.sh&lt;/code&gt; to start the master.&lt;/p&gt;
-
-&lt;h2 id=&#34;start-mesos-slave:dac466967fe79cd636e3f82ddd3ff3e9&#34;&gt;Start Mesos slave&lt;/h2&gt;
-
-&lt;p&gt;Create a separate script to prep and launch the &lt;code&gt;mesos-slave&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;run-mesos-slave-sh:dac466967fe79cd636e3f82ddd3ff3e9&#34;&gt;run_mesos_slave.sh&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-
-dockerIp=$(ip route get 8.8.8.8 | awk &#39;{print $NF; exit}&#39;)
-
-exec MESOS_HOSTNAME=$dockerIp MESOS_IP=$dockerIp mesos-slave
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;start-mesos-slave-sh:dac466967fe79cd636e3f82ddd3ff3e9&#34;&gt;start_mesos_slave.sh&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-
-hostIp=$(ipconfig getifaddr en0)
-
-docker run \
--e MESOS_MASTER=zk://$hostIp:2181/mesos \
--v $(pwd):/scripts \
--v /sys/fs/cgroup:/sys/fs/cgroup \
--v /var/run/docker.sock:/var/run/docker.sock \
---name slave --net=host --privileged --restart always \
---entrypoint /bin/bash \
-mesosphere/mesos-slave:0.28.0-2.0.16.ubuntu1404 \
-/scripts/run_mesos_slave.sh
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now run &lt;code&gt;start_mesos_slave.sh&lt;/code&gt; to start the slave.&lt;/p&gt;
-
-&lt;p&gt;Browse to the IP address output when starting the mesos master.&lt;/p&gt;
-</description>
+      <description>Previously I wrote about running Apache Mesos in Docker on Mac OS X using Docker for Mac Beta 8. With the recent update to Docker 1.11.1-beta11 things have changed a bit and so the scripts have to change.
+Once again the dockerIp had to be discovered differently and I had to switch docker to use nat networking, instead of the default hostnet.
+First, change the networking: pinata set network nat.</description>
     </item>
     
     <item>
@@ -234,118 +61,9 @@ mesosphere/mesos-slave:0.28.0-2.0.16.ubuntu1404 \
       <pubDate>Sun, 17 Apr 2016 20:30:55 -0400</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2016/04/run-mesos-using-docker-beta-on-mac-osx/</guid>
-      <description>
-
-&lt;p&gt;Previously I &lt;a href=&#34;http://craigwickesser.com/2016/01/mesos-on-mac-osx/&#34;&gt;wrote about&lt;/a&gt; running &lt;a href=&#34;http://mesos.apache.org&#34;&gt;Apache Mesos&lt;/a&gt;
-in Docker on Mac OS X. Back then Docker worked by using a VM run via VirtualBox. Today,
-using Docker Beta for Mac, the process is simpler and more like the linux experience.&lt;/p&gt;
-
-&lt;p&gt;The scripts I used before only had to be changed to update the way the &lt;code&gt;dockerIp&lt;/code&gt;
-was discovered. I wasn&amp;rsquo;t sure how do find that IP address.&lt;/p&gt;
-
-&lt;p&gt;With the Docker Beta there&amp;rsquo;s a command-line tool named &lt;code&gt;pinata&lt;/code&gt;
-which can be used to configure docker:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;laptop:~ craig$ pinata list
-These are advanced configuration settings to customise Docker.app on MacOSX.
-You can set them via pinata set &amp;lt;key&amp;gt; &amp;lt;value&amp;gt; &amp;lt;options&amp;gt;.
-
-🐳  hostname = docker
-   Hostname of the virtual machine endpoint, where container ports will be
-   exposed if using nat networking. Access it via &#39;docker.local&#39;.
-
-🐳  hypervisor = native (memory=2, ncpu=4)
-   The Docker.app includes embedded hypervisors that run the virtual machines
-   that power the containers. This setting allows you to control which the
-   default one used for Linux is.
-
- ▸  native: a version of the xhyve hypervisor that uses the MacOSX
-              Hypervisor.framework to run container VMs. Parameters:
-              memory (VM memory in gigabytes), ncpu (vCPUs)
-
-
-🐳  network = nat (external-bind=false)
-   Controls how local containers can access the external network via the
-   MacOS X host. This includes outbound traffic as well as publishing ports
-   for external access to the local containers.
-
- ▸     nat: a mode that uses the MacOS X vmnet.framework to route container
-              traffic to the host network via a NAT. Parameters:
-              external-bind (bind ports to external network interface)
- ▸ hostnet: a mode that helps if you are using a VPN that restricts
-              connectivity. Activating this mode will proxy container network
-              packets via the Docker.app process as host socket traffic.
-              Parameters: docker-ipv4 (docker node), host-ipv4 (host node)
-
-🐳  filesystem = osxfs
-   Controls the mode by which files from the MacOS X host and the container
-   filesystem are shared with each other.
-
- ▸   osxfs: a FUSE-based filesystem that bidirectionally forwards OSX
-              filesystem events into the container.
-
-
-🐳  daemon = run &#39;pinata get daemon&#39; or &#39;pinata set daemon [@file|-]&amp;gt;
-   JSON configuration of the local Docker daemon. Configure any custom
-   options you need as documented in:
-   https://docs.docker.com/engine/reference/commandline/daemon/. Set it
-   directly, or a @file or - for stdin.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The &lt;code&gt;hostname&lt;/code&gt; property says you can access the virtual machine endpoint through
-&lt;code&gt;docker.local&lt;/code&gt;. I tried to ping that hostname and received &amp;ldquo;request timed out&amp;rdquo;. From what I render
-in the forums, I should&amp;rsquo;ve gotten a response. I rebooted my Mac and tried the ping again:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;laptop:~ craig$ ping docker.local
-PING docker.local (192.168.64.4): 56 data bytes
-64 bytes from 192.168.64.4: icmp_seq=0 ttl=64 time=0.361 ms
-64 bytes from 192.168.64.4: icmp_seq=1 ttl=64 time=0.382 ms
-^C
---- docker.local ping statistics ---
-2 packets transmitted, 2 packets received, 0.0% packet loss
-round-trip min/avg/max/stddev = 0.361/0.371/0.382/0.010 ms
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;It worked! Here&amp;rsquo;s the updated scripts I used to start a Mesos master and slave
-using Docker Beta for Mac:&lt;/p&gt;
-
-&lt;h2 id=&#34;start-mesos-master:53ae553c4baed7c54e57f316d653c62a&#34;&gt;Start Mesos master&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-
-# there must be a simpler way...
-dockerIp=$(ping -c 1 docker.local  | grep &amp;quot;^PING docker.local&amp;quot; | gawk &#39;{print $3}&#39; | tr -d &#39;(&#39; | tr -d &#39;)&#39; | tr -d &#39;:&#39;)
-hostIp=$(ipconfig getifaddr en0)
-
-docker run \
--e MESOS_HOSTNAME=$dockerIp \
--e MESOS_IP=$dockerIp \
--e MESOS_QUORUM=1 \
--e MESOS_ZK=zk://$hostIp:2181/mesos \
---name mesos-master \
---net host \
---restart always \
-mesosphere/mesos-master:0.28.0-2.0.16.ubuntu1404
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;start-mesos-slave:53ae553c4baed7c54e57f316d653c62a&#34;&gt;Start Mesos slave&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-
-# there must be a simpler way...
-dockerIp=$(ping -c 1 docker.local  | grep &amp;quot;^PING docker.local&amp;quot; | gawk &#39;{print $3}&#39; | tr -d &#39;(&#39; | tr -d &#39;)&#39; | tr -d &#39;:&#39;)
-hostIp=$(ipconfig getifaddr en0)
-
-docker run \
--e MESOS_HOSTNAME=$dockerIp \
--e MESOS_IP=$dockerIp \
--e MESOS_MASTER=zk://$hostIp:2181/mesos \
--v /sys/fs/cgroup:/sys/fs/cgroup \
--v /var/run/docker.sock:/var/run/docker.sock \
---name slave --net host --privileged --restart always \
-mesosphere/mesos-slave:0.28.0-2.0.16.ubuntu1404
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>Previously I wrote about running Apache Mesos in Docker on Mac OS X. Back then Docker worked by using a VM run via VirtualBox. Today, using Docker Beta for Mac, the process is simpler and more like the linux experience.
+The scripts I used before only had to be changed to update the way the dockerIp was discovered. I wasn&amp;rsquo;t sure how do find that IP address.
+With the Docker Beta there&amp;rsquo;s a command-line tool named pinata which can be used to configure docker:</description>
     </item>
     
     <item>
@@ -354,39 +72,8 @@ mesosphere/mesos-slave:0.28.0-2.0.16.ubuntu1404
       <pubDate>Mon, 18 Jan 2016 20:32:45 -0500</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2016/01/hypersh-on-mac/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://hyper.sh/&#34;&gt;Hyper&lt;/a&gt; calls itself a &lt;code&gt;Hypervisor-agnostic Docker Runtime&lt;/code&gt;.
-It boasts the &lt;a href=&#34;https://hyper.sh/why-hyper.html&#34;&gt;benefits&lt;/a&gt; of Virtual Machines and Containers, without the downsides:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;security
-
-&lt;ul&gt;
-&lt;li&gt;using a VM reduces the attach surface and avoids the &amp;ldquo;shared kernel&amp;rdquo; problem
-presented by containers.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;performance
-
-&lt;ul&gt;
-&lt;li&gt;Hyper is able to launch instances in sub-second versus tens of seconds like
-traditional VM&amp;rsquo;s.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;portable
-
-&lt;ul&gt;
-&lt;li&gt;the hypervisor is agnostic, it supports KVM, Xen and VirtualBox.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;immutable&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;It&amp;rsquo;s also nice to see their following the &lt;a href=&#34;https://github.com/opencontainers/specs&#34;&gt;OCI Specs&lt;/a&gt;
-for their &lt;a href=&#34;https://github.com/hyperhq/runv&#34;&gt;hypervisor&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Hyper supports Mac OS X, however, due to recent changes in the OS, VirtualBox doesn&amp;rsquo;t
-work well, so &lt;a href=&#34;https://github.com/hyperhq/hyper/issues/182&#34;&gt;Hyper doesn&amp;rsquo;t currently work with Mac OS X 10.11 (El Capitan)&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I look forward to trying out Hyper on my laptop, I&amp;rsquo;ll probably give it a whirl
-on &lt;a href=&#34;https://www.packet.net/promo/hyper/&#34;&gt;Packet&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>Hyper calls itself a Hypervisor-agnostic Docker Runtime. It boasts the benefits of Virtual Machines and Containers, without the downsides:
+ security  using a VM reduces the attach surface and avoids the &amp;ldquo;shared kernel&amp;rdquo; problem presented by containers.  performance  Hyper is able to launch instances in sub-second versus tens of seconds like traditional VM&amp;rsquo;s.  portable  the hypervisor is agnostic, it supports KVM, Xen and VirtualBox.  immutable  It&amp;rsquo;s also nice to see their following the OCI Specs for their hypervisor.</description>
     </item>
     
     <item>
@@ -395,26 +82,9 @@ on &lt;a href=&#34;https://www.packet.net/promo/hyper/&#34;&gt;Packet&lt;/a&gt;.
       <pubDate>Mon, 18 Jan 2016 20:06:53 -0500</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2016/01/secure-email-on-mac/</guid>
-      <description>&lt;p&gt;This will be quick. I use GMail but it lacks the native ability to sign and
-encrypt email. I did some looking around for desktop email clients for Mac OS X
-that support &lt;a href=&#34;https://en.wikipedia.org/wiki/S/MIME&#34;&gt;S/MIME&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I ended up going with &lt;a href=&#34;http://airmailapp.com/&#34;&gt;Airmail 2&lt;/a&gt; because it has S/MIME
-support and it supports &lt;a href=&#34;https://daringfireball.net/projects/markdown/&#34;&gt;Markdown&lt;/a&gt; which I like to use.&lt;/p&gt;
-
-&lt;p&gt;S/MIME support is provided by a &lt;a href=&#34;http://airmailapp.com/smime&#34;&gt;plugin&lt;/a&gt;. Follow
-the instructions after going to the link, you&amp;rsquo;ll ultimately download a zip file.&lt;/p&gt;
-
-&lt;p&gt;Open Airmail, click on the &lt;code&gt;Window&lt;/code&gt; menu and select &lt;code&gt;Show Plugins Folder...&lt;/code&gt;.
-Extract the S/MIME plugin zip file and copy the &lt;code&gt;.bundle&lt;/code&gt; file into the plugins
-folder.&lt;/p&gt;
-
-&lt;p&gt;Click on the &lt;code&gt;Window&lt;/code&gt; menu and choose &lt;code&gt;Plugins&lt;/code&gt; and click &lt;code&gt;Reload Plugins&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;You should be all set to send signed and encrypted email.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;note&lt;/strong&gt;: Comodo offers a &lt;a href=&#34;https://www.comodo.com/home/email-security/free-email-certificate.php&#34;&gt;free email certificate&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>This will be quick. I use GMail but it lacks the native ability to sign and encrypt email. I did some looking around for desktop email clients for Mac OS X that support S/MIME.
+I ended up going with Airmail 2 because it has S/MIME support and it supports Markdown which I like to use.
+S/MIME support is provided by a plugin. Follow the instructions after going to the link, you&amp;rsquo;ll ultimately download a zip file.</description>
     </item>
     
     <item>
@@ -423,73 +93,10 @@ folder.&lt;/p&gt;
       <pubDate>Sat, 09 Jan 2016 12:14:56 -0500</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2016/01/mesos-on-mac-osx/</guid>
-      <description>
-
-&lt;p&gt;&lt;strong&gt;updated on 04/01/2016 to use mesosphere docker images&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Using docker it&amp;rsquo;s simple to get a &lt;a href=&#34;mesos.apache.org&#34;&gt;Mesos&lt;/a&gt; cluster running on Mac OS X. I&amp;rsquo;m running Docker 1.9.1
-and OS X 10.11.2. We&amp;rsquo;ll be running Zookeeper 3.4.7 and Mesos 0.24.1 (that&amp;rsquo;s the version provided by the docker image I&amp;rsquo;m using for this example).&lt;/p&gt;
-
-&lt;p&gt;First we&amp;rsquo;ll start a Zookeeper server, then a Mesos master and
-a single Mesos slave.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;note&lt;/strong&gt;: I have satellite internet, so my downloads are throttled after I use the data allowance for the month. I was able to pull a Docker images for Mesos but I kept having issues pulling the Zookeeper so I just downloaded Zookeeper from their &lt;a href=&#34;zookeeper.apache.org&#34;&gt;website&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;zookeeper:fbd5e7fec7c8e618d5a6c691dfb3fbe5&#34;&gt;Zookeeper&lt;/h2&gt;
-
-&lt;p&gt;After downloading the zookeeper tarball, extract it. Copy the sample configuration file, &lt;code&gt;cp /path/to/zookeeper-3.4.7/conf/zoo_sample.cfg /path/to/zookeeper-3.4.7/zoo.cfg&lt;/code&gt;. For now, the default configuration is good enough.&lt;/p&gt;
-
-&lt;p&gt;Start the server: &lt;code&gt;/path/to/zookeeper-3.4.7/bin/zkServer.sh&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;start-mesos-master:fbd5e7fec7c8e618d5a6c691dfb3fbe5&#34;&gt;Start Mesos master&lt;/h2&gt;
-
-&lt;p&gt;On the Mac, Docker is run in a VM, so we have to do some finagling to get the correect IP address for Mesos to use. To start the Mesos master I created a small script:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-
-dockerIp=$(echo $DOCKER_HOST | cut -d &#39;/&#39; -f 3 | cut -d &#39;:&#39; -f 1)
-hostIp=$(ipconfig getifaddr en0)
-
-docker run \
--e MESOS_HOSTNAME=$dockerIp \
--e MESOS_IP=$dockerIp \
--e MESOS_QUORUM=1 \
--e MESOS_ZK=zk://$hostIp:2181/mesos \
---name mesos-master \
---net host \
---restart always \
-mesosphere/mesos-master:0.28.0-2.0.16.ubuntu1404
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;note&lt;/em&gt;: You could optionally pass the &lt;code&gt;-d&lt;/code&gt; flag so the container would run in the background.&lt;/p&gt;
-
-&lt;h2 id=&#34;start-mesos-slave:fbd5e7fec7c8e618d5a6c691dfb3fbe5&#34;&gt;Start Mesos slave&lt;/h2&gt;
-
-&lt;p&gt;I also used a script to start the Mesos slave:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-
-dockerIp=$(echo $DOCKER_HOST | cut -d &#39;/&#39; -f 3 | cut -d &#39;:&#39; -f 1)
-hostIp=$(ipconfig getifaddr en0)
-
-docker run \
--e MESOS_HOSTNAME=$dockerIp \
--e MESOS_IP=$dockerIp \
--e MESOS_MASTER=zk://$hostIp:2181/mesos \
--v /sys/fs/cgroup:/sys/fs/cgroup \
--v /var/run/docker.sock:/var/run/docker.sock \
---name slave --net host --privileged --restart always \
-mesosphere/mesos-slave:0.28.0-2.0.16.ubuntu1404
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You can now browse to the Mesos UI. You&amp;rsquo;ll need to get the IP address of the VM running docker:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;bash-3.2$ echo $DOCKER_HOST
-tcp://192.168.99.100:2376
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In this case, browse to &lt;code&gt;http://192.168.99.100:5050&lt;/code&gt;.&lt;/p&gt;
-</description>
+      <description>updated on 04/01/2016 to use mesosphere docker images
+Using docker it&amp;rsquo;s simple to get a Mesos cluster running on Mac OS X. I&amp;rsquo;m running Docker 1.9.1 and OS X 10.11.2. We&amp;rsquo;ll be running Zookeeper 3.4.7 and Mesos 0.24.1 (that&amp;rsquo;s the version provided by the docker image I&amp;rsquo;m using for this example).
+First we&amp;rsquo;ll start a Zookeeper server, then a Mesos master and a single Mesos slave.
+note: I have satellite internet, so my downloads are throttled after I use the data allowance for the month.</description>
     </item>
     
     <item>
@@ -498,86 +105,11 @@ tcp://192.168.99.100:2376
       <pubDate>Tue, 24 Mar 2015 20:33:36 -0500</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2015/03/mesos-022-release/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://mesos.apache.org/&#34;&gt;Mesos&lt;/a&gt; 0.22.0 has been &lt;a href=&#34;https://dist.apache.org/repos/dist/release/mesos/0.22.0/&#34;&gt;released&lt;/a&gt;!&lt;/p&gt;
-
-&lt;p&gt;There&amp;rsquo;s a nice &lt;a href=&#34;https://www.youtube.com/watch?v=LC3dlmdc4bc&#34;&gt;video&lt;/a&gt; which goes through the new features in 0.22.0 as well as
-some features scheduled for the 0.23.0 release.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve put together some notes I put together while watching the video.&lt;/p&gt;
-
-&lt;h2 id=&#34;disk-isolation:05540a89ab0bd7894a855407044491dc&#34;&gt;Disk Isolation&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-1589&#34;&gt;Disk Isolation&lt;/a&gt; allows the
-&lt;code&gt;MesosContainerizer&lt;/code&gt; to enforce a disk quota. Prior to 0.22.0 mesos supported &lt;a href=&#34;https://youtu.be/LC3dlmdc4bc?t=207&#34;&gt;isolation&lt;/a&gt; of cpu, memory, pid namespacing,
-network ports and bandwidth.&lt;/p&gt;
-
-&lt;p&gt;To use this new isolation, two new flags are required:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# enable disk isolation
---isolation=“posix/disk” --enforce_container_disk_quota
-
-# set the quota, in megabytes
--—resources=“disk:64”
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;disaster-prevention:05540a89ab0bd7894a855407044491dc&#34;&gt;Disaster Prevention&lt;/h2&gt;
-
-&lt;p&gt;There are &lt;a href=&#34;https://youtu.be/LC3dlmdc4bc?t=503&#34;&gt;several mechanisms&lt;/a&gt; to prevent
-disaster that were in place prior to the 0.22.0 release:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;master commits suicide when losing connection to ZK&lt;/li&gt;
-&lt;li&gt;compute nodes ignore shutdown requests received from master that is not leader&lt;/li&gt;
-&lt;li&gt;recovery remove limit (% of cluster)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In this release the ability to &lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-1148&#34;&gt;rate limit slave removal&lt;/a&gt;
-was added which could allow administrators to react when they notice the
-slave removals occurring.&lt;/p&gt;
-
-&lt;p&gt;To configure the rate limit, a new flag is available:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# remove one slave per minute
---slave_removal_rate_limit=1/1mins
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;labels-and-discovery:05540a89ab0bd7894a855407044491dc&#34;&gt;Labels and Discovery&lt;/h2&gt;
-
-&lt;p&gt;Tasks can now have &lt;a href=&#34;https://github.com/apache/mesos/blob/b2f73095fd168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1056&#34;&gt;labels&lt;/a&gt;, which are simply key/value pairs. This allows tasks to be tagged, for example &lt;code&gt;environment: production&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Additionally, tasks can now include &lt;a href=&#34;https://github.com/apache/mesos/blob/b2f73095fd168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093&#34;&gt;DiscoveryInfo&lt;/a&gt;. This information can be used for service discovery as it can provide
-common attributes such as &lt;code&gt;environment&lt;/code&gt;, &lt;code&gt;location&lt;/code&gt; and &lt;code&gt;version&lt;/code&gt;. However, it
-also supports &lt;a href=&#34;https://github.com/apache/mesos/blob/b2f73095fd168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1075&#34;&gt;Ports&lt;/a&gt; (which can have names), as well as arbitrary labels.&lt;/p&gt;
-
-&lt;p&gt;Video link: &lt;a href=&#34;https://youtu.be/LC3dlmdc4bc?t=600d168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093&#34;&gt;https://youtu.be/LC3dlmdc4bc?t=600d168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;more-features-and-improvements:05540a89ab0bd7894a855407044491dc&#34;&gt;More features and improvements&lt;/h2&gt;
-
-&lt;p&gt;There are other features and improvements which are highlighted in the video.
-I imagine the mesos website will be updated soon with a summary as well.&lt;/p&gt;
-
-&lt;h2 id=&#34;what-to-look-forward-to:05540a89ab0bd7894a855407044491dc&#34;&gt;What to look forward to&lt;/h2&gt;
-
-&lt;p&gt;With a release being published within the hour, naturally it&amp;rsquo;s time to look at
-what&amp;rsquo;s coming next:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-1554&#34;&gt;persistent primitives&lt;/a&gt; - to
-support storage-like services&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-2018&#34;&gt;dynamic reservations&lt;/a&gt; - allow a
-framework to dynamically reserve offered resources, allowing those resources to
-only be re-offered to the same framework (to support stateful services)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-910&#34;&gt;ssl support&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://issues.apache.org/jira/browse/MESOS-1607&#34;&gt;optimistic offers&lt;/a&gt; - resource offers
-are currently offered to a single framework at a time, with optimistic offers the
-offers would be handed out in parallel.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Again, there&amp;rsquo;s other features, improvements and bug fixes slated for Mesos 0.23.0
-but this should at least give a taste for what&amp;rsquo;s to come.&lt;/p&gt;
-</description>
+      <description>Mesos 0.22.0 has been released!
+There&amp;rsquo;s a nice video which goes through the new features in 0.22.0 as well as some features scheduled for the 0.23.0 release.
+I&amp;rsquo;ve put together some notes I put together while watching the video.
+Disk Isolation Disk Isolation allows the MesosContainerizer to enforce a disk quota. Prior to 0.22.0 mesos supported isolation of cpu, memory, pid namespacing, network ports and bandwidth.
+To use this new isolation, two new flags are required:</description>
     </item>
     
     <item>
@@ -586,76 +118,9 @@ but this should at least give a taste for what&amp;rsquo;s to come.&lt;/p&gt;
       <pubDate>Tue, 24 Feb 2015 21:51:56 -0500</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2015/02/golang-cmd-with-custom-environment/</guid>
-      <description>&lt;p&gt;Problem: Execute an external process with a customized environment.&lt;/p&gt;
-
-&lt;p&gt;Solution: The &lt;a href=&#34;https://gobyexample.com&#34;&gt;Go by Example&lt;/a&gt; site
-has as an example demonstrating how to &lt;a href=&#34;https://gobyexample.com/spawning-processes&#34;&gt;spawn an external process&lt;/a&gt; and how &lt;a href=&#34;https://gobyexample.com/execing-processes&#34;&gt;exec
-a process&lt;/a&gt;. Those two examples provide
-a great starting point. Below, we&amp;rsquo;ll take it a step further to modify the
-environment.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;package main
-
-import (
-	&amp;quot;fmt&amp;quot;
-	&amp;quot;io/ioutil&amp;quot;
-	&amp;quot;os&amp;quot;
-	&amp;quot;os/exec&amp;quot;
-)
-
-// In this example `messageId` is a value that
-// needs to be stored in an environment variable to be
-// used by the command that&#39;s going to be executed
-func doIt(messageId string) error {
-	binary, err := exec.LookPath(&amp;quot;print_env.sh&amp;quot;)
-	if err != nil {
-		return err
-	}
-
-	cmd := exec.Command(binary)
-	env := os.Environ()
-	env = append(env, fmt.Sprintf(&amp;quot;MESSAGE_ID=%s&amp;quot;, messageId))
-	cmd.Env = env
-
-	cmdOut, _ := cmd.StdoutPipe()
-	//cmdErr, _ := cmd.StderrPipe()
-
-	startErr := cmd.Start()
-	if startErr != nil {
-		return startErr
-	}
-
-	// read stdout and stderr
-	stdOutput, _ := ioutil.ReadAll(cmdOut)
-	//errOutput, _ := ioutil.ReadAll(cmdErr)
-
-	fmt.Printf(&amp;quot;STDOUT: %s\n&amp;quot;, stdOutput)
-	//fmt.Printf(&amp;quot;ERROUT: %s\n&amp;quot;, errOutput)
-
-	err = cmd.Wait()
-	return err
-}
-
-func main() {
-	messageId := &amp;quot;abc123&amp;quot;
-	err := doIt(messageId)
-	if err != nil {
-		fmt.Printf(&amp;quot;Error: %v\n&amp;quot;, err)
-	}
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The &lt;code&gt;doIt&lt;/code&gt; function is where the magic happens. First, a &lt;code&gt;exec.Command&lt;/code&gt; is
-created. Next, we grab a copy of the environment using &lt;code&gt;os.Environ()&lt;/code&gt;. The
-environment is a slice of strings so we append another string, in the correct
-format, containing the environment variable we want to add, &lt;code&gt;MESSAGE_ID&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;The rest of the code sets up reading stdout (and stderr, though I commented )
-and executing the command. If you run the program, you&amp;rsquo;ll see in the output
-that &lt;code&gt;MESSAGE_ID&lt;/code&gt; was set to &lt;code&gt;abc123&lt;/code&gt; (as passed into the &lt;code&gt;doIt&lt;/code&gt; function).&lt;/p&gt;
-
-&lt;p&gt;Simple, right?&lt;/p&gt;
-</description>
+      <description>Problem: Execute an external process with a customized environment.
+Solution: The Go by Example site has as an example demonstrating how to spawn an external process and how exec a process. Those two examples provide a great starting point. Below, we&amp;rsquo;ll take it a step further to modify the environment.
+package main import ( &amp;quot;fmt&amp;quot; &amp;quot;io/ioutil&amp;quot; &amp;quot;os&amp;quot; &amp;quot;os/exec&amp;quot; ) // In this example `messageId` is a value that // needs to be stored in an environment variable to be // used by the command that&#39;s going to be executed func doIt(messageId string) error { binary, err := exec.</description>
     </item>
     
     <item>
@@ -664,45 +129,15 @@ that &lt;code&gt;MESSAGE_ID&lt;/code&gt; was set to &lt;code&gt;abc123&lt;/code&
       <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2015/01/mindscratch-newsletter-1/</guid>
-      <description>&lt;p&gt;On a regular basis, hopefully once per week, I&amp;rsquo;ll be posting links to
-content related to distributed systems, programming and devops. If you&amp;rsquo;d prefer
-to access this content via email, then &lt;a href=&#34;http://craigwickesser.com/subscribe&#34;&gt;subscribe&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.meetup.com/Apache-Mesos-NYC-Meetup/events/219073804/&#34;&gt;http://www.meetup.com/Apache-Mesos-NYC-Meetup/events/219073804/&lt;/a&gt;
-  - interesting b/c of  mention of running Accumulo on Mesos&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.slideshare.net/ColleenLee1/iguaz-a-longrunning-job-scheduler-using-docker-and-mesos&#34;&gt;http://www.slideshare.net/ColleenLee1/iguaz-a-longrunning-job-scheduler-using-docker-and-mesos&lt;/a&gt;
-  - job scheduler from corsera&lt;/p&gt;
-
-&lt;p&gt;Docker security
-&lt;a href=&#34;https://github.com/GDSSecurity/Docker-Secure-Deployment-Guidelines&#34;&gt;https://github.com/GDSSecurity/Docker-Secure-Deployment-Guidelines&lt;/a&gt;
-&lt;a href=&#34;https://www.gartner.com/doc/2956826&#34;&gt;https://www.gartner.com/doc/2956826&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/ExPHAT/twitter-sort&#34;&gt;https://github.com/ExPHAT/twitter-sort&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://am./chronos&#34;&gt;http://am./chronos&lt;/a&gt; &amp;ndash;master zk://server1:2181/mesos &amp;ndash;zk_hosts zk://server1:2181/mesos &amp;ndash;http_port 8080bari.apache.org/&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://jpetazzo.github.io/2015/01/13/docker-mount-dynamic-volumes/&#34;&gt;http://jpetazzo.github.io/2015/01/13/docker-mount-dynamic-volumes/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://codeascraft.com/2015/01/14/introducing-statsd-jvm-profiler-a-jvm-profiler-for-hadoop/&#34;&gt;https://codeascraft.com/2015/01/14/introducing-statsd-jvm-profiler-a-jvm-profiler-for-hadoop/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Go
-Go Static Analysis Tools by Alan Donovan &lt;a href=&#34;https://vimeo.com/116108566&#34;&gt;https://vimeo.com/116108566&lt;/a&gt;
-Benchmarking Go &lt;a href=&#34;https://vimeo.com/114975899&#34;&gt;https://vimeo.com/114975899&lt;/a&gt;
-7 common mistakes in go and how to avoid them &lt;a href=&#34;https://vimeo.com/115776445&#34;&gt;https://vimeo.com/115776445&lt;/a&gt;
-cancellation, context and plumbing &lt;a href=&#34;https://vimeo.com/115309491&#34;&gt;https://vimeo.com/115309491&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Io.js
-&lt;a href=&#34;https://www.youtube.com/watch?v=DqMFX91ToLw&#34;&gt;https://www.youtube.com/watch?v=DqMFX91ToLw&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Ecmascript 7 async &amp;ndash; the evolution of javascript - &lt;a href=&#34;https://www.youtube.com/watch?v=DqMFX91ToLw&#34;&gt;https://www.youtube.com/watch?v=DqMFX91ToLw&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://opensource.com/business/15/1/apache-spark-new-world-record&#34;&gt;http://opensource.com/business/15/1/apache-spark-new-world-record&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://events.linuxfoundation.org/events/vault/program/schedule?utm_source=lf&amp;amp;utm_medium=email&amp;amp;utm_campaign=vault15&#34;&gt;http://events.linuxfoundation.org/events/vault/program/schedule?utm_source=lf&amp;amp;utm_medium=email&amp;amp;utm_campaign=vault15&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;onyx: &lt;a href=&#34;https://www.youtube.com/watch?v=vG47Gui3hYE&#34;&gt;https://www.youtube.com/watch?v=vG47Gui3hYE&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>On a regular basis, hopefully once per week, I&amp;rsquo;ll be posting links to content related to distributed systems, programming and devops. If you&amp;rsquo;d prefer to access this content via email, then subscribe.
+http://www.meetup.com/Apache-Mesos-NYC-Meetup/events/219073804/ - interesting b/c of mention of running Accumulo on Mesos
+http://www.slideshare.net/ColleenLee1/iguaz-a-longrunning-job-scheduler-using-docker-and-mesos - job scheduler from corsera
+Docker security https://github.com/GDSSecurity/Docker-Secure-Deployment-Guidelines https://www.gartner.com/doc/2956826
+https://github.com/ExPHAT/twitter-sort
+http://am./chronos &amp;ndash;master zk://server1:2181/mesos &amp;ndash;zk_hosts zk://server1:2181/mesos &amp;ndash;http_port 8080bari.apache.org/
+http://jpetazzo.github.io/2015/01/13/docker-mount-dynamic-volumes/
+https://codeascraft.com/2015/01/14/introducing-statsd-jvm-profiler-a-jvm-profiler-for-hadoop/
+Go Go Static Analysis Tools by Alan Donovan https://vimeo.</description>
     </item>
     
     <item>
@@ -711,79 +146,8 @@ cancellation, context and plumbing &lt;a href=&#34;https://vimeo.com/115309491&#
       <pubDate>Wed, 07 Jan 2015 18:26:39 -0500</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2015/01/golang-http-to-many-open-files/</guid>
-      <description>&lt;p&gt;I recently had a situation where an application I was working on in &lt;a href=&#34;http://golang.org&#34;&gt;Go&lt;/a&gt; would
-run into the &amp;ldquo;too many open files&amp;rdquo; error. After some debugging, I discovered
-it wasn&amp;rsquo;t closing HTTP connections being made to an HTTP server.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: It turns out, I was testing against &amp;ldquo;test&amp;rdquo; server which wasn&amp;rsquo;t
-setting the &lt;code&gt;Connection: close&lt;/code&gt; header, therefore neither the client or
-server was requesting the connection to be closed. If the server had set the
-&lt;code&gt;Connection&lt;/code&gt; header, things would&amp;rsquo;ve been fine.&lt;/p&gt;
-
-&lt;p&gt;The code looked like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;  transport := &amp;amp;http.Transport {
-    Proxy: http.ProxyFromEnvironment,
-    Dial: (&amp;amp;net.Dialer{
-      Timeout: 0,
-      KeepAlive: 0
-    }).Dial,
-    TLSHandshakeTimeout: 10 * time.second
-  }
-
-  httpClient := &amp;amp;http.Client{Transport: transport}
-
-  function submitData(url string, fileReader io.Reader) error {
-    req, reqErr := http.NewRequest(&amp;quot;POST&amp;quot;, url, fileReader)
-    if reqErr != nil {
-      return reqErr
-    }
-    req.Header.Set(&amp;quot;Content-Type&amp;quot;, &amp;quot;application/octet-stream&amp;quot;)
-
-    resp, err := httpClient.Do(req)
-    if err != nil {
-      return err
-    }
-    defer resp.Body.Close()
-
-    // read the body
-
-    return nil
-  }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The &lt;code&gt;submitData&lt;/code&gt; function gets called over and over whenever new data needs to
-be POSTed. Using &lt;a href=&#34;http://en.wikipedia.org/wiki/Netstat&#34;&gt;netstat&lt;/a&gt; I noticed the
-connections to the server were staying &lt;code&gt;ESTABLISHED&lt;/code&gt; instead of being closed. I
-set the &amp;ldquo;timeout&amp;rdquo; on the dialer to 0, because the POST should block until the
-server is done and responds (which is an undetermined amount of time).&lt;/p&gt;
-
-&lt;p&gt;I know the server is responding, because the code that processes the response
-was in fact getting data.&lt;/p&gt;
-
-&lt;p&gt;It turns out, HTTP/1.1 uses persistent connections by default:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;A significant difference between HTTP/1.1 and earlier versions of HTTP is that persistent connections are the default behavior of any HTTP connection.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;cite&gt;&lt;a href=&#34;http://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html&#34;&gt;http://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
-
-&lt;p&gt;The solution was to inform the server that the client wants to close the connection
-after the transaction is complete. This can be done by setting the &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Connection&#34;&gt;Connection&lt;/a&gt;
-header,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;req.Header.Set(&amp;quot;Connection&amp;quot;, &amp;quot;close&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;or by setting the &lt;code&gt;Close&lt;/code&gt; property to &lt;code&gt;true&lt;/code&gt; on the &lt;a href=&#34;http://golang.org/pkg/net/http/#Request&#34;&gt;http.Request&lt;/a&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;req.Close = true
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;After doing that, the &amp;ldquo;too many open files&amp;rdquo; issue went away as the program was
-no longer keeping HTTP connections open and thus not using up file descriptors.&lt;/p&gt;
-</description>
+      <description>I recently had a situation where an application I was working on in Go would run into the &amp;ldquo;too many open files&amp;rdquo; error. After some debugging, I discovered it wasn&amp;rsquo;t closing HTTP connections being made to an HTTP server.
+Update: It turns out, I was testing against &amp;ldquo;test&amp;rdquo; server which wasn&amp;rsquo;t setting the Connection: close header, therefore neither the client or server was requesting the connection to be closed. If the server had set the Connection header, things would&amp;rsquo;ve been fine.</description>
     </item>
     
     <item>
@@ -792,57 +156,10 @@ no longer keeping HTTP connections open and thus not using up file descriptors.&
       <pubDate>Sat, 03 Jan 2015 00:00:00 +0000</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2015/01/post-data-to-load-test-with-apachebench/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://httpd.apache.org/docs/2.2/programs/ab.html&#34;&gt;ApacheBench&lt;/a&gt; (also known as, ab) is,&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;a tool for benchmarking your Apache Hypertext Transfer Protocol (HTTP) server&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Don&amp;rsquo;t be fooled, you can use it to benchmark any server that supports HTTP. In
-fact, it might be worth checking out &lt;a href=&#34;https://github.com/rakyll/boom&#34;&gt;boom&lt;/a&gt; which
-is written in &lt;a href=&#34;http://golang.org&#34;&gt;Go&lt;/a&gt; which makes it easier to use across platforms,
-and is simple to install (spoiler alert: it&amp;rsquo;s just a binary).&lt;/p&gt;
-
-&lt;p&gt;Anyhow, in this post I&amp;rsquo;ll demonstrate using ApacheBench (since I came across it first).&lt;/p&gt;
-
-&lt;p&gt;If you look at the documentation for &lt;code&gt;ab&lt;/code&gt; you&amp;rsquo;ll see there a bunch of options.
-The focus of this post is the &lt;code&gt;-p POST-file&lt;/code&gt; option which lets you POST a
-&lt;code&gt;File containing data to POST&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Sounded simple, so I thought I&amp;rsquo;d give it a shot. I was trying to benchmark a form
-submission. I thought maybe I could use &lt;code&gt;-p my-awesome-data.tgz&lt;/code&gt;, but it
-wasn&amp;rsquo;t quite that simple.&lt;/p&gt;
-
-&lt;p&gt;After some googling, I found that what I needed to do was submit a file that
-looked like a form based file upload. Turns out &lt;a href=&#34;http://www.faqs.org/rfcs/rfc1867.html&#34;&gt;RFC1867&lt;/a&gt; was the ticket.
-Here&amp;rsquo;s an example, check out the RFC for more details.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;--1234567890
-Content-Disposition: form-data; filename=&amp;quot;my-awesome-data.tgz&amp;quot;
-Content-Type: application/octet-stream
-Content-Transfer-Encoding: binary
-
-&amp;lt;base64 data&amp;gt;
---1234567890
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The boundary, &lt;code&gt;1234567890&lt;/code&gt;, should be a value &lt;strong&gt;guaranteed&lt;/strong&gt; not to appear in
-the content of the request. The rest of the fields should be relatively simple
-to understand. The &lt;code&gt;&amp;lt;base64 data&amp;gt;&lt;/code&gt; portion must contain the base64 encoded
-value of the file being uploaded.&lt;/p&gt;
-
-&lt;p&gt;Here&amp;rsquo;s how you&amp;rsquo;d run a benchmark that submits 100 requests, with 5 concurrent
-clients using a file named &lt;code&gt;post.txt&lt;/code&gt; (which looks like the example shown above)
-to &lt;code&gt;http://server.com/api/v1/data&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ab -n 100 -c 5 -T &#39;multipart/form-data; boundary=1234567890&#39; -p post.txt http://server.com/api/v1/data
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I&amp;rsquo;d like to try out boom, but the concepts are similar so I suspect it should be
-just as easy.&lt;/p&gt;
-
-&lt;p&gt;Happy benchmarking!&lt;/p&gt;
-</description>
+      <description>ApacheBench (also known as, ab) is,
+ a tool for benchmarking your Apache Hypertext Transfer Protocol (HTTP) server
+ Don&amp;rsquo;t be fooled, you can use it to benchmark any server that supports HTTP. In fact, it might be worth checking out boom which is written in Go which makes it easier to use across platforms, and is simple to install (spoiler alert: it&amp;rsquo;s just a binary).
+Anyhow, in this post I&amp;rsquo;ll demonstrate using ApacheBench (since I came across it first).</description>
     </item>
     
     <item>
@@ -851,63 +168,8 @@ just as easy.&lt;/p&gt;
       <pubDate>Fri, 02 Jan 2015 00:00:00 +0000</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2015/01/capture-stdout-in-go/</guid>
-      <description>&lt;p&gt;Capturing output written to STDOUT (standard output) can be accomplished
-with the following code.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;import (
-  &amp;quot;bytes&amp;quot;
-  &amp;quot;io&amp;quot;
-  &amp;quot;os&amp;quot;
-)
-
-// not thread safe
-func captureStdout(f func()) string {
-  old := os.Stdout
-  r, w, _ := os.Pipe()
-  os.Stdout = w
-
-  f()
-
-  w.Close()
-  os.Stdout = old
-
-  var buf bytes.Buffer
-  io.Copy(&amp;amp;buf, r)
-  return buf.String()
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The code here is fairly straight forward. First, a reference to the &lt;code&gt;Writer&lt;/code&gt;
-that&amp;rsquo;s assigned to &lt;code&gt;os.Stdout&lt;/code&gt; is stashed for later. Next a &lt;a href=&#34;http://golang.org/pkg/os/#Pipe&#34;&gt;Pipe&lt;/a&gt; is created,
-which provides a connected pair of Files. The writer created by the Pipe is
-assigned to &lt;code&gt;os.Stdout&lt;/code&gt;. Perhaps you can see where this is going.&lt;/p&gt;
-
-&lt;p&gt;Next, we invoke the function provided to &lt;code&gt;captureStdout&lt;/code&gt;. The writer is closed
-and &lt;code&gt;os.Stdout&lt;/code&gt; gets the original &lt;code&gt;Writer&lt;/code&gt; assigned back to it.&lt;/p&gt;
-
-&lt;p&gt;The final steps are to copy the data from the reader, created from the Pipe,
-and return the string as the result.&lt;/p&gt;
-
-&lt;p&gt;You should note, this code is &lt;strong&gt;not thread safe&lt;/strong&gt;. Why? Because of that
-&lt;em&gt;global&lt;/em&gt; reference, &lt;code&gt;os.Stdout&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;An example using it would look something like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;func doSomething() {
-  fmt.Println(&amp;quot;This goes to STDOUT&amp;quot;)
-}
-
-func example() {
-
-  // invoke doSomething and return whatever it writes to STDOUT
-  message := captureStdout(doSomething)
-
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The example shown is trivial. I had a use case where I had to execute an
-executable on the system that wrote data to STDOUT which I needed to process.&lt;/p&gt;
-</description>
+      <description>Capturing output written to STDOUT (standard output) can be accomplished with the following code.
+import ( &amp;quot;bytes&amp;quot; &amp;quot;io&amp;quot; &amp;quot;os&amp;quot; ) // not thread safe func captureStdout(f func()) string { old := os.Stdout r, w, _ := os.Pipe() os.Stdout = w f() w.Close() os.Stdout = old var buf bytes.Buffer io.Copy(&amp;amp;buf, r) return buf.String() }  The code here is fairly straight forward. First, a reference to the Writer that&amp;rsquo;s assigned to os.</description>
     </item>
     
     <item>
@@ -916,26 +178,8 @@ executable on the system that wrote data to STDOUT which I needed to process.&lt
       <pubDate>Sun, 28 Dec 2014 00:00:00 +0000</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2014/12/windows-8-thoughts/</guid>
-      <description>&lt;p&gt;My son received a laptop, his first, for Christmas. It&amp;rsquo;s an ASUS running Windows 8. To date, he&amp;rsquo;s only used Apple laptops, iPad, iPhone Touch and Galaxy S3/4/5 Android phones at home.&lt;/p&gt;
-
-&lt;p&gt;I helped setup the laptop and the first thing I noticed was the &amp;ldquo;app&amp;rdquo; centric user interface. I noticed he seemed to be able to navigate around rather easily and wasn&amp;rsquo;t getting lost. The &amp;ldquo;app&amp;rdquo; centric focus of the operating system is compelling and I believe a win for Microsoft in terms of aligning with the younger generation.&lt;/p&gt;
-
-&lt;p&gt;The first issue I ran into was when my son wanted to install the YouTube client.  I was able to find it in the Store, thanks to it being near the top of the &amp;ldquo;Top Free&amp;rdquo; apps. I was surprised not to see a &amp;ldquo;search&amp;rdquo; option, but perhaps I just didn&amp;rsquo;t see it. The Store said that Windows 8.1 was required to install the YouTube client.&lt;/p&gt;
-
-&lt;p&gt;Luckily, the Store had Windows 8.1 as a featured item to install, so I clicked the button to install it. I was then prompted with a message stating updates needed to be installed first. I began the install for those which took a little over an hour and required a restart.&lt;/p&gt;
-
-&lt;p&gt;Once the laptop booted up, I went back to the store to install Windows 8.1. Again, it took a while and required a restart. After the laptop booted up with Windows 8.1 freshly installed I went back to the Store. This time I noticed a search box, which I used to find the YouTube client, since the &amp;ldquo;Top Free&amp;rdquo; apps list was no longer an option.&lt;/p&gt;
-
-&lt;p&gt;Upon trying to install the YouTube client it stated that it required a parents permission (since my son is younger than 13). I clicked the &amp;ldquo;Fix It&amp;rdquo; button, logged into my Microsoft Live account (which I forgot I had). After logging in, I was just dropped into the account home, no directions on where to go to approve installing the YouTube client app. I went back to try installing the YouTube client and again it said, I could &amp;ldquo;Fix It&amp;rdquo; (the parent permission issue). I clicked the button and again it just took me to the Microsoft Live account home page.&lt;/p&gt;
-
-&lt;p&gt;After trying several variations of the steps I&amp;rsquo;ve already described, I decided I&amp;rsquo;d change my sons account to make his birthday such that he was at least 13 years old. After I figured out how to do that, I was required to put in credit card information so Microsoft could verify I (my son in this case) was an adult. I submitted the information, and Microsoft was happy that the credit card I submitted verified someone elses age (since the card has my name, not my sons).&lt;/p&gt;
-
-&lt;p&gt;Finally, I was able to install the YouTube client app.&lt;/p&gt;
-
-&lt;p&gt;This is where Windows 8 went wrong. Certain aspects are just overly complicated and difficult to follow, especially for children. In concrast, the &lt;a href=&#34;www.amazon.com/kids-edition-tablet&#34;&gt;Amazon Fire Kids&lt;/a&gt; made it stupid simple to setup, add a &amp;ldquo;childs&amp;rdquo; account and let them begin playing with it (including add apps). Certainly the Windows 8 laptop and the Amazon tablet are different in many ways, but I think the comparison is reasonable to demonstrate how Windows 8 got things wrong and how something like the Amazon Fire kids tablet got it right.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/hashtag/windows8&#34;&gt;#windows8&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/amazon&#34;&gt;#amazon&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>My son received a laptop, his first, for Christmas. It&amp;rsquo;s an ASUS running Windows 8. To date, he&amp;rsquo;s only used Apple laptops, iPad, iPhone Touch and Galaxy S3/4/5 Android phones at home.
+I helped setup the laptop and the first thing I noticed was the &amp;ldquo;app&amp;rdquo; centric user interface. I noticed he seemed to be able to navigate around rather easily and wasn&amp;rsquo;t getting lost. The &amp;ldquo;app&amp;rdquo; centric focus of the operating system is compelling and I believe a win for Microsoft in terms of aligning with the younger generation.</description>
     </item>
     
     <item>
@@ -944,48 +188,8 @@ executable on the system that wrote data to STDOUT which I needed to process.&lt
       <pubDate>Tue, 09 Dec 2014 00:00:00 +0000</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2014/12/starting-a-new-go-project/</guid>
-      <description>
-
-&lt;p&gt;I have the need for a program that can monitor Kubernetes* for services* and update an HAProxy* configuration file when changes occur. Sounds rather simple, however, there&amp;rsquo;s a slight twist. I don&amp;rsquo;t want to simply add entries to HAProxy for each service created in Kubernetes (it also wouldn&amp;rsquo;t work as multiple services in Kubernetes could have the same port, since each service has its own IP address).&lt;/p&gt;
-
-&lt;p&gt;Instead I need a way to define a set of rules, perhaps as simple as a template, that will be used to update the HAProxy configuration file intelligently.&lt;/p&gt;
-
-&lt;p&gt;The template spec:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;type ServiceEntry struct {
-    Name string `json:&amp;quot;name,omitempty&amp;quot;`
-    Port int `json:&amp;quot;port,omitempty&amp;quot;`
-    Uri string `json:&amp;quot;uri,omitempty&amp;quot;`
-}
-
-type ServiceEntries []ServiceEntry {}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;services:
-    # accessible as http://&amp;lt;proxy ip&amp;gt;:9200
-    # the name of the service to monitor
-    - name: elasticsearch
-    # the port on the proxy for the service
-      port: 9200
-    # the uri on the proxy for the service
-      uri: /
-    # accessible as http://&amp;lt;proxy ip&amp;gt;/kibana
-    - name: kibana
-      port: 80
-      uri: /kibana
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To be continued&amp;hellip;&lt;/p&gt;
-
-&lt;h3 id=&#34;resources:49d19ae450dab18d6578e10e73a07a91&#34;&gt;Resources&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes/&#34;&gt;Kubernetes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/services.md&#34;&gt;Kubernetes services&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.haproxy.org/&#34;&gt;HAProxy&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://code.google.com/p/go-wiki/wiki/GithubCodeLayout&#34;&gt;GithubCodeLayout&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>I have the need for a program that can monitor Kubernetes* for services* and update an HAProxy* configuration file when changes occur. Sounds rather simple, however, there&amp;rsquo;s a slight twist. I don&amp;rsquo;t want to simply add entries to HAProxy for each service created in Kubernetes (it also wouldn&amp;rsquo;t work as multiple services in Kubernetes could have the same port, since each service has its own IP address).
+Instead I need a way to define a set of rules, perhaps as simple as a template, that will be used to update the HAProxy configuration file intelligently.</description>
     </item>
     
   </channel>

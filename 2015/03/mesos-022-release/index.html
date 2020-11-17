@@ -55,6 +55,9 @@
                 <li class="pure-menu-item">
                     <a href="http://craigwickesser.com/about/" class="pure-menu-link">About</a>
                 </li>
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/books/" class="pure-menu-link">Books</a>
+                </li>
             </ul>
         </div>
         <div class="mobile pure-menu nav-menu">
@@ -76,6 +79,9 @@
                 </li>
                 <li class="pure-menu-item">
                     <a href="http://craigwickesser.com/about" class="pure-menu-link">About</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/books" class="pure-menu-link">Books</a>
                 </li>
             </ul>
         </div>
@@ -119,7 +125,7 @@ some features scheduled for the 0.23.0 release.</p>
 
 <p>I&rsquo;ve put together some notes I put together while watching the video.</p>
 
-<h2 id="disk-isolation:05540a89ab0bd7894a855407044491dc">Disk Isolation</h2>
+<h2 id="disk-isolation">Disk Isolation</h2>
 
 <p><a href="https://issues.apache.org/jira/browse/MESOS-1589">Disk Isolation</a> allows the
 <code>MesosContainerizer</code> to enforce a disk quota. Prior to 0.22.0 mesos supported <a href="https://youtu.be/LC3dlmdc4bc?t=207">isolation</a> of cpu, memory, pid namespacing,
@@ -134,7 +140,7 @@ network ports and bandwidth.</p>
 -—resources=“disk:64”
 </code></pre>
 
-<h2 id="disaster-prevention:05540a89ab0bd7894a855407044491dc">Disaster Prevention</h2>
+<h2 id="disaster-prevention">Disaster Prevention</h2>
 
 <p>There are <a href="https://youtu.be/LC3dlmdc4bc?t=503">several mechanisms</a> to prevent
 disaster that were in place prior to the 0.22.0 release:</p>
@@ -155,7 +161,7 @@ slave removals occurring.</p>
 --slave_removal_rate_limit=1/1mins
 </code></pre>
 
-<h2 id="labels-and-discovery:05540a89ab0bd7894a855407044491dc">Labels and Discovery</h2>
+<h2 id="labels-and-discovery">Labels and Discovery</h2>
 
 <p>Tasks can now have <a href="https://github.com/apache/mesos/blob/b2f73095fd168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1056">labels</a>, which are simply key/value pairs. This allows tasks to be tagged, for example <code>environment: production</code>.</p>
 
@@ -165,12 +171,12 @@ also supports <a href="https://github.com/apache/mesos/blob/b2f73095fd168a75c275
 
 <p>Video link: <a href="https://youtu.be/LC3dlmdc4bc?t=600d168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093">https://youtu.be/LC3dlmdc4bc?t=600d168a75c2754f26d5368f4cff414752/include/mesos/mesos.proto#L1093</a></p>
 
-<h2 id="more-features-and-improvements:05540a89ab0bd7894a855407044491dc">More features and improvements</h2>
+<h2 id="more-features-and-improvements">More features and improvements</h2>
 
 <p>There are other features and improvements which are highlighted in the video.
 I imagine the mesos website will be updated soon with a summary as well.</p>
 
-<h2 id="what-to-look-forward-to:05540a89ab0bd7894a855407044491dc">What to look forward to</h2>
+<h2 id="what-to-look-forward-to">What to look forward to</h2>
 
 <p>With a release being published within the hour, naturally it&rsquo;s time to look at
 what&rsquo;s coming next:</p>
@@ -196,7 +202,7 @@ but this should at least give a taste for what&rsquo;s to come.</p>
     <div class="pure-u-1-24 pure-u-md-1-6">
           <a href="https://twitter.com/mind_scratch" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @mind_scratch</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 	  <a href="http://craigwickesser.com/">
-	    <img src="http://craigwickesser.com//images/mindscratch_150.png" class="pull-right" title="mindscratch"/>
+	    <img src="http://craigwickesser.com//images/craig-profile-sm.png" class="pull-right profile" title="craig"/>
 	  </a>
     </div>
 </div>

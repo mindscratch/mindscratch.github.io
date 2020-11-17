@@ -9,7 +9,9 @@
     <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
     <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
     <lastBuildDate>Sat, 03 Jan 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://craigwickesser.com/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://craigwickesser.com/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>POST Data to Load Test with ApacheBench</title>
@@ -17,57 +19,10 @@
       <pubDate>Sat, 03 Jan 2015 00:00:00 +0000</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2015/01/post-data-to-load-test-with-apachebench/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://httpd.apache.org/docs/2.2/programs/ab.html&#34;&gt;ApacheBench&lt;/a&gt; (also known as, ab) is,&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;a tool for benchmarking your Apache Hypertext Transfer Protocol (HTTP) server&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Don&amp;rsquo;t be fooled, you can use it to benchmark any server that supports HTTP. In
-fact, it might be worth checking out &lt;a href=&#34;https://github.com/rakyll/boom&#34;&gt;boom&lt;/a&gt; which
-is written in &lt;a href=&#34;http://golang.org&#34;&gt;Go&lt;/a&gt; which makes it easier to use across platforms,
-and is simple to install (spoiler alert: it&amp;rsquo;s just a binary).&lt;/p&gt;
-
-&lt;p&gt;Anyhow, in this post I&amp;rsquo;ll demonstrate using ApacheBench (since I came across it first).&lt;/p&gt;
-
-&lt;p&gt;If you look at the documentation for &lt;code&gt;ab&lt;/code&gt; you&amp;rsquo;ll see there a bunch of options.
-The focus of this post is the &lt;code&gt;-p POST-file&lt;/code&gt; option which lets you POST a
-&lt;code&gt;File containing data to POST&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Sounded simple, so I thought I&amp;rsquo;d give it a shot. I was trying to benchmark a form
-submission. I thought maybe I could use &lt;code&gt;-p my-awesome-data.tgz&lt;/code&gt;, but it
-wasn&amp;rsquo;t quite that simple.&lt;/p&gt;
-
-&lt;p&gt;After some googling, I found that what I needed to do was submit a file that
-looked like a form based file upload. Turns out &lt;a href=&#34;http://www.faqs.org/rfcs/rfc1867.html&#34;&gt;RFC1867&lt;/a&gt; was the ticket.
-Here&amp;rsquo;s an example, check out the RFC for more details.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;--1234567890
-Content-Disposition: form-data; filename=&amp;quot;my-awesome-data.tgz&amp;quot;
-Content-Type: application/octet-stream
-Content-Transfer-Encoding: binary
-
-&amp;lt;base64 data&amp;gt;
---1234567890
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The boundary, &lt;code&gt;1234567890&lt;/code&gt;, should be a value &lt;strong&gt;guaranteed&lt;/strong&gt; not to appear in
-the content of the request. The rest of the fields should be relatively simple
-to understand. The &lt;code&gt;&amp;lt;base64 data&amp;gt;&lt;/code&gt; portion must contain the base64 encoded
-value of the file being uploaded.&lt;/p&gt;
-
-&lt;p&gt;Here&amp;rsquo;s how you&amp;rsquo;d run a benchmark that submits 100 requests, with 5 concurrent
-clients using a file named &lt;code&gt;post.txt&lt;/code&gt; (which looks like the example shown above)
-to &lt;code&gt;http://server.com/api/v1/data&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ab -n 100 -c 5 -T &#39;multipart/form-data; boundary=1234567890&#39; -p post.txt http://server.com/api/v1/data
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I&amp;rsquo;d like to try out boom, but the concepts are similar so I suspect it should be
-just as easy.&lt;/p&gt;
-
-&lt;p&gt;Happy benchmarking!&lt;/p&gt;
-</description>
+      <description>ApacheBench (also known as, ab) is,
+ a tool for benchmarking your Apache Hypertext Transfer Protocol (HTTP) server
+ Don&amp;rsquo;t be fooled, you can use it to benchmark any server that supports HTTP. In fact, it might be worth checking out boom which is written in Go which makes it easier to use across platforms, and is simple to install (spoiler alert: it&amp;rsquo;s just a binary).
+Anyhow, in this post I&amp;rsquo;ll demonstrate using ApacheBench (since I came across it first).</description>
     </item>
     
   </channel>

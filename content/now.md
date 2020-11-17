@@ -9,9 +9,11 @@ title = "now"
 * being a full-time dad
 * being the best husband I can be to the most amazing woman
 * building [Codescratch](https://codescratch.com)
-* ~~keeping our two chikens away from the hawks~~ (we gave them to someone else to, safely, take care of), and loving our 4 dogs
-* enjoying great experiences with my family in 2019
+* loving our 3 dogs
+* living more virtually (work from home, kids have virtual schooling)
+* doing our best to safe and healthy while living through the [COVID-19 Pandemic](https://en.wikipedia.org/wiki/COVID-19_pandemic)
+* smoking meat with a pellet grill
 
-__last updated__: 01/04/2019
+__last updated__: 11/17/2020
 
 This page inspired by [nownownow.com](http://nownownow.com/).

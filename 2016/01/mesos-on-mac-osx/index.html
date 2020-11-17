@@ -55,6 +55,9 @@
                 <li class="pure-menu-item">
                     <a href="http://craigwickesser.com/about/" class="pure-menu-link">About</a>
                 </li>
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/books/" class="pure-menu-link">Books</a>
+                </li>
             </ul>
         </div>
         <div class="mobile pure-menu nav-menu">
@@ -76,6 +79,9 @@
                 </li>
                 <li class="pure-menu-item">
                     <a href="http://craigwickesser.com/about" class="pure-menu-link">About</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/books" class="pure-menu-link">Books</a>
                 </li>
             </ul>
         </div>
@@ -122,13 +128,13 @@ a single Mesos slave.</p>
 
 <p><strong>note</strong>: I have satellite internet, so my downloads are throttled after I use the data allowance for the month. I was able to pull a Docker images for Mesos but I kept having issues pulling the Zookeeper so I just downloaded Zookeeper from their <a href="zookeeper.apache.org">website</a>.</p>
 
-<h2 id="zookeeper:fbd5e7fec7c8e618d5a6c691dfb3fbe5">Zookeeper</h2>
+<h2 id="zookeeper">Zookeeper</h2>
 
 <p>After downloading the zookeeper tarball, extract it. Copy the sample configuration file, <code>cp /path/to/zookeeper-3.4.7/conf/zoo_sample.cfg /path/to/zookeeper-3.4.7/zoo.cfg</code>. For now, the default configuration is good enough.</p>
 
 <p>Start the server: <code>/path/to/zookeeper-3.4.7/bin/zkServer.sh</code></p>
 
-<h2 id="start-mesos-master:fbd5e7fec7c8e618d5a6c691dfb3fbe5">Start Mesos master</h2>
+<h2 id="start-mesos-master">Start Mesos master</h2>
 
 <p>On the Mac, Docker is run in a VM, so we have to do some finagling to get the correect IP address for Mesos to use. To start the Mesos master I created a small script:</p>
 
@@ -150,7 +156,7 @@ mesosphere/mesos-master:0.28.0-2.0.16.ubuntu1404
 
 <p><em>note</em>: You could optionally pass the <code>-d</code> flag so the container would run in the background.</p>
 
-<h2 id="start-mesos-slave:fbd5e7fec7c8e618d5a6c691dfb3fbe5">Start Mesos slave</h2>
+<h2 id="start-mesos-slave">Start Mesos slave</h2>
 
 <p>I also used a script to start the Mesos slave:</p>
 
@@ -183,7 +189,7 @@ tcp://192.168.99.100:2376
     <div class="pure-u-1-24 pure-u-md-1-6">
           <a href="https://twitter.com/mind_scratch" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @mind_scratch</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 	  <a href="http://craigwickesser.com/">
-	    <img src="http://craigwickesser.com//images/mindscratch_150.png" class="pull-right" title="mindscratch"/>
+	    <img src="http://craigwickesser.com//images/craig-profile-sm.png" class="pull-right profile" title="craig"/>
 	  </a>
     </div>
 </div>

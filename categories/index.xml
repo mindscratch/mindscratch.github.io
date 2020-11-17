@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on craig wickesser</title>
+    <link>http://craigwickesser.com/categories/</link>
+    <description>Recent content in Categories on craig wickesser</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
+    <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
+    
+	<atom:link href="http://craigwickesser.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Newsletter</title>
+      <link>http://craigwickesser.com/categories/newsletter/</link>
+      <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>http://craigwickesser.com/categories/newsletter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Posts</title>
+      <link>http://craigwickesser.com/categories/posts/</link>
+      <pubDate>Mon, 31 Dec 2018 15:35:00 -0400</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>http://craigwickesser.com/categories/posts/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

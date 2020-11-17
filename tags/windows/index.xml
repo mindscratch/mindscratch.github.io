@@ -9,7 +9,9 @@
     <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
     <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
     <lastBuildDate>Sun, 28 Dec 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://craigwickesser.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://craigwickesser.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Thoughts on Windows 8</title>
@@ -17,26 +19,8 @@
       <pubDate>Sun, 28 Dec 2014 00:00:00 +0000</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2014/12/windows-8-thoughts/</guid>
-      <description>&lt;p&gt;My son received a laptop, his first, for Christmas. It&amp;rsquo;s an ASUS running Windows 8. To date, he&amp;rsquo;s only used Apple laptops, iPad, iPhone Touch and Galaxy S3/4/5 Android phones at home.&lt;/p&gt;
-
-&lt;p&gt;I helped setup the laptop and the first thing I noticed was the &amp;ldquo;app&amp;rdquo; centric user interface. I noticed he seemed to be able to navigate around rather easily and wasn&amp;rsquo;t getting lost. The &amp;ldquo;app&amp;rdquo; centric focus of the operating system is compelling and I believe a win for Microsoft in terms of aligning with the younger generation.&lt;/p&gt;
-
-&lt;p&gt;The first issue I ran into was when my son wanted to install the YouTube client.  I was able to find it in the Store, thanks to it being near the top of the &amp;ldquo;Top Free&amp;rdquo; apps. I was surprised not to see a &amp;ldquo;search&amp;rdquo; option, but perhaps I just didn&amp;rsquo;t see it. The Store said that Windows 8.1 was required to install the YouTube client.&lt;/p&gt;
-
-&lt;p&gt;Luckily, the Store had Windows 8.1 as a featured item to install, so I clicked the button to install it. I was then prompted with a message stating updates needed to be installed first. I began the install for those which took a little over an hour and required a restart.&lt;/p&gt;
-
-&lt;p&gt;Once the laptop booted up, I went back to the store to install Windows 8.1. Again, it took a while and required a restart. After the laptop booted up with Windows 8.1 freshly installed I went back to the Store. This time I noticed a search box, which I used to find the YouTube client, since the &amp;ldquo;Top Free&amp;rdquo; apps list was no longer an option.&lt;/p&gt;
-
-&lt;p&gt;Upon trying to install the YouTube client it stated that it required a parents permission (since my son is younger than 13). I clicked the &amp;ldquo;Fix It&amp;rdquo; button, logged into my Microsoft Live account (which I forgot I had). After logging in, I was just dropped into the account home, no directions on where to go to approve installing the YouTube client app. I went back to try installing the YouTube client and again it said, I could &amp;ldquo;Fix It&amp;rdquo; (the parent permission issue). I clicked the button and again it just took me to the Microsoft Live account home page.&lt;/p&gt;
-
-&lt;p&gt;After trying several variations of the steps I&amp;rsquo;ve already described, I decided I&amp;rsquo;d change my sons account to make his birthday such that he was at least 13 years old. After I figured out how to do that, I was required to put in credit card information so Microsoft could verify I (my son in this case) was an adult. I submitted the information, and Microsoft was happy that the credit card I submitted verified someone elses age (since the card has my name, not my sons).&lt;/p&gt;
-
-&lt;p&gt;Finally, I was able to install the YouTube client app.&lt;/p&gt;
-
-&lt;p&gt;This is where Windows 8 went wrong. Certain aspects are just overly complicated and difficult to follow, especially for children. In concrast, the &lt;a href=&#34;www.amazon.com/kids-edition-tablet&#34;&gt;Amazon Fire Kids&lt;/a&gt; made it stupid simple to setup, add a &amp;ldquo;childs&amp;rdquo; account and let them begin playing with it (including add apps). Certainly the Windows 8 laptop and the Amazon tablet are different in many ways, but I think the comparison is reasonable to demonstrate how Windows 8 got things wrong and how something like the Amazon Fire kids tablet got it right.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/hashtag/windows8&#34;&gt;#windows8&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/amazon&#34;&gt;#amazon&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>My son received a laptop, his first, for Christmas. It&amp;rsquo;s an ASUS running Windows 8. To date, he&amp;rsquo;s only used Apple laptops, iPad, iPhone Touch and Galaxy S3/4/5 Android phones at home.
+I helped setup the laptop and the first thing I noticed was the &amp;ldquo;app&amp;rdquo; centric user interface. I noticed he seemed to be able to navigate around rather easily and wasn&amp;rsquo;t getting lost. The &amp;ldquo;app&amp;rdquo; centric focus of the operating system is compelling and I believe a win for Microsoft in terms of aligning with the younger generation.</description>
     </item>
     
   </channel>

@@ -55,6 +55,9 @@
                 <li class="pure-menu-item">
                     <a href="http://craigwickesser.com/about/" class="pure-menu-link">About</a>
                 </li>
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/books/" class="pure-menu-link">Books</a>
+                </li>
             </ul>
         </div>
         <div class="mobile pure-menu nav-menu">
@@ -76,6 +79,9 @@
                 </li>
                 <li class="pure-menu-item">
                     <a href="http://craigwickesser.com/about" class="pure-menu-link">About</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="http://craigwickesser.com/books" class="pure-menu-link">Books</a>
                 </li>
             </ul>
         </div>
@@ -122,11 +128,11 @@ docker to use <code>nat</code> networking, instead of the default <code>hostnet<
 <p>First, change the networking: <code>pinata set network nat</code>. Now, create a script
 to help start mesos once inside the container.</p>
 
-<h2 id="start-mesos-master:dac466967fe79cd636e3f82ddd3ff3e9">Start Mesos Master</h2>
+<h2 id="start-mesos-master">Start Mesos Master</h2>
 
 <p>First create a script used to prep and launch <code>mesos-master</code>.</p>
 
-<h3 id="run-mesos-master-sh:dac466967fe79cd636e3f82ddd3ff3e9">run_mesos_master.sh</h3>
+<h3 id="run-mesos-master-sh">run_mesos_master.sh</h3>
 
 <pre><code>#!/bin/bash
 
@@ -137,7 +143,7 @@ echo; echo &quot;DOCKER IP: $dockerIp; echo; echo&quot;
 exec MESOS_HOSTNAME=$dockerIp MESOS_IP=$dockerIp mesos-master
 </code></pre>
 
-<h3 id="start-mesos-master-sh:dac466967fe79cd636e3f82ddd3ff3e9">start_mesos_master.sh</h3>
+<h3 id="start-mesos-master-sh">start_mesos_master.sh</h3>
 
 <pre><code>#!/bin/bash
 
@@ -157,11 +163,11 @@ mesosphere/mesos-master:0.28.0-2.0.16.ubuntu1404 \
 
 <p>Now run <code>start_mesos_master.sh</code> to start the master.</p>
 
-<h2 id="start-mesos-slave:dac466967fe79cd636e3f82ddd3ff3e9">Start Mesos slave</h2>
+<h2 id="start-mesos-slave">Start Mesos slave</h2>
 
 <p>Create a separate script to prep and launch the <code>mesos-slave</code>.</p>
 
-<h3 id="run-mesos-slave-sh:dac466967fe79cd636e3f82ddd3ff3e9">run_mesos_slave.sh</h3>
+<h3 id="run-mesos-slave-sh">run_mesos_slave.sh</h3>
 
 <pre><code>#!/bin/bash
 
@@ -170,7 +176,7 @@ dockerIp=$(ip route get 8.8.8.8 | awk '{print $NF; exit}')
 exec MESOS_HOSTNAME=$dockerIp MESOS_IP=$dockerIp mesos-slave
 </code></pre>
 
-<h3 id="start-mesos-slave-sh:dac466967fe79cd636e3f82ddd3ff3e9">start_mesos_slave.sh</h3>
+<h3 id="start-mesos-slave-sh">start_mesos_slave.sh</h3>
 
 <pre><code>#!/bin/bash
 
@@ -197,7 +203,7 @@ mesosphere/mesos-slave:0.28.0-2.0.16.ubuntu1404 \
     <div class="pure-u-1-24 pure-u-md-1-6">
           <a href="https://twitter.com/mind_scratch" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @mind_scratch</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 	  <a href="http://craigwickesser.com/">
-	    <img src="http://craigwickesser.com//images/mindscratch_150.png" class="pull-right" title="mindscratch"/>
+	    <img src="http://craigwickesser.com//images/craig-profile-sm.png" class="pull-right profile" title="craig"/>
 	  </a>
     </div>
 </div>

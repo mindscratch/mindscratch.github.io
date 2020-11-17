@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://craigwickesser.com/</loc>
-    <lastmod>2016-12-22T22:01:49-04:00</lastmod>
-    <priority>0</priority>
+    <loc>http://craigwickesser.com/books/</loc>
+    <lastmod>2019-01-04T20:16:58-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/2018/12/2018-year-in-review/</loc>
+    <lastmod>2018-12-31T15:35:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/2017/12/2017-year-in-review/</loc>
+    <lastmod>2017-12-31T12:26:05-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/machine-learning/</loc>
+    <lastmod>2017-03-01T20:13:00-05:00</lastmod>
   </url>
   
   <url>
@@ -85,6 +100,173 @@
   <url>
     <loc>http://craigwickesser.com/2014/12/starting-a-new-go-project/</loc>
     <lastmod>2014-12-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/2016/</loc>
+    <lastmod>2016-12-22T22:01:49-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/2017/</loc>
+    <lastmod>2017-12-31T12:26:05-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/2018/</loc>
+    <lastmod>2018-12-31T15:35:00-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/apachebench/</loc>
+    <lastmod>2015-01-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/chronos/</loc>
+    <lastmod>2015-01-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/containers/</loc>
+    <lastmod>2016-01-18T20:32:45-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/development/</loc>
+    <lastmod>2015-01-07T18:26:39-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/distributed-systems/</loc>
+    <lastmod>2015-01-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/docker/</loc>
+    <lastmod>2016-05-11T19:37:37-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/golang/</loc>
+    <lastmod>2015-02-24T21:51:56-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/hadoop/</loc>
+    <lastmod>2015-01-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/http/</loc>
+    <lastmod>2015-01-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/hyper.sh/</loc>
+    <lastmod>2016-01-18T20:32:45-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/java/</loc>
+    <lastmod>2015-01-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/javascript/</loc>
+    <lastmod>2015-01-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/load-test/</loc>
+    <lastmod>2015-01-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/mac/</loc>
+    <lastmod>2016-05-11T19:37:37-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/mesos/</loc>
+    <lastmod>2016-05-11T19:37:37-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/mesosphere/</loc>
+    <lastmod>2015-01-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/mindscratch/</loc>
+    <lastmod>2015-01-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/categories/newsletter/</loc>
+    <lastmod>2015-01-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/post/</loc>
+    <lastmod>2018-12-31T15:35:00-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/posts/</loc>
+    <lastmod>2015-01-07T18:26:39-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/categories/posts/</loc>
+    <lastmod>2018-12-31T15:35:00-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/</loc>
+    <lastmod>2016-12-22T22:01:49-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/tags/windows/</loc>
+    <lastmod>2014-12-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://craigwickesser.com/</loc>
+    <lastmod>2019-01-04T20:16:58-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>

@@ -9,7 +9,9 @@
     <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
     <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
     <lastBuildDate>Tue, 24 Feb 2015 21:51:56 -0500</lastBuildDate>
-    <atom:link href="http://craigwickesser.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://craigwickesser.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Go: command with custom environment</title>
@@ -17,76 +19,9 @@
       <pubDate>Tue, 24 Feb 2015 21:51:56 -0500</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2015/02/golang-cmd-with-custom-environment/</guid>
-      <description>&lt;p&gt;Problem: Execute an external process with a customized environment.&lt;/p&gt;
-
-&lt;p&gt;Solution: The &lt;a href=&#34;https://gobyexample.com&#34;&gt;Go by Example&lt;/a&gt; site
-has as an example demonstrating how to &lt;a href=&#34;https://gobyexample.com/spawning-processes&#34;&gt;spawn an external process&lt;/a&gt; and how &lt;a href=&#34;https://gobyexample.com/execing-processes&#34;&gt;exec
-a process&lt;/a&gt;. Those two examples provide
-a great starting point. Below, we&amp;rsquo;ll take it a step further to modify the
-environment.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;package main
-
-import (
-	&amp;quot;fmt&amp;quot;
-	&amp;quot;io/ioutil&amp;quot;
-	&amp;quot;os&amp;quot;
-	&amp;quot;os/exec&amp;quot;
-)
-
-// In this example `messageId` is a value that
-// needs to be stored in an environment variable to be
-// used by the command that&#39;s going to be executed
-func doIt(messageId string) error {
-	binary, err := exec.LookPath(&amp;quot;print_env.sh&amp;quot;)
-	if err != nil {
-		return err
-	}
-
-	cmd := exec.Command(binary)
-	env := os.Environ()
-	env = append(env, fmt.Sprintf(&amp;quot;MESSAGE_ID=%s&amp;quot;, messageId))
-	cmd.Env = env
-
-	cmdOut, _ := cmd.StdoutPipe()
-	//cmdErr, _ := cmd.StderrPipe()
-
-	startErr := cmd.Start()
-	if startErr != nil {
-		return startErr
-	}
-
-	// read stdout and stderr
-	stdOutput, _ := ioutil.ReadAll(cmdOut)
-	//errOutput, _ := ioutil.ReadAll(cmdErr)
-
-	fmt.Printf(&amp;quot;STDOUT: %s\n&amp;quot;, stdOutput)
-	//fmt.Printf(&amp;quot;ERROUT: %s\n&amp;quot;, errOutput)
-
-	err = cmd.Wait()
-	return err
-}
-
-func main() {
-	messageId := &amp;quot;abc123&amp;quot;
-	err := doIt(messageId)
-	if err != nil {
-		fmt.Printf(&amp;quot;Error: %v\n&amp;quot;, err)
-	}
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The &lt;code&gt;doIt&lt;/code&gt; function is where the magic happens. First, a &lt;code&gt;exec.Command&lt;/code&gt; is
-created. Next, we grab a copy of the environment using &lt;code&gt;os.Environ()&lt;/code&gt;. The
-environment is a slice of strings so we append another string, in the correct
-format, containing the environment variable we want to add, &lt;code&gt;MESSAGE_ID&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;The rest of the code sets up reading stdout (and stderr, though I commented )
-and executing the command. If you run the program, you&amp;rsquo;ll see in the output
-that &lt;code&gt;MESSAGE_ID&lt;/code&gt; was set to &lt;code&gt;abc123&lt;/code&gt; (as passed into the &lt;code&gt;doIt&lt;/code&gt; function).&lt;/p&gt;
-
-&lt;p&gt;Simple, right?&lt;/p&gt;
-</description>
+      <description>Problem: Execute an external process with a customized environment.
+Solution: The Go by Example site has as an example demonstrating how to spawn an external process and how exec a process. Those two examples provide a great starting point. Below, we&amp;rsquo;ll take it a step further to modify the environment.
+package main import ( &amp;quot;fmt&amp;quot; &amp;quot;io/ioutil&amp;quot; &amp;quot;os&amp;quot; &amp;quot;os/exec&amp;quot; ) // In this example `messageId` is a value that // needs to be stored in an environment variable to be // used by the command that&#39;s going to be executed func doIt(messageId string) error { binary, err := exec.</description>
     </item>
     
     <item>
@@ -95,45 +30,15 @@ that &lt;code&gt;MESSAGE_ID&lt;/code&gt; was set to &lt;code&gt;abc123&lt;/code&
       <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2015/01/mindscratch-newsletter-1/</guid>
-      <description>&lt;p&gt;On a regular basis, hopefully once per week, I&amp;rsquo;ll be posting links to
-content related to distributed systems, programming and devops. If you&amp;rsquo;d prefer
-to access this content via email, then &lt;a href=&#34;http://craigwickesser.com/subscribe&#34;&gt;subscribe&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.meetup.com/Apache-Mesos-NYC-Meetup/events/219073804/&#34;&gt;http://www.meetup.com/Apache-Mesos-NYC-Meetup/events/219073804/&lt;/a&gt;
-  - interesting b/c of  mention of running Accumulo on Mesos&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.slideshare.net/ColleenLee1/iguaz-a-longrunning-job-scheduler-using-docker-and-mesos&#34;&gt;http://www.slideshare.net/ColleenLee1/iguaz-a-longrunning-job-scheduler-using-docker-and-mesos&lt;/a&gt;
-  - job scheduler from corsera&lt;/p&gt;
-
-&lt;p&gt;Docker security
-&lt;a href=&#34;https://github.com/GDSSecurity/Docker-Secure-Deployment-Guidelines&#34;&gt;https://github.com/GDSSecurity/Docker-Secure-Deployment-Guidelines&lt;/a&gt;
-&lt;a href=&#34;https://www.gartner.com/doc/2956826&#34;&gt;https://www.gartner.com/doc/2956826&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/ExPHAT/twitter-sort&#34;&gt;https://github.com/ExPHAT/twitter-sort&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://am./chronos&#34;&gt;http://am./chronos&lt;/a&gt; &amp;ndash;master zk://server1:2181/mesos &amp;ndash;zk_hosts zk://server1:2181/mesos &amp;ndash;http_port 8080bari.apache.org/&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://jpetazzo.github.io/2015/01/13/docker-mount-dynamic-volumes/&#34;&gt;http://jpetazzo.github.io/2015/01/13/docker-mount-dynamic-volumes/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://codeascraft.com/2015/01/14/introducing-statsd-jvm-profiler-a-jvm-profiler-for-hadoop/&#34;&gt;https://codeascraft.com/2015/01/14/introducing-statsd-jvm-profiler-a-jvm-profiler-for-hadoop/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Go
-Go Static Analysis Tools by Alan Donovan &lt;a href=&#34;https://vimeo.com/116108566&#34;&gt;https://vimeo.com/116108566&lt;/a&gt;
-Benchmarking Go &lt;a href=&#34;https://vimeo.com/114975899&#34;&gt;https://vimeo.com/114975899&lt;/a&gt;
-7 common mistakes in go and how to avoid them &lt;a href=&#34;https://vimeo.com/115776445&#34;&gt;https://vimeo.com/115776445&lt;/a&gt;
-cancellation, context and plumbing &lt;a href=&#34;https://vimeo.com/115309491&#34;&gt;https://vimeo.com/115309491&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Io.js
-&lt;a href=&#34;https://www.youtube.com/watch?v=DqMFX91ToLw&#34;&gt;https://www.youtube.com/watch?v=DqMFX91ToLw&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Ecmascript 7 async &amp;ndash; the evolution of javascript - &lt;a href=&#34;https://www.youtube.com/watch?v=DqMFX91ToLw&#34;&gt;https://www.youtube.com/watch?v=DqMFX91ToLw&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://opensource.com/business/15/1/apache-spark-new-world-record&#34;&gt;http://opensource.com/business/15/1/apache-spark-new-world-record&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://events.linuxfoundation.org/events/vault/program/schedule?utm_source=lf&amp;amp;utm_medium=email&amp;amp;utm_campaign=vault15&#34;&gt;http://events.linuxfoundation.org/events/vault/program/schedule?utm_source=lf&amp;amp;utm_medium=email&amp;amp;utm_campaign=vault15&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;onyx: &lt;a href=&#34;https://www.youtube.com/watch?v=vG47Gui3hYE&#34;&gt;https://www.youtube.com/watch?v=vG47Gui3hYE&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>On a regular basis, hopefully once per week, I&amp;rsquo;ll be posting links to content related to distributed systems, programming and devops. If you&amp;rsquo;d prefer to access this content via email, then subscribe.
+http://www.meetup.com/Apache-Mesos-NYC-Meetup/events/219073804/ - interesting b/c of mention of running Accumulo on Mesos
+http://www.slideshare.net/ColleenLee1/iguaz-a-longrunning-job-scheduler-using-docker-and-mesos - job scheduler from corsera
+Docker security https://github.com/GDSSecurity/Docker-Secure-Deployment-Guidelines https://www.gartner.com/doc/2956826
+https://github.com/ExPHAT/twitter-sort
+http://am./chronos &amp;ndash;master zk://server1:2181/mesos &amp;ndash;zk_hosts zk://server1:2181/mesos &amp;ndash;http_port 8080bari.apache.org/
+http://jpetazzo.github.io/2015/01/13/docker-mount-dynamic-volumes/
+https://codeascraft.com/2015/01/14/introducing-statsd-jvm-profiler-a-jvm-profiler-for-hadoop/
+Go Go Static Analysis Tools by Alan Donovan https://vimeo.</description>
     </item>
     
     <item>
@@ -142,79 +47,8 @@ cancellation, context and plumbing &lt;a href=&#34;https://vimeo.com/115309491&#
       <pubDate>Wed, 07 Jan 2015 18:26:39 -0500</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2015/01/golang-http-to-many-open-files/</guid>
-      <description>&lt;p&gt;I recently had a situation where an application I was working on in &lt;a href=&#34;http://golang.org&#34;&gt;Go&lt;/a&gt; would
-run into the &amp;ldquo;too many open files&amp;rdquo; error. After some debugging, I discovered
-it wasn&amp;rsquo;t closing HTTP connections being made to an HTTP server.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: It turns out, I was testing against &amp;ldquo;test&amp;rdquo; server which wasn&amp;rsquo;t
-setting the &lt;code&gt;Connection: close&lt;/code&gt; header, therefore neither the client or
-server was requesting the connection to be closed. If the server had set the
-&lt;code&gt;Connection&lt;/code&gt; header, things would&amp;rsquo;ve been fine.&lt;/p&gt;
-
-&lt;p&gt;The code looked like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;  transport := &amp;amp;http.Transport {
-    Proxy: http.ProxyFromEnvironment,
-    Dial: (&amp;amp;net.Dialer{
-      Timeout: 0,
-      KeepAlive: 0
-    }).Dial,
-    TLSHandshakeTimeout: 10 * time.second
-  }
-
-  httpClient := &amp;amp;http.Client{Transport: transport}
-
-  function submitData(url string, fileReader io.Reader) error {
-    req, reqErr := http.NewRequest(&amp;quot;POST&amp;quot;, url, fileReader)
-    if reqErr != nil {
-      return reqErr
-    }
-    req.Header.Set(&amp;quot;Content-Type&amp;quot;, &amp;quot;application/octet-stream&amp;quot;)
-
-    resp, err := httpClient.Do(req)
-    if err != nil {
-      return err
-    }
-    defer resp.Body.Close()
-
-    // read the body
-
-    return nil
-  }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The &lt;code&gt;submitData&lt;/code&gt; function gets called over and over whenever new data needs to
-be POSTed. Using &lt;a href=&#34;http://en.wikipedia.org/wiki/Netstat&#34;&gt;netstat&lt;/a&gt; I noticed the
-connections to the server were staying &lt;code&gt;ESTABLISHED&lt;/code&gt; instead of being closed. I
-set the &amp;ldquo;timeout&amp;rdquo; on the dialer to 0, because the POST should block until the
-server is done and responds (which is an undetermined amount of time).&lt;/p&gt;
-
-&lt;p&gt;I know the server is responding, because the code that processes the response
-was in fact getting data.&lt;/p&gt;
-
-&lt;p&gt;It turns out, HTTP/1.1 uses persistent connections by default:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;A significant difference between HTTP/1.1 and earlier versions of HTTP is that persistent connections are the default behavior of any HTTP connection.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;cite&gt;&lt;a href=&#34;http://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html&#34;&gt;http://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
-
-&lt;p&gt;The solution was to inform the server that the client wants to close the connection
-after the transaction is complete. This can be done by setting the &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Connection&#34;&gt;Connection&lt;/a&gt;
-header,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;req.Header.Set(&amp;quot;Connection&amp;quot;, &amp;quot;close&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;or by setting the &lt;code&gt;Close&lt;/code&gt; property to &lt;code&gt;true&lt;/code&gt; on the &lt;a href=&#34;http://golang.org/pkg/net/http/#Request&#34;&gt;http.Request&lt;/a&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;req.Close = true
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;After doing that, the &amp;ldquo;too many open files&amp;rdquo; issue went away as the program was
-no longer keeping HTTP connections open and thus not using up file descriptors.&lt;/p&gt;
-</description>
+      <description>I recently had a situation where an application I was working on in Go would run into the &amp;ldquo;too many open files&amp;rdquo; error. After some debugging, I discovered it wasn&amp;rsquo;t closing HTTP connections being made to an HTTP server.
+Update: It turns out, I was testing against &amp;ldquo;test&amp;rdquo; server which wasn&amp;rsquo;t setting the Connection: close header, therefore neither the client or server was requesting the connection to be closed. If the server had set the Connection header, things would&amp;rsquo;ve been fine.</description>
     </item>
     
     <item>
@@ -223,63 +57,8 @@ no longer keeping HTTP connections open and thus not using up file descriptors.&
       <pubDate>Fri, 02 Jan 2015 00:00:00 +0000</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2015/01/capture-stdout-in-go/</guid>
-      <description>&lt;p&gt;Capturing output written to STDOUT (standard output) can be accomplished
-with the following code.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;import (
-  &amp;quot;bytes&amp;quot;
-  &amp;quot;io&amp;quot;
-  &amp;quot;os&amp;quot;
-)
-
-// not thread safe
-func captureStdout(f func()) string {
-  old := os.Stdout
-  r, w, _ := os.Pipe()
-  os.Stdout = w
-
-  f()
-
-  w.Close()
-  os.Stdout = old
-
-  var buf bytes.Buffer
-  io.Copy(&amp;amp;buf, r)
-  return buf.String()
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The code here is fairly straight forward. First, a reference to the &lt;code&gt;Writer&lt;/code&gt;
-that&amp;rsquo;s assigned to &lt;code&gt;os.Stdout&lt;/code&gt; is stashed for later. Next a &lt;a href=&#34;http://golang.org/pkg/os/#Pipe&#34;&gt;Pipe&lt;/a&gt; is created,
-which provides a connected pair of Files. The writer created by the Pipe is
-assigned to &lt;code&gt;os.Stdout&lt;/code&gt;. Perhaps you can see where this is going.&lt;/p&gt;
-
-&lt;p&gt;Next, we invoke the function provided to &lt;code&gt;captureStdout&lt;/code&gt;. The writer is closed
-and &lt;code&gt;os.Stdout&lt;/code&gt; gets the original &lt;code&gt;Writer&lt;/code&gt; assigned back to it.&lt;/p&gt;
-
-&lt;p&gt;The final steps are to copy the data from the reader, created from the Pipe,
-and return the string as the result.&lt;/p&gt;
-
-&lt;p&gt;You should note, this code is &lt;strong&gt;not thread safe&lt;/strong&gt;. Why? Because of that
-&lt;em&gt;global&lt;/em&gt; reference, &lt;code&gt;os.Stdout&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;An example using it would look something like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;func doSomething() {
-  fmt.Println(&amp;quot;This goes to STDOUT&amp;quot;)
-}
-
-func example() {
-
-  // invoke doSomething and return whatever it writes to STDOUT
-  message := captureStdout(doSomething)
-
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The example shown is trivial. I had a use case where I had to execute an
-executable on the system that wrote data to STDOUT which I needed to process.&lt;/p&gt;
-</description>
+      <description>Capturing output written to STDOUT (standard output) can be accomplished with the following code.
+import ( &amp;quot;bytes&amp;quot; &amp;quot;io&amp;quot; &amp;quot;os&amp;quot; ) // not thread safe func captureStdout(f func()) string { old := os.Stdout r, w, _ := os.Pipe() os.Stdout = w f() w.Close() os.Stdout = old var buf bytes.Buffer io.Copy(&amp;amp;buf, r) return buf.String() }  The code here is fairly straight forward. First, a reference to the Writer that&amp;rsquo;s assigned to os.</description>
     </item>
     
     <item>
@@ -288,48 +67,8 @@ executable on the system that wrote data to STDOUT which I needed to process.&lt
       <pubDate>Tue, 09 Dec 2014 00:00:00 +0000</pubDate>
       <author>codecraig@gmail.com (Craig Wickesser)</author>
       <guid>http://craigwickesser.com/2014/12/starting-a-new-go-project/</guid>
-      <description>
-
-&lt;p&gt;I have the need for a program that can monitor Kubernetes* for services* and update an HAProxy* configuration file when changes occur. Sounds rather simple, however, there&amp;rsquo;s a slight twist. I don&amp;rsquo;t want to simply add entries to HAProxy for each service created in Kubernetes (it also wouldn&amp;rsquo;t work as multiple services in Kubernetes could have the same port, since each service has its own IP address).&lt;/p&gt;
-
-&lt;p&gt;Instead I need a way to define a set of rules, perhaps as simple as a template, that will be used to update the HAProxy configuration file intelligently.&lt;/p&gt;
-
-&lt;p&gt;The template spec:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;type ServiceEntry struct {
-    Name string `json:&amp;quot;name,omitempty&amp;quot;`
-    Port int `json:&amp;quot;port,omitempty&amp;quot;`
-    Uri string `json:&amp;quot;uri,omitempty&amp;quot;`
-}
-
-type ServiceEntries []ServiceEntry {}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;services:
-    # accessible as http://&amp;lt;proxy ip&amp;gt;:9200
-    # the name of the service to monitor
-    - name: elasticsearch
-    # the port on the proxy for the service
-      port: 9200
-    # the uri on the proxy for the service
-      uri: /
-    # accessible as http://&amp;lt;proxy ip&amp;gt;/kibana
-    - name: kibana
-      port: 80
-      uri: /kibana
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To be continued&amp;hellip;&lt;/p&gt;
-
-&lt;h3 id=&#34;resources:49d19ae450dab18d6578e10e73a07a91&#34;&gt;Resources&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes/&#34;&gt;Kubernetes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/services.md&#34;&gt;Kubernetes services&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.haproxy.org/&#34;&gt;HAProxy&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://code.google.com/p/go-wiki/wiki/GithubCodeLayout&#34;&gt;GithubCodeLayout&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>I have the need for a program that can monitor Kubernetes* for services* and update an HAProxy* configuration file when changes occur. Sounds rather simple, however, there&amp;rsquo;s a slight twist. I don&amp;rsquo;t want to simply add entries to HAProxy for each service created in Kubernetes (it also wouldn&amp;rsquo;t work as multiple services in Kubernetes could have the same port, since each service has its own IP address).
+Instead I need a way to define a set of rules, perhaps as simple as a template, that will be used to update the HAProxy configuration file intelligently.</description>
     </item>
     
   </channel>
