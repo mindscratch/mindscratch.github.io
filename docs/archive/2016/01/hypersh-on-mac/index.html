@@ -1,0 +1,224 @@
+<html lang="en">
+<head>
+
+  
+  <meta charset="utf-8">
+  <title>hypersh on mac</title>
+  <meta name="description" content="hypersh on mac">
+  <meta name="author" content="Craig Wickesser">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/archive/css/fonts.css">
+  
+  
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+
+  <link rel="stylesheet" href="/archive/css/custom.css">
+
+  
+  
+  <link rel="stylesheet" href="/archive/highlight/styles/default.css">
+  
+  <script src="/archive/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+<div style="font:13px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;background:#14161a;color:#e9eaec;padding:10px 16px;text-align:center">Archived, from my old site (2014–2020). <a href="/" style="color:#f7931e">← Back to craigwickesser.com</a></div>
+
+
+<div class="header pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+    <div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="desktop pure-menu pure-menu-horizontal nav-menu">
+            
+            <a href="/archive/" class="site-title pure-menu-heading">craig wickesser</a>
+            <ul class="pure-menu-list">
+                
+                <li class="pure-menu-item">
+                    <a href="/archive/categories/newsletter" class="pure-menu-link">Newsletter</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="/archive/categories/posts" class="pure-menu-link">Posts</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="/archive/now/" class="pure-menu-link">Now</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="/archive/about/" class="pure-menu-link">About</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="/archive/books/" class="pure-menu-link">Books</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mobile pure-menu nav-menu">
+            <a href="/archive/" class="pure-menu-heading" id="toggle-home">craig wickesser</a>
+            <a href="#" id="toggle-btn">&#9776;</a>
+            <ul class="pure-menu-list" id="toggle-content" style="display:none;">
+                
+                
+                <li class="pure-menu-item">
+                    <a href="/archive/categories/newsletter" class="pure-menu-link">Newsletter</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="/archive/categories/posts" class="pure-menu-link">Posts</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="/archive/now" class="pure-menu-link">Now</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="/archive/about" class="pure-menu-link">About</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="/archive/books" class="pure-menu-link">Books</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-6"></div>
+</div>
+
+
+<div class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+	<div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="post">
+
+            <div class="post-title">
+                <p class="footnote">
+                    <time class="">2016-01-18</time>
+		            
+                    
+                    |
+                    
+                    
+                    tags:<a href="/archive/tags/docker">docker</a> <a href="/archive/tags/containers">containers</a> <a href="/archive/tags/hyper.sh">hyper.sh</a> 
+                    
+
+                    
+                    categories:<a href="/archive/categories/posts">posts</a> 
+                    
+
+                    
+                </p>
+                <h1>hypersh on mac</h1>
+            </div>
+
+            <div class="post-content">
+                <p><a href="https://hyper.sh/">Hyper</a> calls itself a <code>Hypervisor-agnostic Docker Runtime</code>.
+It boasts the <a href="https://hyper.sh/why-hyper.html">benefits</a> of Virtual Machines and Containers, without the downsides:</p>
+
+<ul>
+<li>security
+
+<ul>
+<li>using a VM reduces the attach surface and avoids the &ldquo;shared kernel&rdquo; problem
+presented by containers.</li>
+</ul></li>
+<li>performance
+
+<ul>
+<li>Hyper is able to launch instances in sub-second versus tens of seconds like
+traditional VM&rsquo;s.</li>
+</ul></li>
+<li>portable
+
+<ul>
+<li>the hypervisor is agnostic, it supports KVM, Xen and VirtualBox.</li>
+</ul></li>
+<li>immutable</li>
+</ul>
+
+<p>It&rsquo;s also nice to see their following the <a href="https://github.com/opencontainers/specs">OCI Specs</a>
+for their <a href="https://github.com/hyperhq/runv">hypervisor</a>.</p>
+
+<p>Hyper supports Mac OS X, however, due to recent changes in the OS, VirtualBox doesn&rsquo;t
+work well, so <a href="https://github.com/hyperhq/hyper/issues/182">Hyper doesn&rsquo;t currently work with Mac OS X 10.11 (El Capitan)</a>.</p>
+
+<p>I look forward to trying out Hyper on my laptop, I&rsquo;ll probably give it a whirl
+on <a href="https://www.packet.net/promo/hyper/">Packet</a>.</p>
+
+            </div>
+        </div>
+	</div>
+    <div class="pure-u-1-24 pure-u-md-1-6">
+          <a href="https://twitter.com/mind_scratch" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @mind_scratch</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+	  <a href="/archive/">
+	    <img src="/archive//images/craig-profile-sm.png" class="pull-right profile" title="craig"/>
+	  </a>
+    </div>
+</div>
+
+<div class="footer pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+    <div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="pure-menu pure-menu-horizontal footer-content">
+            <ul>
+                <li class="pure-menu-heading" id="foot-name">Craig Wickesser:</li>
+
+                
+                <li class="pure-menu-item">
+                    <a href="mailto:codecraig@gmail.com" class="pure-menu-link">Email</a>
+                </li>
+                
+
+                
+                <li class="pure-menu-item">
+                    <a href="https://github.com/mindscratch" class="pure-menu-link">GitHub</a>
+                </li>
+                
+
+                
+
+                
+
+                
+                <li class="pure-menu-item">
+                    <a href="https://twitter.com/mind_scratch" class="pure-menu-link">Twitter</a>
+                </li>
+                
+
+            </ul>
+            <a href="#" class="pure-menu-heading pull-right" id="gototop-btn">↑↑</a>
+        </div>
+	  </div>
+      <div class="pure-u-1-24 pure-u-md-1-6"></div>
+</div>
+
+
+<script src="/archive/js/jquery.min.js" type="text/javascript"></script>
+<script src="/archive/js/jquery.timeago.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(function(){
+    $("time.timeago").timeago();
+  })
+  $("#toggle-btn").click(function(){
+    $("#toggle-content").toggle();
+    if($(this).html() === "☰") {
+        $(this).html("X")
+    } else {
+        $(this).html("☰")
+    }
+  });
+  $(window).resize(function(){
+    if(window.innerWidth > 768) {
+      $(".desktop").removeAttr("style");
+    }
+  });
+</script>
+
+</body>
+</html>
+

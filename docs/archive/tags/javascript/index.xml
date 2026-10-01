@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on craig wickesser</title>
+    <link>/archive/tags/javascript/</link>
+    <description>Recent content in Javascript on craig wickesser</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
+    <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
+    <lastBuildDate>Wed, 21 Jan 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/archive/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mindscratch Newsletter 1</title>
+      <link>/archive/2015/01/mindscratch-newsletter-1/</link>
+      <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2015/01/mindscratch-newsletter-1/</guid>
+      <description>On a regular basis, hopefully once per week, I&amp;rsquo;ll be posting links to content related to distributed systems, programming and devops. If you&amp;rsquo;d prefer to access this content via email, then subscribe.
+http://www.meetup.com/Apache-Mesos-NYC-Meetup/events/219073804/ - interesting b/c of mention of running Accumulo on Mesos
+http://www.slideshare.net/ColleenLee1/iguaz-a-longrunning-job-scheduler-using-docker-and-mesos - job scheduler from corsera
+Docker security https://github.com/GDSSecurity/Docker-Secure-Deployment-Guidelines https://www.gartner.com/doc/2956826
+https://github.com/ExPHAT/twitter-sort
+http://am./chronos &amp;ndash;master zk://server1:2181/mesos &amp;ndash;zk_hosts zk://server1:2181/mesos &amp;ndash;http_port 8080bari.apache.org/
+http://jpetazzo.github.io/2015/01/13/docker-mount-dynamic-volumes/
+https://codeascraft.com/2015/01/14/introducing-statsd-jvm-profiler-a-jvm-profiler-for-hadoop/
+Go Go Static Analysis Tools by Alan Donovan https://vimeo.</description>
+    </item>
+    
+  </channel>
+</rss>

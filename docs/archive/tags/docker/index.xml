@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on craig wickesser</title>
+    <link>/archive/tags/docker/</link>
+    <description>Recent content in Docker on craig wickesser</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
+    <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
+    <lastBuildDate>Wed, 11 May 2016 19:37:37 -0400</lastBuildDate>
+    
+	<atom:link href="/archive/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Run Mesos using Docker 1.11.1-beta11 on Mac OS X</title>
+      <link>/archive/2016/05/run-mesos-using-docker-beta11-on-mac-osx/</link>
+      <pubDate>Wed, 11 May 2016 19:37:37 -0400</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2016/05/run-mesos-using-docker-beta11-on-mac-osx/</guid>
+      <description>Previously I wrote about running Apache Mesos in Docker on Mac OS X using Docker for Mac Beta 8. With the recent update to Docker 1.11.1-beta11 things have changed a bit and so the scripts have to change.
+Once again the dockerIp had to be discovered differently and I had to switch docker to use nat networking, instead of the default hostnet.
+First, change the networking: pinata set network nat.</description>
+    </item>
+    
+    <item>
+      <title>Run Mesos using Docker Beta on Mac OS X</title>
+      <link>/archive/2016/04/run-mesos-using-docker-beta-on-mac-osx/</link>
+      <pubDate>Sun, 17 Apr 2016 20:30:55 -0400</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2016/04/run-mesos-using-docker-beta-on-mac-osx/</guid>
+      <description>Previously I wrote about running Apache Mesos in Docker on Mac OS X. Back then Docker worked by using a VM run via VirtualBox. Today, using Docker Beta for Mac, the process is simpler and more like the linux experience.
+The scripts I used before only had to be changed to update the way the dockerIp was discovered. I wasn&amp;rsquo;t sure how do find that IP address.
+With the Docker Beta there&amp;rsquo;s a command-line tool named pinata which can be used to configure docker:</description>
+    </item>
+    
+    <item>
+      <title>hypersh on mac</title>
+      <link>/archive/2016/01/hypersh-on-mac/</link>
+      <pubDate>Mon, 18 Jan 2016 20:32:45 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2016/01/hypersh-on-mac/</guid>
+      <description>Hyper calls itself a Hypervisor-agnostic Docker Runtime. It boasts the benefits of Virtual Machines and Containers, without the downsides:
+ security  using a VM reduces the attach surface and avoids the &amp;ldquo;shared kernel&amp;rdquo; problem presented by containers.  performance  Hyper is able to launch instances in sub-second versus tens of seconds like traditional VM&amp;rsquo;s.  portable  the hypervisor is agnostic, it supports KVM, Xen and VirtualBox.  immutable  It&amp;rsquo;s also nice to see their following the OCI Specs for their hypervisor.</description>
+    </item>
+    
+    <item>
+      <title>Mindscratch Newsletter 1</title>
+      <link>/archive/2015/01/mindscratch-newsletter-1/</link>
+      <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2015/01/mindscratch-newsletter-1/</guid>
+      <description>On a regular basis, hopefully once per week, I&amp;rsquo;ll be posting links to content related to distributed systems, programming and devops. If you&amp;rsquo;d prefer to access this content via email, then subscribe.
+http://www.meetup.com/Apache-Mesos-NYC-Meetup/events/219073804/ - interesting b/c of mention of running Accumulo on Mesos
+http://www.slideshare.net/ColleenLee1/iguaz-a-longrunning-job-scheduler-using-docker-and-mesos - job scheduler from corsera
+Docker security https://github.com/GDSSecurity/Docker-Secure-Deployment-Guidelines https://www.gartner.com/doc/2956826
+https://github.com/ExPHAT/twitter-sort
+http://am./chronos &amp;ndash;master zk://server1:2181/mesos &amp;ndash;zk_hosts zk://server1:2181/mesos &amp;ndash;http_port 8080bari.apache.org/
+http://jpetazzo.github.io/2015/01/13/docker-mount-dynamic-volumes/
+https://codeascraft.com/2015/01/14/introducing-statsd-jvm-profiler-a-jvm-profiler-for-hadoop/
+Go Go Static Analysis Tools by Alan Donovan https://vimeo.</description>
+    </item>
+    
+  </channel>
+</rss>

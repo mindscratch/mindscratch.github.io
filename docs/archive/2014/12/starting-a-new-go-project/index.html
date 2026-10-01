@@ -1,0 +1,233 @@
+<html lang="en">
+<head>
+
+  
+  <meta charset="utf-8">
+  <title>Starting a new Go project</title>
+  <meta name="description" content="Starting a new Go project">
+  <meta name="author" content="Craig Wickesser">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/archive/css/fonts.css">
+  
+  
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+
+  <link rel="stylesheet" href="/archive/css/custom.css">
+
+  
+  
+  <link rel="stylesheet" href="/archive/highlight/styles/default.css">
+  
+  <script src="/archive/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+<div style="font:13px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;background:#14161a;color:#e9eaec;padding:10px 16px;text-align:center">Archived, from my old site (2014–2020). <a href="/" style="color:#f7931e">← Back to craigwickesser.com</a></div>
+
+
+<div class="header pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+    <div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="desktop pure-menu pure-menu-horizontal nav-menu">
+            
+            <a href="/archive/" class="site-title pure-menu-heading">craig wickesser</a>
+            <ul class="pure-menu-list">
+                
+                <li class="pure-menu-item">
+                    <a href="/archive/categories/newsletter" class="pure-menu-link">Newsletter</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="/archive/categories/posts" class="pure-menu-link">Posts</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="/archive/now/" class="pure-menu-link">Now</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="/archive/about/" class="pure-menu-link">About</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="/archive/books/" class="pure-menu-link">Books</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mobile pure-menu nav-menu">
+            <a href="/archive/" class="pure-menu-heading" id="toggle-home">craig wickesser</a>
+            <a href="#" id="toggle-btn">&#9776;</a>
+            <ul class="pure-menu-list" id="toggle-content" style="display:none;">
+                
+                
+                <li class="pure-menu-item">
+                    <a href="/archive/categories/newsletter" class="pure-menu-link">Newsletter</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="/archive/categories/posts" class="pure-menu-link">Posts</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="/archive/now" class="pure-menu-link">Now</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="/archive/about" class="pure-menu-link">About</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="/archive/books" class="pure-menu-link">Books</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-6"></div>
+</div>
+
+
+<div class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+	<div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="post">
+
+            <div class="post-title">
+                <p class="footnote">
+                    <time class="">2014-12-09</time>
+		            
+                    
+                    |
+                    
+                    
+                    tags:<a href="/archive/tags/golang">golang</a> 
+                    
+
+                    
+                    categories:<a href="/archive/categories/posts">posts</a> 
+                    
+
+                    
+                </p>
+                <h1>Starting a new Go project</h1>
+            </div>
+
+            <div class="post-content">
+                
+
+<p>I have the need for a program that can monitor Kubernetes* for services* and update an HAProxy* configuration file when changes occur. Sounds rather simple, however, there&rsquo;s a slight twist. I don&rsquo;t want to simply add entries to HAProxy for each service created in Kubernetes (it also wouldn&rsquo;t work as multiple services in Kubernetes could have the same port, since each service has its own IP address).</p>
+
+<p>Instead I need a way to define a set of rules, perhaps as simple as a template, that will be used to update the HAProxy configuration file intelligently.</p>
+
+<p>The template spec:</p>
+
+<pre><code class="language-go">type ServiceEntry struct {
+    Name string `json:&quot;name,omitempty&quot;`
+    Port int `json:&quot;port,omitempty&quot;`
+    Uri string `json:&quot;uri,omitempty&quot;`
+}
+
+type ServiceEntries []ServiceEntry {}
+</code></pre>
+
+<pre><code>services:
+    # accessible as http://&lt;proxy ip&gt;:9200
+    # the name of the service to monitor
+    - name: elasticsearch
+    # the port on the proxy for the service
+      port: 9200
+    # the uri on the proxy for the service
+      uri: /
+    # accessible as http://&lt;proxy ip&gt;/kibana
+    - name: kibana
+      port: 80
+      uri: /kibana
+</code></pre>
+
+<p>To be continued&hellip;</p>
+
+<h3 id="resources">Resources</h3>
+
+<ul>
+<li><a href="https://github.com/GoogleCloudPlatform/kubernetes/">Kubernetes</a></li>
+<li><a href="https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/services.md">Kubernetes services</a></li>
+<li><a href="http://www.haproxy.org/">HAProxy</a></li>
+<li><a href="https://code.google.com/p/go-wiki/wiki/GithubCodeLayout">GithubCodeLayout</a></li>
+</ul>
+
+            </div>
+        </div>
+	</div>
+    <div class="pure-u-1-24 pure-u-md-1-6">
+          <a href="https://twitter.com/mind_scratch" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @mind_scratch</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+	  <a href="/archive/">
+	    <img src="/archive//images/craig-profile-sm.png" class="pull-right profile" title="craig"/>
+	  </a>
+    </div>
+</div>
+
+<div class="footer pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+    <div class="pure-u-11-12 pure-u-md-5-8">
+        <div class="pure-menu pure-menu-horizontal footer-content">
+            <ul>
+                <li class="pure-menu-heading" id="foot-name">Craig Wickesser:</li>
+
+                
+                <li class="pure-menu-item">
+                    <a href="mailto:codecraig@gmail.com" class="pure-menu-link">Email</a>
+                </li>
+                
+
+                
+                <li class="pure-menu-item">
+                    <a href="https://github.com/mindscratch" class="pure-menu-link">GitHub</a>
+                </li>
+                
+
+                
+
+                
+
+                
+                <li class="pure-menu-item">
+                    <a href="https://twitter.com/mind_scratch" class="pure-menu-link">Twitter</a>
+                </li>
+                
+
+            </ul>
+            <a href="#" class="pure-menu-heading pull-right" id="gototop-btn">↑↑</a>
+        </div>
+	  </div>
+      <div class="pure-u-1-24 pure-u-md-1-6"></div>
+</div>
+
+
+<script src="/archive/js/jquery.min.js" type="text/javascript"></script>
+<script src="/archive/js/jquery.timeago.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(function(){
+    $("time.timeago").timeago();
+  })
+  $("#toggle-btn").click(function(){
+    $("#toggle-content").toggle();
+    if($(this).html() === "☰") {
+        $(this).html("X")
+    } else {
+        $(this).html("☰")
+    }
+  });
+  $(window).resize(function(){
+    if(window.innerWidth > 768) {
+      $(".desktop").removeAttr("style");
+    }
+  });
+</script>
+
+</body>
+</html>
+

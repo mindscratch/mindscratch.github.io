@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Craig Wickesser</title>
+  <meta name="description" content="Husband, father, co-founder and CEO of Codescratch.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='12' fill='%23f7931e'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Martian+Mono:wght@400&family=Newsreader:opsz,wght@6..72,400&display=swap">
+  <style>
+    :root {
+      --paper: #f5f6f7;
+      --ink: #15171b;
+      --muted: #5b616b;
+      --rule: #dde0e4;
+      --accent: #d67200;
+
+      --display: "Bricolage Grotesque", system-ui, sans-serif;
+      --body: "Newsreader", Georgia, serif;
+      --mono: "Martian Mono", ui-monospace, Menlo, monospace;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #0f1114;
+        --ink: #ecedef;
+        --muted: #9aa0a9;
+        --rule: #262a30;
+        --accent: #f7931e;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      background: var(--paper);
+      color: var(--ink);
+      font: 400 1.25rem/1.55 var(--body);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 60rem;
+      margin: 0 auto;
+      padding: clamp(3rem, 12vh, 9rem) 16px 0;
+      flex: 1;
+    }
+    @media (min-width: 640px) {
+      .page { padding-left: 2.5rem; padding-right: 2.5rem; }
+    }
+
+    /* The name: two lines, with the portrait set into the type like a glyph. */
+    .name {
+      margin: 0;
+      font-family: var(--display);
+      font-weight: 720;
+      font-variation-settings: "wdth" 78, "opsz" 96;
+      font-size: clamp(3.25rem, 21vw, 9rem);
+      line-height: 0.86;
+      letter-spacing: -0.04em;
+    }
+    .name span { display: block; }
+    .portrait {
+      display: inline-block;
+      width: 0.74em;
+      height: 0.74em;
+      margin-left: 0.08em;
+      border-radius: 50%;
+      object-fit: cover;
+      vertical-align: -0.02em;
+      background: var(--rule);
+    }
+
+    .roles {
+      margin: clamp(1.75rem, 5vw, 2.75rem) 0 0;
+      max-width: 22em;
+      font-family: var(--display);
+      font-weight: 500;
+      font-variation-settings: "wdth" 92, "opsz" 32;
+      font-size: clamp(1.5rem, 4.2vw, 2.25rem);
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+    }
+    .roles a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .roles a:hover { text-decoration: underline; text-underline-offset: 0.12em; text-decoration-thickness: 2px; }
+
+    .bio {
+      margin: 1.25rem 0 0;
+      max-width: 31em;
+      color: var(--muted);
+    }
+
+    .links {
+      list-style: none;
+      margin: 2.5rem 0 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 2rem;
+      font: 400 0.8125rem/1 var(--mono);
+    }
+    .links a {
+      display: inline-block;
+      padding: 0.5rem 0;
+      text-decoration: underline;
+      text-decoration-color: var(--rule);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.5em;
+      transition: text-decoration-color 0.15s;
+    }
+    .links a:hover { text-decoration-color: var(--accent); }
+    .links a::after { content: " ↗"; color: var(--accent); }
+
+    .foot {
+      width: 100%;
+      max-width: 60rem;
+      margin: 0 auto;
+      padding: 4rem 16px 2rem;
+      font: 400 0.75rem/1.6 var(--mono);
+      color: var(--muted);
+    }
+    @media (min-width: 640px) {
+      .foot { padding-left: 2.5rem; padding-right: 2.5rem; }
+    }
+    .foot p {
+      margin: 0;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--rule);
+    }
+    .foot a { text-decoration-color: var(--rule); text-underline-offset: 0.4em; }
+    .foot a:hover { color: var(--ink); text-decoration-color: var(--accent); }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .rise { animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+      .rise:nth-child(2) { animation-delay: 0.08s; }
+      .rise:nth-child(3) { animation-delay: 0.16s; }
+      .rise:nth-child(4) { animation-delay: 0.24s; }
+      @keyframes rise {
+        from { opacity: 0; transform: translateY(0.6rem); }
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1 class="name rise">
+      <span>Craig<img class="portrait" src="craig.jpg" width="240" height="240" alt="Craig Wickesser"></span>
+      <span>Wickesser</span>
+    </h1>
+    <p class="roles rise">Husband, father, co-founder &amp; CEO of <a href="https://www.codescratch.com">Codescratch</a>.</p>
+    <p class="bio rise">I&rsquo;ve been writing software for over twenty years, mostly in Go and TypeScript, and I&rsquo;m still an engineer at heart. These days I lead Codescratch, a company of engineers building data, machine-learning and security systems that hold up at scale.</p>
+    <ul class="links rise">
+      <li><a href="https://github.com/mindscratch">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/craig-wickesser-365959193/">LinkedIn</a></li>
+      <li><a href="https://www.codescratch.com">Codescratch</a></li>
+    </ul>
+  </main>
+  <footer class="foot">
+    <p><a href="/archive/">Older writing, 2014&ndash;2020</a></p>
+  </footer>
+</body>
+</html>

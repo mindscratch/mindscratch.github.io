@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on craig wickesser</title>
+    <link>/archive/tags/windows/</link>
+    <description>Recent content in Windows on craig wickesser</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
+    <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
+    <lastBuildDate>Sun, 28 Dec 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/archive/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Thoughts on Windows 8</title>
+      <link>/archive/2014/12/windows-8-thoughts/</link>
+      <pubDate>Sun, 28 Dec 2014 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2014/12/windows-8-thoughts/</guid>
+      <description>My son received a laptop, his first, for Christmas. It&amp;rsquo;s an ASUS running Windows 8. To date, he&amp;rsquo;s only used Apple laptops, iPad, iPhone Touch and Galaxy S3/4/5 Android phones at home.
+I helped setup the laptop and the first thing I noticed was the &amp;ldquo;app&amp;rdquo; centric user interface. I noticed he seemed to be able to navigate around rather easily and wasn&amp;rsquo;t getting lost. The &amp;ldquo;app&amp;rdquo; centric focus of the operating system is compelling and I believe a win for Microsoft in terms of aligning with the younger generation.</description>
+    </item>
+    
+  </channel>
+</rss>

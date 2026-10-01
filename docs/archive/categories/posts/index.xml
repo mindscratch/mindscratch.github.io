@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on craig wickesser</title>
+    <link>/archive/categories/posts/</link>
+    <description>Recent content in Posts on craig wickesser</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
+    <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
+    <lastBuildDate>Mon, 31 Dec 2018 15:35:00 -0400</lastBuildDate>
+    
+	<atom:link href="/archive/categories/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2018 - Year in Review</title>
+      <link>/archive/2018/12/2018-year-in-review/</link>
+      <pubDate>Mon, 31 Dec 2018 15:35:00 -0400</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2018/12/2018-year-in-review/</guid>
+      <description>In trying to keep the tradition of posting a year in review, so here it goes.
+Programming This year I continued working part-time on a LAMP stack app, the one that used Angular 1.x for the UI. I also continued fixing bugs and adding new features to the &amp;ldquo;web based application to assist in monitoring local government, which I still continue to do. I did move it over to use Amazon AWS hosted Elasticsearch because the single, &amp;ldquo;small&amp;rdquo; EC2 server was being overloaded.</description>
+    </item>
+    
+    <item>
+      <title>2017 - Year in Review</title>
+      <link>/archive/2017/12/2017-year-in-review/</link>
+      <pubDate>Sun, 31 Dec 2017 12:26:05 -0400</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2017/12/2017-year-in-review/</guid>
+      <description>In trying to keep the tradition of posting a year in review, so here it goes.
+Programming This year I worked a couple of different projects. I continued to work on a LAMP stack app which used Angular 1.x for its frontend. I also developed a web based application to assist in monitoring local government, built with VueJS, Go, Elasticsearch, Amazon SQS, RDS and SES.
+I also continued working on the next generation of a backend processing system that uses Docker + Mesos, with the goal of simplifying the archtiecture, development, deployment and maintenance.</description>
+    </item>
+    
+    <item>
+      <title>2016 - Year in Review</title>
+      <link>/archive/2016/12/year-in-review/</link>
+      <pubDate>Thu, 22 Dec 2016 22:01:49 -0400</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2016/12/year-in-review/</guid>
+      <description>Another year is coming to an end so I thought I&amp;rsquo;d reflect and jot down some things.
+Programming I&amp;rsquo;ve enjoyed spending the majority of my time writing code, including web applications, command-line applications, devops tools and user interfaces. Besides writing code, the next highest item on my list was probably &amp;ldquo;devops&amp;rdquo;. Tasks in this area included writing Puppet and Salt modules, bash scripts to simplify repetitive tasks, configuring firewalls and tracking down issues with services and servers.</description>
+    </item>
+    
+    <item>
+      <title>Run Mesos using Docker 1.11.1-beta11 on Mac OS X</title>
+      <link>/archive/2016/05/run-mesos-using-docker-beta11-on-mac-osx/</link>
+      <pubDate>Wed, 11 May 2016 19:37:37 -0400</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2016/05/run-mesos-using-docker-beta11-on-mac-osx/</guid>
+      <description>Previously I wrote about running Apache Mesos in Docker on Mac OS X using Docker for Mac Beta 8. With the recent update to Docker 1.11.1-beta11 things have changed a bit and so the scripts have to change.
+Once again the dockerIp had to be discovered differently and I had to switch docker to use nat networking, instead of the default hostnet.
+First, change the networking: pinata set network nat.</description>
+    </item>
+    
+    <item>
+      <title>Run Mesos using Docker Beta on Mac OS X</title>
+      <link>/archive/2016/04/run-mesos-using-docker-beta-on-mac-osx/</link>
+      <pubDate>Sun, 17 Apr 2016 20:30:55 -0400</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2016/04/run-mesos-using-docker-beta-on-mac-osx/</guid>
+      <description>Previously I wrote about running Apache Mesos in Docker on Mac OS X. Back then Docker worked by using a VM run via VirtualBox. Today, using Docker Beta for Mac, the process is simpler and more like the linux experience.
+The scripts I used before only had to be changed to update the way the dockerIp was discovered. I wasn&amp;rsquo;t sure how do find that IP address.
+With the Docker Beta there&amp;rsquo;s a command-line tool named pinata which can be used to configure docker:</description>
+    </item>
+    
+    <item>
+      <title>hypersh on mac</title>
+      <link>/archive/2016/01/hypersh-on-mac/</link>
+      <pubDate>Mon, 18 Jan 2016 20:32:45 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2016/01/hypersh-on-mac/</guid>
+      <description>Hyper calls itself a Hypervisor-agnostic Docker Runtime. It boasts the benefits of Virtual Machines and Containers, without the downsides:
+ security  using a VM reduces the attach surface and avoids the &amp;ldquo;shared kernel&amp;rdquo; problem presented by containers.  performance  Hyper is able to launch instances in sub-second versus tens of seconds like traditional VM&amp;rsquo;s.  portable  the hypervisor is agnostic, it supports KVM, Xen and VirtualBox.  immutable  It&amp;rsquo;s also nice to see their following the OCI Specs for their hypervisor.</description>
+    </item>
+    
+    <item>
+      <title>Secure Email on Mac OS X</title>
+      <link>/archive/2016/01/secure-email-on-mac/</link>
+      <pubDate>Mon, 18 Jan 2016 20:06:53 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2016/01/secure-email-on-mac/</guid>
+      <description>This will be quick. I use GMail but it lacks the native ability to sign and encrypt email. I did some looking around for desktop email clients for Mac OS X that support S/MIME.
+I ended up going with Airmail 2 because it has S/MIME support and it supports Markdown which I like to use.
+S/MIME support is provided by a plugin. Follow the instructions after going to the link, you&amp;rsquo;ll ultimately download a zip file.</description>
+    </item>
+    
+    <item>
+      <title>Mesos on Mac OS X</title>
+      <link>/archive/2016/01/mesos-on-mac-osx/</link>
+      <pubDate>Sat, 09 Jan 2016 12:14:56 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2016/01/mesos-on-mac-osx/</guid>
+      <description>updated on 04/01/2016 to use mesosphere docker images
+Using docker it&amp;rsquo;s simple to get a Mesos cluster running on Mac OS X. I&amp;rsquo;m running Docker 1.9.1 and OS X 10.11.2. We&amp;rsquo;ll be running Zookeeper 3.4.7 and Mesos 0.24.1 (that&amp;rsquo;s the version provided by the docker image I&amp;rsquo;m using for this example).
+First we&amp;rsquo;ll start a Zookeeper server, then a Mesos master and a single Mesos slave.
+note: I have satellite internet, so my downloads are throttled after I use the data allowance for the month.</description>
+    </item>
+    
+    <item>
+      <title>Mesos 0.22.0 Release</title>
+      <link>/archive/2015/03/mesos-022-release/</link>
+      <pubDate>Tue, 24 Mar 2015 20:33:36 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2015/03/mesos-022-release/</guid>
+      <description>Mesos 0.22.0 has been released!
+There&amp;rsquo;s a nice video which goes through the new features in 0.22.0 as well as some features scheduled for the 0.23.0 release.
+I&amp;rsquo;ve put together some notes I put together while watching the video.
+Disk Isolation Disk Isolation allows the MesosContainerizer to enforce a disk quota. Prior to 0.22.0 mesos supported isolation of cpu, memory, pid namespacing, network ports and bandwidth.
+To use this new isolation, two new flags are required:</description>
+    </item>
+    
+    <item>
+      <title>Go: command with custom environment</title>
+      <link>/archive/2015/02/golang-cmd-with-custom-environment/</link>
+      <pubDate>Tue, 24 Feb 2015 21:51:56 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2015/02/golang-cmd-with-custom-environment/</guid>
+      <description>Problem: Execute an external process with a customized environment.
+Solution: The Go by Example site has as an example demonstrating how to spawn an external process and how exec a process. Those two examples provide a great starting point. Below, we&amp;rsquo;ll take it a step further to modify the environment.
+package main import ( &amp;quot;fmt&amp;quot; &amp;quot;io/ioutil&amp;quot; &amp;quot;os&amp;quot; &amp;quot;os/exec&amp;quot; ) // In this example `messageId` is a value that // needs to be stored in an environment variable to be // used by the command that&#39;s going to be executed func doIt(messageId string) error { binary, err := exec.</description>
+    </item>
+    
+    <item>
+      <title>Mindscratch Newsletter 1</title>
+      <link>/archive/2015/01/mindscratch-newsletter-1/</link>
+      <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2015/01/mindscratch-newsletter-1/</guid>
+      <description>On a regular basis, hopefully once per week, I&amp;rsquo;ll be posting links to content related to distributed systems, programming and devops. If you&amp;rsquo;d prefer to access this content via email, then subscribe.
+http://www.meetup.com/Apache-Mesos-NYC-Meetup/events/219073804/ - interesting b/c of mention of running Accumulo on Mesos
+http://www.slideshare.net/ColleenLee1/iguaz-a-longrunning-job-scheduler-using-docker-and-mesos - job scheduler from corsera
+Docker security https://github.com/GDSSecurity/Docker-Secure-Deployment-Guidelines https://www.gartner.com/doc/2956826
+https://github.com/ExPHAT/twitter-sort
+http://am./chronos &amp;ndash;master zk://server1:2181/mesos &amp;ndash;zk_hosts zk://server1:2181/mesos &amp;ndash;http_port 8080bari.apache.org/
+http://jpetazzo.github.io/2015/01/13/docker-mount-dynamic-volumes/
+https://codeascraft.com/2015/01/14/introducing-statsd-jvm-profiler-a-jvm-profiler-for-hadoop/
+Go Go Static Analysis Tools by Alan Donovan https://vimeo.</description>
+    </item>
+    
+    <item>
+      <title>Go HTTP: Too Many Open Files</title>
+      <link>/archive/2015/01/golang-http-to-many-open-files/</link>
+      <pubDate>Wed, 07 Jan 2015 18:26:39 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2015/01/golang-http-to-many-open-files/</guid>
+      <description>I recently had a situation where an application I was working on in Go would run into the &amp;ldquo;too many open files&amp;rdquo; error. After some debugging, I discovered it wasn&amp;rsquo;t closing HTTP connections being made to an HTTP server.
+Update: It turns out, I was testing against &amp;ldquo;test&amp;rdquo; server which wasn&amp;rsquo;t setting the Connection: close header, therefore neither the client or server was requesting the connection to be closed. If the server had set the Connection header, things would&amp;rsquo;ve been fine.</description>
+    </item>
+    
+    <item>
+      <title>POST Data to Load Test with ApacheBench</title>
+      <link>/archive/2015/01/post-data-to-load-test-with-apachebench/</link>
+      <pubDate>Sat, 03 Jan 2015 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2015/01/post-data-to-load-test-with-apachebench/</guid>
+      <description>ApacheBench (also known as, ab) is,
+ a tool for benchmarking your Apache Hypertext Transfer Protocol (HTTP) server
+ Don&amp;rsquo;t be fooled, you can use it to benchmark any server that supports HTTP. In fact, it might be worth checking out boom which is written in Go which makes it easier to use across platforms, and is simple to install (spoiler alert: it&amp;rsquo;s just a binary).
+Anyhow, in this post I&amp;rsquo;ll demonstrate using ApacheBench (since I came across it first).</description>
+    </item>
+    
+    <item>
+      <title>Capture STDOUT in Go</title>
+      <link>/archive/2015/01/capture-stdout-in-go/</link>
+      <pubDate>Fri, 02 Jan 2015 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2015/01/capture-stdout-in-go/</guid>
+      <description>Capturing output written to STDOUT (standard output) can be accomplished with the following code.
+import ( &amp;quot;bytes&amp;quot; &amp;quot;io&amp;quot; &amp;quot;os&amp;quot; ) // not thread safe func captureStdout(f func()) string { old := os.Stdout r, w, _ := os.Pipe() os.Stdout = w f() w.Close() os.Stdout = old var buf bytes.Buffer io.Copy(&amp;amp;buf, r) return buf.String() }  The code here is fairly straight forward. First, a reference to the Writer that&amp;rsquo;s assigned to os.</description>
+    </item>
+    
+    <item>
+      <title>Thoughts on Windows 8</title>
+      <link>/archive/2014/12/windows-8-thoughts/</link>
+      <pubDate>Sun, 28 Dec 2014 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2014/12/windows-8-thoughts/</guid>
+      <description>My son received a laptop, his first, for Christmas. It&amp;rsquo;s an ASUS running Windows 8. To date, he&amp;rsquo;s only used Apple laptops, iPad, iPhone Touch and Galaxy S3/4/5 Android phones at home.
+I helped setup the laptop and the first thing I noticed was the &amp;ldquo;app&amp;rdquo; centric user interface. I noticed he seemed to be able to navigate around rather easily and wasn&amp;rsquo;t getting lost. The &amp;ldquo;app&amp;rdquo; centric focus of the operating system is compelling and I believe a win for Microsoft in terms of aligning with the younger generation.</description>
+    </item>
+    
+    <item>
+      <title>Starting a new Go project</title>
+      <link>/archive/2014/12/starting-a-new-go-project/</link>
+      <pubDate>Tue, 09 Dec 2014 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2014/12/starting-a-new-go-project/</guid>
+      <description>I have the need for a program that can monitor Kubernetes* for services* and update an HAProxy* configuration file when changes occur. Sounds rather simple, however, there&amp;rsquo;s a slight twist. I don&amp;rsquo;t want to simply add entries to HAProxy for each service created in Kubernetes (it also wouldn&amp;rsquo;t work as multiple services in Kubernetes could have the same port, since each service has its own IP address).
+Instead I need a way to define a set of rules, perhaps as simple as a template, that will be used to update the HAProxy configuration file intelligently.</description>
+    </item>
+    
+  </channel>
+</rss>

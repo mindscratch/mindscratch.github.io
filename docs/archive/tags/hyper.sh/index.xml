@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hyper.sh on craig wickesser</title>
+    <link>/archive/tags/hyper.sh/</link>
+    <description>Recent content in Hyper.sh on craig wickesser</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
+    <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
+    <lastBuildDate>Mon, 18 Jan 2016 20:32:45 -0500</lastBuildDate>
+    
+	<atom:link href="/archive/tags/hyper.sh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>hypersh on mac</title>
+      <link>/archive/2016/01/hypersh-on-mac/</link>
+      <pubDate>Mon, 18 Jan 2016 20:32:45 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2016/01/hypersh-on-mac/</guid>
+      <description>Hyper calls itself a Hypervisor-agnostic Docker Runtime. It boasts the benefits of Virtual Machines and Containers, without the downsides:
+ security  using a VM reduces the attach surface and avoids the &amp;ldquo;shared kernel&amp;rdquo; problem presented by containers.  performance  Hyper is able to launch instances in sub-second versus tens of seconds like traditional VM&amp;rsquo;s.  portable  the hypervisor is agnostic, it supports KVM, Xen and VirtualBox.  immutable  It&amp;rsquo;s also nice to see their following the OCI Specs for their hypervisor.</description>
+    </item>
+    
+  </channel>
+</rss>

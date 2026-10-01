@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on craig wickesser</title>
+    <link>/archive/tags/golang/</link>
+    <description>Recent content in Golang on craig wickesser</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
+    <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
+    <lastBuildDate>Tue, 24 Feb 2015 21:51:56 -0500</lastBuildDate>
+    
+	<atom:link href="/archive/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go: command with custom environment</title>
+      <link>/archive/2015/02/golang-cmd-with-custom-environment/</link>
+      <pubDate>Tue, 24 Feb 2015 21:51:56 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2015/02/golang-cmd-with-custom-environment/</guid>
+      <description>Problem: Execute an external process with a customized environment.
+Solution: The Go by Example site has as an example demonstrating how to spawn an external process and how exec a process. Those two examples provide a great starting point. Below, we&amp;rsquo;ll take it a step further to modify the environment.
+package main import ( &amp;quot;fmt&amp;quot; &amp;quot;io/ioutil&amp;quot; &amp;quot;os&amp;quot; &amp;quot;os/exec&amp;quot; ) // In this example `messageId` is a value that // needs to be stored in an environment variable to be // used by the command that&#39;s going to be executed func doIt(messageId string) error { binary, err := exec.</description>
+    </item>
+    
+    <item>
+      <title>Mindscratch Newsletter 1</title>
+      <link>/archive/2015/01/mindscratch-newsletter-1/</link>
+      <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2015/01/mindscratch-newsletter-1/</guid>
+      <description>On a regular basis, hopefully once per week, I&amp;rsquo;ll be posting links to content related to distributed systems, programming and devops. If you&amp;rsquo;d prefer to access this content via email, then subscribe.
+http://www.meetup.com/Apache-Mesos-NYC-Meetup/events/219073804/ - interesting b/c of mention of running Accumulo on Mesos
+http://www.slideshare.net/ColleenLee1/iguaz-a-longrunning-job-scheduler-using-docker-and-mesos - job scheduler from corsera
+Docker security https://github.com/GDSSecurity/Docker-Secure-Deployment-Guidelines https://www.gartner.com/doc/2956826
+https://github.com/ExPHAT/twitter-sort
+http://am./chronos &amp;ndash;master zk://server1:2181/mesos &amp;ndash;zk_hosts zk://server1:2181/mesos &amp;ndash;http_port 8080bari.apache.org/
+http://jpetazzo.github.io/2015/01/13/docker-mount-dynamic-volumes/
+https://codeascraft.com/2015/01/14/introducing-statsd-jvm-profiler-a-jvm-profiler-for-hadoop/
+Go Go Static Analysis Tools by Alan Donovan https://vimeo.</description>
+    </item>
+    
+    <item>
+      <title>Go HTTP: Too Many Open Files</title>
+      <link>/archive/2015/01/golang-http-to-many-open-files/</link>
+      <pubDate>Wed, 07 Jan 2015 18:26:39 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2015/01/golang-http-to-many-open-files/</guid>
+      <description>I recently had a situation where an application I was working on in Go would run into the &amp;ldquo;too many open files&amp;rdquo; error. After some debugging, I discovered it wasn&amp;rsquo;t closing HTTP connections being made to an HTTP server.
+Update: It turns out, I was testing against &amp;ldquo;test&amp;rdquo; server which wasn&amp;rsquo;t setting the Connection: close header, therefore neither the client or server was requesting the connection to be closed. If the server had set the Connection header, things would&amp;rsquo;ve been fine.</description>
+    </item>
+    
+    <item>
+      <title>Capture STDOUT in Go</title>
+      <link>/archive/2015/01/capture-stdout-in-go/</link>
+      <pubDate>Fri, 02 Jan 2015 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2015/01/capture-stdout-in-go/</guid>
+      <description>Capturing output written to STDOUT (standard output) can be accomplished with the following code.
+import ( &amp;quot;bytes&amp;quot; &amp;quot;io&amp;quot; &amp;quot;os&amp;quot; ) // not thread safe func captureStdout(f func()) string { old := os.Stdout r, w, _ := os.Pipe() os.Stdout = w f() w.Close() os.Stdout = old var buf bytes.Buffer io.Copy(&amp;amp;buf, r) return buf.String() }  The code here is fairly straight forward. First, a reference to the Writer that&amp;rsquo;s assigned to os.</description>
+    </item>
+    
+    <item>
+      <title>Starting a new Go project</title>
+      <link>/archive/2014/12/starting-a-new-go-project/</link>
+      <pubDate>Tue, 09 Dec 2014 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/2014/12/starting-a-new-go-project/</guid>
+      <description>I have the need for a program that can monitor Kubernetes* for services* and update an HAProxy* configuration file when changes occur. Sounds rather simple, however, there&amp;rsquo;s a slight twist. I don&amp;rsquo;t want to simply add entries to HAProxy for each service created in Kubernetes (it also wouldn&amp;rsquo;t work as multiple services in Kubernetes could have the same port, since each service has its own IP address).
+Instead I need a way to define a set of rules, perhaps as simple as a template, that will be used to update the HAProxy configuration file intelligently.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on craig wickesser</title>
+    <link>/archive/tags/</link>
+    <description>Recent content in Tags on craig wickesser</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>codecraig@gmail.com (Craig Wickesser)</managingEditor>
+    <webMaster>codecraig@gmail.com (Craig Wickesser)</webMaster>
+    <lastBuildDate>Thu, 22 Dec 2016 22:01:49 -0400</lastBuildDate>
+    
+	<atom:link href="/archive/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2016</title>
+      <link>/archive/tags/2016/</link>
+      <pubDate>Thu, 22 Dec 2016 22:01:49 -0400</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/tags/2016/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2017</title>
+      <link>/archive/tags/2017/</link>
+      <pubDate>Sun, 31 Dec 2017 12:26:05 -0400</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/tags/2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2018</title>
+      <link>/archive/tags/2018/</link>
+      <pubDate>Mon, 31 Dec 2018 15:35:00 -0400</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/tags/2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Apachebench</title>
+      <link>/archive/tags/apachebench/</link>
+      <pubDate>Sat, 03 Jan 2015 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/tags/apachebench/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chronos</title>
+      <link>/archive/tags/chronos/</link>
+      <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/tags/chronos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Containers</title>
+      <link>/archive/tags/containers/</link>
+      <pubDate>Mon, 18 Jan 2016 20:32:45 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/tags/containers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>/archive/tags/development/</link>
+      <pubDate>Wed, 07 Jan 2015 18:26:39 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Distributed Systems</title>
+      <link>/archive/tags/distributed-systems/</link>
+      <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/tags/distributed-systems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>/archive/tags/docker/</link>
+      <pubDate>Wed, 11 May 2016 19:37:37 -0400</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>/archive/tags/golang/</link>
+      <pubDate>Tue, 24 Feb 2015 21:51:56 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hadoop</title>
+      <link>/archive/tags/hadoop/</link>
+      <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/tags/hadoop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Http</title>
+      <link>/archive/tags/http/</link>
+      <pubDate>Sat, 03 Jan 2015 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/tags/http/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hyper.sh</title>
+      <link>/archive/tags/hyper.sh/</link>
+      <pubDate>Mon, 18 Jan 2016 20:32:45 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/tags/hyper.sh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>/archive/tags/java/</link>
+      <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>/archive/tags/javascript/</link>
+      <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Load Test</title>
+      <link>/archive/tags/load-test/</link>
+      <pubDate>Sat, 03 Jan 2015 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/tags/load-test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mac</title>
+      <link>/archive/tags/mac/</link>
+      <pubDate>Wed, 11 May 2016 19:37:37 -0400</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/tags/mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mesos</title>
+      <link>/archive/tags/mesos/</link>
+      <pubDate>Wed, 11 May 2016 19:37:37 -0400</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/tags/mesos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mesosphere</title>
+      <link>/archive/tags/mesosphere/</link>
+      <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/tags/mesosphere/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mindscratch</title>
+      <link>/archive/tags/mindscratch/</link>
+      <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/tags/mindscratch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Posts</title>
+      <link>/archive/tags/posts/</link>
+      <pubDate>Wed, 07 Jan 2015 18:26:39 -0500</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/tags/posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>/archive/tags/windows/</link>
+      <pubDate>Sun, 28 Dec 2014 00:00:00 +0000</pubDate>
+      <author>codecraig@gmail.com (Craig Wickesser)</author>
+      <guid>/archive/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
