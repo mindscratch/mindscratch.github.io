@@ -10,7 +10,7 @@
 ## Rules
 
 - Keep it one page with no build step, no framework and no JavaScript unless it's truly needed.
-- Fonts come from Google Fonts: Bricolage Grotesque (display), Newsreader (body), Martian Mono (small labels and links).
+- Fonts come from Google Fonts: Schibsted Grotesk (display), Newsreader (body), Martian Mono (small labels and links).
 - Colours are CSS custom properties on `:root`, redefined under `prefers-color-scheme: dark`:
   - light: paper `#f5f6f7`, ink `#15171b`, muted `#5b616b`, rule `#dde0e4`, accent `#d67200`
   - dark: paper `#0f1114`, ink `#ecedef`, muted `#9aa0a9`, rule `#262a30`, accent `#f7931e`
