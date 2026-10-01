@@ -16,7 +16,6 @@
   - dark: paper `#0f1114`, ink `#ecedef`, muted `#9aa0a9`, rule `#262a30`, accent `#f7931e`
 - The accent is Codescratch orange. Use it sparingly: the Codescratch name, link arrows and hover states.
 - The page must work at phone width (16px side gutter, no horizontal scroll), show visible keyboard focus and respect `prefers-reduced-motion`.
-- The portrait (`docs/craig.jpg`, 240×240) sits inline inside the `<h1>` after "Craig". To remove it, delete the `<img>`.
 
 ## Preview
 
