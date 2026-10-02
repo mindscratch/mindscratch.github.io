@@ -128,6 +128,10 @@
       .foot { padding-left: 2.5rem; padding-right: 2.5rem; }
     }
     .foot p {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem 1.5rem;
       margin: 0;
       padding-top: 1.25rem;
       border-top: 1px solid var(--rule);
@@ -161,7 +165,10 @@
     </ul>
   </main>
   <footer class="foot">
-    <p><a href="/archive/">Older writing, 2014&ndash;2020</a></p>
+    <p>
+      <a href="/archive/">Older writing, 2014&ndash;2020</a>
+      <span>Updated <time datetime="2026-10">October 2026</time></span>
+    </p>
   </footer>
 </body>
 </html>
